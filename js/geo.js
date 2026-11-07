@@ -62,15 +62,23 @@ export function buildTrack(pts, { threshold = 4 } = {}) {
 
 export const segment = (T, i0, i1) => ({ km: T.cum[i1] - T.cum[i0], up: T.cumUp[i1] - T.cumUp[i0], down: T.cumDown[i1] - T.cumDown[i0] });
 
-/** Point le plus proche. preferLast : dernier passage à moins de radiusKm (boucles en aller-retour). */
+/** Point le plus proche. preferLast : le plus proche du dernier vrai passage à moins de radiusKm
+ *  (boucle qui repasse par le spot ; demi-tour d'un aller-retour). Un passage qui frôle seulement le rayon,
+ *  à plus de 50 m de plus que le meilleur, est ignoré. Même calcul que nearest_index (scripts/gpx_route.py). */
 export function nearestIndex(T, lat, lon, preferLast = false, radiusKm = 0.15) {
-  let best = { i: 0, d: Infinity }, lastNear = -1;
+  let best = { i: 0, d: Infinity }, inside = false;
+  const runs = [];
   for (let i = 0; i < T.pts.length; i++) {
     const d = hav(lat, lon, T.pts[i][0], T.pts[i][1]);
     if (d < best.d) best = { i, d };
-    if (d < radiusKm) lastNear = i;
+    if (d < radiusKm) {
+      if (!inside) runs.push({ i, d });
+      const r = runs[runs.length - 1];
+      if (d < r.d) { r.i = i; r.d = d; }
+      inside = true;
+    } else inside = false;
   }
-  if (preferLast && lastNear >= 0) return { i: lastNear, d: hav(lat, lon, T.pts[lastNear][0], T.pts[lastNear][1]) };
+  if (preferLast) for (let k = runs.length - 1; k >= 0; k--) if (runs[k].d <= best.d + 0.05) return runs[k];
   return best;
 }
 

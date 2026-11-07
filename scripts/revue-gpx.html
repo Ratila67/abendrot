@@ -27,7 +27,7 @@
   main{position:relative} #map{position:absolute;inset:0}
   .panel{position:absolute;z-index:2;top:12px;left:12px;width:min(420px,calc(100% - 70px));background:var(--surface);border-radius:14px;padding:12px 14px;box-shadow:0 6px 24px rgba(0,0,0,.35)}
   .panel h2{font-size:1.05rem;margin:0} .cmp{display:grid;grid-template-columns:auto 1fr 1fr;gap:2px 12px;margin-top:8px;font-size:.88rem}
-  .cmp b{font-weight:600} .cmp .bad{color:var(--warn)} .flags{color:var(--warn);font-size:.82rem;margin-top:6px} .flags.ok{color:var(--ok)}
+  .cmp b{font-weight:600} .flags{color:var(--warn);font-size:.82rem;margin-top:6px} .flags.ok{color:var(--ok)}
   .tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px} .help{color:var(--muted);font-size:.78rem;margin-top:8px}
   .wp{width:24px;height:24px;border-radius:50%;background:#fff;color:#17222A;border:2px solid #17222A;display:grid;place-items:center;font:700 11px var(--font);cursor:grab}
   .wp.first{background:#17222A;color:#fff;border-color:#fff}
@@ -43,7 +43,8 @@
 <aside>
   <div class="head">
     <h1>Revue des traces</h1>
-    <p class="sub">Trace calculée sur les sentiers OpenStreetMap (BRouter) à travers les points clés. Corrige les points, puis valide.</p>
+    <p class="sub">Spot d’abord : du parking au spot du coucher, en aller-retour par défaut. Trace calculée sur OpenStreetMap (BRouter). Un point de passage seulement pour éviter la route.</p>
+    <div class="exp"><button class="btn" id="allBtn" type="button">Aller-retour pour toutes</button></div>
     <div class="exp"><button class="btn" id="expBtn" type="button">Exporter les corrections</button><button class="btn" id="copyBtn" type="button">Copier</button></div>
   </div>
   <div id="list"></div>
@@ -59,7 +60,8 @@
 const IGN = 'https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/png&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}';
 const TOPO = ['a', 'b', 'c'].map(s => `https://${s}.tile.opentopomap.org/{z}/{x}/{y}.png`);
 // Mêmes seuils que scripts/gpx_route.py
-const MAX_KM_GAP = 0.20, MAX_DPLUS_GAP = 0.25, MAX_SNAP_M = 150, MAX_ROAD = 0.20;
+const MAX_SNAP_M = 150, MAX_ROAD = 0.20, MIN_TO_SPOT_KM = 1, MAX_LONGER = 1.5, FACTOR = 1.25;   // FACTOR : allure « hiver » des temps de la fiche
+const geoP = import(`../js/geo.js?v=${Date.now()}`);   // mêmes calculs que l'app (distance, D+, temps jusqu'au spot), jamais en cache
 const ROADS = new Set(['motorway', 'trunk', 'primary', 'secondary', 'tertiary', 'unclassified', 'residential', 'living_street', 'service']);
 const KEY = 'abendrot-revue-gpx';
 
@@ -86,6 +88,11 @@ const stats = {};   // id → dernier résultat (pour la liste)
 const isLoop = w => w.length > 2 && hav(w[0][0], w[0][1], w.at(-1)[0], w.at(-1)[1]) < 0.03;
 function editable(h) { const w = saved.edits[h.id] || h.waypoints; return { loop: isLoop(w), pts: (isLoop(w) ? w.slice(0, -1) : w).map(p => [...p]) }; }
 const closed = () => cur.loop ? [...cur.pts, cur.pts[0]] : cur.pts;
+/** Le spot du coucher, sinon le dernier spot de la fiche (comme target_spot du script). */
+const targetSpot = h => h.spots.find(s => s.sunset) || h.spots.at(-1) || null;
+/** Aller-retour parking → spot → parking (boucle de deux points pour l'éditeur). */
+function spotFirst(h) { const sp = targetSpot(h), a = [h.start.lat, h.start.lon, h.start.alt ?? null]; return [a, [sp.lat, sp.lon, sp.alt ?? null], a]; }
+const hm = m => m == null ? '…' : `${Math.floor(m / 60)} h ${String(Math.round(m % 60)).padStart(2, '0')}`;
 
 const map = new maplibregl.Map({ container: 'map', center: [7.2, 48.2], zoom: 9, style: { version: 8, sources: {
   ign: { type: 'raster', tiles: [IGN], tileSize: 256, maxzoom: 19, attribution: '© IGN Plan IGN' },
@@ -106,26 +113,45 @@ function summary(f) {
 }
 function flags(s, h) {
   const o = [];
-  if (Math.abs(s.km - h.km) > MAX_KM_GAP * h.km) o.push(`distance ${s.km.toFixed(1)} km contre ${h.km}`);
-  if (Math.abs(s.dplus - h.dplus) > MAX_DPLUS_GAP * h.dplus) o.push(`D+ ${Math.round(s.dplus)} m contre ${h.dplus}`);
+  if (s.km > MAX_LONGER * h.km) o.push(`${s.km.toFixed(1)} km contre ${h.km} km sur la fiche : vérifier le parking`);
+  if (!s.spot) o.push('aucun spot sur la fiche');
+  else {
+    if (s.spot.m > MAX_SNAP_M) o.push(`spot à ${Math.round(s.spot.m)} m de la trace`);
+    if (s.spot.km < MIN_TO_SPOT_KM) o.push(`${s.spot.km.toFixed(1)} km jusqu’au spot : trop court pour une rando`);
+  }
   if (s.snap > MAX_SNAP_M) o.push(`point clé à ${Math.round(s.snap)} m de la trace`);
   if (s.road > MAX_ROAD) o.push(`${Math.round(s.road * 100)} % sur route`);
   return o;
 }
 
+async function brouter(pts, signal) {
+  const u = `https://brouter.de/brouter?lonlats=${pts.map(p => `${p[1].toFixed(6)},${p[0].toFixed(6)}`).join('|')}&profile=hiking-mountain&alternativeidx=0&format=geojson`;
+  const r = await fetch(u, { signal });
+  if (!r.ok) throw new Error(`BRouter ${r.status} : ${(await r.text()).slice(0, 120)}`);
+  return summary((await r.json()).features[0]);
+}
+/** Trace calculée puis mesurée comme dans l'app (buildTrack, nearestIndex, din de js/geo.js). */
+async function evaluate(h, pts, signal) {
+  const s = await brouter(pts, signal), g = await geoP;
+  const T = g.buildTrack(s.coords.map(c => [c[1], c[0], c[2] ?? null]), { threshold: 4 });
+  Object.assign(s, { km: T.km, dplus: T.dplus, total: g.din(T.km, T.dplus, T.dminus, FACTOR) });
+  const sp = targetSpot(h);
+  if (sp) {
+    const n = g.nearestIndex(T, sp.lat, sp.lon, true), a = g.segment(T, 0, n.i), b = g.segment(T, n.i, T.pts.length - 1);
+    s.spot = { m: n.d * 1000, km: a.km, toSpot: g.din(a.km, a.up, a.down, FACTOR), down: g.din(b.km, b.up, b.down, FACTOR) };
+  }
+  s.snap = Math.max(...pts.map(w => Math.min(...s.coords.map(c => hav(w[0], w[1], c[1], c[0]))))) * 1000;
+  s.flags = flags(s, h);
+  const ref = refs[h.id];
+  if (ref) { s.gap = refGap(s.coords, ref); if (s.gap.max > MAX_SNAP_M) s.flags.push(`s’écarte de la référence jusqu’à ${Math.round(s.gap.max)} m`); }
+  return s;
+}
 async function reroute() {
   const h = cur.h, pts = closed();
   ctrl?.abort(); ctrl = new AbortController();
   cur.busy = true; panel();
   try {
-    const u = `https://brouter.de/brouter?lonlats=${pts.map(p => `${p[1].toFixed(6)},${p[0].toFixed(6)}`).join('|')}&profile=hiking-mountain&alternativeidx=0&format=geojson`;
-    const r = await fetch(u, { signal: ctrl.signal });
-    if (!r.ok) throw new Error(`BRouter ${r.status} : ${(await r.text()).slice(0, 120)}`);
-    const s = summary((await r.json()).features[0]);
-    s.snap = Math.max(...pts.map(w => Math.min(...s.coords.map(c => hav(w[0], w[1], c[1], c[0]))))) * 1000;
-    s.flags = flags(s, h);
-    const ref = refs[h.id];
-    if (ref) { s.gap = refGap(s.coords, ref); if (s.gap.max > MAX_SNAP_M) s.flags.push(`s’écarte de la référence jusqu’à ${Math.round(s.gap.max)} m`); }
+    const s = await evaluate(h, pts, ctrl.signal);
     if (cur.h !== h) return;
     cur.s = s; stats[h.id] = s; cur.err = null;
     map.getSource('trace').setData({ type: 'Feature', geometry: { type: 'LineString', coordinates: s.coords.map(c => [c[0], c[1]]) } });
@@ -261,12 +287,15 @@ drop.addEventListener('drop', e => { e.preventDefault(); drop.classList.remove('
 function panel() {
   if (!cur) return;
   const { h, s } = cur, val = saved.validated.includes(h.id), mod = !!saved.edits[h.id], ref = refs[h.id], rs = ref && trackStats(ref);
-  const cell = (v, ref, gap, u) => `<span class="${v != null && Math.abs(v - ref) > gap * ref ? 'bad' : ''}">${v == null ? '…' : `${u === 'km' ? v.toFixed(1) : Math.round(v)} ${u}`}</span>`;
+  const sp = targetSpot(h), x = ref ? '<span></span>' : '';
   $('#panel').innerHTML = `<h2>${esc(h.name)}</h2>
-    <div class="cmp" style="grid-template-columns:auto 1fr 1fr${ref ? ' 1fr' : ''}"><span></span><b>Trace</b><b>Fiche</b>${ref ? '<b class="ref">Référence</b>' : ''}
-      <span>Distance</span>${cell(s?.km, h.km, MAX_KM_GAP, 'km')}<span>${h.km} km</span>${ref ? `<span class="ref">${rs.km.toFixed(1)} km</span>` : ''}
-      <span>D+</span>${cell(s?.dplus, h.dplus, MAX_DPLUS_GAP, 'm')}<span>${h.dplus} m</span>${ref ? `<span class="ref">${rs.dplus != null ? Math.round(rs.dplus) + ' m' : '?'}</span>` : ''}
-      <span>Route</span><span>${s ? Math.round(s.road * 100) + ' %' : '…'}</span><span></span>${ref ? '<span></span>' : ''}</div>
+    <div class="n">${esc(h.start.name)} → ${sp ? esc(sp.name) : '?'}</div>
+    <div class="cmp" style="grid-template-columns:auto 1fr 1fr${ref ? ' 1fr' : ''}"><span></span><b>Trace</b><b>Fiche actuelle</b>${ref ? '<b class="ref">Référence</b>' : ''}
+      <span>Distance</span><span>${s ? s.km.toFixed(1) + ' km' : '…'}</span><span>${h.km} km</span>${ref ? `<span class="ref">${rs.km.toFixed(1)} km</span>` : ''}
+      <span>D+</span><span>${s ? Math.round(s.dplus) + ' m' : '…'}</span><span>${h.dplus} m</span>${ref ? `<span class="ref">${rs.dplus != null ? Math.round(rs.dplus) + ' m' : '?'}</span>` : ''}
+      <span>Jusqu’au spot</span><span>${s?.spot ? `${hm(s.spot.toSpot)} (${s.spot.km.toFixed(1)} km)` : '…'}</span><span>${hm(h.toSpot)}</span>${x}
+      <span>Retour</span><span>${s?.spot ? hm(s.spot.down) : '…'}</span><span>${hm(h.down)}</span>${x}
+      <span>Route</span><span>${s ? Math.round(s.road * 100) + ' %' : '…'}</span><span></span>${x}</div>
     ${ref && s?.gap ? `<div class="refline" style="font-size:.82rem;margin-top:6px">Écart à la référence : ${Math.round(s.gap.mean)} m en moyenne, ${Math.round(s.gap.max)} m au plus
       ${s.gap.max > 50 ? '<button class="btn" id="worstBtn" type="button" style="margin-left:6px;padding:3px 8px">Voir le plus gros écart</button>' : ''}</div>` : ''}
     <div class="flags${s && !s.flags.length ? ' ok' : ''}">${cur.busy ? 'Calcul de la trace…' : cur.err ? esc(cur.err) : s ? (s.flags.length ? esc(s.flags.join(' ; ')) : 'Cohérente avec la fiche') : ''}</div>
@@ -274,14 +303,16 @@ function panel() {
       <button class="btn${val ? ' on' : ''}" id="valBtn" type="button"${!s || cur.busy ? ' disabled' : ''}>${val ? 'Validée' : 'Valider cette trace'}</button>
       <button class="btn" id="undoBtn" type="button"${cur.undo.length ? '' : ' disabled'}>Annuler</button>
       <button class="btn" id="resetBtn" type="button"${mod ? '' : ' disabled'}>Points d’origine</button>
+      ${sp ? '<button class="btn" id="arBtn" type="button">Aller-retour vers le spot</button>' : ''}
     </div>
     <div class="tools">
       <button class="btn" id="refBtn" type="button">${ref ? 'Changer la référence' : 'Charger une trace de référence'}</button>
       ${ref ? '<button class="btn" id="fromRefBtn" type="button">Placer les points depuis la référence</button><button class="btn" id="noRefBtn" type="button">Retirer</button>' : ''}
     </div>
-    <p class="help">Référence : un GPX ou KML (Wikiloc…) glissé sur la carte, affiché en bleu, gardé dans ce navigateur et jamais exporté.<br>Clic sur la carte : ajouter un point. Glisser un point : le déplacer. Clic droit : le supprimer. Ctrl+Z : annuler.</p>`;
+    <p class="help">Temps à l’allure des fiches (hiver, × 1,25) : à la validation, la fiche reprend ces chiffres.<br>Référence : un GPX ou KML (Wikiloc…) glissé sur la carte, affiché en bleu, gardé dans ce navigateur et jamais exporté.<br>Clic sur la carte : ajouter un point. Glisser un point : le déplacer. Clic droit : le supprimer. Ctrl+Z : annuler.</p>`;
   $('#valBtn').onclick = () => { saved.validated = val ? saved.validated.filter(id => id !== h.id) : [...saved.validated, h.id]; persist(); panel(); list(); };
   $('#undoBtn').onclick = undo;
+  $('#arBtn')?.addEventListener('click', () => { const [a, b] = spotFirst(h); change(pts => { pts.splice(0, pts.length, a, b); cur.loop = true; }); });
   $('#refBtn').onclick = () => $('#refIn').click();
   $('#worstBtn')?.addEventListener('click', () => map.flyTo({ center: [s.gap.worst[1], s.gap.worst[0]], zoom: 16, duration: 600 }));
   $('#fromRefBtn')?.addEventListener('click', () => {
@@ -306,7 +337,7 @@ function list() {
     const s = stats[h.id], val = saved.validated.includes(h.id), mod = !!saved.edits[h.id];
     const tag = val ? '<span class="tag ok">validée</span>' : s ? (s.flags.length ? '<span class="tag ko">à revoir</span>' : '<span class="tag ok">cohérente</span>') : '<span class="tag">non vue</span>';
     return `<button class="h" type="button" data-id="${h.id}" aria-current="${cur?.h === h}"><span class="t"><span>${esc(h.name)}</span><span class="tags">${mod ? '<span class="tag mod">modifiée</span>' : ''}${tag}</span></span>
-      <div class="n">Fiche ${h.km} km, ${h.dplus} m${s ? ` ; trace ${s.km.toFixed(1)} km, ${Math.round(s.dplus)} m` : ''}</div></button>`;
+      <div class="n">Fiche ${h.km} km, ${h.dplus} m${s ? ` ; trace ${s.km.toFixed(1)} km, ${Math.round(s.dplus)} m${s.flags.length ? ` ; ${esc(s.flags[0])}` : ''}` : ''}</div></button>`;
   }).join('');
 }
 $('#list').addEventListener('click', e => { const b = e.target.closest('button.h'); if (b) select(b.dataset.id); });
@@ -324,6 +355,25 @@ function select(id) {
   history.replaceState(null, '', '#' + h.id);
   panel(); list(); reroute();
 }
+
+// Aller-retour proposé pour chaque rando pas encore retouchée, puis calculé une à une pour remplir la liste.
+$('#allBtn').onclick = async () => {
+  const btn = $('#allBtn'), todo = hikes.filter(h => !saved.edits[h.id] && targetSpot(h));
+  if (!todo.length) return toast('Toutes les randos ont déjà des points retouchés');
+  btn.disabled = true;
+  todo.forEach(h => { saved.edits[h.id] = spotFirst(h); delete stats[h.id]; });
+  persist();
+  if (todo.includes(cur.h)) select(cur.h.id); else list();
+  for (const [k, h] of todo.entries()) {
+    btn.textContent = `Calcul ${k + 1}/${todo.length}…`;
+    if (h !== cur.h) {
+      try { stats[h.id] = await evaluate(h, saved.edits[h.id]); } catch { /* la fiche s'ouvrira et recalculera */ }
+      list(); await new Promise(ok => setTimeout(ok, 400));   // serveur public : sans insister
+    }
+  }
+  btn.textContent = 'Aller-retour pour toutes'; btn.disabled = false;
+  toast(`${todo.length} aller-retours proposés : revois ceux marqués « à revoir »`);
+};
 
 function exportData() {
   return { waypoints: saved.edits, validate: saved.validated };
