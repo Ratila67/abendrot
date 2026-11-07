@@ -1,0 +1,33 @@
+name: Vérité terrain, entraînement
+on:
+  schedule:
+    - cron: '0 5 1,15 * *'   # le 1er et le 15 de chaque mois
+  workflow_dispatch:
+    inputs:
+      min_days:
+        description: Nombre minimal de soirs observés
+        default: '30'
+concurrency:
+  group: truth-data
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-train.txt
+      - run: pip install -r requirements-train.txt
+      - run: python -m truth.train --min-days "${{ github.event.inputs.min_days || '30' }}"
+      - name: Publier le modèle
+        run: |
+          git config user.name "abendrot-bot"
+          git config user.email "abendrot-bot@users.noreply.github.com"
+          git add data/model.json data/truth/report.md 2>/dev/null || true
+          git diff --cached --quiet || { git commit -m "modèle : réentraînement $(date -u +%F)" && git pull --rebase && git push; }
