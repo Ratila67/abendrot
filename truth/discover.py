@@ -15,7 +15,7 @@ from .common import WEBCAMS_FILE, env, load_webcams, sunset_spots
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--radius", type=float, default=25)
+    ap.add_argument("--radius", type=int, default=25)
     ap.add_argument("--per-spot", type=int, default=4)
     args = ap.parse_args()
     key = env("WINDY_KEY")
