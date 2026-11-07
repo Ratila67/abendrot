@@ -38,7 +38,7 @@ def nearby(key, lat, lon, radius_km=25, limit=20):
 
 def get(key, webcam_id):
     r = requests.get(f"{BASE}/{webcam_id}", headers=_h(key), timeout=30, params={"include": "images,location,urls"})
-    r.raise_for_status()
+    r._check(r)
     j = r.json()
     return _parse(j["webcams"][0] if "webcams" in j else j)
 
