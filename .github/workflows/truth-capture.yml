@@ -23,6 +23,7 @@ jobs:
       - run: python -m truth.capture
         env:
           WINDY_KEY: ${{ secrets.WINDY_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY || secrets.GEMINI_KEY_API }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HF_DATASET: ${{ vars.HF_DATASET }}
