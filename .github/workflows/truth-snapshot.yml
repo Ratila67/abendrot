@@ -1,0 +1,31 @@
+name: Vérité terrain, prévisions du jour
+on:
+  schedule:
+    - cron: '30 10 * * *'
+  workflow_dispatch:
+concurrency:
+  group: truth-data
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-truth.txt
+      - run: pip install -r requirements-truth.txt
+      - run: python -m truth.snapshot
+        env:
+          SUNSETHUE_KEY: ${{ secrets.SUNSETHUE_KEY }}
+      - name: Enregistrer les données
+        run: |
+          git config user.name "abendrot-bot"
+          git config user.email "abendrot-bot@users.noreply.github.com"
+          git add data/truth
+          git diff --cached --quiet || { git commit -m "vérité terrain : prévisions $(date -u +%F)" && git pull --rebase && git push; }
