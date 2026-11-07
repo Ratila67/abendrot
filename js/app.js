@@ -31,7 +31,7 @@ const S = { hikes: [], date: todayStr(), pos: null, filter: 'all', sort: 'smart'
   wx: null, wxErr: null, base: 'ign', token: 0, cur: null, settings: { sunsethue: '', windy: '', proxy: '' } };
 const trackCache = new Map();
 let map = null, mapMarkers = [];
-const isToday = () => S.date === todayStr();
+const isToday = (d = S.date) => d === todayStr();
 
 /* ---------- traces ---------- */
 const sunsetSpot = h => h.spots.find(s => s.sunset) || null;
@@ -73,8 +73,8 @@ function metrics(h, T) {
   const k = f / 1.25;
   return { km: h.km, dplus: h.dplus, total: h.dur * k, toSpot: h.toSpot * k, down: h.down * k, real: false, spotGap: 0 };
 }
-function plan(h, m) {
-  const spot = sunsetSpot(h), p = spot || h.start, day = noon(S.date);
+function plan(h, m, date = S.date) {
+  const spot = sunsetSpot(h), p = spot || h.start, day = noon(date);
   const set = effectiveSunset(day, p.lat, p.lon, p.alt, h.horizon || 0);
   const gold = sunTime(day, p.lat, p.lon, 6), dusk = sunTime(day, p.lat, p.lon, -6);
   const sunsetHike = !!spot && h.sunsetScore >= 2;
@@ -87,14 +87,14 @@ const origin = () => (S.home === 'gps' && S.pos) ? S.pos : HOME;
 const originName = () => (S.home === 'gps' && S.pos) ? 'ta position' : HOME.name;
 const road = h => { const o = origin(), km = hav(o.lat, o.lon, h.start.lat, h.start.lon) * 1.3; return { km, min: km / 65 * 60 + 8 }; };
 
-const daysAhead = () => Math.round((noon(S.date) - noon(todayStr())) / 864e5);
-function wxFor(h, p) {
+const daysAhead = (d = S.date) => Math.round((noon(d) - noon(todayStr())) / 864e5);
+function wxFor(h, p, date = S.date) {
   if (!S.wx) return null;
   const s = S.wx.spots[S.hikes.indexOf(h)];
   const k = hourIndex(s, p.sunsetHike ? p.set : addMin(p.dep, 120));
   if (k < 0) return null;
   const alt = wxPoint(h).alt, r = scoreSunset(s, S.wx.plain, k, alt);
-  const feats = modelFeatures({ series: s, plain: S.wx.plain, k, alt, heuristic: r.score, leadDay: daysAhead(), date: S.date });
+  const feats = modelFeatures({ series: s, plain: S.wx.plain, k, alt, heuristic: r.score, leadDay: daysAhead(date), date });
   const prob = predict('good', feats), sea = alt >= 850 ? predict('sea', feats) : null;
   return { ...r, series: s, k, model: s.hourly.model?.[k], feats, prob, sea, display: prob != null ? Math.round(prob * 100) : r.score };
 }
@@ -104,11 +104,11 @@ const ring = (v, size = 44, cls = '') => {
   return `<svg class="ring ${scoreCls(v)} ${cls}" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" role="img" aria-label="Score coucher ${v} sur 100"><circle cx="${o}" cy="${o}" r="${r}" class="track"/><circle cx="${o}" cy="${o}" r="${r}" class="val" stroke-dasharray="${c.toFixed(1)}" stroke-dashoffset="${(c * (1 - v / 100)).toFixed(1)}" transform="rotate(-90 ${o} ${o})"/><text x="50%" y="50%" dy=".35em" text-anchor="middle">${v}</text></svg>`;
 };
 
-/** Tout ce qu'il faut pour classer et afficher une rando à la date choisie. */
-function evaluate(h) {
-  const m = metrics(h, trackCache.get(h.id)), p = plan(h, m), w = wxFor(h, p), rd = road(h);
+/** Tout ce qu'il faut pour classer et afficher une rando à une date (par défaut, celle choisie). */
+function evaluate(h, date = S.date) {
+  const m = metrics(h, trackCache.get(h.id)), p = plan(h, m, date), w = wxFor(h, p, date), rd = road(h);
   const leave = addMin(p.dep, -rd.min);
-  const late = isToday() && leave.getTime() < Date.now() - 10 * 6e4;
+  const late = isToday(date) && leave.getTime() < Date.now() - 10 * 6e4;
   const base = p.sunsetHike ? (w ? w.display : h.sunsetScore * 16) : 10;
   const fav = S.saved.fav.includes(h.id);
   return { h, m, p, w, rd, leave, late, fav, value: base - rd.min * 0.12 + (fav ? 4 : 0) - (late ? 1000 : 0) };
@@ -130,24 +130,25 @@ function days() {
   if (!out.some(d => d.s === S.date)) out.push({ s: S.date, l: noon(S.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' }) });
   return out;
 }
-function headerHTML(title) {
+function headerHTML(title, withDays = true) {
   return `<header class="hd">
     <div class="hd-row"><h1>${title}</h1>
       <div class="hd-actions">
         <button class="icbtn${S.pos ? ' on' : ''}" id="locBtn" type="button" aria-label="Me localiser">${ic('locate')}</button>
         <button class="icbtn" id="setBtn" type="button" aria-label="Réglages">${ic('gear')}</button>
       </div></div>
-    <div class="days" role="tablist" aria-label="Date du coucher">
+    ${withDays ? `<div class="days" role="tablist" aria-label="Date du coucher">
       ${days().map(d => `<button class="day" type="button" role="tab" data-d="${d.s}" aria-selected="${d.s === S.date}">${d.l}</button>`).join('')}
       <button class="day cal" type="button" id="calBtn" aria-label="Choisir une autre date">${ic('cal')}</button>
       <input type="date" id="dateIn" class="vh" tabindex="-1" aria-hidden="true">
-    </div></header>`;
+    </div>` : ''}</header>`;
 }
 function bindHeader() {
   $('#locBtn').onclick = locate;
   $('#setBtn').onclick = openSettings;
   $$('.day[data-d]').forEach(b => b.onclick = () => { S.date = b.dataset.d; buzz(); route(); });
-  const di = $('#dateIn'); di.value = S.date;
+  const di = $('#dateIn'); if (!di) return;
+  di.value = S.date;
   $('#calBtn').onclick = () => { try { di.showPicker(); } catch { di.style.pointerEvents = 'auto'; di.focus(); di.click(); } };
   di.onchange = e => { if (e.target.value) { S.date = e.target.value; route(); } };
   $('.day[aria-selected="true"]')?.scrollIntoView?.({ inline: 'center', block: 'nearest' });
@@ -155,10 +156,42 @@ function bindHeader() {
 
 /* ---------- liste ---------- */
 const FILTERS = [['all', 'Tout'], ['sun', 'Meilleurs spots'], ['short', 'Moins de 2 h 30'], ['nosnow', 'Sans neige']];
+const GOOD = 40;   // score en dessous duquel l’app ne pousse plus à partir
+const weekDays = () => days().slice(0, 7);
+const dayName = s => s === weekDays()[1]?.s ? 'demain' : noon(s).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric' });
+const upFirst = t => t.charAt(0).toUpperCase() + t.slice(1);
+/** Coucher atteignable le mieux noté à une date, ou null si pas de prévision. */
+const bestOf = (E) => E.filter(e => e.p.sunsetHike && e.w && !e.late).sort((a, b) => b.w.display - a.w.display || b.value - a.value)[0] || null;
+/** Meilleure soirée des 7 prochains jours, hors date courante : { s, e } ou null. */
+function bestAhead(except) {
+  return weekDays().filter(d => d.s !== except).map(d => ({ s: d.s, e: bestOf(S.hikes.map(h => evaluate(h, d.s))) }))
+    .filter(x => x.e).sort((a, b) => b.e.w.display - a.e.w.display)[0] || null;
+}
+function nextHTML(a) {
+  if (!a) return '';
+  const good = a.e.w.display >= GOOD;
+  return `<a class="next" href="#${a.e.h.id}" data-date="${a.s}">
+      ${ring(a.e.w.display, 46)}
+      <span><span class="next-k">${good ? 'Meilleure soirée en vue' : `Rien au-dessus de ${GOOD} sur 7 jours, le moins mauvais`}</span>
+      <strong>${esc(a.e.h.name)}</strong>
+      <span class="next-d">${upFirst(dayName(a.s))}, coucher à ${hm(a.e.p.set)}</span></span></a>`;
+}
+/** Accueil sobre quand aucun coucher ne vaut la route : on ne pousse pas à partir, on montre quand ça vaudra le coup. */
+function calmHeroHTML(title, line) {
+  return `<div class="hero calm">
+    <span class="hero-k">${isToday() ? 'Ce soir' : upFirst(noon(S.date).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' }))}</span>
+    <span class="hero-name">${title}</span>
+    <p class="hero-line">${line}</p>
+    ${nextHTML(bestAhead(S.date))}
+    <a class="hero-link" href="#semaine">${ic('cal')}Voir toute la semaine</a>
+  </div>`;
+}
 function heroHTML(E) {
   const best = E.filter(e => e.p.sunsetHike && !e.late).sort((a, b) => b.value - a.value)[0];
   const when = isToday() ? 'Ce soir' : noon(S.date).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
-  if (!best) return `<div class="hero empty"><strong>Plus aucun coucher atteignable ce soir</strong><p>Le prochain se prépare dès maintenant.</p><button class="btn primary" type="button" id="toTomorrow">Voir demain</button></div>`;
+  if (!best) return calmHeroHTML(`Plus aucun coucher atteignable${isToday() ? ' ce soir' : ''}`, 'Trop tard pour rejoindre un spot avant le coucher.');
+  const top = S.wx && !S.wxErr ? bestOf(E) : null;
+  if (top && top.w.display < GOOD) return calmHeroHTML('Pas de beau coucher en vue', `${top.w.display} sur 100 au mieux, à ${esc(top.h.name)}. Pas la peine de faire la route.`);
   const { h, p, w, leave } = best;
   return `<a class="hero" href="#${h.id}">
     <span class="hero-k">${when}, le meilleur plan</span>
@@ -184,7 +217,7 @@ function rowHTML(e) {
 function viewList(onlyFav) {
   document.body.classList.remove('is-detail');
   const q = S.q.trim().toLowerCase();
-  let E = S.hikes.map(evaluate);
+  let E = S.hikes.map(h => evaluate(h));
   const heroE = E;
   if (onlyFav) E = E.filter(e => e.fav);
   if (q) E = E.filter(e => `${e.h.name} ${e.h.zone} ${e.h.merged}`.toLowerCase().includes(q));
@@ -204,7 +237,6 @@ function viewList(onlyFav) {
     </div>
     ${E.length ? `<ul class="list">${E.map(rowHTML).join('')}</ul>` : `<p class="empty">${onlyFav ? 'Touche l’étoile d’une fiche pour la retrouver ici.' : 'Aucun résultat avec ces filtres.'}</p>`}`;
   bindHeader();
-  $('#toTomorrow')?.addEventListener('click', () => { S.date = days()[1].s; route(); });
   $('#sort').value = S.sort;
   $('#sort').onchange = e => { S.sort = e.target.value; route(); };
   $('#q').oninput = e => { S.q = e.target.value; const c = e.target.selectionStart; route(); const n = $('#q'); n.focus(); n.setSelectionRange(c, c); };
@@ -513,6 +545,38 @@ function onPos(coords, err) {
   } else ro.textContent = `Tu es à ${n.d < 5 ? Math.round(n.d * 1000) + ' m' : Math.round(n.d) + ' km'} du tracé.`;
 }
 
+/* ---------- semaine ---------- */
+function viewWeek() {
+  document.body.classList.remove('is-detail');
+  const ds = weekDays();
+  const head = headerHTML('Semaine', false);
+  if (!S.wx) {
+    app.innerHTML = `${head}<p class="${S.wxErr ? 'banner' : 'empty'}">${S.wxErr ? `${ic('warn')} Météo indisponible, la semaine ne peut pas être calculée.` : 'Chargement des prévisions…'}</p>`;
+    bindHeader(); return;
+  }
+  const rows = S.hikes.filter(h => sunsetSpot(h) && h.sunsetScore >= 2).map(h => {
+    const cells = ds.map(d => ({ s: d.s, e: evaluate(h, d.s) }));
+    return { h, cells, best: Math.max(-1, ...cells.map(c => c.e.w && !c.e.late ? c.e.w.display : -1)) };
+  }).sort((a, b) => b.best - a.best || a.h.name.localeCompare(b.h.name, 'fr'));
+  const label = s => { const d = noon(s); return `<span>${d.toLocaleDateString('fr-FR', { weekday: 'short' }).replace('.', '')}</span><b>${d.getDate()}</b>`; };
+  const cell = (h, c) => {
+    const { e } = c, v = e.w?.display;
+    if (v == null) return `<td><span class="wk na" aria-label="Pas de prévision">–</span></td>`;
+    const say = `${h.name}, ${dayName(c.s)} : ${v} sur 100${e.late ? ', trop tard' : ''}`;
+    return `<td><a class="wk ${scoreCls(v)}${e.late ? ' late' : ''}" href="#${h.id}" data-date="${c.s}" aria-label="${esc(say)}">${v}</a></td>`;
+  };
+  const top = bestAhead(null);
+  app.innerHTML = `${head}
+    ${top ? `<div class="hero calm wk-top">${nextHTML(top)}</div>` : ''}
+    <div class="weekwrap"><table class="week">
+      <thead><tr><th scope="col"><span class="vh">Rando</span></th>${ds.map(d => `<th scope="col"${d.s === todayStr() ? ' class="today"' : ''}>${label(d.s)}</th>`).join('')}</tr></thead>
+      <tbody>${rows.map(r => `<tr><th scope="row"><a href="#${r.h.id}">${esc(r.h.name)}</a></th>${r.cells.map(c => cell(r.h, c)).join('')}</tr>`).join('')}</tbody>
+    </table></div>
+    <p class="cap wk-cap">Chance de beau coucher sur 100, au spot. Touche une case pour ouvrir le plan de ce soir-là.
+      Prévision Météo-France jusqu’à 4 jours, puis multi-modèle : plus on s’éloigne, plus c’est indicatif.</p>`;
+  bindHeader();
+}
+
 /* ---------- carte d'ensemble ---------- */
 function viewMap() {
   document.body.classList.remove('is-detail');
@@ -521,7 +585,7 @@ function viewMap() {
   if (!window.maplibregl) { $('#bigmap').innerHTML = '<p class="empty">Carte indisponible : ouvre l’app une fois avec du réseau.</p>'; return; }
   map = MAP.createMap('bigmap', { center: [7.3, 48.3], zoom: 7.4, base: 'topo' });
   map.on('load', () => {
-    S.hikes.map(evaluate).forEach(e => {
+    S.hikes.map(h => evaluate(h)).forEach(e => {
       const { h, p, w } = e, v = w && p.sunsetHike ? w.display : (h.sunsetScore === 5 ? 80 : h.sunsetScore === 4 ? 60 : 30);
       const el = document.createElement('button'); el.type = 'button'; el.className = `hk-dot ${scoreCls(v)}`; el.setAttribute('aria-label', h.name);
       el.onclick = ev => {
@@ -561,10 +625,10 @@ function toggle(k, id) { const a = S.saved[k], i = a.indexOf(id); i < 0 ? a.push
 function route() {
   S.token++; teardown();
   const h = location.hash.slice(1), hike = S.hikes.find(x => x.id === h);
-  const tab = hike ? null : (h === 'carte' || h === 'favoris') ? h : 'liste';
+  const tab = hike ? null : ['carte', 'favoris', 'semaine'].includes(h) ? h : 'liste';
   $$('.tabs a').forEach(a => a.toggleAttribute('aria-current', false));
   if (tab) $(`.tabs a[data-tab="${tab}"]`).setAttribute('aria-current', 'page');
-  if (hike) viewDetail(hike); else if (tab === 'carte') viewMap(); else viewList(tab === 'favoris');
+  if (hike) viewDetail(hike); else if (tab === 'carte') viewMap(); else if (tab === 'semaine') viewWeek(); else viewList(tab === 'favoris');
 }
 function locate() {
   if (!navigator.geolocation) { toast('Position non disponible sur ce navigateur'); return; }
@@ -583,6 +647,7 @@ async function loadWeather() {
 async function init() {
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(() => {});
   window.addEventListener('hashchange', route);
+  document.addEventListener('click', e => { const a = e.target.closest?.('a[data-date]'); if (a) S.date = a.dataset.date; });
   bindSettings();
   try { S.hikes = await (await fetch('./data/hikes.json')).json(); }
   catch { app.innerHTML = '<p class="empty">Impossible de charger les randos. Ouvre l’app depuis son adresse web.</p>'; return; }
