@@ -157,3 +157,79 @@ def test_gemini_reponse_et_repli(monkeypatch):
     monkeypatch.setattr(vision.requests, "post", fake_post)
     assert vision.classify(b"jpeg") == {"vis_sky": "feu", "vis_sea": 1, "vis_alps": None, "vis_conf": 0.8}
     assert calls == ["retire", "gemini-2.5-flash"]
+
+
+def decor(seed, size=(400, 225)):
+    """Image synthétique texturée : des blocs de gris, comme un relief vu de loin."""
+    rng = np.random.default_rng(seed)
+    a = rng.integers(20, 235, (9, 16, 1)).repeat(3, axis=2).astype(np.uint8)
+    return Image.fromarray(a).resize(size, Image.Resampling.NEAREST)
+
+
+def test_dhash_stable_a_la_lumiere_sensible_au_pivot():
+    from truth.qa import PIVOT_BITS
+    img = decor(1)
+    ref = metrics.dhash(img, 0.0)
+    plus_sombre = Image.fromarray((np.asarray(img) * 0.45).astype(np.uint8))
+    pivot = Image.fromarray(np.roll(np.asarray(img), 130, axis=1))
+    assert len(ref) == 16
+    assert metrics.hamming(ref, metrics.dhash(plus_sombre, 0.0)) <= 4
+    assert metrics.hamming(ref, metrics.dhash(pivot, 0.0)) > PIVOT_BITS
+    assert metrics.hamming(ref, metrics.dhash(decor(2), 0.0)) > PIVOT_BITS
+
+
+def test_capture_journalise_les_releves(isole, monkeypatch):
+    day = dt.date(2026, 11, 20)
+    s = next(x for x in common.sunset_spots() if x["spot_id"] == "donon")
+    sset = sun.effective_sunset(day, s["lat"], s["lon"], s["alt"], s["horizon"], common.TZ)
+    state = {"upd": sset - dt.timedelta(minutes=60), "fail": False}
+
+    def fake_get(key, wid):
+        if state["fail"]:
+            raise RuntimeError("Windy 503 : indisponible")
+        return {"id": wid, "image": "https://img/x", "updated": state["upd"], "status": "active"}
+
+    def fake_dl(url):
+        b = io.BytesIO(); decor(3).save(b, "JPEG"); return b.getvalue()
+
+    monkeypatch.setattr(windy, "get", fake_get)
+    monkeypatch.setattr(windy, "download", fake_dl)
+    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    monkeypatch.delenv("GEMINI_API_KEY", raising=False)
+    capture.main(now=sset + dt.timedelta(minutes=2))          # image vieille d'une heure
+    state["upd"] = sset
+    capture.main(now=sset + dt.timedelta(minutes=3))          # image fraîche
+    state["fail"] = True
+    capture.main(now=sset + dt.timedelta(minutes=13))         # API en panne
+    capture.main(now=sset + dt.timedelta(minutes=120))        # hors fenêtre : aucun relevé
+    f = common.read_csv(isole / "fetches.csv")
+    assert [r["status"] for r in f] == ["stale", "fresh", "error"] and {r["webcam_id"] for r in f} == {"111"}
+    assert float(f[0]["age_min"]) == 62.0 and not f[0]["sha1"]
+    assert len(f[1]["sha1"]) == 12 and len(f[1]["dhash"]) == 16 and float(f[1]["minutes_from_sunset"]) == 0.0
+    assert "503" in f[2]["error"]
+    assert len(common.read_csv(isole / "captures.csv")) == 1   # seule l'image fraîche est mesurée
+
+
+def test_qa_signale_les_cameras_a_problemes():
+    from truth import qa
+    h_fixe, h_pivot = metrics.dhash(decor(1), 0.0), metrics.dhash(Image.fromarray(np.roll(np.asarray(decor(1)), 130, axis=1)), 0.0)
+
+    def rel(cid, d, m, status="fresh", sha="", h=""):
+        return {"date": f"2026-11-{d:02d}", "webcam_id": cid, "image_updated_utc": f"2026-11-{d:02d}T16:{m:02d}:00+00:00",
+                "age_min": "45" if status == "stale" else "2", "minutes_from_sunset": str(m - 15), "status": status,
+                "sha1": sha or f"{cid}{d}{m}", "dhash": h if status == "fresh" else ""}
+
+    f = []
+    for d in range(1, 5):
+        for m in (5, 15, 25):
+            f += [rel("perimee", d, m, "stale"),
+                  rel("figee", d, m, sha="toujours-la-meme", h=h_fixe),
+                  rel("pivote", d, m, h=h_pivot if d % 2 else h_fixe),
+                  rel("saine", d, m, h=h_fixe)]
+    cams = {c: {"enabled": True, "title": c} for c in ("perimee", "figee", "pivote", "saine", "muette")}
+    cams["off"] = {"enabled": False}
+    res = {r["id"]: r["flags"] for r in qa.audit(f, cams)}
+    assert res == {"perimee": ["jamais fraîche"], "figee": ["image figée"], "pivote": ["pivote ?"], "saine": [],
+                   "muette": ["jamais relevée"]}
+    assert qa.audit(f, cams, since="2026-11-05")[0]["checks"] == 0   # filtre de date
+    assert "| saine |" in qa.report(qa.audit(f, cams))

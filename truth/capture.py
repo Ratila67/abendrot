@@ -7,14 +7,16 @@
 Usage : WINDY_KEY=... python -m truth.capture   (GEMINI_API_KEY ou ANTHROPIC_API_KEY, HF_TOKEN + HF_DATASET optionnels)
 """
 import datetime as dt
+import hashlib
 import io
 from collections import defaultdict
 
 from PIL import Image
 
 from . import vision, windy
-from .common import (CAPTURE_FIELDS, DATA, OBS_FIELDS, TZ, append_csv, env, load_webcams, read_csv, sunset_spots)
-from .metrics import sky_metrics
+from .common import (CAPTURE_FIELDS, DATA, FETCH_FIELDS, OBS_FIELDS, TZ, append_csv, env, load_webcams, read_csv,
+                     sunset_spots)
+from .metrics import dhash, sky_metrics
 from .storage import ImageStore
 from .sun import effective_sunset
 
@@ -29,7 +31,21 @@ MAX_AGE = dt.timedelta(minutes=20)
 VIS = ("vis_sky", "vis_sea", "vis_alps", "vis_conf")
 
 
-def capture(now, spots, cams_by_spot, key, store, captures):
+def _check(now, day, cid, w, sset):
+    """Relevé de fraîcheur d'une caméra (une ligne de fetches.csv). Statuts : fresh, stale, no_image, no_date."""
+    upd = w["updated"]
+    status = "no_image" if not w["image"] else "no_date" if not upd else "stale" if now - upd > MAX_AGE else "fresh"
+    return {"date": day.isoformat(), "webcam_id": cid, "checked_utc": now.isoformat(timespec="seconds"),
+            "image_updated_utc": upd.isoformat(timespec="seconds") if upd else "",
+            "age_min": round((now - upd).total_seconds() / 60, 1) if upd else "",
+            # coucher du premier spot qui interroge la caméra : les spots qui la partagent sont à 1 ou 2 min près
+            "minutes_from_sunset": round((upd - sset).total_seconds() / 60, 1) if upd else "",
+            "status": status, "windy_status": w.get("status") or "", "sha1": "", "dhash": "", "error": ""}
+
+
+def capture(now, spots, cams_by_spot, key, store, captures, checks=None):
+    """checks : dict {webcam_id: relevé} rempli au passage, à écrire dans fetches.csv."""
+    checks = {} if checks is None else checks
     seen = {(r["spot_id"], r["webcam_id"], r["image_updated_utc"]) for r in captures}
     labels = {(r["date"], r["webcam_id"]): {k: r.get(k) for k in VIS} for r in captures if r.get("vis_sky")}
     fetched = {}   # webcam_id → (infos, jpeg, métriques, chemin image) : une seule requête par caméra et par exécution
@@ -44,11 +60,14 @@ def capture(now, spots, cams_by_spot, key, store, captures):
             cid = str(cam["id"])
             try:
                 if cid not in fetched:
+                    checks.setdefault(cid, {"date": day.isoformat(), "webcam_id": cid,
+                                            "checked_utc": now.isoformat(timespec="seconds"), "status": "error"})
                     w = windy.get(key, cid)
-                    fresh = w["image"] and w["updated"] and now - w["updated"] <= MAX_AGE
+                    checks[cid] = _check(now, day, cid, w, sset)
+                    fresh = checks[cid]["status"] == "fresh"
                     fetched[cid] = [w, None, None, ""] if fresh else None
                     if not fresh:
-                        print(f"  caméra {cid} : image trop ancienne, ignorée")
+                        print(f"  caméra {cid} : {checks[cid]['status']} (âge {checks[cid]['age_min'] or '?'} min), ignorée")
                 if not fetched[cid]:
                     continue
                 w = fetched[cid][0]
@@ -57,9 +76,12 @@ def capture(now, spots, cams_by_spot, key, store, captures):
                     continue
                 if fetched[cid][1] is None:
                     jpeg = windy.download(w["image"])
+                    img = Image.open(io.BytesIO(jpeg))
                     fetched[cid][1] = jpeg
-                    fetched[cid][2] = sky_metrics(Image.open(io.BytesIO(jpeg)), cam.get("sky_top", 0.0), cam.get("sky_bottom", 0.42))
+                    fetched[cid][2] = sky_metrics(img, cam.get("sky_top", 0.0), cam.get("sky_bottom", 0.42))
                     fetched[cid][3] = store.add(f"images/{day}/{cid}_{w['updated'].strftime('%H%M')}.jpg", jpeg)
+                    checks[cid].update(status="fresh", error="", sha1=hashlib.sha1(jpeg).hexdigest()[:12],
+                                       dhash=dhash(img, cam.get("sky_bottom", 0.42)))
                 jpeg, m, path = fetched[cid][1], fetched[cid][2], fetched[cid][3]
                 mfs = round((w["updated"] - sset).total_seconds() / 60, 1)
                 lab = labels.get((day.isoformat(), cid), {})
@@ -75,6 +97,8 @@ def capture(now, spots, cams_by_spot, key, store, captures):
                       + (f", étiquette : {lab.get('vis_sky')}" if lab else ""))
             except Exception as e:  # noqa: BLE001 - une caméra en panne ne doit pas bloquer les autres
                 print(f"  {s['spot_id']}/{cid} : erreur {e}")
+                if cid in checks:
+                    checks[cid].update(status="error", error=str(e)[:200])
     return rows
 
 
@@ -117,8 +141,10 @@ def main(now=None):
     cap_path, obs_path = DATA / "captures.csv", DATA / "observations.csv"
     captures = read_csv(cap_path)
     store = ImageStore()
-    new = capture(now, spots, cams, key, store, captures)
+    checks = {}
+    new = capture(now, spots, cams, key, store, captures, checks)
     append_csv(cap_path, new, CAPTURE_FIELDS)
+    append_csv(DATA / "fetches.csv", list(checks.values()), FETCH_FIELDS)
     store.flush(f"captures {now:%Y-%m-%d %H:%M}Z")
     obs = finalize(now, spots, captures + [{k: str(v) for k, v in r.items()} for r in new], read_csv(obs_path))
     append_csv(obs_path, obs, OBS_FIELDS)

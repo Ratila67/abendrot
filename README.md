@@ -51,8 +51,12 @@ Chaque soir, le pipeline photographie le ciel via les webcams proches des spots,
 10:30 UTC  truth.snapshot   prévision de ce soir et de demain, par spot      → data/truth/forecasts.csv
 */10 min   truth.capture    images webcam autour du coucher + métriques ciel → data/truth/captures.csv
            (même job)       pic de la soirée par caméra, étiquette Claude    → data/truth/observations.csv
+           (même job)       un relevé par caméra : fraîche, périmée, erreur  → data/truth/fetches.csv
 1er et 15  truth.train      walk-forward CV, export si meilleur que la réf.  → data/model.json + report.md
+à la main  truth.qa         caméras jamais fraîches, figées ou qui pivotent  → terminal (ou --out)
 ```
+
+**Contrôle des caméras.** `python -m truth.qa --days 14` lit `fetches.csv` et liste les caméras actives à vérifier : jamais fraîches ou souvent périmées (image de plus de 20 min au moment du relevé), en erreur, figées (même image sous plusieurs horodatages) ou qui pivotent (l’empreinte du décor, sous la bande de ciel, s’écarte de son cadrage habituel). Les caméras qui ne remontent jamais d’image fraîche n’apparaissent nulle part ailleurs : `captures.csv` ne garde que les images mesurées.
 
 **Mesure du ciel.** La colorfulness de Hasler et Süsstrunk, la part de pixels chauds saturés, la part de gris et la part de noir sont calculées sur la bande de ciel de l’image. Chaque caméra est ensuite normalisée sur son propre historique (rang percentile), car chacune a son exposition.
 
@@ -65,11 +69,11 @@ Chaque soir, le pipeline photographie le ciel via les webcams proches des spots,
 1. Pousse ce dossier dans un dépôt GitHub.
 2. Dans Settings, Secrets and variables, Actions :
    - secret `WINDY_KEY` (obligatoire) ;
-   - secret `ANTHROPIC_API_KEY` (étiquettes Claude, optionnel) ;
+   - secret `GEMINI_API_KEY` (étiquettes par Gemini, palier gratuit) ou `ANTHROPIC_API_KEY` (Claude), optionnel ;
    - secret `SUNSETHUE_KEY` (variable du modèle, optionnel) ;
    - secret `HF_TOKEN` et variable `HF_DATASET`, par exemple `ton-pseudo/abendrot-sky` (archive privée des images sur Hugging Face, recommandé).
 3. Onglet Actions, lance « Vérité terrain, découverte des webcams ».
-4. Ouvre `truth/webcams.yml` : désactive les caméras qui ne montrent pas le ciel (`enabled: false`) et ajuste `sky_bottom` si l’horizon coupe l’image plus haut ou plus bas que 42 %.
+4. Ouvre `truth/webcams.yml`. Dans `cameras`, chaque caméra se règle une seule fois : `enabled: false` si elle ne montre pas le ciel, et `sky_bottom` pour cadrer la bande de ciel (42 % par défaut). Dans `spots`, `use: false` exclut une caméra d’un spot précis seulement. Une caméra partagée par plusieurs spots est téléchargée et étiquetée une seule fois, et pèse moins quand elle est loin du spot.
 5. Laisse tourner. Après environ 30 soirs observés, l’entraînement exporte un modèle s’il bat le score heuristique. Sinon, `data/truth/report.md` explique pourquoi.
 
 Pour que chaque nouveau modèle arrive dans l’app sans manipulation, crée le projet Cloudflare Pages depuis ce dépôt GitHub (Git integration, sans commande de build, dossier de sortie `/`) plutôt qu’en import de zip.

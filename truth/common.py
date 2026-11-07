@@ -15,6 +15,9 @@ CAPTURE_FIELDS = ["date", "spot_id", "webcam_id", "captured_utc", "image_updated
                   "vis_sky", "vis_sea", "vis_alps", "vis_conf", "image_path"]
 OBS_FIELDS = ["date", "spot_id", "webcam_id", "n_captures", "peak_minutes_from_sunset", "colorfulness", "warm_ratio",
               "gray_ratio", "dark_ratio", "sky_score_raw", "vis_sky", "vis_sea", "vis_alps", "vis_conf", "image_path"]
+# Un relevé par caméra et par exécution, fraîche ou non : c'est le seul endroit où une image périmée laisse une trace.
+FETCH_FIELDS = ["date", "webcam_id", "checked_utc", "image_updated_utc", "age_min", "minutes_from_sunset", "status",
+                "windy_status", "sha1", "dhash", "error"]
 FORECAST_FIELDS = ["snapshot_date", "date", "spot_id", "lead_day", "sunset_utc", "model", "cloud_low", "cloud_mid",
                    "cloud_high", "precip", "visibility_km", "gust", "t850", "plain_t2m", "plain_low", "t850_minus_plain",
                    "inversion", "heuristic", "aod", "sunsethue", "alt"]

@@ -30,3 +30,22 @@ def sky_metrics(img: Image.Image, top=0.0, bottom=0.42):
         "gray_ratio": round(float(gray.mean()), 4), "dark_ratio": round(dark_ratio, 4),
         "sky_score_raw": round(score, 2),
     }
+
+
+def dhash(img: Image.Image, sky_bottom=0.42, size=8):
+    """Empreinte de structure (dHash, 64 bits, en hexadécimal) du décor sous la bande de ciel.
+
+    Le relief bouge peu d'un soir à l'autre, contrairement aux nuages : deux images d'une caméra fixe
+    restent à quelques bits l'une de l'autre, une caméra qui a pivoté s'en écarte nettement.
+    Si la bande de ciel couvre presque toute l'image, on prend l'image entière.
+    """
+    w, h = img.size
+    top = sky_bottom if sky_bottom <= 0.85 else 0.0
+    crop = img.convert("L").crop((0, int(h * top), w, h))
+    a = np.asarray(crop.resize((size + 1, size), Image.Resampling.BOX), dtype=np.float32)
+    bits = (a[:, 1:] > a[:, :-1]).flatten()
+    return f"{int(''.join('1' if b else '0' for b in bits), 2):0{size * size // 4}x}"
+
+
+def hamming(a, b):
+    return bin(int(a, 16) ^ int(b, 16)).count("1")
