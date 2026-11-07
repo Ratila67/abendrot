@@ -20,7 +20,7 @@ from sklearn.metrics import brier_score_loss, roc_auc_score
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
-from .common import DATA, ROOT
+from .common import DATA, ROOT, read_webcams_raw
 
 FEATURES = ["cloud_low", "cloud_mid", "cloud_high", "precip", "visibility_km", "gust", "t850_minus_plain",
             "plain_low", "color_band", "alt", "heuristic", "sunsethue", "aod", "lead_day", "month_sin", "month_cos"]
@@ -31,9 +31,21 @@ def build_dataset():
     fc = pd.read_csv(DATA / "forecasts.csv")
     ob = pd.read_csv(DATA / "observations.csv")
     ob = ob[ob["dark_ratio"] < 0.6].copy()  # image prise de nuit : inexploitable
-    ob["pct"] = ob.groupby("webcam_id")["sky_score_raw"].rank(pct=True)
-    spot = ob.groupby(["date", "spot_id"]).agg(pct=("pct", "mean"), n_cams=("webcam_id", "nunique"),
-                                               sea=("vis_sea", "max"), sky=("vis_sky", "first")).reset_index()
+    ob["webcam_id"] = ob["webcam_id"].astype(str)
+    # Percentile calculé sur les images uniques : une caméra partagée par 3 spots ne compte pas 3 fois.
+    uniq = ob.drop_duplicates(["date", "webcam_id"])[["date", "webcam_id", "sky_score_raw"]].copy()
+    uniq["pct"] = uniq.groupby("webcam_id")["sky_score_raw"].rank(pct=True)
+    ob = ob.merge(uniq[["date", "webcam_id", "pct"]], on=["date", "webcam_id"], how="left")
+    # Une caméra à 15 km pèse moins qu'une caméra au sommet : poids = 1 / (1 + distance / 5 km).
+    _, links = read_webcams_raw()
+    dist = {(sp, l["id"]): l.get("distance_km") for sp, lst in links.items() for l in lst}
+    ob["dist"] = [dist.get((sp, w)) if dist.get((sp, w)) is not None else 10.0 for sp, w in zip(ob["spot_id"], ob["webcam_id"])]
+    ob["w"] = 1 / (1 + ob["dist"] / 5)
+    ob["wp"] = ob["w"] * ob["pct"]
+    ob["sea_near"] = np.where(ob["dist"] <= 12, pd.to_numeric(ob.get("vis_sea"), errors="coerce"), np.nan)
+    spot = ob.groupby(["date", "spot_id"]).agg(wp=("wp", "sum"), w=("w", "sum"), n_cams=("webcam_id", "nunique"),
+                                               sea=("sea_near", "max"), sky=("vis_sky", "first")).reset_index()
+    spot["pct"] = spot["wp"] / spot["w"]
     spot["good"] = (spot["pct"] >= GOOD_QUANTILE).astype(int)
     # dernière prévision émise pour chaque (soir, spot, échéance)
     fc = fc.sort_values("snapshot_date").drop_duplicates(["date", "spot_id", "lead_day"], keep="last")

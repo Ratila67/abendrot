@@ -1,566 +1,556 @@
-# Généré par python -m truth.discover. Tes modifications (enabled, sky_top, sky_bottom) sont conservées
-# à la prochaine découverte. sky_top/sky_bottom : bande de ciel analysée, en fraction de la hauteur.
-lac-blanc-noir:
-- id: '1200396839'
-  title: 'Le Bonhomme: Webcam station du Lac Blanc 1200 - Massif des Vosges - Alsace
-    - France'
-  city: Le Bonhomme
-  distance_km: 1.9
-  url: https://windy.com/webcams/1200396839
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.20
-- id: '1200396675'
-  title: 'Le Bonhomme: Webcam du Lac Blanc 900 - Massif des Vosges - alsace'
-  city: Le Bonhomme
-  distance_km: 3.0
-  url: https://windy.com/webcams/1200396675
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.10
-- id: '1621687990'
-  title: Le Bonhomme
-  city: Le Bonhomme
-  distance_km: 5.0
-  url: https://windy.com/webcams/1621687990
-  enabled: false
-  sky_top: 0.0
-  sky_bottom: 0.42
-- id: '1607110571'
-  title: 'Stosswihr › East: Col de la Schlucht'
-  city: Stosswihr
-  distance_km: 7.7
-  url: https://windy.com/webcams/1607110571
-  enabled: false
-  sky_top: 0.0
-  sky_bottom: 0.42
-hohneck:
-- id: '1671005500'
-  title: La Bresse
-  city: La Bresse
-  distance_km: 0.3
-  url: https://windy.com/webcams/1671005500
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.90
-- id: '1582614103'
-  title: 'La Bresse: Le Haut Chitelet'
-  city: La Bresse
-  distance_km: 1.5
-  url: https://windy.com/webcams/1582614103
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.42
-- id: '1675760769'
-  title: 'La Bresse: Télésiège de Vologne Express'
-  city: La Bresse
-  distance_km: 2.3
-  url: https://windy.com/webcams/1675760769
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.42
-- id: '1581685155'
-  title: 'Muhlbach-sur-Munster: Le Gaschney'
-  city: Muhlbach-sur-Munster
-  distance_km: 2.4
-  url: https://windy.com/webcams/1581685155
-  enabled: false
-  sky_top: 0.0
-  sky_bottom: 0.42
-truites-gazon:
-- id: '1200396839'
-  title: 'Le Bonhomme: Webcam station du Lac Blanc 1200 - Massif des Vosges - Alsace
-    - France'
-  city: Le Bonhomme
-  distance_km: 3.8
-  url: https://windy.com/webcams/1200396839
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.15
-- id: '1200396675'
-  title: 'Le Bonhomme: Webcam du Lac Blanc 900 - Massif des Vosges - alsace'
-  city: Le Bonhomme
-  distance_km: 4.7
-  url: https://windy.com/webcams/1200396675
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.10
-- id: '1607110571'
-  title: 'Stosswihr › East: Col de la Schlucht'
-  city: Stosswihr
-  distance_km: 5.6
-  url: https://windy.com/webcams/1607110571
-  enabled: false
-  sky_top: 0.0
-  sky_bottom: 0.42
-- id: '1793869328'
-  title: 'Stosswihr: Rue du Front de Neige'
-  city: Stosswihr
-  distance_km: 5.7
-  url: https://windy.com/webcams/1793869328
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.32
-haut-koenigsbourg:
-- id: '1552424024'
-  title: 'La Vancelle: Grand Est, France'
-  city: La Vancelle
-  distance_km: 5.1
-  url: https://windy.com/webcams/1552424024
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.80
-- id: '1793918576'
-  title: 'La Vancelle › South-east: Château du Haut-Kœnigsbourg'
-  city: La Vancelle
-  distance_km: 5.3
-  url: https://windy.com/webcams/1793918576
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.32
-- id: '1688134497'
-  title: Guemar › South-west
-  city: Guemar
-  distance_km: 7.7
-  url: https://windy.com/webcams/1688134497
-  enabled: false
-  sky_top: 0.0
-  sky_bottom: 0.42
-- id: '1688133822'
-  title: Rombach-le-Franc › South-west
-  city: Rombach-le-Franc
-  distance_km: 8.7
-  url: https://windy.com/webcams/1688133822
-  enabled: false
-  sky_top: 0.0
-  sky_bottom: 0.42
-grand-ballon:
-- id: '1719144185'
-  title: Goldbach-Altenbach › South-west
-  city: Goldbach-Altenbach
-  distance_km: 0.2
-  url: https://windy.com/webcams/1719144185
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.60
-- id: '1719144183'
-  title: Goldbach-Altenbach › South-east
-  city: Goldbach-Altenbach
-  distance_km: 0.2
-  url: https://windy.com/webcams/1719144183
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.60
-- id: '1719749334'
-  title: Goldbach-Altenbach › North-west
-  city: Goldbach-Altenbach
-  distance_km: 0.2
-  url: https://windy.com/webcams/1719749334
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.95
-- id: '1719144176'
-  title: Goldbach-Altenbach › North-east
-  city: Goldbach-Altenbach
-  distance_km: 0.2
-  url: https://windy.com/webcams/1719144176
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.42
-champ-du-feu:
-- id: '1516695520'
-  title: 'Le Hohwald › North: Tour du Champ du Feu (1099m)'
-  city: Le Hohwald
-  distance_km: 0.4
-  url: https://windy.com/webcams/1516695520
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.62
-- id: '1611407513'
-  title: 'Breitenbach: Col de la Charbonnière'
-  city: Breitenbach
-  distance_km: 1.7
-  url: https://windy.com/webcams/1611407513
-  enabled: false
-  sky_top: 0.0
-  sky_bottom: 0.42
-- id: '1607109002'
-  title: 'Ranrupt › West: Col de Steige'
-  city: Ranrupt
-  distance_km: 6.3
-  url: https://windy.com/webcams/1607109002
-  enabled: false
-  sky_top: 0.0
-  sky_bottom: 0.42
-- id: '1607110298'
-  title: 'Urbeis: Col d''Urbeis'
-  city: Urbeis
-  distance_km: 9.0
-  url: https://windy.com/webcams/1607110298
-  enabled: false
-  sky_top: 0.0
-  sky_bottom: 0.42
-ribeauville:
-- id: '1688134497'
-  title: Guemar › South-west
-  city: Guemar
-  distance_km: 7.1
-  url: https://windy.com/webcams/1688134497
-  enabled: false
-  sky_top: 0.0
-  sky_bottom: 0.42
-- id: '1688134364'
-  title: Sainte-Croix-aux-Mines › East
-  city: Sainte-Croix-aux-Mines
-  distance_km: 8.3
-  url: https://windy.com/webcams/1688134364
-  enabled: false
-  sky_top: 0.0
-  sky_bottom: 0.42
-- id: '1552424024'
-  title: 'La Vancelle: Grand Est, France'
-  city: La Vancelle
-  distance_km: 9.2
-  url: https://windy.com/webcams/1552424024
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.62
-- id: '1793918576'
-  title: 'La Vancelle › South-east: Château du Haut-Kœnigsbourg'
-  city: La Vancelle
-  distance_km: 9.4
-  url: https://windy.com/webcams/1793918576
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.32
-eguisheim:
-- id: '1575240774'
-  title: 'Katzenthal: Castle Wineck'
-  city: Katzenthal
-  distance_km: 8.2
-  url: https://windy.com/webcams/1575240774
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.72
-- id: '1546763818'
-  title: 'Rouffach: Petit Ballon - Vosges'
-  city: Rouffach
-  distance_km: 8.6
-  url: https://windy.com/webcams/1546763818
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.22
-- id: '1581685155'
-  title: 'Muhlbach-sur-Munster: Le Gaschney'
-  city: Muhlbach-sur-Munster
-  distance_km: 16.7
-  url: https://windy.com/webcams/1581685155
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.10
-- id: '1350021602'
-  title: 'Murbach: Le petit ballon'
-  city: Murbach
-  distance_km: 16.8
-  url: https://windy.com/webcams/1350021602
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.32
-petit-ballon:
-- id: '1793895514'
-  title: 'Sondernach: Schnepfenried'
-  city: Sondernach
-  distance_km: 6.2
-  url: https://windy.com/webcams/1793895514
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.42
-- id: '1350021602'
-  title: 'Murbach: Le petit ballon'
-  city: Murbach
-  distance_km: 7.9
-  url: https://windy.com/webcams/1350021602
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.35
-- id: '1581685155'
-  title: 'Muhlbach-sur-Munster: Le Gaschney'
-  city: Muhlbach-sur-Munster
-  distance_km: 8.4
-  url: https://windy.com/webcams/1581685155
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.10
-- id: '1389769199'
-  title: 'Oderen: Markstein'
-  city: Oderen
-  distance_km: 9.1
-  url: https://windy.com/webcams/1389769199
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.30
-donon:
-- id: '1516695655'
-  title: 'Grandfontaine › North-west: Donon'
-  city: Grandfontaine
-  distance_km: 1.9
-  url: https://windy.com/webcams/1516695655
-  enabled: false
-  sky_top: 0.0
-  sky_bottom: 0.42
-- id: '1607107793'
-  title: 'Saulxures › South: Col du Hantz'
-  city: Saulxures
-  distance_km: 13.6
-  url: https://windy.com/webcams/1607107793
-  enabled: false
-  sky_top: 0.0
-  sky_bottom: 0.42
-- id: '1516695520'
-  title: 'Le Hohwald › North: Tour du Champ du Feu (1099m)'
-  city: Le Hohwald
-  distance_km: 15.1
-  url: https://windy.com/webcams/1516695520
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.65
-- id: '1611407513'
-  title: 'Breitenbach: Col de la Charbonnière'
-  city: Breitenbach
-  distance_km: 15.7
-  url: https://windy.com/webcams/1611407513
-  enabled: false
-  sky_top: 0.0
-  sky_bottom: 0.42
-sainte-odile:
-- id: '1688133480'
-  title: Ottrott › South
-  city: Ottrott
-  distance_km: 1.4
-  url: https://windy.com/webcams/1688133480
-  enabled: false
-  sky_top: 0.0
-  sky_bottom: 0.42
-- id: '1516695520'
-  title: 'Le Hohwald › North: Tour du Champ du Feu (1099m)'
-  city: Le Hohwald
-  distance_km: 10.2
-  url: https://windy.com/webcams/1516695520
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.65
-- id: '1611407513'
-  title: 'Breitenbach: Col de la Charbonnière'
-  city: Breitenbach
-  distance_km: 11.5
-  url: https://windy.com/webcams/1611407513
-  enabled: false
-  sky_top: 0.0
-  sky_bottom: 0.42
-- id: '1607109002'
-  title: 'Ranrupt › West: Col de Steige'
-  city: Ranrupt
-  distance_km: 16.2
-  url: https://windy.com/webcams/1607109002
-  enabled: false
-  sky_top: 0.0
-  sky_bottom: 0.42
-taennchel:
-- id: '1688134364'
-  title: Sainte-Croix-aux-Mines › East
-  city: Sainte-Croix-aux-Mines
-  distance_km: 5.2
-  url: https://windy.com/webcams/1688134364
-  enabled: false
-  sky_top: 0.0
-  sky_bottom: 0.42
-- id: '1552424024'
-  title: 'La Vancelle: Grand Est, France'
-  city: La Vancelle
-  distance_km: 7.9
-  url: https://windy.com/webcams/1552424024
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.70
-- id: '1793918576'
-  title: 'La Vancelle › South-east: Château du Haut-Kœnigsbourg'
-  city: La Vancelle
-  distance_km: 8.1
-  url: https://windy.com/webcams/1793918576
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.30
-- id: '1729928660'
-  title: Freland › South-west
-  city: Freland
-  distance_km: 9.1
-  url: https://windy.com/webcams/1729928660
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.95
-brezouard:
-- id: '1729928660'
-  title: Freland › South-west
-  city: Freland
-  distance_km: 1.3
-  url: https://windy.com/webcams/1729928660
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.95
-- id: '1621688468'
-  title: Sainte-Marie-aux-Mines
-  city: Sainte-Marie-aux-Mines
-  distance_km: 6.0
-  url: https://windy.com/webcams/1621688468
-  enabled: false
-  sky_top: 0.0
-  sky_bottom: 0.42
-- id: '1621687990'
-  title: Le Bonhomme
-  city: Le Bonhomme
-  distance_km: 7.2
-  url: https://windy.com/webcams/1621687990
-  enabled: false
-  sky_top: 0.0
-  sky_bottom: 0.42
-- id: '1688134364'
-  title: Sainte-Croix-aux-Mines › East
-  city: Sainte-Croix-aux-Mines
-  distance_km: 8.3
-  url: https://windy.com/webcams/1688134364
-  enabled: false
-  sky_top: 0.0
-  sky_bottom: 0.42
-ballon-alsace:
-- id: '1793918423'
-  title: 'Saint-Maurice-sur-Moselle: Ballon d''Alsace'
-  city: Saint-Maurice-sur-Moselle
-  distance_km: 0.2
-  url: https://windy.com/webcams/1793918423
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.35
-- id: '1793903768'
-  title: 'Bussang › North-east: Le Drumont'
-  city: Bussang
-  distance_km: 7.2
-  url: https://windy.com/webcams/1793903768
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.65
-- id: '1793903767'
-  title: 'Bussang › South-east: Cimetière'
-  city: Bussang
-  distance_km: 7.2
-  url: https://windy.com/webcams/1793903767
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.40
-- id: '1793904055'
-  title: 'Urbes › South-east: Ferme-Auberge Gustiberg Urbès - Col de Bussang - Chambres
-    en demi pension'
-  city: Urbes
-  distance_km: 10.5
-  url: https://windy.com/webcams/1793904055
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.20
-belchen:
-- id: '1793871758'
-  title: 'Schonenberg: Belchen Bergstation'
-  city: Schonenberg
-  distance_km: 0.3
-  url: https://windy.com/webcams/1793871758
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.65
-- id: '1462284686'
-  title: 'Aitern: Belchen'
-  city: Aitern
-  distance_km: 0.4
-  url: https://windy.com/webcams/1462284686
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.60
-- id: '1462284681'
-  title: 'Aitern: Belchenbahn Talstation'
-  city: Aitern
-  distance_km: 1.3
-  url: https://windy.com/webcams/1462284681
-  enabled: false
-  sky_top: 0.0
-  sky_bottom: 0.42
-- id: '1604149341'
-  title: 'Aitern › North: Hohtann'
-  city: Aitern
-  distance_km: 2.0
-  url: https://windy.com/webcams/1604149341
-  enabled: false
-  sky_top: 0.0
-  sky_bottom: 0.42
-dabo:
-- id: '1668335952'
-  title: Dabo › South-east
-  city: Dabo
-  distance_km: 4.0
-  url: https://windy.com/webcams/1668335952
-  enabled: false
-  sky_top: 0.0
-  sky_bottom: 0.42
-- id: '1615707346'
-  title: 'Buhl-Lorraine: Aérodrome de Sarrebourg - Buhl - Sarrebourg'
-  city: Buhl-Lorraine
-  distance_km: 14.0
-  url: https://windy.com/webcams/1615707346
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.40
-- id: '1516695655'
-  title: 'Grandfontaine › North-west: Donon'
-  city: Grandfontaine
-  distance_km: 17.4
-  url: https://windy.com/webcams/1516695655
-  enabled: false
-  sky_top: 0.0
-  sky_bottom: 0.42
-- id: '1759304403'
-  title: Steinbourg › South-east
-  city: Steinbourg
-  distance_km: 17.9
-  url: https://windy.com/webcams/1759304403
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.10
-fleckenstein:
-- id: '1793910952'
-  title: Schindhard › North
-  city: Schindhard
-  distance_km: 9.7
-  url: https://windy.com/webcams/1793910952
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.30
-- id: '1793906461'
-  title: 'Dorrenbach: Stäffelsbergturm'
-  city: Dorrenbach
-  distance_km: 11.5
-  url: https://windy.com/webcams/1793906461
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.42
-- id: '1793902184'
-  title: 'Dorrenbach: Stäffelsbergturm'
-  city: Dorrenbach
-  distance_km: 11.5
-  url: https://windy.com/webcams/1793902184
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.50
-- id: '1793906462'
-  title: 'Dorrenbach: Stäffelsbergturm'
-  city: Dorrenbach
-  distance_km: 11.5
-  url: https://windy.com/webcams/1793906462
-  enabled: true
-  sky_top: 0.0
-  sky_bottom: 0.50
+# Caméras : réglées une seule fois, même si plusieurs spots les utilisent.
+#   enabled    : false si l'image ne montre pas le ciel (désactive la caméra partout)
+#   sky_top / sky_bottom : bande de ciel analysée, en fraction de la hauteur de l'image
+# Spots : quelles caméras représentent ce spot. use: false pour l'exclure de CE spot seulement.
+cameras:
+  '1200396675':
+    title: 'Le Bonhomme: Webcam du Lac Blanc 900 - Massif des Vosges - alsace'
+    city: Le Bonhomme
+    url: https://windy.com/webcams/1200396675
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.1
+  '1200396839':
+    title: 'Le Bonhomme: Webcam station du Lac Blanc 1200 - Massif des Vosges - Alsace - France'
+    city: Le Bonhomme
+    url: https://windy.com/webcams/1200396839
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.15
+  '1350021602':
+    title: 'Murbach: Le petit ballon'
+    city: Murbach
+    url: https://windy.com/webcams/1350021602
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.32
+  '1389769199':
+    title: 'Oderen: Markstein'
+    city: Oderen
+    url: https://windy.com/webcams/1389769199
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.3
+  '1462284681':
+    title: 'Aitern: Belchenbahn Talstation'
+    city: Aitern
+    url: https://windy.com/webcams/1462284681
+    enabled: false
+    sky_top: 0.0
+    sky_bottom: 0.42
+  '1462284686':
+    title: 'Aitern: Belchen'
+    city: Aitern
+    url: https://windy.com/webcams/1462284686
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.6
+  '1516695520':
+    title: 'Le Hohwald › North: Tour du Champ du Feu (1099m)'
+    city: Le Hohwald
+    url: https://windy.com/webcams/1516695520
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.62
+  '1516695655':
+    title: 'Grandfontaine › North-west: Donon'
+    city: Grandfontaine
+    url: https://windy.com/webcams/1516695655
+    enabled: false
+    sky_top: 0.0
+    sky_bottom: 0.42
+  '1546763818':
+    title: 'Rouffach: Petit Ballon - Vosges'
+    city: Rouffach
+    url: https://windy.com/webcams/1546763818
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.22
+  '1552424024':
+    title: 'La Vancelle: Grand Est, France'
+    city: La Vancelle
+    url: https://windy.com/webcams/1552424024
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.62
+  '1575240774':
+    title: 'Katzenthal: Castle Wineck'
+    city: Katzenthal
+    url: https://windy.com/webcams/1575240774
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.72
+  '1581685155':
+    title: 'Muhlbach-sur-Munster: Le Gaschney'
+    city: Muhlbach-sur-Munster
+    url: https://windy.com/webcams/1581685155
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.1
+  '1582614103':
+    title: 'La Bresse: Le Haut Chitelet'
+    city: La Bresse
+    url: https://windy.com/webcams/1582614103
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.42
+  '1604149341':
+    title: 'Aitern › North: Hohtann'
+    city: Aitern
+    url: https://windy.com/webcams/1604149341
+    enabled: false
+    sky_top: 0.0
+    sky_bottom: 0.42
+  '1607107793':
+    title: 'Saulxures › South: Col du Hantz'
+    city: Saulxures
+    url: https://windy.com/webcams/1607107793
+    enabled: false
+    sky_top: 0.0
+    sky_bottom: 0.42
+  '1607109002':
+    title: 'Ranrupt › West: Col de Steige'
+    city: Ranrupt
+    url: https://windy.com/webcams/1607109002
+    enabled: false
+    sky_top: 0.0
+    sky_bottom: 0.42
+  '1607110298':
+    title: 'Urbeis: Col d''Urbeis'
+    city: Urbeis
+    url: https://windy.com/webcams/1607110298
+    enabled: false
+    sky_top: 0.0
+    sky_bottom: 0.42
+  '1607110571':
+    title: 'Stosswihr › East: Col de la Schlucht'
+    city: Stosswihr
+    url: https://windy.com/webcams/1607110571
+    enabled: false
+    sky_top: 0.0
+    sky_bottom: 0.42
+  '1611407513':
+    title: 'Breitenbach: Col de la Charbonnière'
+    city: Breitenbach
+    url: https://windy.com/webcams/1611407513
+    enabled: false
+    sky_top: 0.0
+    sky_bottom: 0.42
+  '1615707346':
+    title: 'Buhl-Lorraine: Aérodrome de Sarrebourg - Buhl - Sarrebourg'
+    city: Buhl-Lorraine
+    url: https://windy.com/webcams/1615707346
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.4
+  '1621687990':
+    title: Le Bonhomme
+    city: Le Bonhomme
+    url: https://windy.com/webcams/1621687990
+    enabled: false
+    sky_top: 0.0
+    sky_bottom: 0.42
+  '1621688468':
+    title: Sainte-Marie-aux-Mines
+    city: Sainte-Marie-aux-Mines
+    url: https://windy.com/webcams/1621688468
+    enabled: false
+    sky_top: 0.0
+    sky_bottom: 0.42
+  '1668335952':
+    title: Dabo › South-east
+    city: Dabo
+    url: https://windy.com/webcams/1668335952
+    enabled: false
+    sky_top: 0.0
+    sky_bottom: 0.42
+  '1671005500':
+    title: La Bresse
+    city: La Bresse
+    url: https://windy.com/webcams/1671005500
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.9
+  '1675760769':
+    title: 'La Bresse: Télésiège de Vologne Express'
+    city: La Bresse
+    url: https://windy.com/webcams/1675760769
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.42
+  '1688133480':
+    title: Ottrott › South
+    city: Ottrott
+    url: https://windy.com/webcams/1688133480
+    enabled: false
+    sky_top: 0.0
+    sky_bottom: 0.42
+  '1688133822':
+    title: Rombach-le-Franc › South-west
+    city: Rombach-le-Franc
+    url: https://windy.com/webcams/1688133822
+    enabled: false
+    sky_top: 0.0
+    sky_bottom: 0.42
+  '1688134364':
+    title: Sainte-Croix-aux-Mines › East
+    city: Sainte-Croix-aux-Mines
+    url: https://windy.com/webcams/1688134364
+    enabled: false
+    sky_top: 0.0
+    sky_bottom: 0.42
+  '1688134497':
+    title: Guemar › South-west
+    city: Guemar
+    url: https://windy.com/webcams/1688134497
+    enabled: false
+    sky_top: 0.0
+    sky_bottom: 0.42
+  '1719144176':
+    title: Goldbach-Altenbach › North-east
+    city: Goldbach-Altenbach
+    url: https://windy.com/webcams/1719144176
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.42
+  '1719144183':
+    title: Goldbach-Altenbach › South-east
+    city: Goldbach-Altenbach
+    url: https://windy.com/webcams/1719144183
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.6
+  '1719144185':
+    title: Goldbach-Altenbach › South-west
+    city: Goldbach-Altenbach
+    url: https://windy.com/webcams/1719144185
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.6
+  '1719749334':
+    title: Goldbach-Altenbach › North-west
+    city: Goldbach-Altenbach
+    url: https://windy.com/webcams/1719749334
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.95
+  '1729928660':
+    title: Freland › South-west
+    city: Freland
+    url: https://windy.com/webcams/1729928660
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.95
+  '1759304403':
+    title: Steinbourg › South-east
+    city: Steinbourg
+    url: https://windy.com/webcams/1759304403
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.1
+  '1793869328':
+    title: 'Stosswihr: Rue du Front de Neige'
+    city: Stosswihr
+    url: https://windy.com/webcams/1793869328
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.32
+  '1793871758':
+    title: 'Schonenberg: Belchen Bergstation'
+    city: Schonenberg
+    url: https://windy.com/webcams/1793871758
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.65
+  '1793895514':
+    title: 'Sondernach: Schnepfenried'
+    city: Sondernach
+    url: https://windy.com/webcams/1793895514
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.42
+  '1793902184':
+    title: 'Dorrenbach: Stäffelsbergturm'
+    city: Dorrenbach
+    url: https://windy.com/webcams/1793902184
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.5
+  '1793903767':
+    title: 'Bussang › South-east: Cimetière'
+    city: Bussang
+    url: https://windy.com/webcams/1793903767
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.4
+  '1793903768':
+    title: 'Bussang › North-east: Le Drumont'
+    city: Bussang
+    url: https://windy.com/webcams/1793903768
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.65
+  '1793904055':
+    title: 'Urbes › South-east: Ferme-Auberge Gustiberg Urbès - Col de Bussang - Chambres en demi pension'
+    city: Urbes
+    url: https://windy.com/webcams/1793904055
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.2
+  '1793906461':
+    title: 'Dorrenbach: Stäffelsbergturm'
+    city: Dorrenbach
+    url: https://windy.com/webcams/1793906461
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.42
+  '1793906462':
+    title: 'Dorrenbach: Stäffelsbergturm'
+    city: Dorrenbach
+    url: https://windy.com/webcams/1793906462
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.5
+  '1793910952':
+    title: Schindhard › North
+    city: Schindhard
+    url: https://windy.com/webcams/1793910952
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.3
+  '1793918423':
+    title: 'Saint-Maurice-sur-Moselle: Ballon d''Alsace'
+    city: Saint-Maurice-sur-Moselle
+    url: https://windy.com/webcams/1793918423
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.35
+  '1793918576':
+    title: 'La Vancelle › South-east: Château du Haut-Kœnigsbourg'
+    city: La Vancelle
+    url: https://windy.com/webcams/1793918576
+    enabled: true
+    sky_top: 0.0
+    sky_bottom: 0.3
+spots:
+  lac-blanc-noir:
+  - id: '1200396839'
+    distance_km: 1.9
+    use: true
+  - id: '1200396675'
+    distance_km: 3.0
+    use: true
+  - id: '1621687990'
+    distance_km: 5.0
+    use: false
+  - id: '1607110571'
+    distance_km: 7.7
+    use: false
+  hohneck:
+  - id: '1671005500'
+    distance_km: 0.3
+    use: true
+  - id: '1582614103'
+    distance_km: 1.5
+    use: true
+  - id: '1675760769'
+    distance_km: 2.3
+    use: true
+  - id: '1581685155'
+    distance_km: 2.4
+    use: false
+  truites-gazon:
+  - id: '1200396839'
+    distance_km: 3.8
+    use: true
+  - id: '1200396675'
+    distance_km: 4.7
+    use: true
+  - id: '1607110571'
+    distance_km: 5.6
+    use: false
+  - id: '1793869328'
+    distance_km: 5.7
+    use: true
+  haut-koenigsbourg:
+  - id: '1552424024'
+    distance_km: 5.1
+    use: true
+  - id: '1793918576'
+    distance_km: 5.3
+    use: true
+  - id: '1688134497'
+    distance_km: 7.7
+    use: false
+  - id: '1688133822'
+    distance_km: 8.7
+    use: false
+  grand-ballon:
+  - id: '1719144185'
+    distance_km: 0.2
+    use: true
+  - id: '1719144183'
+    distance_km: 0.2
+    use: true
+  - id: '1719749334'
+    distance_km: 0.2
+    use: true
+  - id: '1719144176'
+    distance_km: 0.2
+    use: true
+  champ-du-feu:
+  - id: '1516695520'
+    distance_km: 0.4
+    use: true
+  - id: '1611407513'
+    distance_km: 1.7
+    use: false
+  - id: '1607109002'
+    distance_km: 6.3
+    use: false
+  - id: '1607110298'
+    distance_km: 9.0
+    use: false
+  ribeauville:
+  - id: '1688134497'
+    distance_km: 7.1
+    use: false
+  - id: '1688134364'
+    distance_km: 8.3
+    use: false
+  - id: '1552424024'
+    distance_km: 9.2
+    use: true
+  - id: '1793918576'
+    distance_km: 9.4
+    use: true
+  eguisheim:
+  - id: '1575240774'
+    distance_km: 8.2
+    use: true
+  - id: '1546763818'
+    distance_km: 8.6
+    use: true
+  - id: '1581685155'
+    distance_km: 16.7
+    use: true
+  - id: '1350021602'
+    distance_km: 16.8
+    use: true
+  petit-ballon:
+  - id: '1793895514'
+    distance_km: 6.2
+    use: true
+  - id: '1350021602'
+    distance_km: 7.9
+    use: true
+  - id: '1581685155'
+    distance_km: 8.4
+    use: true
+  - id: '1389769199'
+    distance_km: 9.1
+    use: true
+  donon:
+  - id: '1516695655'
+    distance_km: 1.9
+    use: false
+  - id: '1607107793'
+    distance_km: 13.6
+    use: false
+  - id: '1516695520'
+    distance_km: 15.1
+    use: true
+  - id: '1611407513'
+    distance_km: 15.7
+    use: false
+  sainte-odile:
+  - id: '1688133480'
+    distance_km: 1.4
+    use: false
+  - id: '1516695520'
+    distance_km: 10.2
+    use: true
+  - id: '1611407513'
+    distance_km: 11.5
+    use: false
+  - id: '1607109002'
+    distance_km: 16.2
+    use: false
+  taennchel:
+  - id: '1688134364'
+    distance_km: 5.2
+    use: false
+  - id: '1552424024'
+    distance_km: 7.9
+    use: true
+  - id: '1793918576'
+    distance_km: 8.1
+    use: true
+  - id: '1729928660'
+    distance_km: 9.1
+    use: true
+  brezouard:
+  - id: '1729928660'
+    distance_km: 1.3
+    use: true
+  - id: '1621688468'
+    distance_km: 6.0
+    use: false
+  - id: '1621687990'
+    distance_km: 7.2
+    use: false
+  - id: '1688134364'
+    distance_km: 8.3
+    use: false
+  ballon-alsace:
+  - id: '1793918423'
+    distance_km: 0.2
+    use: true
+  - id: '1793903768'
+    distance_km: 7.2
+    use: true
+  - id: '1793903767'
+    distance_km: 7.2
+    use: true
+  - id: '1793904055'
+    distance_km: 10.5
+    use: true
+  belchen:
+  - id: '1793871758'
+    distance_km: 0.3
+    use: true
+  - id: '1462284686'
+    distance_km: 0.4
+    use: true
+  - id: '1462284681'
+    distance_km: 1.3
+    use: false
+  - id: '1604149341'
+    distance_km: 2.0
+    use: false
+  dabo:
+  - id: '1668335952'
+    distance_km: 4.0
+    use: false
+  - id: '1615707346'
+    distance_km: 14.0
+    use: true
+  - id: '1516695655'
+    distance_km: 17.4
+    use: false
+  - id: '1759304403'
+    distance_km: 17.9
+    use: true
+  fleckenstein:
+  - id: '1793910952'
+    distance_km: 9.7
+    use: true
+  - id: '1793906461'
+    distance_km: 11.5
+    use: true
+  - id: '1793902184'
+    distance_km: 11.5
+    use: true
+  - id: '1793906462'
+    distance_km: 11.5
+    use: true

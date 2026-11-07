@@ -61,10 +61,54 @@ def append_csv(path, rows, fields):
             w.writerow({k: ("" if r.get(k) is None else r.get(k)) for k in fields})
 
 
-def load_webcams():
-    """truth/webcams.yml → {spot_id: [cam, …]} (caméras activées uniquement)."""
+def read_webcams_raw():
+    """Lit truth/webcams.yml et renvoie (caméras, rattachements) quel que soit le format.
+
+    Format actuel :
+      cameras: {id: {title, city, url, enabled, sky_top, sky_bottom}}
+      spots:   {spot_id: [{id, distance_km, use}]}
+    L'ancien format (une liste de caméras par spot) est converti à la volée.
+    """
     import yaml
     if not WEBCAMS_FILE.exists():
-        return {}
+        return {}, {}
     raw = yaml.safe_load(WEBCAMS_FILE.read_text("utf-8")) or {}
-    return {spot: [c for c in cams or [] if c.get("enabled", True)] for spot, cams in raw.items()}
+    if "cameras" in raw or "spots" in raw:
+        cams = {str(k): v for k, v in (raw.get("cameras") or {}).items()}
+        links = {sp: [{**l, "id": str(l["id"])} for l in (lst or [])] for sp, lst in (raw.get("spots") or {}).items()}
+        return cams, links
+    cams, links = {}, {}
+    for sp, lst in raw.items():
+        links[sp] = []
+        for c in lst or []:
+            cid = str(c["id"])
+            links[sp].append({"id": cid, "distance_km": c.get("distance_km"), "use": bool(c.get("enabled", True))})
+            cur = cams.setdefault(cid, {k: c.get(k) for k in ("title", "city", "url")} | {"enabled": False, "sky_top": 0.0, "sky_bottom": None})
+            if c.get("enabled", True):
+                cur["enabled"] = True
+                b = c.get("sky_bottom", 0.42)
+                cur["sky_bottom"] = b if cur["sky_bottom"] is None else min(cur["sky_bottom"], b)
+                cur["sky_top"] = max(cur["sky_top"], c.get("sky_top", 0.0) or 0.0)
+    for c in cams.values():
+        c["sky_bottom"] = 0.42 if c["sky_bottom"] is None else c["sky_bottom"]
+    return cams, links
+
+
+def load_webcams():
+    """{spot_id: [caméra effective, …]} : caméra activée ET rattachée au spot (use: true)."""
+    cams, links = read_webcams_raw()
+    out = {}
+    for sp, lst in links.items():
+        out[sp] = [{**cams[l["id"]], "id": l["id"], "distance_km": l.get("distance_km")}
+                   for l in lst if l.get("use", True) and cams.get(l["id"], {}).get("enabled", True) and l["id"] in cams]
+    return out
+
+
+def write_webcams(cams, links):
+    import yaml
+    header = ("# Caméras : réglées une seule fois, même si plusieurs spots les utilisent.\n"
+              "#   enabled    : false si l'image ne montre pas le ciel (désactive la caméra partout)\n"
+              "#   sky_top / sky_bottom : bande de ciel analysée, en fraction de la hauteur de l'image\n"
+              "# Spots : quelles caméras représentent ce spot. use: false pour l'exclure de CE spot seulement.\n")
+    body = {"cameras": dict(sorted(cams.items())), "spots": links}
+    WEBCAMS_FILE.write_text(header + yaml.safe_dump(body, allow_unicode=True, sort_keys=False, width=200), "utf-8")
