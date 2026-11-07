@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Revue des traces</title>
+<!-- Outil de développement : corriger les points clés des randos et valider leurs traces.
+     Lancer `python -m http.server 8080` à la racine, ouvrir http://localhost:8080/scripts/revue-gpx.html,
+     puis appliquer l'export avec `python scripts/gpx_route.py --apply corrections-gpx.json`. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<style>
+  :root{--bg:#0E171C;--surface:#172329;--surface2:#213139;--ink:#E6EDF0;--muted:#8E9EA6;--line:#2A3B43;--ok:#72CFA0;--warn:#F2B34B;--me:#6EA4FF;
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color-scheme:dark}
+  *{box-sizing:border-box} body{margin:0;display:grid;grid-template-columns:330px 1fr;height:100vh;background:var(--bg);color:var(--ink);font:14px/1.4 var(--font)}
+  aside{display:flex;flex-direction:column;min-height:0;border-right:1px solid var(--line)}
+  .head{padding:14px;border-bottom:1px solid var(--line)} h1{font-size:1.1rem;margin:0 0 4px} .sub{color:var(--muted);margin:0;font-size:.82rem}
+  .exp{display:flex;gap:6px;margin-top:10px} #list{overflow-y:auto;flex:1}
+  button{font:inherit;color:inherit;cursor:pointer} .btn{border:1px solid var(--line);background:var(--surface);border-radius:9px;padding:7px 10px;font-weight:600;font-size:.85rem}
+  .btn:hover{background:var(--surface2)} .btn.on{background:var(--ok);color:#0E171C;border-color:var(--ok)} .btn:disabled{opacity:.4;cursor:default}
+  button.h{display:block;width:100%;text-align:left;border:0;border-bottom:1px solid var(--line);background:transparent;padding:9px 14px}
+  button.h:hover{background:var(--surface)} button.h[aria-current="true"]{background:var(--surface2)}
+  .t{display:flex;justify-content:space-between;gap:8px;font-weight:600} .tags{display:flex;gap:4px;flex:none}
+  .tag{font-size:.72rem;font-weight:700;padding:1px 6px;border-radius:6px;background:var(--surface2);color:var(--muted)}
+  .tag.ok{background:var(--ok);color:#0E171C} .tag.mod{background:var(--me);color:#0E171C} .tag.ko{background:var(--warn);color:#0E171C}
+  .n{color:var(--muted);font-size:.8rem;margin-top:2px}
+  main{position:relative} #map{position:absolute;inset:0}
+  .panel{position:absolute;z-index:2;top:12px;left:12px;width:min(420px,calc(100% - 70px));background:var(--surface);border-radius:14px;padding:12px 14px;box-shadow:0 6px 24px rgba(0,0,0,.35)}
+  .panel h2{font-size:1.05rem;margin:0} .cmp{display:grid;grid-template-columns:auto 1fr 1fr;gap:2px 12px;margin-top:8px;font-size:.88rem}
+  .cmp b{font-weight:600} .cmp .bad{color:var(--warn)} .flags{color:var(--warn);font-size:.82rem;margin-top:6px} .flags.ok{color:var(--ok)}
+  .tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px} .help{color:var(--muted);font-size:.78rem;margin-top:8px}
+  .wp{width:24px;height:24px;border-radius:50%;background:#fff;color:#17222A;border:2px solid #17222A;display:grid;place-items:center;font:700 11px var(--font);cursor:grab}
+  .wp.first{background:#17222A;color:#fff;border-color:#fff}
+  .sp{width:14px;height:14px;border-radius:50%;background:#2A7A55;border:2px solid #fff;pointer-events:none} .sp.sun{background:#CF4560}
+  #toast{position:absolute;z-index:3;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 12px;border-radius:10px;opacity:0;transition:opacity .2s;pointer-events:none}
+  #toast.show{opacity:1}
+  .drop{position:absolute;z-index:4;inset:0;display:none;place-items:center;background:rgba(14,23,28,.75);font-size:1.2rem;font-weight:700;border:3px dashed var(--me)}
+  .drop.show{display:grid} .refline{color:var(--me)} .cmp .ref{color:var(--me)}
+  textarea{width:100%;height:120px;margin-top:8px;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px;font:12px/1.3 ui-monospace,monospace}
+</style>
+</head>
+<body>
+<aside>
+  <div class="head">
+    <h1>Revue des traces</h1>
+    <p class="sub">Trace calculée sur les sentiers OpenStreetMap (BRouter) à travers les points clés. Corrige les points, puis valide.</p>
+    <div class="exp"><button class="btn" id="expBtn" type="button">Exporter les corrections</button><button class="btn" id="copyBtn" type="button">Copier</button></div>
+  </div>
+  <div id="list"></div>
+</aside>
+<main>
+  <div id="map"></div>
+  <div class="panel" id="panel"></div>
+  <div id="toast" role="status"></div>
+  <div class="drop" id="drop">Dépose la trace de référence (GPX ou KML)</div>
+  <input type="file" id="refIn" accept=".gpx,.kml,application/gpx+xml,application/vnd.google-earth.kml+xml,application/xml,text/xml" hidden>
+</main>
+<script>
+const IGN = 'https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/png&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}';
+const TOPO = ['a', 'b', 'c'].map(s => `https://${s}.tile.opentopomap.org/{z}/{x}/{y}.png`);
+// Mêmes seuils que scripts/gpx_route.py
+const MAX_KM_GAP = 0.20, MAX_DPLUS_GAP = 0.25, MAX_SNAP_M = 150, MAX_ROAD = 0.20;
+const ROADS = new Set(['motorway', 'trunk', 'primary', 'secondary', 'tertiary', 'unclassified', 'residential', 'living_street', 'service']);
+const KEY = 'abendrot-revue-gpx';
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const hav = (a, b, c, d) => { const r = Math.PI / 180, x = (c - a) * r, y = (d - b) * r, h = Math.sin(x / 2) ** 2 + Math.cos(a * r) * Math.cos(c * r) * Math.sin(y / 2) ** 2; return 12742 * Math.asin(Math.sqrt(h)); };
+const toast = m => { const t = $('#toast'); t.textContent = m; t.classList.add('show'); clearTimeout(toast.k); toast.k = setTimeout(() => t.classList.remove('show'), 2500); };
+
+// État : corrections persistées dans ce navigateur, en attendant l'export.
+let saved = { edits: {}, validated: [] };
+try { saved = { ...saved, ...JSON.parse(localStorage.getItem(KEY) || '{}') }; } catch { /* stockage indisponible */ }
+const persist = () => { try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch { /* */ } };
+
+// Traces de référence (Wikiloc, etc.) : affichées pour guider, gardées dans ce navigateur, jamais exportées.
+const REF_KEY = 'abendrot-revue-ref';
+let refs = {};
+try { refs = JSON.parse(localStorage.getItem(REF_KEY) || '{}'); } catch { /* */ }
+const persistRefs = () => { try { localStorage.setItem(REF_KEY, JSON.stringify(refs)); } catch { toast('Référence trop lourde pour être gardée après rechargement'); } };
+
+let hikes = [], cur = null, markers = [], spotMarkers = [], ctrl = null;
+const stats = {};   // id → dernier résultat (pour la liste)
+
+/* points : [lat, lon, alt] ; une boucle a son dernier point égal au premier, l'éditeur la garde ouverte */
+const isLoop = w => w.length > 2 && hav(w[0][0], w[0][1], w.at(-1)[0], w.at(-1)[1]) < 0.03;
+function editable(h) { const w = saved.edits[h.id] || h.waypoints; return { loop: isLoop(w), pts: (isLoop(w) ? w.slice(0, -1) : w).map(p => [...p]) }; }
+const closed = () => cur.loop ? [...cur.pts, cur.pts[0]] : cur.pts;
+
+const map = new maplibregl.Map({ container: 'map', center: [7.2, 48.2], zoom: 9, style: { version: 8, sources: {
+  ign: { type: 'raster', tiles: [IGN], tileSize: 256, maxzoom: 19, attribution: '© IGN Plan IGN' },
+  topo: { type: 'raster', tiles: TOPO, tileSize: 256, maxzoom: 17, attribution: '© OpenTopoMap, © OpenStreetMap' } },
+  layers: [{ id: 'topo', type: 'raster', source: 'topo' }, { id: 'ign', type: 'raster', source: 'ign' }] } });
+map.addControl(new maplibregl.NavigationControl(), 'top-right');
+map.addControl(new maplibregl.ScaleControl({ unit: 'metric' }));
+new ResizeObserver(() => map.resize()).observe($('#map'));
+
+function summary(f) {
+  const p = f.properties, coords = f.geometry.coordinates, msgs = p.messages || [];
+  let road = 0, total = 0;
+  if (msgs.length) {
+    const iD = msgs[0].indexOf('Distance'), iT = msgs[0].indexOf('WayTags');
+    for (const m of msgs.slice(1)) { const d = +m[iD], hw = (m[iT].match(/(?:^|\s)highway=(\S+)/) || [])[1]; total += d; if (ROADS.has(hw)) road += d; }
+  }
+  return { km: +p['track-length'] / 1000, dplus: +p['filtered ascend'], road: total ? road / total : 0, coords };
+}
+function flags(s, h) {
+  const o = [];
+  if (Math.abs(s.km - h.km) > MAX_KM_GAP * h.km) o.push(`distance ${s.km.toFixed(1)} km contre ${h.km}`);
+  if (Math.abs(s.dplus - h.dplus) > MAX_DPLUS_GAP * h.dplus) o.push(`D+ ${Math.round(s.dplus)} m contre ${h.dplus}`);
+  if (s.snap > MAX_SNAP_M) o.push(`point clé à ${Math.round(s.snap)} m de la trace`);
+  if (s.road > MAX_ROAD) o.push(`${Math.round(s.road * 100)} % sur route`);
+  return o;
+}
+
+async function reroute() {
+  const h = cur.h, pts = closed();
+  ctrl?.abort(); ctrl = new AbortController();
+  cur.busy = true; panel();
+  try {
+    const u = `https://brouter.de/brouter?lonlats=${pts.map(p => `${p[1].toFixed(6)},${p[0].toFixed(6)}`).join('|')}&profile=hiking-mountain&alternativeidx=0&format=geojson`;
+    const r = await fetch(u, { signal: ctrl.signal });
+    if (!r.ok) throw new Error(`BRouter ${r.status} : ${(await r.text()).slice(0, 120)}`);
+    const s = summary((await r.json()).features[0]);
+    s.snap = Math.max(...pts.map(w => Math.min(...s.coords.map(c => hav(w[0], w[1], c[1], c[0]))))) * 1000;
+    s.flags = flags(s, h);
+    const ref = refs[h.id];
+    if (ref) { s.gap = refGap(s.coords, ref); if (s.gap.max > MAX_SNAP_M) s.flags.push(`s’écarte de la référence jusqu’à ${Math.round(s.gap.max)} m`); }
+    if (cur.h !== h) return;
+    cur.s = s; stats[h.id] = s; cur.err = null;
+    map.getSource('trace').setData({ type: 'Feature', geometry: { type: 'LineString', coordinates: s.coords.map(c => [c[0], c[1]]) } });
+  } catch (e) { if (e.name !== 'AbortError') cur.err = e.message; }
+  cur.busy = false; panel(); list();
+}
+let timer = null;
+const later = () => { clearTimeout(timer); timer = setTimeout(reroute, 350); };
+
+function drawPoints() {
+  markers.forEach(m => m.remove());
+  markers = cur.pts.map((p, i) => {
+    const el = document.createElement('div'); el.className = 'wp' + (i ? '' : ' first'); el.textContent = i ? i + 1 : 'D';
+    el.title = i ? `Point ${i + 1} : glisser pour déplacer, clic droit pour supprimer` : 'Départ (et arrivée de la boucle)';
+    const m = new maplibregl.Marker({ element: el, draggable: true }).setLngLat([p[1], p[0]]).addTo(map);
+    m.on('dragend', () => { const ll = m.getLngLat(); change(pts => { pts[i] = [ll.lat, ll.lng, eleAt(ll)]; }); });
+    el.addEventListener('contextmenu', e => { e.preventDefault(); e.stopPropagation(); if (cur.pts.length <= 2) return toast('Il faut au moins deux points'); change(pts => { pts.splice(i, 1); }); });
+    el.addEventListener('click', e => e.stopPropagation());
+    return m;
+  });
+  map.getSource('keys').setData({ type: 'Feature', geometry: { type: 'LineString', coordinates: closed().map(p => [p[1], p[0]]) } });
+}
+// Altitude d'un nouveau point : celle du point de trace le plus proche (sinon inconnue).
+function eleAt(ll) {
+  const c = cur.s?.coords; if (!c?.length) return null;
+  let best = c[0], d = Infinity;
+  for (const q of c) { const x = hav(ll.lat, ll.lng, q[1], q[0]); if (x < d) { d = x; best = q; } }
+  return best[2] != null ? Math.round(best[2]) : null;
+}
+function change(fn) {
+  cur.undo.push({ pts: cur.pts.map(p => [...p]), loop: cur.loop });
+  fn(cur.pts);
+  saved.edits[cur.h.id] = closed().map(p => [+p[0].toFixed(5), +p[1].toFixed(5), p[2] ?? null]);
+  saved.validated = saved.validated.filter(id => id !== cur.h.id);   // toute modification invalide la validation
+  persist(); drawPoints(); later(); list();
+}
+// Un clic ajoute un point là où il allonge le moins le parcours.
+map.on('click', e => {
+  if (!cur) return;
+  const p = [e.lngLat.lat, e.lngLat.lng], P = cur.pts, n = P.length, segs = cur.loop ? n : n - 1;
+  let at = 1, best = Infinity;
+  for (let i = 0; i < segs; i++) {
+    const a = P[i], b = P[(i + 1) % n], cost = hav(a[0], a[1], p[0], p[1]) + hav(p[0], p[1], b[0], b[1]) - hav(a[0], a[1], b[0], b[1]);
+    if (cost < best) { best = cost; at = i + 1; }
+  }
+  change(pts => { pts.splice(at, 0, [p[0], p[1], eleAt(e.lngLat)]); });
+});
+
+/* ---------- trace de référence ---------- */
+/** GPX (trkpt, sinon rtept) ou KML (LineString / gx:Track) → [[lat, lon, ele|null], …]. */
+function parseTrack(text) {
+  const doc = new DOMParser().parseFromString(text, 'application/xml');
+  if (doc.getElementsByTagName('parsererror').length) throw new Error('Fichier illisible');
+  let nodes = [...doc.getElementsByTagName('trkpt')];
+  if (nodes.length < 2) nodes = [...doc.getElementsByTagName('rtept')];
+  if (nodes.length >= 2) return nodes.map(n => { const e = n.getElementsByTagName('ele')[0]; return [+n.getAttribute('lat'), +n.getAttribute('lon'), e ? Math.round(+e.textContent) : null]; });
+  const kml = [...doc.getElementsByTagName('coordinates')].map(c => c.textContent.trim()).filter(Boolean).sort((a, b) => b.length - a.length)[0]
+    || [...doc.getElementsByTagNameNS('*', 'coord')].map(c => c.textContent.trim().replace(/\s+/g, ',')).join(' ');
+  const pts = (kml || '').split(/\s+/).map(t => t.split(',').map(Number)).filter(c => c.length >= 2 && c.every(Number.isFinite)).map(c => [c[1], c[0], c[2] != null ? Math.round(c[2]) : null]);
+  if (pts.length < 2) throw new Error('Aucune trace dans ce fichier');
+  return pts;
+}
+function trackStats(pts) {
+  let km = 0, up = 0, base = pts[0][2];
+  for (let i = 1; i < pts.length; i++) {
+    km += hav(pts[i - 1][0], pts[i - 1][1], pts[i][0], pts[i][1]);
+    const e = pts[i][2]; if (e == null || base == null) continue;
+    if (e - base >= 5) { up += e - base; base = e; } else if (e < base) base = e;   // hystérésis anti-bruit
+  }
+  return { km, dplus: pts.some(p => p[2] != null) ? up : null };
+}
+const thin = (a, max) => a.length <= max ? a : a.filter((_, i) => i % Math.ceil(a.length / max) === 0);
+/** Écart entre trace calculée ([lon, lat]) et référence ([lat, lon]) : moyen et maximal, dans les deux sens. */
+function refGap(coords, ref) {
+  const T = thin(coords, 500).map(c => [c[1], c[0]]), R = thin(ref, 500);
+  const near = (p, set) => Math.min(...set.map(q => hav(p[0], p[1], q[0], q[1]))) * 1000;
+  const a = T.map(p => near(p, R)), b = R.map(p => near(p, T));
+  const ia = a.indexOf(Math.max(...a)), ib = b.indexOf(Math.max(...b));
+  return { mean: a.reduce((x, y) => x + y, 0) / a.length, max: Math.max(a[ia], b[ib]), worst: a[ia] >= b[ib] ? T[ia] : R[ib] };
+}
+/** n points régulièrement espacés le long d'une polyligne (extrémités comprises). */
+function resample(pts, n) {
+  const cum = [0];
+  for (let i = 1; i < pts.length; i++) cum.push(cum[i - 1] + hav(pts[i - 1][0], pts[i - 1][1], pts[i][0], pts[i][1]));
+  const L = cum.at(-1), out = [];
+  let j = 0;
+  for (let k = 0; k < n; k++) {
+    const t = L * k / (n - 1);
+    while (j < pts.length - 2 && cum[j + 1] < t) j++;
+    const a = pts[j], b = pts[j + 1], u = Math.min(1, (t - cum[j]) / ((cum[j + 1] - cum[j]) || 1));
+    out.push([a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, a[2] != null && b[2] != null ? Math.round(a[2] + (b[2] - a[2]) * u) : a[2] ?? null]);
+  }
+  return out;
+}
+const nearestIdx = (pts, p) => { let k = 0, d = Infinity; pts.forEach((q, i) => { const x = hav(p[0], p[1], q[0], q[1]); if (x < d) { d = x; k = i; } }); return k; };
+/** Points clés tirés de la référence : départ au plus près du parking de la fiche, même sens que les points d'origine. */
+function pointsFromRef(h, ref) {
+  let r = ref.slice();
+  const loop = hav(r[0][0], r[0][1], r.at(-1)[0], r.at(-1)[1]) < 0.2;
+  if (loop) {   // la boucle commence au plus près du départ de la fiche
+    const open = r.slice(0, -1), k = nearestIdx(open, h.waypoints[0]);
+    r = [...open.slice(k), ...open.slice(0, k), open[k]];
+  }
+  const orig = h.waypoints.slice(1, -1).map(w => nearestIdx(r, w));
+  let fwd = 0, back = 0;
+  for (let i = 1; i < orig.length; i++) { if (orig[i] > orig[i - 1]) fwd++; else if (orig[i] < orig[i - 1]) back++; }
+  if (back > fwd) r = loop ? [r[0], ...r.slice(1, -1).reverse(), r[0]] : r.reverse();
+  const n = Math.max(8, Math.min(24, Math.round(trackStats(r).km / 0.7)));
+  const pts = resample(r, loop ? n + 1 : n).map(p => [+p[0].toFixed(5), +p[1].toFixed(5), p[2]]);
+  return { loop, pts: loop ? pts.slice(0, -1) : pts };
+}
+function drawRef() {
+  const r = cur && refs[cur.h.id];
+  map.getSource('ref').setData(r ? { type: 'Feature', geometry: { type: 'LineString', coordinates: r.map(p => [p[1], p[0]]) } } : { type: 'FeatureCollection', features: [] });
+}
+async function loadRef(file) {
+  if (!cur || !file) return;
+  try {
+    const pts = parseTrack(await file.text());
+    refs[cur.h.id] = thin(pts, 3000).map(p => [+p[0].toFixed(5), +p[1].toFixed(5), p[2]]);
+    persistRefs(); drawRef();
+    const st = trackStats(refs[cur.h.id]);
+    toast(`Référence chargée : ${st.km.toFixed(1)} km${st.dplus != null ? `, ${Math.round(st.dplus)} m de D+` : ''}`);
+    panel(); reroute();
+  } catch (e) { toast(e.message); }
+}
+$('#refIn').onchange = e => { loadRef(e.target.files?.[0]); e.target.value = ''; };
+const drop = $('#drop');
+document.querySelector('main').addEventListener('dragover', e => { e.preventDefault(); drop.classList.add('show'); });
+drop.addEventListener('dragleave', () => drop.classList.remove('show'));
+drop.addEventListener('drop', e => { e.preventDefault(); drop.classList.remove('show'); loadRef(e.dataTransfer.files?.[0]); });
+
+function panel() {
+  if (!cur) return;
+  const { h, s } = cur, val = saved.validated.includes(h.id), mod = !!saved.edits[h.id], ref = refs[h.id], rs = ref && trackStats(ref);
+  const cell = (v, ref, gap, u) => `<span class="${v != null && Math.abs(v - ref) > gap * ref ? 'bad' : ''}">${v == null ? '…' : `${u === 'km' ? v.toFixed(1) : Math.round(v)} ${u}`}</span>`;
+  $('#panel').innerHTML = `<h2>${esc(h.name)}</h2>
+    <div class="cmp" style="grid-template-columns:auto 1fr 1fr${ref ? ' 1fr' : ''}"><span></span><b>Trace</b><b>Fiche</b>${ref ? '<b class="ref">Référence</b>' : ''}
+      <span>Distance</span>${cell(s?.km, h.km, MAX_KM_GAP, 'km')}<span>${h.km} km</span>${ref ? `<span class="ref">${rs.km.toFixed(1)} km</span>` : ''}
+      <span>D+</span>${cell(s?.dplus, h.dplus, MAX_DPLUS_GAP, 'm')}<span>${h.dplus} m</span>${ref ? `<span class="ref">${rs.dplus != null ? Math.round(rs.dplus) + ' m' : '?'}</span>` : ''}
+      <span>Route</span><span>${s ? Math.round(s.road * 100) + ' %' : '…'}</span><span></span>${ref ? '<span></span>' : ''}</div>
+    ${ref && s?.gap ? `<div class="refline" style="font-size:.82rem;margin-top:6px">Écart à la référence : ${Math.round(s.gap.mean)} m en moyenne, ${Math.round(s.gap.max)} m au plus
+      ${s.gap.max > 50 ? '<button class="btn" id="worstBtn" type="button" style="margin-left:6px;padding:3px 8px">Voir le plus gros écart</button>' : ''}</div>` : ''}
+    <div class="flags${s && !s.flags.length ? ' ok' : ''}">${cur.busy ? 'Calcul de la trace…' : cur.err ? esc(cur.err) : s ? (s.flags.length ? esc(s.flags.join(' ; ')) : 'Cohérente avec la fiche') : ''}</div>
+    <div class="tools">
+      <button class="btn${val ? ' on' : ''}" id="valBtn" type="button"${!s || cur.busy ? ' disabled' : ''}>${val ? 'Validée' : 'Valider cette trace'}</button>
+      <button class="btn" id="undoBtn" type="button"${cur.undo.length ? '' : ' disabled'}>Annuler</button>
+      <button class="btn" id="resetBtn" type="button"${mod ? '' : ' disabled'}>Points d’origine</button>
+    </div>
+    <div class="tools">
+      <button class="btn" id="refBtn" type="button">${ref ? 'Changer la référence' : 'Charger une trace de référence'}</button>
+      ${ref ? '<button class="btn" id="fromRefBtn" type="button">Placer les points depuis la référence</button><button class="btn" id="noRefBtn" type="button">Retirer</button>' : ''}
+    </div>
+    <p class="help">Référence : un GPX ou KML (Wikiloc…) glissé sur la carte, affiché en bleu, gardé dans ce navigateur et jamais exporté.<br>Clic sur la carte : ajouter un point. Glisser un point : le déplacer. Clic droit : le supprimer. Ctrl+Z : annuler.</p>`;
+  $('#valBtn').onclick = () => { saved.validated = val ? saved.validated.filter(id => id !== h.id) : [...saved.validated, h.id]; persist(); panel(); list(); };
+  $('#undoBtn').onclick = undo;
+  $('#refBtn').onclick = () => $('#refIn').click();
+  $('#worstBtn')?.addEventListener('click', () => map.flyTo({ center: [s.gap.worst[1], s.gap.worst[0]], zoom: 16, duration: 600 }));
+  $('#fromRefBtn')?.addEventListener('click', () => {
+    const r = pointsFromRef(h, ref);
+    change(pts => { pts.splice(0, pts.length, ...r.pts); cur.loop = r.loop; });
+    toast(`${r.pts.length} points placés le long de la référence`);
+  });
+  $('#noRefBtn')?.addEventListener('click', () => { delete refs[h.id]; persistRefs(); drawRef(); if (cur.s) delete cur.s.gap; panel(); reroute(); });
+  $('#resetBtn').onclick = () => { delete saved.edits[h.id]; saved.validated = saved.validated.filter(id => id !== h.id); persist(); select(h.id); };
+}
+function undo() {
+  if (!cur?.undo.length) return;
+  ({ pts: cur.pts, loop: cur.loop } = cur.undo.pop());
+  saved.edits[cur.h.id] = closed().map(p => [+p[0].toFixed(5), +p[1].toFixed(5), p[2] ?? null]);
+  saved.validated = saved.validated.filter(id => id !== cur.h.id);
+  persist(); drawPoints(); later(); list();
+}
+document.addEventListener('keydown', e => { if ((e.ctrlKey || e.metaKey) && e.key === 'z') { e.preventDefault(); undo(); } });
+
+function list() {
+  $('#list').innerHTML = hikes.map(h => {
+    const s = stats[h.id], val = saved.validated.includes(h.id), mod = !!saved.edits[h.id];
+    const tag = val ? '<span class="tag ok">validée</span>' : s ? (s.flags.length ? '<span class="tag ko">à revoir</span>' : '<span class="tag ok">cohérente</span>') : '<span class="tag">non vue</span>';
+    return `<button class="h" type="button" data-id="${h.id}" aria-current="${cur?.h === h}"><span class="t"><span>${esc(h.name)}</span><span class="tags">${mod ? '<span class="tag mod">modifiée</span>' : ''}${tag}</span></span>
+      <div class="n">Fiche ${h.km} km, ${h.dplus} m${s ? ` ; trace ${s.km.toFixed(1)} km, ${Math.round(s.dplus)} m` : ''}</div></button>`;
+  }).join('');
+}
+$('#list').addEventListener('click', e => { const b = e.target.closest('button.h'); if (b) select(b.dataset.id); });
+
+function select(id) {
+  const h = hikes.find(x => x.id === id) || hikes[0];
+  cur = { h, ...editable(h), undo: [], s: stats[h.id] || null };
+  map.resize();
+  spotMarkers.forEach(m => m.remove());
+  spotMarkers = h.spots.map(sp => { const el = document.createElement('div'); el.className = 'sp' + (sp.sunset ? ' sun' : ''); el.title = sp.name; return new maplibregl.Marker({ element: el }).setLngLat([sp.lon, sp.lat]).addTo(map); });
+  map.getSource('trace').setData({ type: 'FeatureCollection', features: [] });
+  drawPoints(); drawRef();
+  const all = [...cur.pts, ...(refs[h.id] || [])].map(p => [p[1], p[0]]), b = all.reduce((bb, c) => bb.extend(c), new maplibregl.LngLatBounds(all[0], all[0]));
+  map.fitBounds(b, { padding: { top: 190, bottom: 60, left: 60, right: 60 }, duration: 0, maxZoom: 15 });
+  history.replaceState(null, '', '#' + h.id);
+  panel(); list(); reroute();
+}
+
+function exportData() {
+  return { waypoints: saved.edits, validate: saved.validated };
+}
+$('#expBtn').onclick = () => {
+  const blob = new Blob([JSON.stringify(exportData(), null, 1)], { type: 'application/json' });
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'corrections-gpx.json'; a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+};
+$('#copyBtn').onclick = async () => {
+  try { await navigator.clipboard.writeText(JSON.stringify(exportData())); toast('Corrections copiées'); } catch { toast('Copie impossible, utilise Exporter'); }
+};
+
+map.on('load', async () => {
+  map.addSource('keys', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
+  map.addSource('trace', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
+  map.addSource('ref', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
+  map.addLayer({ id: 'ref', type: 'line', source: 'ref', paint: { 'line-color': '#2D6CDF', 'line-width': 9, 'line-opacity': .45 }, layout: { 'line-join': 'round', 'line-cap': 'round' } });
+  map.addLayer({ id: 'keys', type: 'line', source: 'keys', paint: { 'line-color': '#17222A', 'line-width': 2, 'line-dasharray': [2, 2] } });
+  map.addLayer({ id: 'trace-casing', type: 'line', source: 'trace', paint: { 'line-color': '#fff', 'line-width': 7 }, layout: { 'line-join': 'round', 'line-cap': 'round' } });
+  map.addLayer({ id: 'trace', type: 'line', source: 'trace', paint: { 'line-color': '#E5484D', 'line-width': 4 }, layout: { 'line-join': 'round', 'line-cap': 'round' } });
+  hikes = await (await fetch('../data/hikes.json')).json();
+  select(location.hash.slice(1));
+});
+</script>
+</body>
+</html>
