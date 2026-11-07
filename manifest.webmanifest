@@ -1,0 +1,29 @@
+{
+  "name": "Abendrot, randos au coucher du soleil",
+  "short_name": "Abendrot",
+  "description": "Où voir le coucher de soleil ce soir en Alsace et dans les Vosges.",
+  "lang": "fr",
+  "start_url": "./#liste",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#EDF0F2",
+  "theme_color": "#57568F",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
