@@ -27,7 +27,7 @@ const HOME = { lat: 48.5734, lon: 7.7521, name: 'Strasbourg' };
 const DIFF = ['', 'Facile', 'Moyen', 'Engagé'];
 const SRC = { gpx: 'Trace GPX', import: 'Ta trace', schematic: 'Tracé approximatif' };
 
-const S = { hikes: [], date: todayStr(), pos: null, filter: 'all', sort: 'smart', q: '', saved: { fav: [], done: [] }, pace: 1.25, home: 'gps',
+const S = { hikes: [], date: todayStr(), pos: null, filter: 'all', sort: 'smart', q: '', saved: { fav: [], done: [] }, pace: 1.25, home: 'gps', stay: false,
   wx: null, wxErr: null, base: 'ign', token: 0, cur: null, settings: { sunsethue: '', windy: '', proxy: '' } };
 const trackCache = new Map();
 let map = null, mapMarkers = [];
@@ -73,15 +73,21 @@ function metrics(h, T) {
   const k = f / 1.25;
   return { km: h.km, dplus: h.dplus, total: h.dur * k, toSpot: h.toSpot * k, down: h.down * k, real: false, spotGap: 0 };
 }
-function plan(h, m, date = S.date) {
+// Pic de couleur : PEAK_AFTER min après le coucher géométrique (horizon 0), comme les fenêtres de truth/capture.py.
+// Valeur moyenne en attendant peak_minutes_from_sunset mesuré par spot dans observations.csv.
+const PEAK_AFTER = 15, LEAVE_AFTER = 10;
+function plan(h, m, date = S.date, stay = S.stay) {
   const spot = sunsetSpot(h), p = spot || h.start, day = noon(date);
   const set = effectiveSunset(day, p.lat, p.lon, p.alt, h.horizon || 0);
+  const peak = addMin(effectiveSunset(day, p.lat, p.lon, p.alt, 0), PEAK_AFTER);
   const gold = sunTime(day, p.lat, p.lon, 6), dusk = sunTime(day, p.lat, p.lon, -6);
   const sunsetHike = !!spot && h.sunsetScore >= 2;
   let dep, arrive = null, back;
-  if (sunsetHike) { arrive = addMin(set, -20); dep = addMin(arrive, -m.toSpot); back = addMin(set, 10 + m.down); }
+  // Au spot jusqu'à coucher + 10 min, ou jusqu'au pic + 5 min si on reste pour les couleurs.
+  const leaveSpot = stay ? new Date(Math.max(addMin(set, LEAVE_AFTER), addMin(peak, 5))) : addMin(set, LEAVE_AFTER);
+  if (sunsetHike) { arrive = addMin(set, -20); dep = addMin(arrive, -m.toSpot); back = addMin(leaveSpot, m.down); }
   else { back = addMin(dusk, -30); dep = addMin(back, -m.total); }
-  return { spot, set, gold, dusk, dep, arrive, back, sunsetHike, night: Math.max(0, (back - dusk) / 6e4), az: sunPosition(set, p.lat, p.lon).azimuth };
+  return { spot, set, peak, leaveSpot, gold, dusk, dep, arrive, back, sunsetHike, night: Math.max(0, (back - dusk) / 6e4), az: sunPosition(set, p.lat, p.lon).azimuth };
 }
 const origin = () => (S.home === 'gps' && S.pos) ? S.pos : HOME;
 const originName = () => (S.home === 'gps' && S.pos) ? 'ta position' : HOME.name;
@@ -244,15 +250,28 @@ function viewList(onlyFav) {
 }
 
 /* ---------- fiche ---------- */
+/** Écarte des centres triés (en %) d'au moins `gap`, dans [lo, hi] : les libellés ne se chevauchent plus. */
+function spread(xs, gap, lo, hi) {
+  const x = [...xs];
+  for (let i = 0; i < x.length; i++) x[i] = Math.max(x[i], i ? x[i - 1] + gap : lo);
+  for (let i = x.length - 1; i >= 0; i--) x[i] = Math.min(x[i], i < x.length - 1 ? x[i + 1] - gap : hi);
+  return x;
+}
 function lightBar(p) {
-  const marks = [{ t: p.dep, l: 'Départ', c: 'dn' }];
-  if (p.sunsetHike) marks.push({ t: p.set, l: 'Coucher', c: 'up' });
-  marks.push({ t: p.dusk, l: 'Nuit', c: p.sunsetHike ? 'dn' : 'up' }, { t: p.back, l: 'Parking', c: p.sunsetHike ? 'up' : 'dn' });
+  const marks = [{ t: p.dep, l: 'Départ' }];
+  if (p.sunsetHike) marks.push({ t: p.set, l: 'Coucher' }, { t: p.peak, l: 'Couleurs' });
+  marks.push({ t: p.dusk, l: 'Nuit' }, { t: p.back, l: 'Parking' });
+  marks.sort((a, b) => a.t - b.t).forEach((m, i) => { m.c = i % 2 ? 'up' : 'dn'; });
   const t0 = addMin(p.dep, -15), t1 = addMin(new Date(Math.max(p.back, p.dusk)), 15), span = t1 - t0;
-  const pc = d => Math.max(2, Math.min(98, (d - t0) / span * 100)).toFixed(1);
+  const pos = d => Math.max(2, Math.min(98, (d - t0) / span * 100));
+  const pc = d => pos(d).toFixed(1);
+  for (const row of ['up', 'dn']) {   // une rangée au-dessus, une en dessous, chacune écartée à part
+    const ms = marks.filter(m => m.c === row), xs = spread(ms.map(m => pos(m.t)), 15, 7, 93);
+    ms.forEach((m, i) => { m.x = xs[i]; });
+  }
   const g = `linear-gradient(90deg,var(--sky-day) 0%,var(--sky-day) ${pc(p.gold)}%,var(--sky-gold) ${pc(addMin(p.set, -15))}%,var(--sky-set) ${pc(p.set)}%,var(--sky-dusk) ${pc(p.dusk)}%,var(--sky-night) 100%)`;
-  return `<div class="light" style="background:${g}" role="img" aria-label="Départ ${hm(p.dep)}, coucher ${hm(p.set)}, nuit ${hm(p.dusk)}, retour ${hm(p.back)}">
-    ${marks.map(m => `<div class="lm ${m.c}" style="left:${pc(m.t)}%"><span><b>${hm(m.t)}</b>${m.l}</span></div>`).join('')}</div>`;
+  return `<div class="light" id="light" style="background:${g}" role="img" aria-label="${marks.map(m => `${m.l} ${hm(m.t)}`).join(', ')}">
+    ${marks.map(m => `<i class="lm" style="left:${pc(m.t)}%"></i><span class="ll ${m.c}" style="left:${m.x.toFixed(1)}%"><b>${hm(m.t)}</b>${m.l}</span>`).join('')}</div>`;
 }
 function profileSVG(h, T, m) {
   const W = 360, H = 140, L = 38, R = 10, Tp = 12, B = 22, N = 220, samp = [];
@@ -314,6 +333,14 @@ function wxHTML(h, p) {
     <p class="cap">Prévision ${esc(w.model || 'Open-Meteo')}, à l’altitude du spot.</p>`;
 }
 
+/** Option « rester pour les couleurs » : ce que ça coûte en retour et en descente de nuit. */
+function stayHTML(h, m) {
+  const a = plan(h, m, S.date, false), b = plan(h, m, S.date, true);
+  const more = Math.round((b.back - a.back) / 6e4), night = Math.round(b.night - a.night);
+  const cost = more <= 0 ? 'Sans incidence sur le retour' : `Retour ${more} min plus tard${night > 0 ? `, dont ${night} min de plus de nuit` : ''}`;
+  return `<label class="stay"><input type="checkbox" id="stayIn"${S.stay ? ' checked' : ''}>
+    <span>Rester jusqu’au pic de couleur, vers ${hm(a.peak)}<small>${cost}</small></span></label>`;
+}
 function alertsHTML(h, p, w, late) {
   const a = [];
   if (late) a.push(['warn', 'Trop tard pour ce coucher. Regarde demain ou une rando plus proche.']);
@@ -338,7 +365,7 @@ async function viewDetail(h) {
   const m = metrics(h, T), p = plan(h, m), rd = road(h), w = wxFor(h, p);
   const leave = addMin(p.dep, -rd.min), late = isToday() && leave.getTime() < Date.now() - 10 * 6e4;
   const fav = S.saved.fav.includes(h.id), done = S.saved.done.includes(h.id);
-  S.cur = { h, T, m, p, w };
+  S.cur = { h, T, m, p, w, late };
   if (h.country !== 'FR') S.base = 'topo';
   const gm = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(h.start.query)}`;
   const spotsHTML = h.spots.map((s, i) => `<li><button type="button" data-t="${T.cum[nearestIndex(T, s.lat, s.lon, !!s.sunset).i] / T.km}"><span class="dot${s.sunset ? ' sun' : ''}">${s.sunset ? ic('sunset') : i + 1}</span><span>${esc(s.name)}<small>${esc(s.desc)}</small></span><small>${s.alt} m</small></button></li>`).join('');
@@ -363,11 +390,12 @@ async function viewDetail(h) {
     </div>
     <p class="leave${late ? ' late' : ''}">${ic('car')}${late ? 'Trop tard pour ce soir' : `<span><strong data-leave="${leave.getTime()}">${leaveTxt(leave.getTime())}</strong> de ${originName()}, ${dur(rd.min)} de route</span>`}</p>
     ${lightBar(p)}
+    ${p.sunsetHike ? stayHTML(h, m) : ''}
     <ul class="facts">
       <li>${ic('route')}<b>${nf(m.km)} km</b></li><li>${ic('up')}<b>${Math.round(m.dplus)} m</b></li>
       <li>${ic('clock')}<b>${dur(m.total)}</b></li><li>${ic('mtn')}<b>${DIFF[h.diff]}</b></li>
     </ul>
-    ${alertsHTML(h, p, w, late)}
+    <div id="alerts">${alertsHTML(h, p, w, late)}</div>
 
     <section class="grp"><h2>Météo au spot</h2><div class="card" id="wx">${wxHTML(h, p)}</div></section>
     <section class="grp" id="camGrp" hidden><h2>Webcams</h2><div class="cams" id="cams"></div><p class="cap">Images Windy.com, rafraîchies à chaque ouverture.</p></section>
@@ -411,6 +439,12 @@ async function viewDetail(h) {
 function bindDetail(h) {
   const c = S.cur;
   $('#favBtn').onclick = e => { toggle('fav', h.id); buzz(); const on = S.saved.fav.includes(h.id); const b = e.currentTarget; b.setAttribute('aria-pressed', on); b.innerHTML = ic('star', on ? 'fill' : ''); toast(on ? 'Ajoutée aux favoris' : 'Retirée des favoris'); };
+  $('#stayIn')?.addEventListener('change', e => {
+    S.stay = e.target.checked; store.set('stay', S.stay).catch(() => {}); buzz();
+    c.p = plan(h, c.m);
+    $('#light').outerHTML = lightBar(c.p);
+    $('#alerts').innerHTML = alertsHTML(h, c.p, c.w, c.late);
+  });
   $('#doneBtn').onclick = e => { toggle('done', h.id); buzz(); e.currentTarget.innerHTML = S.saved.done.includes(h.id) ? `${ic('check')} Faite` : 'Marquer comme faite'; };
   $('#shareBtn').onclick = async () => {
     const p = c.p, when = isToday() ? 'ce soir' : noon(S.date).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric' });
@@ -652,7 +686,7 @@ async function init() {
   try { S.hikes = await (await fetch('./data/hikes.json')).json(); }
   catch { app.innerHTML = '<p class="empty">Impossible de charger les randos. Ouvre l’app depuis son adresse web.</p>'; return; }
   try {
-    S.saved = (await store.get('saved')) || S.saved; S.pace = (await store.get('pace')) || S.pace;
+    S.saved = (await store.get('saved')) || S.saved; S.pace = (await store.get('pace')) || S.pace; S.stay = !!(await store.get('stay'));
     S.home = (await store.get('home')) || S.home; S.settings = (await store.get('settings')) || S.settings;
   } catch { /* navigation privée */ }
   await loadModel();
