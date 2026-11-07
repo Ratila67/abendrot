@@ -1,0 +1,1750 @@
+[
+ {
+  "id": "lac-blanc-noir",
+  "name": "Lac Blanc et Lac Noir par la crête",
+  "zone": "Hautes-Vosges, Orbey",
+  "country": "FR",
+  "added": false,
+  "merged": "Lac Blanc & Lac Noir, Crête du Lac Blanc, Lac Noir",
+  "start": {
+   "name": "Parking du Lac Blanc",
+   "lat": 48.129,
+   "lon": 7.0975,
+   "alt": 1060,
+   "query": "Parking Lac Blanc Orbey"
+  },
+  "km": 7.5,
+  "dplus": 420,
+  "dur": 180,
+  "toSpot": 75,
+  "down": 70,
+  "diff": 2,
+  "sunsetScore": 5,
+  "view": "Ouest, Lorraine et lacs",
+  "horizon": 0,
+  "snow": true,
+  "access": "Station du Lac Blanc : route en principe déneigée.",
+  "risk": "Crête ventée, rochers du Hans souvent verglacés, corniches au-dessus du lac.",
+  "gear": [
+   "raquettes",
+   "microspikes",
+   "frontale",
+   "coupe-vent"
+  ],
+  "tip": "Fais Hans puis la crête : tu es en haut pile pour le coucher et tu redescends par le Lac Noir sur un sentier large.",
+  "gpx": null,
+  "spots": [
+   {
+    "name": "Rochers du Château Hans",
+    "lat": 48.127,
+    "lon": 7.089,
+    "alt": 1190,
+    "desc": "Belvédère plongeant sur le Lac Blanc"
+   },
+   {
+    "name": "Crête du Reisberg",
+    "lat": 48.1195,
+    "lon": 7.086,
+    "alt": 1275,
+    "desc": "Spot coucher de soleil, vue vers la Lorraine",
+    "sunset": true
+   },
+   {
+    "name": "Lac Noir",
+    "lat": 48.1175,
+    "lon": 7.1005,
+    "alt": 954,
+    "desc": "Lac glaciaire, souvent gelé en janvier"
+   }
+  ],
+  "waypoints": [
+   [
+    48.129,
+    7.0975,
+    1060
+   ],
+   [
+    48.128,
+    7.093,
+    1120
+   ],
+   [
+    48.127,
+    7.089,
+    1190
+   ],
+   [
+    48.1235,
+    7.0868,
+    1240
+   ],
+   [
+    48.1195,
+    7.086,
+    1275
+   ],
+   [
+    48.1168,
+    7.0925,
+    1150
+   ],
+   [
+    48.1175,
+    7.1005,
+    954
+   ],
+   [
+    48.1228,
+    7.1012,
+    1010
+   ],
+   [
+    48.129,
+    7.0975,
+    1060
+   ]
+  ]
+ },
+ {
+  "id": "hohneck",
+  "name": "Hohneck et Kastelberg par la crête",
+  "zone": "Hautes-Vosges, Col de la Schlucht",
+  "country": "FR",
+  "added": false,
+  "merged": "Hohneck & Frankenthal, Hohneck + Kastelberg, Sentier des Roches",
+  "start": {
+   "name": "Col de la Schlucht",
+   "lat": 48.0636,
+   "lon": 7.0219,
+   "alt": 1139,
+   "query": "Col de la Schlucht"
+  },
+  "km": 12,
+  "dplus": 480,
+  "dur": 270,
+  "toSpot": 170,
+  "down": 75,
+  "diff": 3,
+  "sunsetScore": 5,
+  "view": "360°, Alpes par temps clair",
+  "horizon": 0,
+  "snow": true,
+  "access": "Col de la Schlucht ouvert l’hiver (D417). Route des Crêtes fermée au-delà.",
+  "risk": "Sentier des Roches et fond du Frankenthal à éviter l’hiver : glace et couloirs avalancheux. Corniches côté est : reste loin du bord.",
+  "gear": [
+   "raquettes",
+   "crampons légers",
+   "frontale",
+   "doudoune",
+   "vigilance avalanche"
+  ],
+  "tip": "Kastelberg d’abord, retour sur le Hohneck pour le coucher : il ne reste qu’1 h 15 de crête facile jusqu’au col.",
+  "gpx": null,
+  "spots": [
+   {
+    "name": "Belvédère du Frankenthal",
+    "lat": 48.0425,
+    "lon": 7.0255,
+    "alt": 1300,
+    "desc": "Vue sur le cirque, depuis le haut uniquement"
+   },
+   {
+    "name": "Hohneck",
+    "lat": 48.0397,
+    "lon": 7.0172,
+    "alt": 1363,
+    "desc": "Sommet 360°, table d’orientation",
+    "sunset": true
+   },
+   {
+    "name": "Kastelberg",
+    "lat": 48.0215,
+    "lon": 7.036,
+    "alt": 1350,
+    "desc": "Chaumes sauvages au-dessus de la Wormsa"
+   }
+  ],
+  "waypoints": [
+   [
+    48.0636,
+    7.0219,
+    1139
+   ],
+   [
+    48.0572,
+    7.0198,
+    1230
+   ],
+   [
+    48.05,
+    7.021,
+    1265
+   ],
+   [
+    48.0425,
+    7.0255,
+    1300
+   ],
+   [
+    48.0397,
+    7.0172,
+    1363
+   ],
+   [
+    48.031,
+    7.026,
+    1310
+   ],
+   [
+    48.0215,
+    7.036,
+    1350
+   ],
+   [
+    48.031,
+    7.026,
+    1310
+   ],
+   [
+    48.0397,
+    7.0172,
+    1363
+   ],
+   [
+    48.049,
+    7.017,
+    1250
+   ],
+   [
+    48.0636,
+    7.0219,
+    1139
+   ]
+  ]
+ },
+ {
+  "id": "truites-gazon",
+  "name": "Lac Vert, Lac des Truites et Gazon du Faing",
+  "zone": "Hautes-Vosges, Soultzeren",
+  "country": "FR",
+  "added": false,
+  "merged": "Lac des Truites, Tour des 3 lacs, Gazon du Faing",
+  "start": {
+   "name": "Lac Vert",
+   "lat": 48.096,
+   "lon": 7.086,
+   "alt": 1040,
+   "query": "Lac Vert Soultzeren"
+  },
+  "km": 9,
+  "dplus": 450,
+  "dur": 210,
+  "toSpot": 110,
+  "down": 60,
+  "diff": 2,
+  "sunsetScore": 4,
+  "view": "Ouest et Hohneck",
+  "horizon": 0,
+  "snow": true,
+  "access": "Accès au Lac Vert pas toujours déneigé : vérifie, sinon pars de Soultzeren (+1 h 30).",
+  "risk": "Montée raide au-dessus du Lac des Truites, neige dure en fin de journée.",
+  "gear": [
+   "raquettes",
+   "microspikes",
+   "frontale"
+  ],
+  "tip": "Chamois très fréquents sur le Gazon du Faing en fin de journée : reste discret.",
+  "gpx": null,
+  "spots": [
+   {
+    "name": "Lac des Truites (Forlet)",
+    "lat": 48.088,
+    "lon": 7.074,
+    "alt": 1066,
+    "desc": "Lac au pied des falaises"
+   },
+   {
+    "name": "Gazon du Faing",
+    "lat": 48.104,
+    "lon": 7.069,
+    "alt": 1302,
+    "desc": "Chaumes ouvertes, coucher face à la Lorraine",
+    "sunset": true
+   }
+  ],
+  "waypoints": [
+   [
+    48.096,
+    7.086,
+    1040
+   ],
+   [
+    48.0915,
+    7.08,
+    1060
+   ],
+   [
+    48.088,
+    7.074,
+    1066
+   ],
+   [
+    48.0935,
+    7.068,
+    1200
+   ],
+   [
+    48.104,
+    7.069,
+    1302
+   ],
+   [
+    48.101,
+    7.08,
+    1180
+   ],
+   [
+    48.096,
+    7.086,
+    1040
+   ]
+  ]
+ },
+ {
+  "id": "haut-koenigsbourg",
+  "name": "Oedenbourg et Haut-Kœnigsbourg",
+  "zone": "Piémont, Saint-Hippolyte",
+  "country": "FR",
+  "added": false,
+  "merged": "Haut-Koenigsbourg & Oedenbourg, Saint-Hippolyte → Haut-Koenigsbourg",
+  "start": {
+   "name": "Saint-Hippolyte",
+   "lat": 48.2318,
+   "lon": 7.3717,
+   "alt": 240,
+   "query": "Saint-Hippolyte 68590"
+  },
+  "km": 11,
+  "dplus": 600,
+  "dur": 240,
+  "toSpot": 130,
+  "down": 80,
+  "diff": 2,
+  "sunsetScore": 3,
+  "view": "Est, plaine et Forêt-Noire dorées",
+  "horizon": 2.7,
+  "snow": false,
+  "access": "Village et route du château ouverts toute l’année.",
+  "risk": "Descente en forêt de nuit, feuilles mouillées glissantes.",
+  "gear": [
+   "frontale",
+   "bâtons"
+  ],
+  "tip": "Le soleil passe derrière les Vosges : tu ne le vois pas plonger, mais la plaine vire à l’orange. Vise la terrasse est.",
+  "gpx": null,
+  "spots": [
+   {
+    "name": "Vignes de Saint-Hippolyte",
+    "lat": 48.237,
+    "lon": 7.364,
+    "alt": 330,
+    "desc": "Lumière rasante sur le vignoble"
+   },
+   {
+    "name": "Oedenbourg",
+    "lat": 48.2512,
+    "lon": 7.3365,
+    "alt": 720,
+    "desc": "Ruines voisines, plus sauvages"
+   },
+   {
+    "name": "Haut-Kœnigsbourg",
+    "lat": 48.2495,
+    "lon": 7.3443,
+    "alt": 757,
+    "desc": "Château, vue plaine et Forêt-Noire",
+    "sunset": true
+   }
+  ],
+  "waypoints": [
+   [
+    48.2318,
+    7.3717,
+    240
+   ],
+   [
+    48.237,
+    7.364,
+    330
+   ],
+   [
+    48.244,
+    7.348,
+    600
+   ],
+   [
+    48.2512,
+    7.3365,
+    720
+   ],
+   [
+    48.2495,
+    7.3443,
+    757
+   ],
+   [
+    48.243,
+    7.356,
+    520
+   ],
+   [
+    48.2385,
+    7.361,
+    380
+   ],
+   [
+    48.2318,
+    7.3717,
+    240
+   ]
+  ]
+ },
+ {
+  "id": "grand-ballon",
+  "name": "Grand Ballon et Storkenkopf",
+  "zone": "Hautes-Vosges, Guebwiller",
+  "country": "FR",
+  "added": false,
+  "merged": "Grand Ballon",
+  "start": {
+   "name": "Parking du Grand Ballon",
+   "lat": 47.9035,
+   "lon": 7.1045,
+   "alt": 1325,
+   "query": "Grand Ballon parking"
+  },
+  "km": 6,
+  "dplus": 250,
+  "dur": 120,
+  "toSpot": 100,
+  "down": 20,
+  "diff": 1,
+  "sunsetScore": 5,
+  "view": "360°, Alpes, Forêt-Noire, Jura",
+  "horizon": 0,
+  "snow": true,
+  "access": "Route des Crêtes partiellement fermée l’hiver : vérifie l’accès (D431) avant de partir.",
+  "risk": "Vent violent, ressenti sous -15 °C fréquent au sommet.",
+  "gear": [
+   "raquettes",
+   "frontale",
+   "doudoune",
+   "gants chauds"
+  ],
+  "tip": "Seulement 20 min de descente après le coucher : le meilleur ratio vue/risque de la liste. Vise les jours d’inversion : mer de nuages et Alpes.",
+  "gpx": null,
+  "spots": [
+   {
+    "name": "Storkenkopf",
+    "lat": 47.9235,
+    "lon": 7.09,
+    "alt": 1366,
+    "desc": "Crête calme, vue sur la vallée de la Thur"
+   },
+   {
+    "name": "Sommet du Grand Ballon",
+    "lat": 47.9015,
+    "lon": 7.0985,
+    "alt": 1424,
+    "desc": "Point culminant des Vosges, Alpes visibles",
+    "sunset": true
+   }
+  ],
+  "waypoints": [
+   [
+    47.9035,
+    7.1045,
+    1325
+   ],
+   [
+    47.911,
+    7.099,
+    1345
+   ],
+   [
+    47.918,
+    7.094,
+    1350
+   ],
+   [
+    47.9235,
+    7.09,
+    1366
+   ],
+   [
+    47.9175,
+    7.0955,
+    1350
+   ],
+   [
+    47.9095,
+    7.0965,
+    1385
+   ],
+   [
+    47.9015,
+    7.0985,
+    1424
+   ],
+   [
+    47.9035,
+    7.1045,
+    1325
+   ]
+  ]
+ },
+ {
+  "id": "champ-du-feu",
+  "name": "Champ du Feu et Cascade de la Serva",
+  "zone": "Bas-Rhin, Ban de la Roche",
+  "country": "FR",
+  "added": false,
+  "merged": "Champ du Feu, Cascade de la Serva",
+  "start": {
+   "name": "Tour du Champ du Feu",
+   "lat": 48.3966,
+   "lon": 7.269,
+   "alt": 1099,
+   "query": "Tour du Champ du Feu"
+  },
+  "km": 9,
+  "dplus": 330,
+  "dur": 180,
+  "toSpot": 160,
+  "down": 5,
+  "diff": 1,
+  "sunsetScore": 4,
+  "view": "360° depuis la tour, Alpes rares",
+  "horizon": 0,
+  "snow": true,
+  "access": "Route ouverte (station de ski), le spot neige le plus proche de Strasbourg.",
+  "risk": "Brouillard fréquent, balisage parfois enfoui sous la neige.",
+  "gear": [
+   "raquettes",
+   "frontale"
+  ],
+  "tip": "Cascade d’abord, tour en dernier : tu finis le coucher à 5 min de la voiture.",
+  "gpx": null,
+  "spots": [
+   {
+    "name": "Cascade de la Serva",
+    "lat": 48.4125,
+    "lon": 7.235,
+    "alt": 830,
+    "desc": "Cascade souvent givrée"
+   },
+   {
+    "name": "Tour du Champ du Feu",
+    "lat": 48.3966,
+    "lon": 7.269,
+    "alt": 1099,
+    "desc": "Tour d’observation, panorama 360°",
+    "sunset": true
+   }
+  ],
+  "waypoints": [
+   [
+    48.3966,
+    7.269,
+    1099
+   ],
+   [
+    48.401,
+    7.26,
+    1060
+   ],
+   [
+    48.407,
+    7.247,
+    960
+   ],
+   [
+    48.4125,
+    7.235,
+    830
+   ],
+   [
+    48.406,
+    7.24,
+    900
+   ],
+   [
+    48.4,
+    7.252,
+    1020
+   ],
+   [
+    48.3966,
+    7.269,
+    1099
+   ]
+  ]
+ },
+ {
+  "id": "wormsa",
+  "name": "Vallée de la Wormsa, Fischbœdle et Schiessrothried",
+  "zone": "Vallée de Munster, Metzeral",
+  "country": "FR",
+  "added": false,
+  "merged": "Vallée de la Wormsa",
+  "start": {
+   "name": "Parking du Kolben, Metzeral",
+   "lat": 48.027,
+   "lon": 7.075,
+   "alt": 620,
+   "query": "Lac du Fischboedle Metzeral"
+  },
+  "km": 10,
+  "dplus": 450,
+  "dur": 210,
+  "toSpot": 110,
+  "down": 100,
+  "diff": 2,
+  "sunsetScore": 1,
+  "view": "Vallée encaissée, pas de coucher direct",
+  "horizon": 15,
+  "snow": true,
+  "access": "Route jusqu’au parking, verglas fréquent à l’ombre.",
+  "risk": "Couloirs du Wormspel et du Schiessroth avalancheux : reste en fond de vallée.",
+  "gear": [
+   "microspikes",
+   "frontale",
+   "vigilance avalanche"
+  ],
+  "tip": "Rando de journée, pas de sunset : l’ombre tombe dès 15 h en décembre. Parfaite quand les crêtes sont balayées par le vent.",
+  "gpx": null,
+  "spots": [
+   {
+    "name": "Lac du Fischbœdle",
+    "lat": 48.031,
+    "lon": 7.049,
+    "alt": 790,
+    "desc": "Petit lac bijou, cascades gelées"
+   },
+   {
+    "name": "Lac du Schiessrothried",
+    "lat": 48.03,
+    "lon": 7.033,
+    "alt": 920,
+    "desc": "Lac sous les falaises du Hohneck"
+   }
+  ],
+  "waypoints": [
+   [
+    48.027,
+    7.075,
+    620
+   ],
+   [
+    48.029,
+    7.062,
+    700
+   ],
+   [
+    48.031,
+    7.049,
+    790
+   ],
+   [
+    48.0312,
+    7.04,
+    860
+   ],
+   [
+    48.03,
+    7.033,
+    920
+   ],
+   [
+    48.0255,
+    7.045,
+    800
+   ],
+   [
+    48.0255,
+    7.06,
+    680
+   ],
+   [
+    48.027,
+    7.075,
+    620
+   ]
+  ]
+ },
+ {
+  "id": "altenweiher",
+  "name": "Lac d’Altenweiher",
+  "zone": "Vallée de Munster, Mittlach",
+  "country": "FR",
+  "added": false,
+  "merged": "Lac d’Altenweiher",
+  "start": {
+   "name": "Mittlach",
+   "lat": 48.003,
+   "lon": 7.042,
+   "alt": 560,
+   "query": "Mittlach"
+  },
+  "km": 8,
+  "dplus": 400,
+  "dur": 180,
+  "toSpot": 90,
+  "down": 70,
+  "diff": 2,
+  "sunsetScore": 2,
+  "view": "Lac en cuvette, vue partielle",
+  "horizon": 8,
+  "snow": true,
+  "access": "Route de Mittlach ouverte.",
+  "risk": "Pentes boisées raides, neige tôlée.",
+  "gear": [
+   "microspikes",
+   "frontale"
+  ],
+  "tip": "Lac souvent gelé et silencieux en janvier : vise le début d’après-midi pour la lumière.",
+  "gpx": null,
+  "spots": [
+   {
+    "name": "Lac d’Altenweiher",
+    "lat": 47.9935,
+    "lon": 7.024,
+    "alt": 915,
+    "desc": "Lac de barrage dans un cirque boisé"
+   }
+  ],
+  "waypoints": [
+   [
+    48.003,
+    7.042,
+    560
+   ],
+   [
+    47.999,
+    7.036,
+    680
+   ],
+   [
+    47.9955,
+    7.029,
+    820
+   ],
+   [
+    47.9935,
+    7.024,
+    915
+   ],
+   [
+    47.9975,
+    7.026,
+    820
+   ],
+   [
+    48.001,
+    7.035,
+    650
+   ],
+   [
+    48.003,
+    7.042,
+    560
+   ]
+  ]
+ },
+ {
+  "id": "ribeauville",
+  "name": "Les 3 châteaux de Ribeauvillé",
+  "zone": "Piémont, Ribeauvillé",
+  "country": "FR",
+  "added": false,
+  "merged": "3 châteaux de Ribeauvillé",
+  "start": {
+   "name": "Ribeauvillé",
+   "lat": 48.1953,
+   "lon": 7.3185,
+   "alt": 240,
+   "query": "Parking Ribeauvillé"
+  },
+  "km": 6.5,
+  "dplus": 460,
+  "dur": 165,
+  "toSpot": 80,
+  "down": 50,
+  "diff": 2,
+  "sunsetScore": 4,
+  "view": "Est, plaine et Forêt-Noire",
+  "horizon": 3,
+  "snow": false,
+  "access": "Départ en ville, accessible tout l’hiver.",
+  "risk": "Escaliers de Saint-Ulrich glissants, ruines non éclairées.",
+  "gear": [
+   "frontale",
+   "bâtons"
+  ],
+  "tip": "Bonus : vin chaud en ville au retour pendant le marché de Noël.",
+  "gpx": null,
+  "spots": [
+   {
+    "name": "Saint-Ulrich",
+    "lat": 48.1985,
+    "lon": 7.3048,
+    "alt": 530,
+    "desc": "Le plus grand des trois, fenêtres romanes"
+   },
+   {
+    "name": "Girsberg",
+    "lat": 48.199,
+    "lon": 7.3015,
+    "alt": 528,
+    "desc": "Piton rocheux, vu depuis Saint-Ulrich"
+   },
+   {
+    "name": "Haut-Ribeaupierre",
+    "lat": 48.203,
+    "lon": 7.299,
+    "alt": 642,
+    "desc": "Le plus haut, donjon panoramique",
+    "sunset": true
+   }
+  ],
+  "waypoints": [
+   [
+    48.1953,
+    7.3185,
+    240
+   ],
+   [
+    48.1965,
+    7.312,
+    330
+   ],
+   [
+    48.1985,
+    7.3048,
+    530
+   ],
+   [
+    48.199,
+    7.3015,
+    528
+   ],
+   [
+    48.203,
+    7.299,
+    642
+   ],
+   [
+    48.2005,
+    7.306,
+    500
+   ],
+   [
+    48.1975,
+    7.313,
+    320
+   ],
+   [
+    48.1953,
+    7.3185,
+    240
+   ]
+  ]
+ },
+ {
+  "id": "eguisheim",
+  "name": "Les 3 châteaux d’Eguisheim",
+  "zone": "Piémont, Eguisheim",
+  "country": "FR",
+  "added": false,
+  "merged": "3 châteaux d’Eguisheim",
+  "start": {
+   "name": "Eguisheim",
+   "lat": 48.043,
+   "lon": 7.305,
+   "alt": 210,
+   "query": "Parking Eguisheim"
+  },
+  "km": 9,
+  "dplus": 480,
+  "dur": 195,
+  "toSpot": 100,
+  "down": 75,
+  "diff": 2,
+  "sunsetScore": 4,
+  "view": "Est, Colmar et Forêt-Noire",
+  "horizon": 3,
+  "snow": false,
+  "access": "Village accessible, parking des châteaux aussi.",
+  "risk": "Descente en forêt de nuit, chemins boueux.",
+  "gear": [
+   "frontale",
+   "bâtons"
+  ],
+  "tip": "Version courte : parking des Trois Châteaux, 10 min de marche, parfait un soir de semaine.",
+  "gpx": null,
+  "spots": [
+   {
+    "name": "Husseren-les-Châteaux",
+    "lat": 48.041,
+    "lon": 7.285,
+    "alt": 380,
+    "desc": "Village viticole le plus haut d’Alsace"
+   },
+   {
+    "name": "Trois Exen",
+    "lat": 48.034,
+    "lon": 7.272,
+    "alt": 590,
+    "desc": "Trois donjons, plaine en feu au coucher",
+    "sunset": true
+   }
+  ],
+  "waypoints": [
+   [
+    48.043,
+    7.305,
+    210
+   ],
+   [
+    48.044,
+    7.293,
+    300
+   ],
+   [
+    48.041,
+    7.285,
+    380
+   ],
+   [
+    48.038,
+    7.278,
+    480
+   ],
+   [
+    48.034,
+    7.272,
+    590
+   ],
+   [
+    48.033,
+    7.283,
+    450
+   ],
+   [
+    48.0385,
+    7.298,
+    280
+   ],
+   [
+    48.043,
+    7.305,
+    210
+   ]
+  ]
+ },
+ {
+  "id": "stolz-ablass",
+  "name": "Cascade du Stolz Ablass",
+  "zone": "Vallée de Munster, Stosswihr",
+  "country": "FR",
+  "added": false,
+  "merged": "Cascade de Stolz Ablass",
+  "start": {
+   "name": "Stosswihr, Ampfersbach",
+   "lat": 48.056,
+   "lon": 7.088,
+   "alt": 650,
+   "query": "Cascade du Stolz Ablass"
+  },
+  "km": 5,
+  "dplus": 250,
+  "dur": 110,
+  "toSpot": 60,
+  "down": 45,
+  "diff": 1,
+  "sunsetScore": 1,
+  "view": "Forêt, pas de vue au couchant",
+  "horizon": 20,
+  "snow": true,
+  "access": "Accès par la route de la Schlucht (D417).",
+  "risk": "Abords de la cascade verglacés.",
+  "gear": [
+   "microspikes"
+  ],
+  "tip": "La sortie des jours de brouillard : quand les crêtes sont bouchées, les cascades gelées valent le détour.",
+  "gpx": null,
+  "spots": [
+   {
+    "name": "Cascade du Stolz Ablass",
+    "lat": 48.052,
+    "lon": 7.076,
+    "alt": 850,
+    "desc": "Cascade en gradins, spectaculaire gelée"
+   }
+  ],
+  "waypoints": [
+   [
+    48.056,
+    7.088,
+    650
+   ],
+   [
+    48.0545,
+    7.083,
+    720
+   ],
+   [
+    48.053,
+    7.079,
+    800
+   ],
+   [
+    48.052,
+    7.076,
+    850
+   ],
+   [
+    48.0535,
+    7.0815,
+    760
+   ],
+   [
+    48.056,
+    7.088,
+    650
+   ]
+  ]
+ },
+ {
+  "id": "petit-ballon",
+  "name": "Petit Ballon (Kahlenwasen)",
+  "zone": "Vallée de Munster, Wihr-au-Val",
+  "country": "FR",
+  "added": true,
+  "merged": "Remplace « Vallée de Munster »",
+  "start": {
+   "name": "Col du Boenlesgrab",
+   "lat": 47.9925,
+   "lon": 7.152,
+   "alt": 1090,
+   "query": "Col du Boenlesgrab"
+  },
+  "km": 6,
+  "dplus": 260,
+  "dur": 140,
+  "toSpot": 60,
+  "down": 45,
+  "diff": 1,
+  "sunsetScore": 5,
+  "view": "360°, Alpes, Grand Ballon, plaine",
+  "horizon": 0,
+  "snow": true,
+  "access": "Route du col pas toujours déneigée : vérifie, sinon pars de Wasserbourg.",
+  "risk": "Sommet chauve très exposé au vent.",
+  "gear": [
+   "raquettes",
+   "frontale",
+   "coupe-vent"
+  ],
+  "tip": "Sommet totalement dégagé : le plus beau 360° pour l’effort demandé.",
+  "gpx": null,
+  "spots": [
+   {
+    "name": "Petit Ballon",
+    "lat": 47.9833,
+    "lon": 7.1306,
+    "alt": 1272,
+    "desc": "Sommet chauve, vue sur tout le massif",
+    "sunset": true
+   }
+  ],
+  "waypoints": [
+   [
+    47.9925,
+    7.152,
+    1090
+   ],
+   [
+    47.99,
+    7.144,
+    1150
+   ],
+   [
+    47.9865,
+    7.136,
+    1220
+   ],
+   [
+    47.9833,
+    7.1306,
+    1272
+   ],
+   [
+    47.988,
+    7.139,
+    1180
+   ],
+   [
+    47.9925,
+    7.152,
+    1090
+   ]
+  ]
+ },
+ {
+  "id": "donon",
+  "name": "Le Donon",
+  "zone": "Vosges moyennes, Grandfontaine",
+  "country": "FR",
+  "added": true,
+  "merged": "",
+  "start": {
+   "name": "Col du Donon",
+   "lat": 48.511,
+   "lon": 7.165,
+   "alt": 727,
+   "query": "Col du Donon"
+  },
+  "km": 5.5,
+  "dplus": 300,
+  "dur": 120,
+  "toSpot": 60,
+  "down": 40,
+  "diff": 1,
+  "sunsetScore": 5,
+  "view": "360°, Lorraine et Alsace",
+  "horizon": 0,
+  "snow": true,
+  "access": "Col du Donon ouvert (D392).",
+  "risk": "Dalles verglacées au sommet, vent fort.",
+  "gear": [
+   "microspikes",
+   "frontale"
+  ],
+  "tip": "Le temple face au soleil couchant, à environ 1 h de Strasbourg : le sunset le plus rentable de la liste.",
+  "gpx": null,
+  "spots": [
+   {
+    "name": "Temple du Donon",
+    "lat": 48.5123,
+    "lon": 7.172,
+    "alt": 1009,
+    "desc": "Temple néo-romain, vue 360°",
+    "sunset": true
+   }
+  ],
+  "waypoints": [
+   [
+    48.511,
+    7.165,
+    727
+   ],
+   [
+    48.51,
+    7.169,
+    800
+   ],
+   [
+    48.5112,
+    7.1735,
+    920
+   ],
+   [
+    48.5123,
+    7.172,
+    1009
+   ],
+   [
+    48.514,
+    7.169,
+    900
+   ],
+   [
+    48.5125,
+    7.165,
+    780
+   ],
+   [
+    48.511,
+    7.165,
+    727
+   ]
+  ]
+ },
+ {
+  "id": "sainte-odile",
+  "name": "Mont Sainte-Odile, Mur Païen et Maennelstein",
+  "zone": "Piémont, Ottrott",
+  "country": "FR",
+  "added": true,
+  "merged": "",
+  "start": {
+   "name": "Mont Sainte-Odile",
+   "lat": 48.4378,
+   "lon": 7.404,
+   "alt": 760,
+   "query": "Mont Sainte-Odile"
+  },
+  "km": 8,
+  "dplus": 250,
+  "dur": 165,
+  "toSpot": 80,
+  "down": 50,
+  "diff": 1,
+  "sunsetScore": 4,
+  "view": "Est, plaine et Strasbourg",
+  "horizon": 2,
+  "snow": false,
+  "access": "Route ouverte toute l’année.",
+  "risk": "Rochers glissants autour du Maennelstein.",
+  "gear": [
+   "frontale"
+  ],
+  "tip": "Plan B neige à 45 min de Strasbourg, avec la plaine qui s’allume au crépuscule.",
+  "gpx": null,
+  "spots": [
+   {
+    "name": "Mur Païen",
+    "lat": 48.43,
+    "lon": 7.4,
+    "alt": 740,
+    "desc": "Enceinte mégalithique de 10 km"
+   },
+   {
+    "name": "Maennelstein",
+    "lat": 48.421,
+    "lon": 7.402,
+    "alt": 817,
+    "desc": "Rocher-belvédère sur la plaine",
+    "sunset": true
+   }
+  ],
+  "waypoints": [
+   [
+    48.4378,
+    7.404,
+    760
+   ],
+   [
+    48.433,
+    7.401,
+    770
+   ],
+   [
+    48.43,
+    7.4,
+    740
+   ],
+   [
+    48.425,
+    7.4005,
+    790
+   ],
+   [
+    48.421,
+    7.402,
+    817
+   ],
+   [
+    48.426,
+    7.4065,
+    760
+   ],
+   [
+    48.433,
+    7.407,
+    750
+   ],
+   [
+    48.4378,
+    7.404,
+    760
+   ]
+  ]
+ },
+ {
+  "id": "taennchel",
+  "name": "Taennchel et Rochers des Titans",
+  "zone": "Piémont, Thannenkirch",
+  "country": "FR",
+  "added": true,
+  "merged": "",
+  "start": {
+   "name": "Thannenkirch",
+   "lat": 48.234,
+   "lon": 7.3,
+   "alt": 510,
+   "query": "Thannenkirch"
+  },
+  "km": 12,
+  "dplus": 560,
+  "dur": 270,
+  "toSpot": 140,
+  "down": 90,
+  "diff": 3,
+  "sunsetScore": 3,
+  "view": "Crête boisée, trouées est et ouest",
+  "horizon": 1,
+  "snow": true,
+  "access": "Village accessible.",
+  "risk": "Rochers glissants, crête peu fréquentée l’hiver.",
+  "gear": [
+   "microspikes",
+   "frontale",
+   "bâtons"
+  ],
+  "tip": "Ambiance mystique garantie, surtout avec un peu de brume.",
+  "gpx": null,
+  "spots": [
+   {
+    "name": "Rochers des Titans",
+    "lat": 48.223,
+    "lon": 7.274,
+    "alt": 900,
+    "desc": "Chaos de grès aux formes étranges"
+   },
+   {
+    "name": "Sommet du Taennchel",
+    "lat": 48.2195,
+    "lon": 7.264,
+    "alt": 988,
+    "desc": "Rochers sommitaux, trouée sur la plaine",
+    "sunset": true
+   }
+  ],
+  "waypoints": [
+   [
+    48.234,
+    7.3,
+    510
+   ],
+   [
+    48.232,
+    7.288,
+    650
+   ],
+   [
+    48.227,
+    7.279,
+    800
+   ],
+   [
+    48.223,
+    7.274,
+    900
+   ],
+   [
+    48.2195,
+    7.264,
+    988
+   ],
+   [
+    48.2245,
+    7.27,
+    900
+   ],
+   [
+    48.23,
+    7.286,
+    700
+   ],
+   [
+    48.234,
+    7.3,
+    510
+   ]
+  ]
+ },
+ {
+  "id": "brezouard",
+  "name": "Le Brézouard",
+  "zone": "Hautes-Vosges, Col des Bagenelles",
+  "country": "FR",
+  "added": true,
+  "merged": "",
+  "start": {
+   "name": "Col des Bagenelles",
+   "lat": 48.204,
+   "lon": 7.14,
+   "alt": 903,
+   "query": "Col des Bagenelles"
+  },
+  "km": 6,
+  "dplus": 340,
+  "dur": 135,
+  "toSpot": 70,
+  "down": 50,
+  "diff": 2,
+  "sunsetScore": 5,
+  "view": "360°, Vosges, plaine, Alpes",
+  "horizon": 0,
+  "snow": true,
+  "access": "Déneigement du col à vérifier.",
+  "risk": "Sommet exposé, pierrier glissant.",
+  "gear": [
+   "raquettes",
+   "frontale"
+  ],
+  "tip": "Beaucoup moins de monde que le Hohneck pour un panorama équivalent.",
+  "gpx": null,
+  "spots": [
+   {
+    "name": "Sommet du Brézouard",
+    "lat": 48.1945,
+    "lon": 7.166,
+    "alt": 1228,
+    "desc": "Panorama 360° sur tout le massif",
+    "sunset": true
+   }
+  ],
+  "waypoints": [
+   [
+    48.204,
+    7.14,
+    903
+   ],
+   [
+    48.201,
+    7.148,
+    980
+   ],
+   [
+    48.1975,
+    7.157,
+    1100
+   ],
+   [
+    48.1945,
+    7.166,
+    1228
+   ],
+   [
+    48.199,
+    7.158,
+    1080
+   ],
+   [
+    48.204,
+    7.14,
+    903
+   ]
+  ]
+ },
+ {
+  "id": "ballon-alsace",
+  "name": "Ballon d’Alsace",
+  "zone": "Vosges du Sud, Territoire de Belfort",
+  "country": "FR",
+  "added": true,
+  "merged": "",
+  "start": {
+   "name": "Col du Ballon d’Alsace",
+   "lat": 47.824,
+   "lon": 6.842,
+   "alt": 1170,
+   "query": "Ballon d’Alsace"
+  },
+  "km": 4.5,
+  "dplus": 150,
+  "dur": 90,
+  "toSpot": 35,
+  "down": 30,
+  "diff": 1,
+  "sunsetScore": 5,
+  "view": "Ouest et Alpes",
+  "horizon": 0,
+  "snow": true,
+  "access": "Route du col déneigée (station de ski).",
+  "risk": "Brouillard rapide, chaumes sans repères.",
+  "gear": [
+   "raquettes",
+   "frontale"
+  ],
+  "tip": "Le plus court de la liste : parfait pour un sunset improvisé.",
+  "gpx": null,
+  "spots": [
+   {
+    "name": "Sommet du Ballon d’Alsace",
+    "lat": 47.8227,
+    "lon": 6.835,
+    "alt": 1247,
+    "desc": "Table d’orientation, Alpes au sud",
+    "sunset": true
+   }
+  ],
+  "waypoints": [
+   [
+    47.824,
+    6.842,
+    1170
+   ],
+   [
+    47.825,
+    6.8385,
+    1200
+   ],
+   [
+    47.8227,
+    6.835,
+    1247
+   ],
+   [
+    47.8215,
+    6.8395,
+    1195
+   ],
+   [
+    47.824,
+    6.842,
+    1170
+   ]
+  ]
+ },
+ {
+  "id": "belchen",
+  "name": "Belchen",
+  "zone": "Forêt-Noire, Allemagne",
+  "country": "DE",
+  "added": true,
+  "merged": "",
+  "start": {
+   "name": "Parking Belchen, Multen",
+   "lat": 47.835,
+   "lon": 7.856,
+   "alt": 1000,
+   "query": "Belchen Multen Parkplatz"
+  },
+  "km": 7,
+  "dplus": 450,
+  "dur": 165,
+  "toSpot": 90,
+  "down": 60,
+  "diff": 2,
+  "sunsetScore": 5,
+  "view": "Ouest, le soleil passe derrière la ligne des Vosges",
+  "horizon": 0,
+  "snow": true,
+  "access": "Route jusqu’à Multen ouverte, télécabine selon horaires.",
+  "risk": "Sommet glacé et venté, descente de nuit en forêt.",
+  "gear": [
+   "raquettes",
+   "microspikes",
+   "frontale"
+  ],
+  "tip": "Le contrechamp parfait : tu vois toute la chaîne des Vosges en silhouette, avec les Alpes en prime.",
+  "gpx": null,
+  "spots": [
+   {
+    "name": "Sommet du Belchen",
+    "lat": 47.8227,
+    "lon": 7.8331,
+    "alt": 1414,
+    "desc": "Croix sommitale, vue Vosges et Alpes",
+    "sunset": true
+   }
+  ],
+  "waypoints": [
+   [
+    47.835,
+    7.856,
+    1000
+   ],
+   [
+    47.832,
+    7.848,
+    1120
+   ],
+   [
+    47.828,
+    7.84,
+    1260
+   ],
+   [
+    47.8227,
+    7.8331,
+    1414
+   ],
+   [
+    47.8265,
+    7.844,
+    1250
+   ],
+   [
+    47.832,
+    7.852,
+    1080
+   ],
+   [
+    47.835,
+    7.856,
+    1000
+   ]
+  ]
+ },
+ {
+  "id": "dabo",
+  "name": "Rocher de Dabo",
+  "zone": "Moselle, Dabo",
+  "country": "FR",
+  "added": true,
+  "merged": "",
+  "start": {
+   "name": "Dabo",
+   "lat": 48.654,
+   "lon": 7.24,
+   "alt": 500,
+   "query": "Rocher de Dabo"
+  },
+  "km": 5,
+  "dplus": 220,
+  "dur": 100,
+  "toSpot": 50,
+  "down": 35,
+  "diff": 1,
+  "sunsetScore": 4,
+  "view": "360°, forêts mosellanes",
+  "horizon": 0,
+  "snow": false,
+  "access": "Route ouverte, parking au pied du rocher pour la version express.",
+  "risk": "Escaliers du rocher glissants.",
+  "gear": [
+   "frontale"
+  ],
+  "tip": "Rarement enneigé, et la chapelle sur son rocher fait une silhouette parfaite au coucher.",
+  "gpx": null,
+  "spots": [
+   {
+    "name": "Rocher et chapelle Saint-Léon",
+    "lat": 48.6514,
+    "lon": 7.2364,
+    "alt": 664,
+    "desc": "Chapelle perchée, vue 360°",
+    "sunset": true
+   }
+  ],
+  "waypoints": [
+   [
+    48.654,
+    7.24,
+    500
+   ],
+   [
+    48.653,
+    7.238,
+    560
+   ],
+   [
+    48.6514,
+    7.2364,
+    664
+   ],
+   [
+    48.6505,
+    7.24,
+    580
+   ],
+   [
+    48.654,
+    7.24,
+    500
+   ]
+  ]
+ },
+ {
+  "id": "fleckenstein",
+  "name": "Fleckenstein et Wegelnburg",
+  "zone": "Vosges du Nord, Lembach",
+  "country": "FR",
+  "added": true,
+  "merged": "",
+  "start": {
+   "name": "Château du Fleckenstein",
+   "lat": 49.0445,
+   "lon": 7.7753,
+   "alt": 340,
+   "query": "Château du Fleckenstein"
+  },
+  "km": 10,
+  "dplus": 420,
+  "dur": 210,
+  "toSpot": 110,
+  "down": 70,
+  "diff": 2,
+  "sunsetScore": 4,
+  "view": "360° depuis le Wegelnburg",
+  "horizon": 0,
+  "snow": false,
+  "access": "Accessible tout l’hiver, rarement enneigé.",
+  "risk": "Grès glissant sur les ruines, réseau parfois absent à la frontière.",
+  "gear": [
+   "frontale",
+   "bâtons"
+  ],
+  "tip": "Le plan B quand les Hautes-Vosges sont sous la tempête : grès rose et coucher de soleil.",
+  "gpx": null,
+  "spots": [
+   {
+    "name": "Hohenbourg",
+    "lat": 49.0505,
+    "lon": 7.7895,
+    "alt": 550,
+    "desc": "Ruines de grès rose"
+   },
+   {
+    "name": "Wegelnburg",
+    "lat": 49.0525,
+    "lon": 7.801,
+    "alt": 571,
+    "desc": "Ruine sommitale, vue 360°",
+    "sunset": true
+   }
+  ],
+  "waypoints": [
+   [
+    49.0445,
+    7.7753,
+    340
+   ],
+   [
+    49.047,
+    7.782,
+    420
+   ],
+   [
+    49.0505,
+    7.7895,
+    550
+   ],
+   [
+    49.0515,
+    7.796,
+    520
+   ],
+   [
+    49.0525,
+    7.801,
+    571
+   ],
+   [
+    49.048,
+    7.793,
+    450
+   ],
+   [
+    49.0445,
+    7.7753,
+    340
+   ]
+  ]
+ }
+]
