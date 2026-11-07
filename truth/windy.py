@@ -24,10 +24,15 @@ def _parse(w):
             "url": (w.get("urls") or {}).get("detail") or f"https://www.windy.com/webcams/{w.get('webcamId')}"}
 
 
+def _check(r):
+    if not r.ok:  # affiche le message de Windy, plus parlant que le code HTTP seul
+        raise RuntimeError(f"Windy {r.status_code} : {r.text[:300]}")
+
+
 def nearby(key, lat, lon, radius_km=25, limit=20):
     r = requests.get(BASE, headers=_h(key), timeout=30, params={
-        "nearby": f"{lat:.4f},{lon:.4f},{radius_km}", "include": "images,location,urls", "limit": limit})
-    r.raise_for_status()
+        "nearby": f"{lat:.4f},{lon:.4f},{int(radius_km)}", "include": "images,location,urls", "limit": limit})
+    _check(r)
     return [_parse(w) for w in r.json().get("webcams", [])]
 
 
