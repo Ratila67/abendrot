@@ -23,7 +23,7 @@ lac-blanc-noir:
   city: Le Bonhomme
   distance_km: 5.0
   url: https://windy.com/webcams/1621687990
-  enabled: true
+  enabled: false
   sky_top: 0.0
   sky_bottom: 0.42
 - id: '1607110571'
@@ -31,7 +31,7 @@ lac-blanc-noir:
   city: Stosswihr
   distance_km: 7.7
   url: https://windy.com/webcams/1607110571
-  enabled: true
+  enabled: false
   sky_top: 0.0
   sky_bottom: 0.42
 hohneck:
@@ -64,7 +64,7 @@ hohneck:
   city: Muhlbach-sur-Munster
   distance_km: 2.4
   url: https://windy.com/webcams/1581685155
-  enabled: true
+  enabled: false
   sky_top: 0.0
   sky_bottom: 0.42
 truites-gazon:
@@ -90,7 +90,7 @@ truites-gazon:
   city: Stosswihr
   distance_km: 5.6
   url: https://windy.com/webcams/1607110571
-  enabled: true
+  enabled: false
   sky_top: 0.0
   sky_bottom: 0.42
 - id: '1793869328'
@@ -123,7 +123,7 @@ haut-koenigsbourg:
   city: Guemar
   distance_km: 7.7
   url: https://windy.com/webcams/1688134497
-  enabled: true
+  enabled: false
   sky_top: 0.0
   sky_bottom: 0.42
 - id: '1688133822'
@@ -131,7 +131,7 @@ haut-koenigsbourg:
   city: Rombach-le-Franc
   distance_km: 8.7
   url: https://windy.com/webcams/1688133822
-  enabled: true
+  enabled: false
   sky_top: 0.0
   sky_bottom: 0.42
 grand-ballon:
@@ -181,7 +181,7 @@ champ-du-feu:
   city: Breitenbach
   distance_km: 1.7
   url: https://windy.com/webcams/1611407513
-  enabled: true
+  enabled: false
   sky_top: 0.0
   sky_bottom: 0.42
 - id: '1607109002'
@@ -189,7 +189,7 @@ champ-du-feu:
   city: Ranrupt
   distance_km: 6.3
   url: https://windy.com/webcams/1607109002
-  enabled: true
+  enabled: false
   sky_top: 0.0
   sky_bottom: 0.42
 - id: '1607110298'
@@ -197,7 +197,7 @@ champ-du-feu:
   city: Urbeis
   distance_km: 9.0
   url: https://windy.com/webcams/1607110298
-  enabled: true
+  enabled: false
   sky_top: 0.0
   sky_bottom: 0.42
 ribeauville:
@@ -206,7 +206,7 @@ ribeauville:
   city: Guemar
   distance_km: 7.1
   url: https://windy.com/webcams/1688134497
-  enabled: true
+  enabled: false
   sky_top: 0.0
   sky_bottom: 0.42
 - id: '1688134364'
@@ -214,7 +214,7 @@ ribeauville:
   city: Sainte-Croix-aux-Mines
   distance_km: 8.3
   url: https://windy.com/webcams/1688134364
-  enabled: true
+  enabled: false
   sky_top: 0.0
   sky_bottom: 0.42
 - id: '1552424024'
@@ -305,7 +305,7 @@ donon:
   city: Grandfontaine
   distance_km: 1.9
   url: https://windy.com/webcams/1516695655
-  enabled: true
+  enabled: false
   sky_top: 0.0
   sky_bottom: 0.42
 - id: '1607107793'
@@ -313,7 +313,7 @@ donon:
   city: Saulxures
   distance_km: 13.6
   url: https://windy.com/webcams/1607107793
-  enabled: true
+  enabled: false
   sky_top: 0.0
   sky_bottom: 0.42
 - id: '1516695520'
@@ -329,7 +329,7 @@ donon:
   city: Breitenbach
   distance_km: 15.7
   url: https://windy.com/webcams/1611407513
-  enabled: true
+  enabled: false
   sky_top: 0.0
   sky_bottom: 0.42
 sainte-odile:
@@ -338,7 +338,7 @@ sainte-odile:
   city: Ottrott
   distance_km: 1.4
   url: https://windy.com/webcams/1688133480
-  enabled: true
+  enabled: false
   sky_top: 0.0
   sky_bottom: 0.42
 - id: '1516695520'
@@ -354,7 +354,7 @@ sainte-odile:
   city: Breitenbach
   distance_km: 11.5
   url: https://windy.com/webcams/1611407513
-  enabled: true
+  enabled: false
   sky_top: 0.0
   sky_bottom: 0.42
 - id: '1607109002'
@@ -362,7 +362,7 @@ sainte-odile:
   city: Ranrupt
   distance_km: 16.2
   url: https://windy.com/webcams/1607109002
-  enabled: true
+  enabled: false
   sky_top: 0.0
   sky_bottom: 0.42
 taennchel:
@@ -371,7 +371,7 @@ taennchel:
   city: Sainte-Croix-aux-Mines
   distance_km: 5.2
   url: https://windy.com/webcams/1688134364
-  enabled: true
+  enabled: false
   sky_top: 0.0
   sky_bottom: 0.42
 - id: '1552424024'
@@ -412,7 +412,7 @@ brezouard:
   city: Sainte-Marie-aux-Mines
   distance_km: 6.0
   url: https://windy.com/webcams/1621688468
-  enabled: true
+  enabled: false
   sky_top: 0.0
   sky_bottom: 0.42
 - id: '1621687990'
@@ -420,7 +420,7 @@ brezouard:
   city: Le Bonhomme
   distance_km: 7.2
   url: https://windy.com/webcams/1621687990
-  enabled: true
+  enabled: false
   sky_top: 0.0
   sky_bottom: 0.42
 - id: '1688134364'
@@ -428,7 +428,7 @@ brezouard:
   city: Sainte-Croix-aux-Mines
   distance_km: 8.3
   url: https://windy.com/webcams/1688134364
-  enabled: true
+  enabled: false
   sky_top: 0.0
   sky_bottom: 0.42
 ballon-alsace:
@@ -487,7 +487,7 @@ belchen:
   city: Aitern
   distance_km: 1.3
   url: https://windy.com/webcams/1462284681
-  enabled: true
+  enabled: false
   sky_top: 0.0
   sky_bottom: 0.42
 - id: '1604149341'
@@ -495,7 +495,7 @@ belchen:
   city: Aitern
   distance_km: 2.0
   url: https://windy.com/webcams/1604149341
-  enabled: true
+  enabled: false
   sky_top: 0.0
   sky_bottom: 0.42
 dabo:
@@ -504,7 +504,7 @@ dabo:
   city: Dabo
   distance_km: 4.0
   url: https://windy.com/webcams/1668335952
-  enabled: true
+  enabled: false
   sky_top: 0.0
   sky_bottom: 0.42
 - id: '1615707346'
@@ -520,7 +520,7 @@ dabo:
   city: Grandfontaine
   distance_km: 17.4
   url: https://windy.com/webcams/1516695655
-  enabled: true
+  enabled: false
   sky_top: 0.0
   sky_bottom: 0.42
 - id: '1759304403'
