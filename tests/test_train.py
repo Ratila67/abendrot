@@ -67,11 +67,12 @@ def test_parite_js_python(dataset, monkeypatch):
     sample = df[train.FEATURES].head(25)
     expected = pipe.predict_proba(sample)[:, 1]
     rows = json.loads(sample.to_json(orient="records"))
+    model_url = (common.ROOT / "js" / "model.js").as_uri()  # file:// : obligatoire pour l'ESM sous Windows
     js = f"""
-      import {{ predict }} from '{common.ROOT}/js/model.js';
+      import {{ predict }} from '{model_url}';
       const M = {json.dumps(json.loads((dataset / 'data' / 'model.json').read_text()))};
       globalThis.fetch = async () => ({{ ok: true, json: async () => M }});
-      const mod = await import('{common.ROOT}/js/model.js'); await mod.loadModel();
+      const mod = await import('{model_url}'); await mod.loadModel();
       console.log(JSON.stringify({json.dumps(rows)}.map(r => mod.predict('good', r))));
     """
     out = subprocess.run(["node", "--input-type=module", "-e", js], capture_output=True, text=True, timeout=30)
