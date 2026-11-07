@@ -1,0 +1,30 @@
+name: Vérité terrain, découverte des webcams
+on:
+  workflow_dispatch:
+    inputs:
+      radius:
+        description: Rayon de recherche autour de chaque spot (km)
+        default: '25'
+permissions:
+  contents: write
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-truth.txt
+      - run: pip install -r requirements-truth.txt
+      - run: python -m truth.discover --radius "${{ github.event.inputs.radius || '25' }}"
+        env:
+          WINDY_KEY: ${{ secrets.WINDY_KEY }}
+      - name: Enregistrer la liste
+        run: |
+          git config user.name "abendrot-bot"
+          git config user.email "abendrot-bot@users.noreply.github.com"
+          git add truth/webcams.yml
+          git diff --cached --quiet || { git commit -m "vérité terrain : webcams" && git push; }
