@@ -612,27 +612,28 @@ function viewWeek() {
 }
 
 /* ---------- carte d'ensemble ---------- */
-const darkUI = () => matchMedia('(prefers-color-scheme: dark)').matches;
+let prevMarkers = [], prevId = null, prevTok = 0;
 function viewMap() {
   document.body.classList.remove('is-detail');
   document.body.classList.add('is-map');
   const when = isToday() ? 'Ce soir' : upFirst(noon(S.date).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric' }));
   app.innerHTML = `<div class="fullmap"><div id="bigmap"></div>
     <div class="maphead"><strong>${when}</strong>
-      <span class="lg" aria-label="Chance de beau coucher"><i class="hot"></i>75+<i class="mid"></i>50+<i class="cold"></i>moins</span></div>
-    <div class="mapcard" id="mapcard" aria-live="polite"></div></div>`;
+      <span class="lg" aria-label="Chance de beau coucher"><i class="hot"></i>75+<i class="mid"></i>50+<i class="cold"></i>moins</span>
+      ${isToday() ? '<span class="lg"><i class="late"></i>estompé : trop tard</span>' : ''}</div>
+    <section class="msheet" id="msheet" aria-label="Aperçu de la rando" aria-live="polite"></section></div>`;
   if (!window.maplibregl) { $('#bigmap').innerHTML = '<p class="empty">Carte indisponible : ouvre l’app une fois avec du réseau.</p>'; return; }
   const E = S.hikes.map(h => evaluate(h));
   const az = E.reduce((a, e) => a + e.p.az, 0) / E.length;
   const lons = S.hikes.map(h => h.start.lon), lats = S.hikes.map(h => h.start.lat);
-  map = MAP.createMap('bigmap', { overview: true, dark: darkUI(), sunAz: az, center: [7.2, 48.2], zoom: 7.6,
+  map = MAP.createMap('bigmap', { overview: true, sunAz: az, center: [7.2, 48.2], zoom: 7.6,
     bounds: [[Math.min(...lons), Math.min(...lats)], [Math.max(...lons), Math.max(...lats)]] });
   const z = () => $('.fullmap')?.classList.toggle('names', map.getZoom() >= 9);
   map.on('zoom', z);
   map.on('load', () => {
     z(); mapPins();
     $('.fullmap .maplibregl-compact-show')?.classList.remove('maplibregl-compact-show');   // crédits repliés derrière le (i)
-    map.on('click', () => { $('#mapcard')?.classList.remove('show'); $$('.pin.sel').forEach(x => x.classList.remove('sel')); });
+    map.on('click', closePreview);
     MAP.geolocate(map, cc => { if (cc) S.pos = { lat: cc.latitude, lon: cc.longitude }; });
   });
 }
@@ -641,26 +642,67 @@ function mapPins() {
   mapMarkers.forEach(m => m.remove()); mapMarkers = [];
   const E = S.hikes.map(h => evaluate(h));
   const val = e => e.p.sunsetHike ? (e.w ? e.w.display : e.h.sunsetScore * 16) : -1;
-  E.sort((a, b) => val(a) - val(b)).forEach(e => {   // les meilleurs posés en dernier, donc au-dessus
-    const { h, p, w, m } = e, v = val(e);
+  const rank = e => (e.late ? -1000 : 0) + val(e);   // les meilleurs encore atteignables posés en dernier, donc au-dessus
+  E.sort((a, b) => rank(a) - rank(b)).forEach(e => {
+    const { h, w } = e, v = val(e);
     const el = document.createElement('button'); el.type = 'button';
-    el.className = `pin ${v < 0 ? 'day' : scoreCls(v)}${w ? '' : ' guess'}${e.late ? ' late' : ''}`;
+    el.className = `pin ${v < 0 ? 'day' : scoreCls(v)}${w ? '' : ' guess'}${e.late ? ' late' : ''}${h.id === prevId ? ' sel' : ''}`;
     el.innerHTML = `<span class="pin-b">${v >= 0 && w ? v : v >= 0 ? ic('sunset') : ic('boot')}</span><span class="pin-n">${esc(h.name)}</span>`;
-    el.onclick = ev => {
-      ev.stopPropagation();
-      $$('.pin.sel').forEach(x => x.classList.remove('sel')); el.classList.add('sel');
-      const card = $('#mapcard');
-      const lead = p.sunsetHike && w ? ring(w.display, 46) : `<span class="lead">${p.sunsetHike ? `<span><b>${hm(p.set)}</b>coucher</span>` : `<span>${ic('boot')}<br>journée</span>`}</span>`;
-      card.innerHTML = `<a class="mc" href="#${h.id}">${lead}
-        <span><strong>${esc(h.name)}</strong>
-          <small>${p.sunsetHike ? `Coucher à ${hm(p.set)}, parking à ${hm(p.dep)}` : 'Rando de journée'}${e.late ? ', trop tard' : ''}</small>
-          <small>${nf(m.km)} km, ${Math.round(m.dplus)} m, ${dur(m.total)}</small></span>
-        <span class="mc-go">${ic('back')}</span></a>`;
-      card.classList.add('show');
-    };
+    el.onclick = ev => { ev.stopPropagation(); openPreview(h, el); };
     mapMarkers.push(MAP.marker(el, [h.start.lon, h.start.lat], { anchor: 'center' }).addTo(map));
-    el.setAttribute('aria-label', `${h.name}${v >= 0 && w ? `, score ${v}` : ''}`);   // après coup : MapLibre pose « Map marker »
+    el.setAttribute('aria-label', `${h.name}${v >= 0 && w ? `, score ${v}` : ''}${e.late ? ', trop tard ce soir' : ''}`);   // après coup : MapLibre pose « Map marker »
   });
+  if (prevId) fillSheet(S.hikes.find(h => h.id === prevId));
+}
+function clearPreview() {
+  prevMarkers.forEach(m => m.remove()); prevMarkers = [];
+  if (map) MAP.clearRoute(map);
+}
+function closePreview() {
+  prevId = null; prevTok++;
+  clearPreview();
+  $('#msheet')?.classList.remove('show');
+  $('.fullmap')?.classList.remove('previewing');
+  $$('.pin.sel').forEach(x => x.classList.remove('sel'));
+}
+/** Aperçu : la trace de la rando sur la carte et son récapitulatif dans un volet, sans quitter la carte. */
+async function openPreview(h, el) {
+  const tok = ++prevTok;
+  prevId = h.id; clearPreview();
+  $$('.pin.sel').forEach(x => x.classList.remove('sel')); el.classList.add('sel');
+  $('.fullmap').classList.add('previewing');
+  fillSheet(h);
+  const T = await getTrack(h);
+  if (tok !== prevTok || !map) return;
+  fillSheet(h);   // chiffres recalculés sur la trace, s'il y en a une
+  MAP.setRoute(map, T, '#CF4560');
+  h.spots.forEach((s, i) => prevMarkers.push(MAP.marker(mk(s.sunset ? 'sun' : '', s.sunset ? ic('sunset') : i + 1), [s.lon, s.lat]).addTo(map)));
+  const tabs = $('.tabs')?.offsetHeight || 58, sheet = $('#msheet').offsetHeight;
+  MAP.fitTrack(map, T, { top: 50, bottom: sheet + tabs + 30, left: 50, right: 76 }, reduced() ? 0 : 700, 13);
+}
+function fillSheet(h) {
+  const box = $('#msheet');
+  if (!box || !h) return;
+  const { m, p, w, rd, leave, late } = evaluate(h);
+  const gm = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(h.start.query)}`;
+  box.innerHTML = `<div class="ms-head"><div><h2>${esc(h.name)}</h2><p class="d-zone">${esc(h.zone)}</p></div>
+      <button class="icbtn" id="msClose" type="button" aria-label="Fermer l’aperçu">${ic('close')}</button></div>
+    <div class="verdict">
+      ${p.sunsetHike ? `<div class="first"><span class="v-big">${hm(p.set)}</span><span class="v-cap">${ic('sunset')}coucher au spot</span></div>`
+        : `<div><span class="v-big">${hm(p.dusk)}</span><span class="v-cap">${ic('moon')}nuit</span></div>`}
+      <div><span class="v-big">${hm(p.dep)}</span><span class="v-cap">${ic('boot')}${p.sunsetHike ? 'départ parking' : 'départ au plus tard'}</span></div>
+      <div>${w && p.sunsetHike ? ring(w.display, 50) : ''}</div>
+    </div>
+    <p class="leave${late ? ' late' : ''}">${ic('car')}${late ? 'Trop tard pour ce soir' : `<span><strong data-leave="${leave.getTime()}">${leaveTxt(leave.getTime())}</strong> de ${originName()}, ${dur(rd.min)} de route</span>`}</p>
+    <ul class="facts">
+      <li>${ic('route')}<b>${nf(m.km)} km</b></li><li>${ic('up')}<b>${Math.round(m.dplus)} m</b></li>
+      <li>${ic('clock')}<b>${dur(m.total)}</b></li><li>${ic('mtn')}<b>${DIFF[h.diff]}</b></li>
+    </ul>
+    ${p.sunsetHike && m.toSpot ? `<p class="cap ms-cap">${dur(m.toSpot)} de montée jusqu’au spot, ${dur(m.down)} pour redescendre</p>` : ''}
+    <div class="ms-act"><a class="btn primary" href="#${h.id}">Voir la fiche</a>
+      <a class="btn ghost" href="${gm}" target="_blank" rel="noopener">${ic('car')}Itinéraire</a></div>`;
+  box.classList.add('show');
+  $('#msClose').onclick = closePreview;
 }
 
 /* ---------- réglages ---------- */
@@ -683,7 +725,7 @@ function bindSettings() {
 }
 
 /* ---------- navigation ---------- */
-function teardown() { mapMarkers.forEach(m => m.remove()); mapMarkers = []; if (map) { map.remove(); map = null; } S.cur = null; }
+function teardown() { mapMarkers.forEach(m => m.remove()); mapMarkers = []; prevMarkers = []; prevId = null; prevTok++; if (map) { map.remove(); map = null; } S.cur = null; }
 function toggle(k, id) { const a = S.saved[k], i = a.indexOf(id); i < 0 ? a.push(id) : a.splice(i, 1); store.set('saved', S.saved).catch(() => {}); }
 function route() {
   S.token++; teardown(); document.body.classList.remove('is-map');

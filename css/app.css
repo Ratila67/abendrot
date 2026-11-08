@@ -245,6 +245,7 @@ body.is-map main{max-width:none;padding-bottom:0}
 .lg i{width:9px;height:9px;border-radius:50%;margin-left:5px;background:var(--muted)}
 .lg i:first-child{margin-left:0}
 .lg i.hot{background:#CF4560}.lg i.mid{background:#D2860F}.lg i.cold{background:#fff;box-shadow:inset 0 0 0 2px #6A777F}
+.lg i.late{background:#CF4560;opacity:.4}
 
 /* repères : score dans une pastille, nom du lieu à partir d'un zoom suffisant */
 .pin{display:grid;place-items:center;width:34px;height:34px;padding:0;border:0;background:none;cursor:pointer}
@@ -253,30 +254,42 @@ body.is-map main{max-width:none;padding-bottom:0}
 .pin-b .ic{width:15px;height:15px;stroke-width:2}
 .pin.hot .pin-b{width:34px;height:34px;font-size:14px;background:#CF4560;color:#fff;box-shadow:0 0 0 5px rgba(207,69,96,.28),0 2px 8px rgba(120,20,40,.45)}
 .pin.mid .pin-b{background:#D2860F;color:#17222A}
-.pin.cold .pin-b{background:#fff;color:#45535B}
+.pin.cold .pin-b{width:26px;height:26px;font-size:11.5px;background:#F4F6F7;color:#5D6A72;box-shadow:0 1px 4px rgba(20,30,40,.3)}
 .pin.guess .pin-b{border-style:dashed}
 .pin.hot.guess .pin-b{background:#fff;color:#CF4560;border:2.5px solid #CF4560;box-shadow:0 2px 6px rgba(20,30,40,.35)}
 .pin.mid.guess .pin-b{background:#fff;color:#B06E08;border:2.5px solid #D2860F}
 .pin.day .pin-b{width:22px;height:22px;border-width:2px;background:#E2E7EA}
 .pin.day .pin-b .ic{width:12px;height:12px}
-.pin.late .pin-b{opacity:.5;filter:grayscale(.85)}
+/* trop tard ce soir : la couleur reste (le ciel aurait été beau), mais estompée et sans halo */
+.pin.late .pin-b{opacity:.5;box-shadow:0 1px 3px rgba(20,30,40,.25)}
+.fullmap.previewing .pin:not(.sel) .pin-b{opacity:.3}
+.fullmap.previewing .pin:not(.sel) .pin-n,.fullmap.previewing .maphead{display:none}
+.pin.sel .pin-b{opacity:1}
 .pin:hover{z-index:2}.pin:hover .pin-b,.pin.sel .pin-b{transform:scale(1.18)}
 .pin.sel{z-index:3}.pin.sel .pin-b{border-color:#17222A}
 .pin-n{position:absolute;top:calc(100% - 2px);left:50%;transform:translateX(-50%);display:none;white-space:nowrap;
   font:600 11.5px/1.2 var(--font);color:#17222A;text-shadow:0 0 3px #fff,0 0 3px #fff,0 0 2px #fff;pointer-events:none}
 .fullmap.names .pin-n,.pin.sel .pin-n{display:block}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .pin-n{color:#E6EDF0;text-shadow:0 0 3px #0E171C,0 0 3px #0E171C,0 0 2px #0E171C}}
 @media (prefers-reduced-motion:reduce){.pin-b{transition:none}}
 
-.mapcard{position:absolute;z-index:5;left:10px;right:10px;bottom:calc(var(--tabh) + 10px + env(safe-area-inset-bottom,0px));max-width:520px;margin:0 auto;
-  display:none;border-radius:18px;background:var(--surface);box-shadow:0 8px 28px rgba(0,0,0,.22)}
-.mapcard.show{display:block}
-.mc{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:12px 12px 12px 14px}
-.mc strong{display:block;font-size:1.06rem;line-height:1.2}
-.mc small{display:block;font-size:.84rem;color:var(--muted);margin-top:2px}
-.mc .lead{width:46px;height:46px}
-.mc-go{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--accent);color:var(--on-accent)}
-.mc-go .ic{transform:rotate(180deg);width:18px;height:18px}
+/* volet d'aperçu : le récap de la rando, la trace reste visible au-dessus */
+.msheet{position:absolute;z-index:5;left:0;right:0;bottom:calc(var(--tabh) + env(safe-area-inset-bottom,0px));max-width:560px;max-height:62%;overflow:auto;
+  margin:0 auto;padding:14px 16px 16px;border-radius:20px 20px 0 0;background:var(--bg);box-shadow:0 -6px 24px rgba(0,0,0,.18);
+  transform:translateY(110%);transition:transform .25s ease}
+.msheet.show{transform:none}
+.msheet:not(.show){visibility:hidden}
+.ms-head{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.ms-head h2{font-size:1.3rem;font-weight:700;letter-spacing:-.015em;line-height:1.15;text-wrap:balance}
+.ms-head .icbtn{margin:-6px -8px 0 0}
+.msheet .d-zone{font-size:.88rem;margin-top:2px}
+.msheet .verdict{margin-top:12px}
+.msheet .v-big{font-size:1.85rem}
+.msheet .leave{margin-top:12px}
+.msheet .facts{margin-top:12px;padding:10px 2px}
+.msheet .facts li{font-size:.9rem;gap:5px}
+.ms-cap{margin:8px 2px 0}
+.ms-act{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:14px}
+@media (prefers-reduced-motion:reduce){.msheet{transition:none}}
 
 /* onglets */
 .tabs{position:fixed;left:0;right:0;bottom:0;z-index:20;display:grid;grid-template-columns:repeat(4,1fr);padding-bottom:env(safe-area-inset-bottom,0px);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line)}
