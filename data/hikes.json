@@ -36,9 +36,9 @@
   "spots": [
    {
     "name": "Rochers du Château Hans",
-    "lat": 48.127,
-    "lon": 7.089,
-    "alt": 1190,
+    "lat": 48.12311,
+    "lon": 7.09276,
+    "alt": 1144,
     "desc": "Belvédère plongeant sur le Lac Blanc"
    },
    {
@@ -51,8 +51,8 @@
    },
    {
     "name": "Lac Noir",
-    "lat": 48.1175,
-    "lon": 7.1005,
+    "lat": 48.11507,
+    "lon": 7.09563,
     "alt": 954,
     "desc": "Lac glaciaire, souvent gelé en janvier"
    }
@@ -69,9 +69,9 @@
     1120
    ],
    [
-    48.127,
-    7.089,
-    1190
+    48.12311,
+    7.09276,
+    1144
    ],
    [
     48.1235,
@@ -89,8 +89,8 @@
     1150
    ],
    [
-    48.1175,
-    7.1005,
+    48.11507,
+    7.09563,
     954
    ],
    [
@@ -150,16 +150,16 @@
    },
    {
     "name": "Hohneck",
-    "lat": 48.0397,
-    "lon": 7.0172,
+    "lat": 48.03761,
+    "lon": 7.01629,
     "alt": 1363,
     "desc": "Sommet 360°, table d’orientation",
     "sunset": true
    },
    {
     "name": "Kastelberg",
-    "lat": 48.0215,
-    "lon": 7.036,
+    "lat": 48.02137,
+    "lon": 7.00103,
     "alt": 1350,
     "desc": "Chaumes sauvages au-dessus de la Wormsa"
    }
@@ -186,8 +186,8 @@
     1300
    ],
    [
-    48.0397,
-    7.0172,
+    48.03761,
+    7.01629,
     1363
    ],
    [
@@ -196,8 +196,8 @@
     1310
    ],
    [
-    48.0215,
-    7.036,
+    48.02137,
+    7.00103,
     1350
    ],
    [
@@ -206,8 +206,8 @@
     1310
    ],
    [
-    48.0397,
-    7.0172,
+    48.03761,
+    7.01629,
     1363
    ],
    [
@@ -258,16 +258,16 @@
   "spots": [
    {
     "name": "Lac des Truites (Forlet)",
-    "lat": 48.088,
-    "lon": 7.074,
+    "lat": 48.1019,
+    "lon": 7.07844,
     "alt": 1066,
     "desc": "Lac au pied des falaises"
    },
    {
     "name": "Gazon du Faing",
-    "lat": 48.104,
-    "lon": 7.069,
-    "alt": 1302,
+    "lat": 48.11392,
+    "lon": 7.07944,
+    "alt": 1306,
     "desc": "Chaumes ouvertes, coucher face à la Lorraine",
     "sunset": true
    }
@@ -284,8 +284,8 @@
     1060
    ],
    [
-    48.088,
-    7.074,
+    48.1019,
+    7.07844,
     1066
    ],
    [
@@ -294,9 +294,9 @@
     1200
    ],
    [
-    48.104,
-    7.069,
-    1302
+    48.11392,
+    7.07944,
+    1306
    ],
    [
     48.101,
@@ -352,15 +352,15 @@
    },
    {
     "name": "Oedenbourg",
-    "lat": 48.2512,
-    "lon": 7.3365,
+    "lat": 48.24926,
+    "lon": 7.33928,
     "alt": 720,
     "desc": "Ruines voisines, plus sauvages"
    },
    {
     "name": "Haut-Kœnigsbourg",
-    "lat": 48.2495,
-    "lon": 7.3443,
+    "lat": 48.24938,
+    "lon": 7.34431,
     "alt": 757,
     "desc": "Château, vue plaine et Forêt-Noire",
     "sunset": true
@@ -383,13 +383,13 @@
     600
    ],
    [
-    48.2512,
-    7.3365,
+    48.24926,
+    7.33928,
     720
    ],
    [
-    48.2495,
-    7.3443,
+    48.24938,
+    7.34431,
     757
    ],
    [
@@ -446,15 +446,15 @@
   "spots": [
    {
     "name": "Storkenkopf",
-    "lat": 47.9235,
-    "lon": 7.09,
+    "lat": 47.90472,
+    "lon": 7.08222,
     "alt": 1366,
     "desc": "Crête calme, vue sur la vallée de la Thur"
    },
    {
     "name": "Sommet du Grand Ballon",
-    "lat": 47.9015,
-    "lon": 7.0985,
+    "lat": 47.90084,
+    "lon": 7.0984,
     "alt": 1424,
     "desc": "Point culminant des Vosges, Alpes visibles",
     "sunset": true
@@ -477,8 +477,8 @@
     1350
    ],
    [
-    47.9235,
-    7.09,
+    47.90472,
+    7.08222,
     1366
    ],
    [
@@ -492,8 +492,8 @@
     1385
    ],
    [
-    47.9015,
-    7.0985,
+    47.90084,
+    7.0984,
     1424
    ],
    [
@@ -538,25 +538,25 @@
   "spots": [
    {
     "name": "Cascade de la Serva",
-    "lat": 48.4125,
-    "lon": 7.235,
+    "lat": 48.42386,
+    "lon": 7.25908,
     "alt": 830,
     "desc": "Cascade souvent givrée"
    },
    {
     "name": "Tour du Champ du Feu",
-    "lat": 48.3966,
-    "lon": 7.269,
-    "alt": 1099,
+    "lat": 48.39441,
+    "lon": 7.26907,
+    "alt": 1100,
     "desc": "Tour d’observation, panorama 360°",
     "sunset": true
    }
   ],
   "waypoints": [
    [
-    48.3966,
-    7.269,
-    1099
+    48.39441,
+    7.26907,
+    1100
    ],
    [
     48.401,
@@ -569,8 +569,8 @@
     960
    ],
    [
-    48.4125,
-    7.235,
+    48.42386,
+    7.25908,
     830
    ],
    [
@@ -584,9 +584,9 @@
     1020
    ],
    [
-    48.3966,
-    7.269,
-    1099
+    48.39441,
+    7.26907,
+    1100
    ]
   ]
  },
@@ -626,15 +626,15 @@
   "spots": [
    {
     "name": "Lac du Fischbœdle",
-    "lat": 48.031,
-    "lon": 7.049,
+    "lat": 48.02342,
+    "lon": 7.02377,
     "alt": 790,
     "desc": "Petit lac bijou, cascades gelées"
    },
    {
     "name": "Lac du Schiessrothried",
-    "lat": 48.03,
-    "lon": 7.033,
+    "lat": 48.02921,
+    "lon": 7.02684,
     "alt": 920,
     "desc": "Lac sous les falaises du Hohneck"
    }
@@ -651,8 +651,8 @@
     700
    ],
    [
-    48.031,
-    7.049,
+    48.02342,
+    7.02377,
     790
    ],
    [
@@ -661,8 +661,8 @@
     860
    ],
    [
-    48.03,
-    7.033,
+    48.02921,
+    7.02684,
     920
    ],
    [
@@ -717,8 +717,8 @@
   "spots": [
    {
     "name": "Lac d’Altenweiher",
-    "lat": 47.9935,
-    "lon": 7.024,
+    "lat": 48.01098,
+    "lon": 6.99771,
     "alt": 915,
     "desc": "Lac de barrage dans un cirque boisé"
    }
@@ -740,8 +740,8 @@
     820
    ],
    [
-    47.9935,
-    7.024,
+    48.01098,
+    6.99771,
     915
    ],
    [
@@ -796,23 +796,23 @@
   "spots": [
    {
     "name": "Saint-Ulrich",
-    "lat": 48.1985,
-    "lon": 7.3048,
-    "alt": 530,
+    "lat": 48.20307,
+    "lon": 7.30525,
+    "alt": 510,
     "desc": "Le plus grand des trois, fenêtres romanes"
    },
    {
     "name": "Girsberg",
-    "lat": 48.199,
-    "lon": 7.3015,
+    "lat": 48.20345,
+    "lon": 7.30718,
     "alt": 528,
     "desc": "Piton rocheux, vu depuis Saint-Ulrich"
    },
    {
     "name": "Haut-Ribeaupierre",
-    "lat": 48.203,
-    "lon": 7.299,
-    "alt": 642,
+    "lat": 48.2063,
+    "lon": 7.30537,
+    "alt": 624,
     "desc": "Le plus haut, donjon panoramique",
     "sunset": true
    }
@@ -829,19 +829,19 @@
     330
    ],
    [
-    48.1985,
-    7.3048,
-    530
+    48.20307,
+    7.30525,
+    510
    ],
    [
-    48.199,
-    7.3015,
+    48.20345,
+    7.30718,
     528
    ],
    [
-    48.203,
-    7.299,
-    642
+    48.2063,
+    7.30537,
+    624
    ],
    [
     48.2005,
@@ -902,8 +902,8 @@
    },
    {
     "name": "Trois Exen",
-    "lat": 48.034,
-    "lon": 7.272,
+    "lat": 48.0388,
+    "lon": 7.27323,
     "alt": 590,
     "desc": "Trois donjons, plaine en feu au coucher",
     "sunset": true
@@ -931,8 +931,8 @@
     480
    ],
    [
-    48.034,
-    7.272,
+    48.0388,
+    7.27323,
     590
    ],
    [
@@ -1061,8 +1061,8 @@
   "spots": [
    {
     "name": "Petit Ballon",
-    "lat": 47.9833,
-    "lon": 7.1306,
+    "lat": 47.98063,
+    "lon": 7.12603,
     "alt": 1272,
     "desc": "Sommet chauve, vue sur tout le massif",
     "sunset": true
@@ -1085,8 +1085,8 @@
     1220
    ],
    [
-    47.9833,
-    7.1306,
+    47.98063,
+    7.12603,
     1272
    ],
    [
@@ -1136,8 +1136,8 @@
   "spots": [
    {
     "name": "Temple du Donon",
-    "lat": 48.5123,
-    "lon": 7.172,
+    "lat": 48.51255,
+    "lon": 7.16443,
     "alt": 1009,
     "desc": "Temple néo-romain, vue 360°",
     "sunset": true
@@ -1160,8 +1160,8 @@
     920
    ],
    [
-    48.5123,
-    7.172,
+    48.51255,
+    7.16443,
     1009
    ],
    [
@@ -1222,8 +1222,8 @@
    },
    {
     "name": "Maennelstein",
-    "lat": 48.421,
-    "lon": 7.402,
+    "lat": 48.42482,
+    "lon": 7.41216,
     "alt": 817,
     "desc": "Rocher-belvédère sur la plaine",
     "sunset": true
@@ -1251,8 +1251,8 @@
     790
    ],
    [
-    48.421,
-    7.402,
+    48.42482,
+    7.41216,
     817
    ],
    [
@@ -1308,8 +1308,8 @@
   "spots": [
    {
     "name": "Rochers des Titans",
-    "lat": 48.223,
-    "lon": 7.274,
+    "lat": 48.22698,
+    "lon": 7.28147,
     "alt": 900,
     "desc": "Chaos de grès aux formes étranges"
    },
@@ -1339,8 +1339,8 @@
     800
    ],
    [
-    48.223,
-    7.274,
+    48.22698,
+    7.28147,
     900
    ],
    [
@@ -1400,9 +1400,9 @@
   "spots": [
    {
     "name": "Sommet du Brézouard",
-    "lat": 48.1945,
-    "lon": 7.166,
-    "alt": 1228,
+    "lat": 48.18951,
+    "lon": 7.15,
+    "alt": 1229,
     "desc": "Panorama 360° sur tout le massif",
     "sunset": true
    }
@@ -1424,9 +1424,9 @@
     1100
    ],
    [
-    48.1945,
-    7.166,
-    1228
+    48.18951,
+    7.15,
+    1229
    ],
    [
     48.199,
@@ -1475,9 +1475,9 @@
   "spots": [
    {
     "name": "Sommet du Ballon d’Alsace",
-    "lat": 47.8227,
-    "lon": 6.835,
-    "alt": 1247,
+    "lat": 47.82235,
+    "lon": 6.84523,
+    "alt": 1248,
     "desc": "Table d’orientation, Alpes au sud",
     "sunset": true
    }
@@ -1494,9 +1494,9 @@
     1200
    ],
    [
-    47.8227,
-    6.835,
-    1247
+    47.82235,
+    6.84523,
+    1248
    ],
    [
     47.8215,
@@ -1546,8 +1546,8 @@
   "spots": [
    {
     "name": "Sommet du Belchen",
-    "lat": 47.8227,
-    "lon": 7.8331,
+    "lat": 47.82249,
+    "lon": 7.833,
     "alt": 1414,
     "desc": "Croix sommitale, vue Vosges et Alpes",
     "sunset": true
@@ -1570,8 +1570,8 @@
     1260
    ],
    [
-    47.8227,
-    7.8331,
+    47.82249,
+    7.833,
     1414
    ],
    [
@@ -1625,8 +1625,8 @@
   "spots": [
    {
     "name": "Rocher et chapelle Saint-Léon",
-    "lat": 48.6514,
-    "lon": 7.2364,
+    "lat": 48.64916,
+    "lon": 7.24551,
     "alt": 664,
     "desc": "Chapelle perchée, vue 360°",
     "sunset": true
@@ -1644,8 +1644,8 @@
     560
    ],
    [
-    48.6514,
-    7.2364,
+    48.64916,
+    7.24551,
     664
    ],
    [
@@ -1695,16 +1695,16 @@
   "spots": [
    {
     "name": "Hohenbourg",
-    "lat": 49.0505,
-    "lon": 7.7895,
+    "lat": 49.0554,
+    "lon": 7.7838,
     "alt": 550,
     "desc": "Ruines de grès rose"
    },
    {
     "name": "Wegelnburg",
-    "lat": 49.0525,
-    "lon": 7.801,
-    "alt": 571,
+    "lat": 49.06139,
+    "lon": 7.78705,
+    "alt": 570,
     "desc": "Ruine sommitale, vue 360°",
     "sunset": true
    }
@@ -1721,8 +1721,8 @@
     420
    ],
    [
-    49.0505,
-    7.7895,
+    49.0554,
+    7.7838,
     550
    ],
    [
@@ -1731,9 +1731,9 @@
     520
    ],
    [
-    49.0525,
-    7.801,
-    571
+    49.06139,
+    7.78705,
+    570
    ],
    [
     49.048,
