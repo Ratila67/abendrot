@@ -233,3 +233,33 @@ def test_qa_signale_les_cameras_a_problemes():
                    "muette": ["jamais relevée"]}
     assert qa.audit(f, cams, since="2026-11-05")[0]["checks"] == 0   # filtre de date
     assert "| saine |" in qa.report(qa.audit(f, cams))
+
+
+def test_boucle_du_soir_couvre_chaque_fenetre(capsys, isole):
+    """Le workflow boucle sur --wait : en partant de n'importe quel déclenchement assez tôt,
+    chaque spot est capturé au moins toutes les 10 min dans sa fenêtre, puis la soirée est consolidée."""
+    spots = common.sunset_spots()
+    day = dt.date(2026, 11, 8)
+    start, end = capture.evening_window(dt.datetime(2026, 11, 8, 12, tzinfo=dt.timezone.utc), spots)
+    assert capture.wait_seconds(start - dt.timedelta(minutes=capture.LEAD + 1), spots) is None      # trop tôt : un créneau plus tard s'en charge
+    assert capture.wait_seconds(end, spots) is None                                  # soirée finie
+    assert capture.wait_seconds(start - dt.timedelta(minutes=30), spots) == 1800    # attend le début de la fenêtre
+    assert capture.wait_seconds(start + dt.timedelta(minutes=3), spots) == 420      # créneau suivant
+    for t0 in (start - dt.timedelta(minutes=capture.LEAD - 5), start + dt.timedelta(minutes=27, seconds=13)):
+        now, passes = t0, []
+        while (w := capture.wait_seconds(now, spots)) is not None:
+            now += dt.timedelta(seconds=w)
+            passes.append(now)
+            now += dt.timedelta(seconds=75)                                          # durée d'un passage
+        assert passes[-1] >= end - dt.timedelta(minutes=1) and len(passes) < 40
+        for s in spots:
+            sset = sun.effective_sunset(day, s["lat"], s["lon"], s["alt"], 0, common.TZ)
+            lo, hi = max(t0, sset + dt.timedelta(minutes=capture.WINDOW[0])), sset + dt.timedelta(minutes=capture.WINDOW[1])
+            inside = [p for p in passes if lo <= p <= hi]
+            assert inside and max(b - a for a, b in zip([lo] + inside, inside + [hi])) <= dt.timedelta(minutes=11), s["spot_id"]
+    donon = [s for s in spots if s["spot_id"] == "donon"]          # main ne garde que les spots ayant une caméra
+    d_start, d_end = capture.evening_window(start, donon)
+    capture.main(now=d_start - dt.timedelta(minutes=10), argv=["--wait"])
+    assert capsys.readouterr().out.strip() == "600"
+    with pytest.raises(SystemExit, match="Rien à capturer"):
+        capture.main(now=d_end + dt.timedelta(minutes=1), argv=["--wait"])

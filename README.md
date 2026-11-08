@@ -49,8 +49,8 @@ Chaque soir, le pipeline photographie le ciel via les webcams proches des spots,
 
 ```
 10:30 UTC  truth.snapshot   prévision de ce soir et de demain, par spot      → data/truth/forecasts.csv
-*/10 min   truth.capture    images webcam autour du coucher + métriques ciel → data/truth/captures.csv
-           (même job)       pic de la soirée par caméra, étiquette Claude    → data/truth/observations.csv
+soirée     truth.capture    un job par soir, un passage toutes les 10 min    → data/truth/captures.csv
+           (même job)       pic de la soirée par caméra, étiquette IA        → data/truth/observations.csv
            (même job)       un relevé par caméra : fraîche, périmée, erreur  → data/truth/fetches.csv
 1er et 15  truth.train      walk-forward CV, export si meilleur que la réf.  → data/model.json + report.md
 à la main  truth.qa         caméras jamais fraîches, figées ou qui pivotent  → terminal (ou --out)

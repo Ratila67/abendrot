@@ -1,7 +1,11 @@
 name: Vérité terrain, captures
+# Le planificateur de GitHub saute ou retarde les déclenchements fréquents (le 7/11 : 2 exécutions sur ~40,
+# toutes après le coucher). Un seul déclenchement couvre donc toute la soirée : il attend le début de la fenêtre,
+# capture toutes les 10 min et commite après chaque passage. Les autres créneaux sont des secours :
+# s'ils arrivent trop tôt, après la soirée, ou pendant qu'une boucle tourne (file d'attente), ils repartent en 20 s.
 on:
   schedule:
-    - cron: '*/10 14-20 * * *'   # fenêtre UTC qui couvre tous les couchers de l'année en Alsace
+    - cron: '5,25,45 13-19 * * *'   # UTC : couvre les couchers de toute l'année en Alsace (15 h 35 à 19 h 40)
   workflow_dispatch:
 concurrency:
   group: truth-data
@@ -11,7 +15,7 @@ permissions:
 jobs:
   capture:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 240
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -20,16 +24,27 @@ jobs:
           cache: pip
           cache-dependency-path: requirements-truth.txt
       - run: pip install -r requirements-truth.txt
-      - run: python -m truth.capture
+      - name: Capturer jusqu'à la fin de la soirée
         env:
           WINDY_KEY: ${{ secrets.WINDY_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY || secrets.GEMINI_KEY_API }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HF_DATASET: ${{ vars.HF_DATASET }}
-      - name: Enregistrer les données
         run: |
           git config user.name "abendrot-bot"
           git config user.email "abendrot-bot@users.noreply.github.com"
-          git add data/truth
-          git diff --cached --quiet || { git commit -m "vérité terrain : captures $(date -u +'%F %H:%M')" && git pull --rebase && git push; }
+          save() {
+            git add data/truth
+            git diff --cached --quiet && return 0
+            git commit -q -m "vérité terrain : captures $(date -u +'%F %H:%M')"
+            for i in 1 2 3; do git pull -q --rebase && git push -q && return 0; sleep 10; done
+            echo "::warning::push impossible, nouvel essai au prochain passage"
+          }
+          while wait=$(python -m truth.capture --wait); do
+            echo "Prochain passage dans ${wait} s"
+            sleep "$wait"
+            python -m truth.capture || echo "::warning::passage en échec, on continue"
+            save
+          done
+          echo "Soirée terminée ou pas encore commencée."

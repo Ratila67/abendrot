@@ -5,10 +5,15 @@
 2. Quand la fenêtre d'un spot est passée : garde le pic de la soirée par caméra → observations.csv.
 
 Usage : WINDY_KEY=... python -m truth.capture   (GEMINI_API_KEY ou ANTHROPIC_API_KEY, HF_TOKEN + HF_DATASET optionnels)
+
+`python -m truth.capture --wait` affiche les secondes à attendre avant le prochain passage, ou sort en
+erreur quand la fenêtre du jour est finie ou encore lointaine. Le workflow boucle dessus : le planificateur
+de GitHub saute ou retarde les déclenchements fréquents, un seul déclenchement doit donc couvrir la soirée.
 """
 import datetime as dt
 import hashlib
 import io
+import sys
 from collections import defaultdict
 
 from PIL import Image
@@ -26,6 +31,26 @@ WINDOW = (-40, 30)        # minutes autour du coucher pendant lesquelles on capt
 PEAK = (-30, 25)          # minutes retenues pour le pic de la soirée
 VISION = (-12, 12)        # image étiquetée par Claude
 MAX_AGE = dt.timedelta(minutes=20)
+STEP = 10                 # minutes entre deux passages
+LEAD = 90                 # un déclenchement arrivé plus tôt avant la fenêtre repart sans rien faire
+
+
+def evening_window(now, spots):
+    """Début de la première fenêtre du jour et heure où la dernière soirée peut être consolidée."""
+    day = now.astimezone(TZ).date()
+    sets = [effective_sunset(day, s["lat"], s["lon"], s["alt"], 0, TZ) for s in spots]
+    return min(sets) + dt.timedelta(minutes=WINDOW[0]), max(sets) + dt.timedelta(minutes=WINDOW[1] + 6)
+
+
+def wait_seconds(now, spots):
+    """Secondes avant le prochain passage (calé sur début + k × STEP, le dernier à la fin),
+    ou None si la soirée est finie ou si la fenêtre commence dans plus de LEAD minutes."""
+    start, end = evening_window(now, spots)
+    if now >= end or now < start - dt.timedelta(minutes=LEAD):
+        return None
+    step = dt.timedelta(minutes=STEP)
+    k = 0 if now <= start else -(-(now - start) // step)   # arrondi au créneau suivant
+    return max(0, round((min(start + k * step, end) - now).total_seconds()))
 
 
 VIS = ("vis_sky", "vis_sea", "vis_alps", "vis_conf")
@@ -129,15 +154,22 @@ def finalize(now, spots, captures, observations):
     return rows
 
 
-def main(now=None):
+def main(now=None, argv=()):
     now = now or dt.datetime.now(dt.timezone.utc)
-    key = env("WINDY_KEY")
-    if not key:
-        raise SystemExit("WINDY_KEY manquante.")
     cams = load_webcams()
     if not cams:
         raise SystemExit("Aucune webcam : lance d'abord python -m truth.discover.")
     spots = [s for s in sunset_spots() if cams.get(s["spot_id"])]
+    if "--wait" in argv:
+        w = wait_seconds(now, spots)
+        if w is None:
+            start, end = evening_window(now, spots)
+            raise SystemExit(f"Rien à capturer maintenant : fenêtre du jour de {start:%H:%M} à {end:%H:%M} UTC.")
+        print(w)
+        return
+    key = env("WINDY_KEY")
+    if not key:
+        raise SystemExit("WINDY_KEY manquante.")
     cap_path, obs_path = DATA / "captures.csv", DATA / "observations.csv"
     captures = read_csv(cap_path)
     store = ImageStore()
@@ -152,4 +184,4 @@ def main(now=None):
 
 
 if __name__ == "__main__":
-    main()
+    main(argv=sys.argv[1:])
