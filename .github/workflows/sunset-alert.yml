@@ -1,7 +1,7 @@
 name: Alerte sunset
+# Lancée chaque jour à 11 h UTC (12 h en hiver, 13 h en été) par le Worker Cloudflare worker/cron.js :
+# le planificateur de GitHub prend jusqu'à 6 h de retard, et un second déclenchement enverrait l'alerte deux fois.
 on:
-  schedule:
-    - cron: '0 11 * * *'   # 12 h (hiver) / 13 h (été), heure de Paris
   workflow_dispatch:
 jobs:
   alert:

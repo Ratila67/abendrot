@@ -1,4 +1,6 @@
 name: Vérité terrain, prévisions du jour
+# Lancée à 10 h 30 UTC par le Worker Cloudflare worker/cron.js ; le cron ci-dessous reste en secours
+# (un passage en retard ne réécrit rien : une prévision par jour et par spot).
 on:
   schedule:
     - cron: '30 10 * * *'

@@ -119,6 +119,7 @@ index.html ── js/app.js (vues, routing par #hash, état)
                └─ js/store.js    IndexedDB : favoris, GPX importés, cache altitudes
                ├─ js/sources.js  Sunsethue, Windy, Overpass, aérosols
 worker/proxy.js  proxy Cloudflare optionnel (clés côté serveur, cache)
+worker/cron.js   déclencheur planifié des workflows (docs/declencheur-cloudflare.md)
 sw.js          shell stale-while-revalidate, tuiles cache-first (6 000 max), API network-first
 data/hikes.json  le « CMS » : ajouter une rando = ajouter un objet
 ```
@@ -140,7 +141,8 @@ Ajoute un objet dans `data/hikes.json`. Les champs clés sont :
 1. Crée un bot avec @BotFather, puis récupère ton `chat_id`.
 2. Dans le dépôt, va dans Settings, Secrets, et ajoute `TELEGRAM_TOKEN` et `TELEGRAM_CHAT_ID`.
 3. Optionnel : ajoute le secret `SUNSETHUE_KEY` pour un 2e avis dans le message. Dans Variables, tu peux définir `APP_URL`, `MIN_SCORE` (70 par défaut) et `HIKES` (ids séparés par des virgules).
-4. Le workflow `.github/workflows/sunset-alert.yml` tourne tous les jours à 12 h (heure de Paris en hiver). Tu peux aussi le lancer à la main.
+4. Le workflow `.github/workflows/sunset-alert.yml` est lancé tous les jours à 11 h UTC (12 h en hiver, 13 h en été) par le Worker
+   `worker/cron.js` : voir `docs/declencheur-cloudflare.md`. Tu peux aussi le lancer à la main.
 
 Test local sans token : `TZ=Europe/Paris node scripts/sunset-alert.mjs` affiche le message dans le terminal.
 
