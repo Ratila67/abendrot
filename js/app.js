@@ -27,7 +27,7 @@ const HOME = { lat: 48.5734, lon: 7.7521, name: 'Strasbourg' };
 const DIFF = ['', 'Facile', 'Moyen', 'Engagé'];
 const SRC = { gpx: 'Trace GPX', import: 'Ta trace', schematic: 'Tracé approximatif' };
 
-const S = { hikes: [], date: todayStr(), pos: null, filter: 'all', sort: 'smart', q: '', saved: { fav: [], done: [] }, pace: 1.25, home: 'gps', stay: false,
+const S = { hikes: [], date: todayStr(), pos: null, filter: 'all', sort: 'smart', q: '', saved: { fav: [], done: [] }, pace: 1.25, home: 'gps', stay: false, mapDark: false,
   wx: null, wxErr: null, base: 'ign', token: 0, cur: null, settings: { sunsethue: '', windy: '', proxy: '' } };
 const trackCache = new Map();
 let map = null, mapMarkers = [];
@@ -618,16 +618,24 @@ function viewMap() {
   document.body.classList.add('is-map');
   const when = isToday() ? 'Ce soir' : upFirst(noon(S.date).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric' }));
   app.innerHTML = `<div class="fullmap"><div id="bigmap"></div>
-    <div class="maphead"><strong>${when}</strong>
+    <div class="maphead"><div class="mh-txt"><strong>${when}</strong>
       <span class="lg" aria-label="Chance de beau coucher"><i class="hot"></i>75+<i class="mid"></i>50+<i class="cold"></i>moins</span>
       ${isToday() ? '<span class="lg"><i class="late"></i>estompé : trop tard</span>' : ''}</div>
+      <button class="mh-btn" id="modeBtn" type="button" aria-pressed="${S.mapDark}" aria-label="Carte sombre">${ic('moon')}</button></div>
     <section class="msheet" id="msheet" aria-label="Aperçu de la rando" aria-live="polite"></section></div>`;
   if (!window.maplibregl) { $('#bigmap').innerHTML = '<p class="empty">Carte indisponible : ouvre l’app une fois avec du réseau.</p>'; return; }
   const E = S.hikes.map(h => evaluate(h));
   const az = E.reduce((a, e) => a + e.p.az, 0) / E.length;
   const lons = S.hikes.map(h => h.start.lon), lats = S.hikes.map(h => h.start.lat);
-  map = MAP.createMap('bigmap', { overview: true, sunAz: az, center: [7.2, 48.2], zoom: 7.6,
+  $('.fullmap').classList.toggle('dark', S.mapDark);
+  map = MAP.createMap('bigmap', { overview: true, dark: S.mapDark, sunAz: az, center: [7.2, 48.2], zoom: 7.6,
     bounds: [[Math.min(...lons), Math.min(...lats)], [Math.max(...lons), Math.max(...lats)]] });
+  $('#modeBtn').onclick = e => {
+    S.mapDark = !S.mapDark; store.set('mapDark', S.mapDark).catch(() => {});
+    MAP.setOverviewTheme(map, S.mapDark, az);
+    $('.fullmap').classList.toggle('dark', S.mapDark); e.currentTarget.setAttribute('aria-pressed', S.mapDark);
+    toast(S.mapDark ? 'Carte sombre' : 'Carte claire');
+  };
   const z = () => $('.fullmap')?.classList.toggle('names', map.getZoom() >= 9);
   map.on('zoom', z);
   map.on('load', () => {
@@ -758,7 +766,7 @@ async function init() {
   try { S.hikes = await (await fetch('./data/hikes.json')).json(); }
   catch { app.innerHTML = '<p class="empty">Impossible de charger les randos. Ouvre l’app depuis son adresse web.</p>'; return; }
   try {
-    S.saved = (await store.get('saved')) || S.saved; S.pace = (await store.get('pace')) || S.pace; S.stay = !!(await store.get('stay'));
+    S.saved = (await store.get('saved')) || S.saved; S.pace = (await store.get('pace')) || S.pace; S.stay = !!(await store.get('stay')); S.mapDark = !!(await store.get('mapDark'));
     S.home = (await store.get('home')) || S.home; S.settings = (await store.get('settings')) || S.settings;
   } catch { /* navigation privée */ }
   await loadModel();

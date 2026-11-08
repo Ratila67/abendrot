@@ -3,21 +3,29 @@ const ML = () => window.maplibregl;
 export const IGN = 'https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/png&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}';
 export const TOPO = ['a', 'b', 'c'].map(s => `https://${s}.tile.opentopomap.org/{z}/{x}/{y}.png`);
 const DEM = 'https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png';
-const OFM = 'https://tiles.openfreemap.org/styles/positron';
+const OFM = dark => `https://tiles.openfreemap.org/styles/${dark ? 'fiord' : 'positron'}`;
 
-/** Carte d'ensemble : fond vectoriel clair et sobre (OpenFreeMap), relief éclairé depuis le couchant, glissé sous les noms de lieux.
- *  Claire aussi en mode sombre, comme les cartes des fiches : le style sombre noyait le relief. */
-function overviewStyle(sunAz = 240) {
+/** Carte d'ensemble : fond vectoriel sobre (OpenFreeMap), clair ou sombre au choix, relief éclairé depuis le couchant,
+ *  glissé sous les noms de lieux. Au changement de fond, la trace de l'aperçu en cours est reprise telle quelle. */
+function overviewStyle(sunAz = 240, dark = false) {
   return (prev, next) => {
     const layers = next.layers.filter(l => l.source !== 'ne2_shaded');   // relief basse résolution du style : remplacé par le nôtre
     const at = layers.findIndex(l => l.type === 'symbol');
-    const hs = { id: 'hs', type: 'hillshade', source: 'demhs', paint: {
-      'hillshade-illumination-direction': Math.round(sunAz) % 360, 'hillshade-exaggeration': 0.45,
-      'hillshade-shadow-color': '#3B4652', 'hillshade-highlight-color': '#FFE6B8', 'hillshade-accent-color': '#56616B' } };
+    const hs = { id: 'hs', type: 'hillshade', source: 'demhs', paint: dark
+      ? { 'hillshade-illumination-direction': Math.round(sunAz) % 360, 'hillshade-exaggeration': 0.6,
+          'hillshade-shadow-color': '#04070A', 'hillshade-highlight-color': '#C99A62', 'hillshade-accent-color': '#0A1016' }
+      : { 'hillshade-illumination-direction': Math.round(sunAz) % 360, 'hillshade-exaggeration': 0.45,
+          'hillshade-shadow-color': '#3B4652', 'hillshade-highlight-color': '#FFE6B8', 'hillshade-accent-color': '#56616B' } };
     layers.splice(at < 0 ? layers.length : at, 0, hs);
-    return { ...next, layers, sources: { ...next.sources,
+    const route = prev?.sources?.route;
+    if (route) layers.push(...prev.layers.filter(l => l.source === 'route'));
+    return { ...next, layers, sources: { ...next.sources, ...(route ? { route } : {}),
       demhs: { type: 'raster-dem', tiles: [DEM], encoding: 'terrarium', tileSize: 256, maxzoom: 12, attribution: 'Terrain Tiles' } } };
   };
+}
+
+export function setOverviewTheme(map, dark, sunAz) {
+  map.setStyle(OFM(dark), { transformStyle: overviewStyle(sunAz, dark) });
 }
 
 function style(base) {
@@ -38,13 +46,13 @@ function style(base) {
   };
 }
 
-export function createMap(container, { center, zoom = 12, base = 'ign', overview = false, sunAz, bounds } = {}) {
+export function createMap(container, { center, zoom = 12, base = 'ign', overview = false, dark = false, sunAz, bounds } = {}) {
   const map = new (ML().Map)({
     container, style: overview ? undefined : style(base), center, zoom, attributionControl: { compact: true },
     ...(bounds ? { bounds, fitBoundsOptions: { padding: { top: 100, bottom: 100, left: 30, right: 64 }, maxZoom: 10 } } : {}),
     ...(overview ? { maxPitch: 0, dragRotate: false, pitchWithRotate: false, touchPitch: false } : { maxPitch: 80 })
   });
-  if (overview) { map.touchZoomRotate.disableRotation(); map.setStyle(OFM, { transformStyle: overviewStyle(sunAz) }); }
+  if (overview) { map.touchZoomRotate.disableRotation(); setOverviewTheme(map, dark, sunAz); }
   map.addControl(new (ML().NavigationControl)(overview ? { showCompass: false } : { visualizePitch: true }), 'top-right');
   map.addControl(new (ML().ScaleControl)({ unit: 'metric' }), 'bottom-left');
   map.on('error', e => console.warn('Carte :', e?.error?.message));

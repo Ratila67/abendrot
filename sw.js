@@ -1,5 +1,5 @@
 // Service worker : app installable + carte et données disponibles sans réseau
-const VERSION = 'v3.4.1';
+const VERSION = 'v3.4.2';
 const SHELL = `shell-${VERSION}`, DATA = 'data-v1', TILES = 'tiles-v1', API = 'api-v1';
 const MAX_TILES = 6000;
 const CDN = ['https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js', 'https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css'];

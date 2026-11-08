@@ -240,7 +240,13 @@ body.is-map main{max-width:none;padding-bottom:0}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .fullmap .maplibregl-ctrl-group button .maplibregl-ctrl-icon{filter:invert(1) brightness(.9)}}
 .maphead{position:absolute;z-index:4;top:12px;left:12px;display:flex;flex-direction:column;gap:3px;padding:9px 13px 10px;border-radius:14px;
   background:color-mix(in srgb,var(--surface) 82%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.maphead{flex-direction:row;align-items:flex-start;gap:10px;padding-right:8px}
+.mh-txt{display:flex;flex-direction:column;gap:3px}
 .maphead strong{font-size:1.02rem;letter-spacing:-.01em}
+.mh-btn{display:grid;place-items:center;width:34px;height:34px;margin:-1px 0 -1px;border:0;border-radius:10px;background:var(--surface2);color:var(--ink);cursor:pointer}
+.mh-btn .ic{width:18px;height:18px}
+.mh-btn[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.mh-btn[aria-pressed="true"] .ic{fill:currentColor}
 .lg{display:flex;align-items:center;gap:4px;font-size:.74rem;color:var(--muted)}
 .lg i{width:9px;height:9px;border-radius:50%;margin-left:5px;background:var(--muted)}
 .lg i:first-child{margin-left:0}
@@ -270,6 +276,7 @@ body.is-map main{max-width:none;padding-bottom:0}
 .pin-n{position:absolute;top:calc(100% - 2px);left:50%;transform:translateX(-50%);display:none;white-space:nowrap;
   font:600 11.5px/1.2 var(--font);color:#17222A;text-shadow:0 0 3px #fff,0 0 3px #fff,0 0 2px #fff;pointer-events:none}
 .fullmap.names .pin-n,.pin.sel .pin-n{display:block}
+.fullmap.dark .pin-n{color:#E6EDF0;text-shadow:0 0 3px #0E171C,0 0 3px #0E171C,0 0 2px #0E171C}
 @media (prefers-reduced-motion:reduce){.pin-b{transition:none}}
 
 /* volet d'aperçu : le récap de la rando, la trace reste visible au-dessus */
