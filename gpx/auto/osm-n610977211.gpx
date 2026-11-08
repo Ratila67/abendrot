@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Uli's Gutedelplatz</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Uli's Gutedelplatz</name>
+    <trkseg>
+      <trkpt lat="47.757415" lon="7.646675"><ele>349.5</ele></trkpt>
+      <trkpt lat="47.757541" lon="7.646831"><ele>350.5</ele></trkpt>
+      <trkpt lat="47.758317" lon="7.646808"><ele>350.0</ele></trkpt>
+      <trkpt lat="47.758460" lon="7.646407"><ele>347.5</ele></trkpt>
+      <trkpt lat="47.758547" lon="7.646435"><ele>347.5</ele></trkpt>
+      <trkpt lat="47.758687" lon="7.646100"><ele>345.8</ele></trkpt>
+      <trkpt lat="47.758903" lon="7.645415"><ele>342.8</ele></trkpt>
+      <trkpt lat="47.758918" lon="7.645192"><ele>341.5</ele></trkpt>
+      <trkpt lat="47.759754" lon="7.643025"><ele>342.2</ele></trkpt>
+      <trkpt lat="47.759959" lon="7.642336"><ele>346.0</ele></trkpt>
+      <trkpt lat="47.760395" lon="7.641920"><ele>353.0</ele></trkpt>
+      <trkpt lat="47.760868" lon="7.641307"><ele>362.8</ele></trkpt>
+      <trkpt lat="47.761473" lon="7.640192"><ele>377.0</ele></trkpt>
+      <trkpt lat="47.761676" lon="7.639400"><ele>385.2</ele></trkpt>
+      <trkpt lat="47.761673" lon="7.638224"><ele>393.5</ele></trkpt>
+      <trkpt lat="47.761843" lon="7.637086"><ele>400.0</ele></trkpt>
+      <trkpt lat="47.761846" lon="7.634932"><ele>404.2</ele></trkpt>
+      <trkpt lat="47.761843" lon="7.637086"><ele>400.0</ele></trkpt>
+      <trkpt lat="47.761673" lon="7.638224"><ele>393.5</ele></trkpt>
+      <trkpt lat="47.761676" lon="7.639400"><ele>385.2</ele></trkpt>
+      <trkpt lat="47.761473" lon="7.640192"><ele>377.0</ele></trkpt>
+      <trkpt lat="47.760868" lon="7.641307"><ele>362.8</ele></trkpt>
+      <trkpt lat="47.760395" lon="7.641920"><ele>353.0</ele></trkpt>
+      <trkpt lat="47.759959" lon="7.642336"><ele>346.0</ele></trkpt>
+      <trkpt lat="47.759754" lon="7.643025"><ele>342.2</ele></trkpt>
+      <trkpt lat="47.758918" lon="7.645192"><ele>341.5</ele></trkpt>
+      <trkpt lat="47.758903" lon="7.645415"><ele>342.8</ele></trkpt>
+      <trkpt lat="47.758687" lon="7.646100"><ele>345.8</ele></trkpt>
+      <trkpt lat="47.758547" lon="7.646435"><ele>347.5</ele></trkpt>
+      <trkpt lat="47.758460" lon="7.646407"><ele>347.5</ele></trkpt>
+      <trkpt lat="47.758317" lon="7.646808"><ele>350.0</ele></trkpt>
+      <trkpt lat="47.757541" lon="7.646831"><ele>350.5</ele></trkpt>
+      <trkpt lat="47.757415" lon="7.646675"><ele>349.5</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

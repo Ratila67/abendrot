@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Straßburger Blick</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Straßburger Blick</name>
+    <trkseg>
+      <trkpt lat="48.438163" lon="8.192294"><ele>600.5</ele></trkpt>
+      <trkpt lat="48.437854" lon="8.192932"><ele>598.0</ele></trkpt>
+      <trkpt lat="48.438290" lon="8.192986"><ele>607.5</ele></trkpt>
+      <trkpt lat="48.438709" lon="8.193157"><ele>617.2</ele></trkpt>
+      <trkpt lat="48.438666" lon="8.193056"><ele>616.8</ele></trkpt>
+      <trkpt lat="48.438725" lon="8.192846"><ele>616.2</ele></trkpt>
+      <trkpt lat="48.438946" lon="8.192614"><ele>616.5</ele></trkpt>
+      <trkpt lat="48.439115" lon="8.193261"><ele>622.8</ele></trkpt>
+      <trkpt lat="48.440167" lon="8.194645"><ele>639.8</ele></trkpt>
+      <trkpt lat="48.440236" lon="8.194560"><ele>639.2</ele></trkpt>
+      <trkpt lat="48.440514" lon="8.194928"><ele>644.2</ele></trkpt>
+      <trkpt lat="48.441656" lon="8.195151"><ele>657.8</ele></trkpt>
+      <trkpt lat="48.442204" lon="8.195092"><ele>669.2</ele></trkpt>
+      <trkpt lat="48.443542" lon="8.194432"><ele>682.5</ele></trkpt>
+      <trkpt lat="48.443921" lon="8.194483"><ele>688.0</ele></trkpt>
+      <trkpt lat="48.445512" lon="8.195242"><ele>699.0</ele></trkpt>
+      <trkpt lat="48.445520" lon="8.195299"><ele>701.5</ele></trkpt>
+      <trkpt lat="48.444929" lon="8.195497"><ele>719.5</ele></trkpt>
+      <trkpt lat="48.445760" lon="8.196214"><ele>749.8</ele></trkpt>
+      <trkpt lat="48.444929" lon="8.195497"><ele>719.5</ele></trkpt>
+      <trkpt lat="48.445520" lon="8.195299"><ele>701.5</ele></trkpt>
+      <trkpt lat="48.445512" lon="8.195242"><ele>699.0</ele></trkpt>
+      <trkpt lat="48.443921" lon="8.194483"><ele>688.0</ele></trkpt>
+      <trkpt lat="48.443542" lon="8.194432"><ele>682.5</ele></trkpt>
+      <trkpt lat="48.442204" lon="8.195092"><ele>669.2</ele></trkpt>
+      <trkpt lat="48.441656" lon="8.195151"><ele>657.8</ele></trkpt>
+      <trkpt lat="48.440514" lon="8.194928"><ele>644.2</ele></trkpt>
+      <trkpt lat="48.440236" lon="8.194560"><ele>639.2</ele></trkpt>
+      <trkpt lat="48.440167" lon="8.194645"><ele>639.8</ele></trkpt>
+      <trkpt lat="48.439115" lon="8.193261"><ele>622.8</ele></trkpt>
+      <trkpt lat="48.438946" lon="8.192614"><ele>616.5</ele></trkpt>
+      <trkpt lat="48.438725" lon="8.192846"><ele>616.2</ele></trkpt>
+      <trkpt lat="48.438666" lon="8.193056"><ele>616.8</ele></trkpt>
+      <trkpt lat="48.438709" lon="8.193157"><ele>617.2</ele></trkpt>
+      <trkpt lat="48.438290" lon="8.192986"><ele>607.5</ele></trkpt>
+      <trkpt lat="48.437854" lon="8.192932"><ele>598.0</ele></trkpt>
+      <trkpt lat="48.438163" lon="8.192294"><ele>600.8</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

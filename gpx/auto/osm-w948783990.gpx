@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Buchkopfturm</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Buchkopfturm</name>
+    <trkseg>
+      <trkpt lat="48.486146" lon="8.240765"><ele>941.2</ele></trkpt>
+      <trkpt lat="48.486221" lon="8.240173"><ele>939.2</ele></trkpt>
+      <trkpt lat="48.485625" lon="8.240013"><ele>931.8</ele></trkpt>
+      <trkpt lat="48.485023" lon="8.240020"><ele>926.5</ele></trkpt>
+      <trkpt lat="48.483977" lon="8.240276"><ele>914.2</ele></trkpt>
+      <trkpt lat="48.483553" lon="8.240197"><ele>908.2</ele></trkpt>
+      <trkpt lat="48.483120" lon="8.241171"><ele>905.5</ele></trkpt>
+      <trkpt lat="48.482938" lon="8.240064"><ele>902.0</ele></trkpt>
+      <trkpt lat="48.481138" lon="8.240350"><ele>912.8</ele></trkpt>
+      <trkpt lat="48.480670" lon="8.240285"><ele>915.8</ele></trkpt>
+      <trkpt lat="48.479362" lon="8.239380"><ele>921.5</ele></trkpt>
+      <trkpt lat="48.478965" lon="8.238988"><ele>923.2</ele></trkpt>
+      <trkpt lat="48.477750" lon="8.238262"><ele>929.2</ele></trkpt>
+      <trkpt lat="48.477363" lon="8.236583"><ele>915.0</ele></trkpt>
+      <trkpt lat="48.477407" lon="8.236538"><ele>915.8</ele></trkpt>
+      <trkpt lat="48.477363" lon="8.236583"><ele>915.0</ele></trkpt>
+      <trkpt lat="48.477750" lon="8.238262"><ele>929.2</ele></trkpt>
+      <trkpt lat="48.478965" lon="8.238988"><ele>923.2</ele></trkpt>
+      <trkpt lat="48.479362" lon="8.239380"><ele>921.5</ele></trkpt>
+      <trkpt lat="48.480670" lon="8.240285"><ele>915.8</ele></trkpt>
+      <trkpt lat="48.481138" lon="8.240350"><ele>912.8</ele></trkpt>
+      <trkpt lat="48.482938" lon="8.240064"><ele>902.0</ele></trkpt>
+      <trkpt lat="48.483120" lon="8.241171"><ele>905.5</ele></trkpt>
+      <trkpt lat="48.483553" lon="8.240197"><ele>908.2</ele></trkpt>
+      <trkpt lat="48.483977" lon="8.240276"><ele>914.2</ele></trkpt>
+      <trkpt lat="48.485023" lon="8.240020"><ele>926.5</ele></trkpt>
+      <trkpt lat="48.485625" lon="8.240013"><ele>931.8</ele></trkpt>
+      <trkpt lat="48.486221" lon="8.240173"><ele>939.2</ele></trkpt>
+      <trkpt lat="48.486146" lon="8.240765"><ele>941.8</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

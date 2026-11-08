@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Brennte Schrofen</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Brennte Schrofen</name>
+    <trkseg>
+      <trkpt lat="48.567006" lon="8.200668"><ele>793.2</ele></trkpt>
+      <trkpt lat="48.567060" lon="8.200398"><ele>792.8</ele></trkpt>
+      <trkpt lat="48.566903" lon="8.199807"><ele>796.0</ele></trkpt>
+      <trkpt lat="48.566876" lon="8.199436"><ele>795.5</ele></trkpt>
+      <trkpt lat="48.566458" lon="8.199069"><ele>810.0</ele></trkpt>
+      <trkpt lat="48.566117" lon="8.197657"><ele>819.0</ele></trkpt>
+      <trkpt lat="48.566249" lon="8.196184"><ele>827.2</ele></trkpt>
+      <trkpt lat="48.566432" lon="8.195452"><ele>825.5</ele></trkpt>
+      <trkpt lat="48.566301" lon="8.193644"><ele>824.8</ele></trkpt>
+      <trkpt lat="48.566171" lon="8.193180"><ele>824.5</ele></trkpt>
+      <trkpt lat="48.566013" lon="8.192877"><ele>822.2</ele></trkpt>
+      <trkpt lat="48.566457" lon="8.191857"><ele>817.2</ele></trkpt>
+      <trkpt lat="48.567285" lon="8.188072"><ele>807.5</ele></trkpt>
+      <trkpt lat="48.567295" lon="8.187621"><ele>808.5</ele></trkpt>
+      <trkpt lat="48.567150" lon="8.186557"><ele>806.0</ele></trkpt>
+      <trkpt lat="48.567136" lon="8.185882"><ele>802.2</ele></trkpt>
+      <trkpt lat="48.567382" lon="8.185099"><ele>789.0</ele></trkpt>
+      <trkpt lat="48.567578" lon="8.184180"><ele>781.8</ele></trkpt>
+      <trkpt lat="48.567448" lon="8.183375"><ele>768.2</ele></trkpt>
+      <trkpt lat="48.567578" lon="8.184180"><ele>781.8</ele></trkpt>
+      <trkpt lat="48.567382" lon="8.185099"><ele>789.0</ele></trkpt>
+      <trkpt lat="48.567136" lon="8.185882"><ele>802.2</ele></trkpt>
+      <trkpt lat="48.567150" lon="8.186557"><ele>806.0</ele></trkpt>
+      <trkpt lat="48.567295" lon="8.187621"><ele>808.5</ele></trkpt>
+      <trkpt lat="48.567285" lon="8.188072"><ele>807.5</ele></trkpt>
+      <trkpt lat="48.566457" lon="8.191857"><ele>817.2</ele></trkpt>
+      <trkpt lat="48.566013" lon="8.192877"><ele>822.2</ele></trkpt>
+      <trkpt lat="48.566171" lon="8.193180"><ele>824.5</ele></trkpt>
+      <trkpt lat="48.566301" lon="8.193644"><ele>824.8</ele></trkpt>
+      <trkpt lat="48.566432" lon="8.195452"><ele>825.5</ele></trkpt>
+      <trkpt lat="48.566249" lon="8.196184"><ele>827.2</ele></trkpt>
+      <trkpt lat="48.566117" lon="8.197657"><ele>819.0</ele></trkpt>
+      <trkpt lat="48.566458" lon="8.199069"><ele>810.0</ele></trkpt>
+      <trkpt lat="48.566876" lon="8.199436"><ele>795.5</ele></trkpt>
+      <trkpt lat="48.566903" lon="8.199807"><ele>796.0</ele></trkpt>
+      <trkpt lat="48.567060" lon="8.200398"><ele>792.8</ele></trkpt>
+      <trkpt lat="48.567010" lon="8.200655"><ele>793.5</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

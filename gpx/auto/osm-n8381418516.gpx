@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Belvédère du Gros Sapin</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Belvédère du Gros Sapin</name>
+    <trkseg>
+      <trkpt lat="48.230722" lon="7.095487"><ele>678.0</ele></trkpt>
+      <trkpt lat="48.230890" lon="7.095548"><ele>678.5</ele></trkpt>
+      <trkpt lat="48.230948" lon="7.095757"><ele>679.0</ele></trkpt>
+      <trkpt lat="48.230832" lon="7.095744"><ele>680.2</ele></trkpt>
+      <trkpt lat="48.230916" lon="7.096277"><ele>680.0</ele></trkpt>
+      <trkpt lat="48.230906" lon="7.096890"><ele>680.8</ele></trkpt>
+      <trkpt lat="48.230725" lon="7.098474"><ele>684.8</ele></trkpt>
+      <trkpt lat="48.230659" lon="7.098843"><ele>685.2</ele></trkpt>
+      <trkpt lat="48.230472" lon="7.099319"><ele>687.0</ele></trkpt>
+      <trkpt lat="48.229885" lon="7.100591"><ele>693.8</ele></trkpt>
+      <trkpt lat="48.229591" lon="7.102014"><ele>700.8</ele></trkpt>
+      <trkpt lat="48.229325" lon="7.103799"><ele>711.8</ele></trkpt>
+      <trkpt lat="48.227726" lon="7.104135"><ele>788.2</ele></trkpt>
+      <trkpt lat="48.227170" lon="7.104170"><ele>815.5</ele></trkpt>
+      <trkpt lat="48.227488" lon="7.105752"><ele>808.0</ele></trkpt>
+      <trkpt lat="48.228098" lon="7.107260"><ele>800.2</ele></trkpt>
+      <trkpt lat="48.228492" lon="7.107832"><ele>797.2</ele></trkpt>
+      <trkpt lat="48.228908" lon="7.108244"><ele>792.2</ele></trkpt>
+      <trkpt lat="48.230028" lon="7.108753"><ele>785.2</ele></trkpt>
+      <trkpt lat="48.230081" lon="7.108558"><ele>785.2</ele></trkpt>
+      <trkpt lat="48.230213" lon="7.108574"><ele>785.2</ele></trkpt>
+      <trkpt lat="48.230735" lon="7.108068"><ele>792.5</ele></trkpt>
+      <trkpt lat="48.231514" lon="7.107684"><ele>795.2</ele></trkpt>
+      <trkpt lat="48.231781" lon="7.107666"><ele>791.2</ele></trkpt>
+      <trkpt lat="48.231514" lon="7.107684"><ele>795.2</ele></trkpt>
+      <trkpt lat="48.230735" lon="7.108068"><ele>792.5</ele></trkpt>
+      <trkpt lat="48.230213" lon="7.108574"><ele>785.2</ele></trkpt>
+      <trkpt lat="48.230081" lon="7.108558"><ele>785.2</ele></trkpt>
+      <trkpt lat="48.230028" lon="7.108753"><ele>785.2</ele></trkpt>
+      <trkpt lat="48.228908" lon="7.108244"><ele>792.2</ele></trkpt>
+      <trkpt lat="48.228492" lon="7.107832"><ele>797.2</ele></trkpt>
+      <trkpt lat="48.228098" lon="7.107260"><ele>800.2</ele></trkpt>
+      <trkpt lat="48.227734" lon="7.106448"><ele>805.2</ele></trkpt>
+      <trkpt lat="48.227488" lon="7.105752"><ele>808.0</ele></trkpt>
+      <trkpt lat="48.227170" lon="7.104170"><ele>815.5</ele></trkpt>
+      <trkpt lat="48.227726" lon="7.104135"><ele>788.2</ele></trkpt>
+      <trkpt lat="48.229325" lon="7.103799"><ele>711.8</ele></trkpt>
+      <trkpt lat="48.229591" lon="7.102014"><ele>700.8</ele></trkpt>
+      <trkpt lat="48.229885" lon="7.100591"><ele>693.8</ele></trkpt>
+      <trkpt lat="48.230472" lon="7.099319"><ele>687.0</ele></trkpt>
+      <trkpt lat="48.230659" lon="7.098843"><ele>685.2</ele></trkpt>
+      <trkpt lat="48.230725" lon="7.098474"><ele>684.8</ele></trkpt>
+      <trkpt lat="48.230906" lon="7.096890"><ele>680.8</ele></trkpt>
+      <trkpt lat="48.230916" lon="7.096277"><ele>680.0</ele></trkpt>
+      <trkpt lat="48.230832" lon="7.095744"><ele>680.2</ele></trkpt>
+      <trkpt lat="48.230948" lon="7.095757"><ele>679.0</ele></trkpt>
+      <trkpt lat="48.230890" lon="7.095548"><ele>678.5</ele></trkpt>
+      <trkpt lat="48.230722" lon="7.095487"><ele>678.0</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Himbeerfels</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Himbeerfels</name>
+    <trkseg>
+      <trkpt lat="48.646023" lon="7.280417"><ele>635.0</ele></trkpt>
+      <trkpt lat="48.645947" lon="7.280334"><ele>636.5</ele></trkpt>
+      <trkpt lat="48.645868" lon="7.279977"><ele>636.2</ele></trkpt>
+      <trkpt lat="48.644754" lon="7.278680"><ele>655.2</ele></trkpt>
+      <trkpt lat="48.643613" lon="7.277813"><ele>668.0</ele></trkpt>
+      <trkpt lat="48.642826" lon="7.277821"><ele>671.2</ele></trkpt>
+      <trkpt lat="48.642674" lon="7.277842"><ele>670.8</ele></trkpt>
+      <trkpt lat="48.642262" lon="7.278204"><ele>674.2</ele></trkpt>
+      <trkpt lat="48.641460" lon="7.278595"><ele>678.5</ele></trkpt>
+      <trkpt lat="48.641385" lon="7.279533"><ele>698.8</ele></trkpt>
+      <trkpt lat="48.641450" lon="7.279959"><ele>707.2</ele></trkpt>
+      <trkpt lat="48.641539" lon="7.280131"><ele>710.2</ele></trkpt>
+      <trkpt lat="48.641464" lon="7.280400"><ele>713.2</ele></trkpt>
+      <trkpt lat="48.641009" lon="7.280935"><ele>714.8</ele></trkpt>
+      <trkpt lat="48.640622" lon="7.280959"><ele>716.5</ele></trkpt>
+      <trkpt lat="48.640408" lon="7.281120"><ele>716.2</ele></trkpt>
+      <trkpt lat="48.640039" lon="7.280976"><ele>718.8</ele></trkpt>
+      <trkpt lat="48.639628" lon="7.281144"><ele>720.2</ele></trkpt>
+      <trkpt lat="48.639027" lon="7.281005"><ele>731.0</ele></trkpt>
+      <trkpt lat="48.638848" lon="7.281213"><ele>734.0</ele></trkpt>
+      <trkpt lat="48.638628" lon="7.281103"><ele>738.8</ele></trkpt>
+      <trkpt lat="48.638536" lon="7.280964"><ele>739.8</ele></trkpt>
+      <trkpt lat="48.637998" lon="7.281016"><ele>739.2</ele></trkpt>
+      <trkpt lat="48.638536" lon="7.280964"><ele>739.8</ele></trkpt>
+      <trkpt lat="48.638628" lon="7.281103"><ele>738.8</ele></trkpt>
+      <trkpt lat="48.638848" lon="7.281213"><ele>734.0</ele></trkpt>
+      <trkpt lat="48.639027" lon="7.281005"><ele>731.0</ele></trkpt>
+      <trkpt lat="48.639628" lon="7.281144"><ele>720.2</ele></trkpt>
+      <trkpt lat="48.640039" lon="7.280976"><ele>718.8</ele></trkpt>
+      <trkpt lat="48.640408" lon="7.281120"><ele>716.2</ele></trkpt>
+      <trkpt lat="48.640622" lon="7.280959"><ele>716.5</ele></trkpt>
+      <trkpt lat="48.641009" lon="7.280935"><ele>714.8</ele></trkpt>
+      <trkpt lat="48.641464" lon="7.280400"><ele>713.2</ele></trkpt>
+      <trkpt lat="48.641539" lon="7.280131"><ele>710.2</ele></trkpt>
+      <trkpt lat="48.641450" lon="7.279959"><ele>707.2</ele></trkpt>
+      <trkpt lat="48.641385" lon="7.279533"><ele>698.8</ele></trkpt>
+      <trkpt lat="48.641460" lon="7.278595"><ele>678.5</ele></trkpt>
+      <trkpt lat="48.642262" lon="7.278204"><ele>674.2</ele></trkpt>
+      <trkpt lat="48.642674" lon="7.277842"><ele>670.8</ele></trkpt>
+      <trkpt lat="48.642826" lon="7.277821"><ele>671.2</ele></trkpt>
+      <trkpt lat="48.643613" lon="7.277813"><ele>668.0</ele></trkpt>
+      <trkpt lat="48.644754" lon="7.278680"><ele>655.2</ele></trkpt>
+      <trkpt lat="48.645868" lon="7.279977"><ele>636.2</ele></trkpt>
+      <trkpt lat="48.645947" lon="7.280334"><ele>636.5</ele></trkpt>
+      <trkpt lat="48.646023" lon="7.280417"><ele>633.8</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

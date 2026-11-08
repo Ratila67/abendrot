@@ -15,14 +15,20 @@ function mergeModels(o) {
   return { ...o, hourly: out };
 }
 
-/** Un seul appel pour tous les spots (Open-Meteo accepte des listes de coordonnées). */
+/** Prévisions de tous les points (Open-Meteo accepte des listes de coordonnées), par lots de 80 pour garder des URL courtes. */
 export async function fetchForecast(points) {
-  const all = [...points, PLAIN];
+  const all = [...points, PLAIN], lots = [];
+  for (let i = 0; i < all.length; i += 80) lots.push(all.slice(i, i + 80));
+  const j = (await Promise.all(lots.map(fetchLot))).flat().map(mergeModels);
+  const plain = j.pop();
+  return { spots: j, plain, fetchedAt: Date.now() };
+}
+async function fetchLot(pts) {
   const build = models => {
     const u = new URL('https://api.open-meteo.com/v1/forecast');
-    u.searchParams.set('latitude', all.map(p => p.lat.toFixed(4)).join(','));
-    u.searchParams.set('longitude', all.map(p => p.lon.toFixed(4)).join(','));
-    u.searchParams.set('elevation', all.map(p => Math.round(p.alt)).join(','));
+    u.searchParams.set('latitude', pts.map(p => p.lat.toFixed(4)).join(','));
+    u.searchParams.set('longitude', pts.map(p => p.lon.toFixed(4)).join(','));
+    u.searchParams.set('elevation', pts.map(p => Math.round(p.alt)).join(','));
     u.searchParams.set('hourly', VARS);
     u.searchParams.set('timezone', 'Europe/Paris');
     u.searchParams.set('forecast_days', '16');
@@ -32,11 +38,8 @@ export async function fetchForecast(points) {
   let r = await fetch(build(`${MF},${GLOBAL}`));
   if (!r.ok) r = await fetch(build(null)); // repli si la combinaison de modèles est refusée
   if (!r.ok) throw new Error(`Météo indisponible (${r.status})`);
-  let j = await r.json();
-  if (!Array.isArray(j)) j = [j];
-  j = j.map(mergeModels);
-  const plain = j.pop();
-  return { spots: j, plain, fetchedAt: Date.now() };
+  const j = await r.json();
+  return Array.isArray(j) ? j : [j];
 }
 
 /** Altitudes MNT (Copernicus 90 m) par lots de 100 points. */

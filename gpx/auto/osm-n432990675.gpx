@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Richtungstafel Britzingen</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Richtungstafel Britzingen</name>
+    <trkseg>
+      <trkpt lat="47.815144" lon="7.679748"><ele>432.2</ele></trkpt>
+      <trkpt lat="47.814924" lon="7.680199"><ele>431.2</ele></trkpt>
+      <trkpt lat="47.814870" lon="7.680462"><ele>432.8</ele></trkpt>
+      <trkpt lat="47.814900" lon="7.680609"><ele>433.5</ele></trkpt>
+      <trkpt lat="47.815153" lon="7.681462"><ele>437.2</ele></trkpt>
+      <trkpt lat="47.815549" lon="7.682204"><ele>437.8</ele></trkpt>
+      <trkpt lat="47.815996" lon="7.682655"><ele>436.0</ele></trkpt>
+      <trkpt lat="47.816239" lon="7.683041"><ele>433.5</ele></trkpt>
+      <trkpt lat="47.816341" lon="7.683475"><ele>434.0</ele></trkpt>
+      <trkpt lat="47.816374" lon="7.684212"><ele>440.0</ele></trkpt>
+      <trkpt lat="47.816685" lon="7.683103"><ele>427.0</ele></trkpt>
+      <trkpt lat="47.816846" lon="7.683042"><ele>430.8</ele></trkpt>
+      <trkpt lat="47.816939" lon="7.682887"><ele>430.0</ele></trkpt>
+      <trkpt lat="47.817028" lon="7.682462"><ele>424.8</ele></trkpt>
+      <trkpt lat="47.817411" lon="7.681993"><ele>426.0</ele></trkpt>
+      <trkpt lat="47.818272" lon="7.681202"><ele>428.8</ele></trkpt>
+      <trkpt lat="47.818371" lon="7.680616"><ele>427.2</ele></trkpt>
+      <trkpt lat="47.818758" lon="7.679848"><ele>432.0</ele></trkpt>
+      <trkpt lat="47.818979" lon="7.679564"><ele>432.8</ele></trkpt>
+      <trkpt lat="47.820154" lon="7.678988"><ele>442.0</ele></trkpt>
+      <trkpt lat="47.820701" lon="7.678175"><ele>432.8</ele></trkpt>
+      <trkpt lat="47.822065" lon="7.675866"><ele>400.0</ele></trkpt>
+      <trkpt lat="47.822311" lon="7.675690"><ele>396.5</ele></trkpt>
+      <trkpt lat="47.822694" lon="7.675703"><ele>395.8</ele></trkpt>
+      <trkpt lat="47.823294" lon="7.676154"><ele>396.0</ele></trkpt>
+      <trkpt lat="47.823063" lon="7.675848"><ele>386.8</ele></trkpt>
+      <trkpt lat="47.823294" lon="7.676154"><ele>396.0</ele></trkpt>
+      <trkpt lat="47.823213" lon="7.676142"><ele>397.0</ele></trkpt>
+      <trkpt lat="47.822694" lon="7.675703"><ele>395.8</ele></trkpt>
+      <trkpt lat="47.822311" lon="7.675690"><ele>396.5</ele></trkpt>
+      <trkpt lat="47.822065" lon="7.675866"><ele>400.0</ele></trkpt>
+      <trkpt lat="47.820701" lon="7.678175"><ele>432.8</ele></trkpt>
+      <trkpt lat="47.820154" lon="7.678988"><ele>442.0</ele></trkpt>
+      <trkpt lat="47.818979" lon="7.679564"><ele>432.8</ele></trkpt>
+      <trkpt lat="47.818758" lon="7.679848"><ele>432.0</ele></trkpt>
+      <trkpt lat="47.818371" lon="7.680616"><ele>427.2</ele></trkpt>
+      <trkpt lat="47.818272" lon="7.681202"><ele>428.8</ele></trkpt>
+      <trkpt lat="47.817411" lon="7.681993"><ele>426.0</ele></trkpt>
+      <trkpt lat="47.817028" lon="7.682462"><ele>424.8</ele></trkpt>
+      <trkpt lat="47.816939" lon="7.682887"><ele>430.0</ele></trkpt>
+      <trkpt lat="47.816846" lon="7.683042"><ele>430.8</ele></trkpt>
+      <trkpt lat="47.816685" lon="7.683103"><ele>427.0</ele></trkpt>
+      <trkpt lat="47.816374" lon="7.684212"><ele>440.0</ele></trkpt>
+      <trkpt lat="47.816341" lon="7.683475"><ele>434.0</ele></trkpt>
+      <trkpt lat="47.816239" lon="7.683041"><ele>433.5</ele></trkpt>
+      <trkpt lat="47.815996" lon="7.682655"><ele>436.0</ele></trkpt>
+      <trkpt lat="47.815549" lon="7.682204"><ele>437.8</ele></trkpt>
+      <trkpt lat="47.815153" lon="7.681462"><ele>437.2</ele></trkpt>
+      <trkpt lat="47.814900" lon="7.680609"><ele>433.5</ele></trkpt>
+      <trkpt lat="47.814870" lon="7.680462"><ele>432.8</ele></trkpt>
+      <trkpt lat="47.814924" lon="7.680199"><ele>431.2</ele></trkpt>
+      <trkpt lat="47.815144" lon="7.679748"><ele>432.5</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Aussichtsplattform Kleines Spießhorn</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Aussichtsplattform Kleines Spießhorn</name>
+    <trkseg>
+      <trkpt lat="47.829174" lon="8.029340"><ele>1251.8</ele></trkpt>
+      <trkpt lat="47.829404" lon="8.029366"><ele>1241.2</ele></trkpt>
+      <trkpt lat="47.829646" lon="8.029207"><ele>1230.8</ele></trkpt>
+      <trkpt lat="47.829541" lon="8.029503"><ele>1236.2</ele></trkpt>
+      <trkpt lat="47.829178" lon="8.030044"><ele>1249.8</ele></trkpt>
+      <trkpt lat="47.829127" lon="8.031026"><ele>1245.5</ele></trkpt>
+      <trkpt lat="47.829002" lon="8.031012"><ele>1250.5</ele></trkpt>
+      <trkpt lat="47.828774" lon="8.030539"><ele>1264.0</ele></trkpt>
+      <trkpt lat="47.828584" lon="8.030602"><ele>1272.2</ele></trkpt>
+      <trkpt lat="47.828424" lon="8.031804"><ele>1282.0</ele></trkpt>
+      <trkpt lat="47.828420" lon="8.032207"><ele>1292.0</ele></trkpt>
+      <trkpt lat="47.828359" lon="8.032367"><ele>1297.2</ele></trkpt>
+      <trkpt lat="47.827611" lon="8.033040"><ele>1309.5</ele></trkpt>
+      <trkpt lat="47.827126" lon="8.033665"><ele>1308.5</ele></trkpt>
+      <trkpt lat="47.826644" lon="8.034966"><ele>1298.5</ele></trkpt>
+      <trkpt lat="47.826402" lon="8.035424"><ele>1310.8</ele></trkpt>
+      <trkpt lat="47.826315" lon="8.035783"><ele>1323.5</ele></trkpt>
+      <trkpt lat="47.826424" lon="8.036562"><ele>1338.0</ele></trkpt>
+      <trkpt lat="47.826486" lon="8.036830"><ele>1339.0</ele></trkpt>
+      <trkpt lat="47.826747" lon="8.037072"><ele>1335.0</ele></trkpt>
+      <trkpt lat="47.826131" lon="8.037553"><ele>1342.0</ele></trkpt>
+      <trkpt lat="47.825911" lon="8.037605"><ele>1343.0</ele></trkpt>
+      <trkpt lat="47.825248" lon="8.037497"><ele>1338.2</ele></trkpt>
+      <trkpt lat="47.825911" lon="8.037605"><ele>1343.0</ele></trkpt>
+      <trkpt lat="47.826131" lon="8.037553"><ele>1342.0</ele></trkpt>
+      <trkpt lat="47.826747" lon="8.037072"><ele>1335.0</ele></trkpt>
+      <trkpt lat="47.826486" lon="8.036830"><ele>1339.0</ele></trkpt>
+      <trkpt lat="47.826424" lon="8.036562"><ele>1338.0</ele></trkpt>
+      <trkpt lat="47.826315" lon="8.035783"><ele>1323.5</ele></trkpt>
+      <trkpt lat="47.826402" lon="8.035424"><ele>1310.8</ele></trkpt>
+      <trkpt lat="47.826644" lon="8.034966"><ele>1298.5</ele></trkpt>
+      <trkpt lat="47.827126" lon="8.033665"><ele>1308.5</ele></trkpt>
+      <trkpt lat="47.827611" lon="8.033040"><ele>1309.5</ele></trkpt>
+      <trkpt lat="47.828359" lon="8.032367"><ele>1297.2</ele></trkpt>
+      <trkpt lat="47.828420" lon="8.032207"><ele>1292.0</ele></trkpt>
+      <trkpt lat="47.828424" lon="8.031804"><ele>1282.0</ele></trkpt>
+      <trkpt lat="47.828584" lon="8.030602"><ele>1272.2</ele></trkpt>
+      <trkpt lat="47.828774" lon="8.030539"><ele>1264.0</ele></trkpt>
+      <trkpt lat="47.829002" lon="8.031012"><ele>1250.5</ele></trkpt>
+      <trkpt lat="47.829127" lon="8.031026"><ele>1245.5</ele></trkpt>
+      <trkpt lat="47.829178" lon="8.030044"><ele>1249.8</ele></trkpt>
+      <trkpt lat="47.829541" lon="8.029503"><ele>1236.2</ele></trkpt>
+      <trkpt lat="47.829646" lon="8.029207"><ele>1230.8</ele></trkpt>
+      <trkpt lat="47.829404" lon="8.029366"><ele>1241.2</ele></trkpt>
+      <trkpt lat="47.829174" lon="8.029340"><ele>1252.8</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

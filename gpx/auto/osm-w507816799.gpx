@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Stöcklewaldturm</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Stöcklewaldturm</name>
+    <trkseg>
+      <trkpt lat="48.102145" lon="8.249780"><ele>998.8</ele></trkpt>
+      <trkpt lat="48.101806" lon="8.249017"><ele>1009.2</ele></trkpt>
+      <trkpt lat="48.101456" lon="8.249406"><ele>1009.8</ele></trkpt>
+      <trkpt lat="48.100406" lon="8.249876"><ele>1011.5</ele></trkpt>
+      <trkpt lat="48.099346" lon="8.250754"><ele>1010.0</ele></trkpt>
+      <trkpt lat="48.098829" lon="8.250811"><ele>1010.0</ele></trkpt>
+      <trkpt lat="48.098691" lon="8.250692"><ele>1010.0</ele></trkpt>
+      <trkpt lat="48.098552" lon="8.251025"><ele>1010.0</ele></trkpt>
+      <trkpt lat="48.098377" lon="8.251253"><ele>1010.0</ele></trkpt>
+      <trkpt lat="48.097705" lon="8.251203"><ele>1010.8</ele></trkpt>
+      <trkpt lat="48.096720" lon="8.251656"><ele>1012.8</ele></trkpt>
+      <trkpt lat="48.096442" lon="8.252164"><ele>1014.8</ele></trkpt>
+      <trkpt lat="48.096106" lon="8.253349"><ele>1019.0</ele></trkpt>
+      <trkpt lat="48.095465" lon="8.254359"><ele>1025.2</ele></trkpt>
+      <trkpt lat="48.094339" lon="8.253931"><ele>1031.2</ele></trkpt>
+      <trkpt lat="48.093999" lon="8.254130"><ele>1036.5</ele></trkpt>
+      <trkpt lat="48.093675" lon="8.254057"><ele>1039.5</ele></trkpt>
+      <trkpt lat="48.093411" lon="8.254147"><ele>1043.0</ele></trkpt>
+      <trkpt lat="48.092585" lon="8.254203"><ele>1055.5</ele></trkpt>
+      <trkpt lat="48.091636" lon="8.253614"><ele>1059.8</ele></trkpt>
+      <trkpt lat="48.091569" lon="8.253664"><ele>1059.0</ele></trkpt>
+      <trkpt lat="48.091636" lon="8.253614"><ele>1059.8</ele></trkpt>
+      <trkpt lat="48.092585" lon="8.254203"><ele>1055.5</ele></trkpt>
+      <trkpt lat="48.093411" lon="8.254147"><ele>1043.0</ele></trkpt>
+      <trkpt lat="48.093675" lon="8.254057"><ele>1039.5</ele></trkpt>
+      <trkpt lat="48.093999" lon="8.254130"><ele>1036.5</ele></trkpt>
+      <trkpt lat="48.094339" lon="8.253931"><ele>1031.2</ele></trkpt>
+      <trkpt lat="48.095465" lon="8.254359"><ele>1025.2</ele></trkpt>
+      <trkpt lat="48.096106" lon="8.253349"><ele>1019.0</ele></trkpt>
+      <trkpt lat="48.096442" lon="8.252164"><ele>1014.8</ele></trkpt>
+      <trkpt lat="48.096720" lon="8.251656"><ele>1012.8</ele></trkpt>
+      <trkpt lat="48.097705" lon="8.251203"><ele>1010.8</ele></trkpt>
+      <trkpt lat="48.098377" lon="8.251253"><ele>1010.0</ele></trkpt>
+      <trkpt lat="48.098552" lon="8.251025"><ele>1010.0</ele></trkpt>
+      <trkpt lat="48.098691" lon="8.250692"><ele>1010.0</ele></trkpt>
+      <trkpt lat="48.098829" lon="8.250811"><ele>1010.0</ele></trkpt>
+      <trkpt lat="48.099346" lon="8.250754"><ele>1010.0</ele></trkpt>
+      <trkpt lat="48.100406" lon="8.249876"><ele>1011.5</ele></trkpt>
+      <trkpt lat="48.101456" lon="8.249406"><ele>1009.8</ele></trkpt>
+      <trkpt lat="48.101806" lon="8.249017"><ele>1009.2</ele></trkpt>
+      <trkpt lat="48.102145" lon="8.249780"><ele>996.2</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

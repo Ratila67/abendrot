@@ -36,6 +36,19 @@ const isToday = (d = S.date) => d === todayStr();
 /* ---------- traces ---------- */
 const sunsetSpot = h => h.spots.find(s => s.sunset) || null;
 const wxPoint = h => sunsetSpot(h) || h.spots[0] || h.start;
+/** Points météo : un par rando vérifiée (le modèle est entraîné sur ces points exacts), et un par maille
+ *  d'environ 9 km et tranche de 300 m d'altitude pour les randos générées. Rend aussi l'index de chaque rando. */
+let wxIdx = new Map();
+function wxPoints() {
+  const pts = [], cells = new Map();
+  wxIdx = new Map();
+  for (const h of S.hikes) {
+    const p = wxPoint(h), k = h.auto ? `${Math.round(p.lat * 12)}:${Math.round(p.lon * 8)}:${Math.round(p.alt / 300)}` : h.id;
+    if (!cells.has(k)) { cells.set(k, pts.length); pts.push(p); }
+    wxIdx.set(h.id, cells.get(k));
+  }
+  return pts;
+}
 
 async function getTrack(h) {
   if (trackCache.has(h.id)) return trackCache.get(h.id);
@@ -96,7 +109,8 @@ const road = h => { const o = origin(), km = hav(o.lat, o.lon, h.start.lat, h.st
 const daysAhead = (d = S.date) => Math.round((noon(d) - noon(todayStr())) / 864e5);
 function wxFor(h, p, date = S.date) {
   if (!S.wx) return null;
-  const s = S.wx.spots[S.hikes.indexOf(h)];
+  const s = S.wx.spots[wxIdx.get(h.id)];
+  if (!s) return null;
   const k = hourIndex(s, p.sunsetHike ? p.set : addMin(p.dep, 120));
   if (k < 0) return null;
   const alt = wxPoint(h).alt, r = scoreSunset(s, S.wx.plain, k, alt);
@@ -161,7 +175,7 @@ function bindHeader() {
 }
 
 /* ---------- liste ---------- */
-const FILTERS = [['all', 'Tout'], ['sun', 'Meilleurs spots'], ['short', 'Moins de 2 h 30'], ['nosnow', 'Sans neige']];
+const FILTERS = [['all', 'Tout'], ['sun', 'Meilleurs spots'], ['short', 'Moins de 2 h 30'], ['near', 'À moins d’1 h de route'], ['nosnow', 'Sans neige'], ['verified', 'Vérifiées']];
 const GOOD = 40;   // score en dessous duquel l’app ne pousse plus à partir
 const weekDays = () => days().slice(0, 7);
 const dayName = s => s === weekDays()[1]?.s ? 'demain' : noon(s).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric' });
@@ -216,7 +230,7 @@ function rowHTML(e) {
     ${lead}
     <span><span class="row-title">${esc(h.name)}${fav ? ic('star', 'fill') : ''}</span>
       <span class="row-meta">${nf(m.km)} km, ${Math.round(m.dplus)} m, ${dur(m.total)}</span>
-      <span class="row-meta">${esc(h.zone)}</span></span>
+      <span class="row-meta">${esc(h.zone)}${h.auto ? ', itinéraire calculé' : ''}</span></span>
     <span class="row-end"><span class="row-time">${time}</span><span class="row-cap">${cap}</span></span>
   </a></li>`;
 }
@@ -226,10 +240,12 @@ function viewList(onlyFav) {
   let E = S.hikes.map(h => evaluate(h));
   const heroE = E;
   if (onlyFav) E = E.filter(e => e.fav);
-  if (q) E = E.filter(e => `${e.h.name} ${e.h.zone} ${e.h.merged}`.toLowerCase().includes(q));
+  if (q) E = E.filter(e => `${e.h.name} ${e.h.zone} ${e.h.merged || ''}`.toLowerCase().includes(q));
   if (S.filter === 'sun') E = E.filter(e => e.h.sunsetScore >= 4);
   if (S.filter === 'short') E = E.filter(e => e.m.total <= 150);
   if (S.filter === 'nosnow') E = E.filter(e => !e.h.snow);
+  if (S.filter === 'near') E = E.filter(e => e.rd.min <= 60);
+  if (S.filter === 'verified') E = E.filter(e => !e.h.auto);
   const by = { smart: (a, b) => b.value - a.value, dist: (a, b) => a.rd.km - b.rd.km, dur: (a, b) => a.m.total - b.m.total };
   E.sort(by[S.sort] || by.smart);
   const banner = S.wxErr ? `<p class="banner">${ic('warn')} Météo indisponible, classement selon la qualité des spots.</p>` : '';
@@ -344,6 +360,7 @@ function stayHTML(h, m) {
 function alertsHTML(h, p, w, late) {
   const a = [];
   if (late) a.push(['warn', 'Trop tard pour ce coucher. Regarde demain ou une rando plus proche.']);
+  if (h.auto) a.push(['route', `Rando générée depuis OpenStreetMap, jamais parcourue. ${h.view}. Repère le sentier de jour avant d’y redescendre de nuit.`]);
   if (p.sunsetHike && p.night > 5) a.push(['moon', `${dur(p.night)} de descente de nuit. Frontale chargée et batterie de secours.`]);
   if (w && w.gust >= 60) a.push(['wind', `Rafales à ${Math.round(w.gust)} km/h au spot. Crête exposée à éviter si ça dépasse 80.`]);
   if (w && w.feels <= -15) a.push(['temp', `Ressenti ${Math.round(w.feels)} °C. Doudoune et gants de rechange.`]);
@@ -752,7 +769,14 @@ function locate() {
   }, e => toast(e.code === 1 ? 'Localisation refusée dans les réglages du navigateur' : 'Position indisponible'), { timeout: 12000, maximumAge: 300000 });
 }
 async function loadWeather() {
-  try { S.wx = await fetchForecast(S.hikes.map(wxPoint)); S.wxErr = null; } catch (e) { S.wxErr = e.message; }
+  try {
+    // gardée 45 min : chaque ouverture ne repart pas chercher des centaines de points (quota Open-Meteo)
+    const pts = wxPoints(), sig = pts.map(p => `${p.lat.toFixed(3)},${p.lon.toFixed(3)}`).join('|');
+    const c = await store.get('wx').catch(() => null);
+    if (c && c.sig === sig && Date.now() - c.fetchedAt < 45 * 6e4) S.wx = c;
+    else { S.wx = await fetchForecast(pts); store.set('wx', { ...S.wx, sig }).catch(() => {}); }
+    S.wxErr = null;
+  } catch (e) { S.wxErr = e.message; }
   const c = S.cur;
   if (c && $('#wx')) { c.w = wxFor(c.h, c.p); $('#wx').innerHTML = wxHTML(c.h, c.p); fillSecond(c.h, c.p, S.token); }
   else if (location.hash === '#carte') { if (map?.loaded()) mapPins(); }
@@ -763,7 +787,11 @@ async function init() {
   window.addEventListener('hashchange', route);
   document.addEventListener('click', e => { const a = e.target.closest?.('a[data-date]'); if (a) S.date = a.dataset.date; });
   bindSettings();
-  try { S.hikes = await (await fetch('./data/hikes.json')).json(); }
+  try {
+    S.hikes = await (await fetch('./data/hikes.json')).json();
+    // randos générées depuis OpenStreetMap (scripts/spot_gen.py), après les randos vérifiées
+    try { const r = await fetch('./data/hikes-auto.json'); if (r.ok) S.hikes = S.hikes.concat(await r.json()); } catch { /* facultatif */ }
+  }
   catch { app.innerHTML = '<p class="empty">Impossible de charger les randos. Ouvre l’app depuis son adresse web.</p>'; return; }
   try {
     S.saved = (await store.get('saved')) || S.saved; S.pace = (await store.get('pace')) || S.pace; S.stay = !!(await store.get('stay')); S.mapDark = !!(await store.get('mapDark'));

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Himmelsschaukel</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Himmelsschaukel</name>
+    <trkseg>
+      <trkpt lat="48.485425" lon="8.006637"><ele>238.0</ele></trkpt>
+      <trkpt lat="48.485776" lon="8.007301"><ele>243.5</ele></trkpt>
+      <trkpt lat="48.485841" lon="8.007638"><ele>247.2</ele></trkpt>
+      <trkpt lat="48.485791" lon="8.007790"><ele>249.5</ele></trkpt>
+      <trkpt lat="48.484223" lon="8.009333"><ele>269.0</ele></trkpt>
+      <trkpt lat="48.482845" lon="8.011906"><ele>310.5</ele></trkpt>
+      <trkpt lat="48.482932" lon="8.012196"><ele>311.5</ele></trkpt>
+      <trkpt lat="48.482908" lon="8.012858"><ele>322.5</ele></trkpt>
+      <trkpt lat="48.482948" lon="8.012994"><ele>324.8</ele></trkpt>
+      <trkpt lat="48.483827" lon="8.013138"><ele>331.8</ele></trkpt>
+      <trkpt lat="48.484209" lon="8.013331"><ele>335.5</ele></trkpt>
+      <trkpt lat="48.484347" lon="8.013770"><ele>338.5</ele></trkpt>
+      <trkpt lat="48.484417" lon="8.014396"><ele>341.0</ele></trkpt>
+      <trkpt lat="48.484204" lon="8.014618"><ele>346.2</ele></trkpt>
+      <trkpt lat="48.483861" lon="8.014646"><ele>356.0</ele></trkpt>
+      <trkpt lat="48.483262" lon="8.015063"><ele>373.2</ele></trkpt>
+      <trkpt lat="48.482861" lon="8.015210"><ele>381.8</ele></trkpt>
+      <trkpt lat="48.482055" lon="8.014835"><ele>401.2</ele></trkpt>
+      <trkpt lat="48.481986" lon="8.014711"><ele>401.8</ele></trkpt>
+      <trkpt lat="48.482055" lon="8.014835"><ele>401.2</ele></trkpt>
+      <trkpt lat="48.482861" lon="8.015210"><ele>381.8</ele></trkpt>
+      <trkpt lat="48.483262" lon="8.015063"><ele>373.2</ele></trkpt>
+      <trkpt lat="48.483861" lon="8.014646"><ele>356.0</ele></trkpt>
+      <trkpt lat="48.484204" lon="8.014618"><ele>346.2</ele></trkpt>
+      <trkpt lat="48.484417" lon="8.014396"><ele>341.0</ele></trkpt>
+      <trkpt lat="48.484347" lon="8.013770"><ele>338.5</ele></trkpt>
+      <trkpt lat="48.484209" lon="8.013331"><ele>335.5</ele></trkpt>
+      <trkpt lat="48.483827" lon="8.013138"><ele>331.8</ele></trkpt>
+      <trkpt lat="48.482948" lon="8.012994"><ele>324.8</ele></trkpt>
+      <trkpt lat="48.482908" lon="8.012858"><ele>322.5</ele></trkpt>
+      <trkpt lat="48.482932" lon="8.012196"><ele>311.5</ele></trkpt>
+      <trkpt lat="48.482845" lon="8.011906"><ele>310.5</ele></trkpt>
+      <trkpt lat="48.484223" lon="8.009333"><ele>269.0</ele></trkpt>
+      <trkpt lat="48.485791" lon="8.007790"><ele>249.5</ele></trkpt>
+      <trkpt lat="48.485841" lon="8.007638"><ele>247.2</ele></trkpt>
+      <trkpt lat="48.485776" lon="8.007301"><ele>243.5</ele></trkpt>
+      <trkpt lat="48.485425" lon="8.006637"><ele>238.2</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

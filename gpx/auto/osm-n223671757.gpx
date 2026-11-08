@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Schauinslandturm</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Schauinslandturm</name>
+    <trkseg>
+      <trkpt lat="47.918802" lon="7.890375"><ele>1111.5</ele></trkpt>
+      <trkpt lat="47.918938" lon="7.890479"><ele>1114.2</ele></trkpt>
+      <trkpt lat="47.918906" lon="7.890733"><ele>1120.5</ele></trkpt>
+      <trkpt lat="47.918412" lon="7.890736"><ele>1118.8</ele></trkpt>
+      <trkpt lat="47.917899" lon="7.891080"><ele>1124.5</ele></trkpt>
+      <trkpt lat="47.916385" lon="7.892996"><ele>1143.8</ele></trkpt>
+      <trkpt lat="47.915817" lon="7.893406"><ele>1150.2</ele></trkpt>
+      <trkpt lat="47.914958" lon="7.893449"><ele>1161.5</ele></trkpt>
+      <trkpt lat="47.914411" lon="7.893197"><ele>1160.0</ele></trkpt>
+      <trkpt lat="47.914111" lon="7.893312"><ele>1163.0</ele></trkpt>
+      <trkpt lat="47.913937" lon="7.893584"><ele>1164.8</ele></trkpt>
+      <trkpt lat="47.913788" lon="7.894362"><ele>1175.2</ele></trkpt>
+      <trkpt lat="47.912469" lon="7.896355"><ele>1203.0</ele></trkpt>
+      <trkpt lat="47.912086" lon="7.896590"><ele>1210.8</ele></trkpt>
+      <trkpt lat="47.911799" lon="7.896546"><ele>1216.5</ele></trkpt>
+      <trkpt lat="47.911595" lon="7.896400"><ele>1221.2</ele></trkpt>
+      <trkpt lat="47.911831" lon="7.896859"><ele>1226.5</ele></trkpt>
+      <trkpt lat="47.912272" lon="7.897042"><ele>1229.0</ele></trkpt>
+      <trkpt lat="47.912980" lon="7.896918"><ele>1237.8</ele></trkpt>
+      <trkpt lat="47.913416" lon="7.896742"><ele>1243.8</ele></trkpt>
+      <trkpt lat="47.913666" lon="7.896743"><ele>1248.0</ele></trkpt>
+      <trkpt lat="47.913788" lon="7.896870"><ele>1249.0</ele></trkpt>
+      <trkpt lat="47.912766" lon="7.897946"><ele>1266.0</ele></trkpt>
+      <trkpt lat="47.911974" lon="7.898496"><ele>1279.0</ele></trkpt>
+      <trkpt lat="47.912766" lon="7.897946"><ele>1266.0</ele></trkpt>
+      <trkpt lat="47.913788" lon="7.896870"><ele>1249.0</ele></trkpt>
+      <trkpt lat="47.913666" lon="7.896743"><ele>1248.0</ele></trkpt>
+      <trkpt lat="47.913416" lon="7.896742"><ele>1243.8</ele></trkpt>
+      <trkpt lat="47.912980" lon="7.896918"><ele>1237.8</ele></trkpt>
+      <trkpt lat="47.912272" lon="7.897042"><ele>1229.0</ele></trkpt>
+      <trkpt lat="47.911831" lon="7.896859"><ele>1226.5</ele></trkpt>
+      <trkpt lat="47.911595" lon="7.896400"><ele>1221.2</ele></trkpt>
+      <trkpt lat="47.911799" lon="7.896546"><ele>1216.5</ele></trkpt>
+      <trkpt lat="47.912086" lon="7.896590"><ele>1210.8</ele></trkpt>
+      <trkpt lat="47.912469" lon="7.896355"><ele>1203.0</ele></trkpt>
+      <trkpt lat="47.913788" lon="7.894362"><ele>1175.2</ele></trkpt>
+      <trkpt lat="47.913937" lon="7.893584"><ele>1164.8</ele></trkpt>
+      <trkpt lat="47.914111" lon="7.893312"><ele>1163.0</ele></trkpt>
+      <trkpt lat="47.914411" lon="7.893197"><ele>1160.0</ele></trkpt>
+      <trkpt lat="47.914958" lon="7.893449"><ele>1161.5</ele></trkpt>
+      <trkpt lat="47.915817" lon="7.893406"><ele>1150.2</ele></trkpt>
+      <trkpt lat="47.916385" lon="7.892996"><ele>1143.8</ele></trkpt>
+      <trkpt lat="47.917899" lon="7.891080"><ele>1124.5</ele></trkpt>
+      <trkpt lat="47.918412" lon="7.890736"><ele>1118.8</ele></trkpt>
+      <trkpt lat="47.918906" lon="7.890733"><ele>1120.5</ele></trkpt>
+      <trkpt lat="47.918938" lon="7.890479"><ele>1114.2</ele></trkpt>
+      <trkpt lat="47.918802" lon="7.890375"><ele>1111.5</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

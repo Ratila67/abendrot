@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Roche des Fées</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Roche des Fées</name>
+    <trkseg>
+      <trkpt lat="48.334852" lon="7.104612"><ele>544.0</ele></trkpt>
+      <trkpt lat="48.335001" lon="7.104981"><ele>545.8</ele></trkpt>
+      <trkpt lat="48.335141" lon="7.105813"><ele>547.5</ele></trkpt>
+      <trkpt lat="48.335153" lon="7.106456"><ele>547.2</ele></trkpt>
+      <trkpt lat="48.335402" lon="7.107053"><ele>550.8</ele></trkpt>
+      <trkpt lat="48.335572" lon="7.108006"><ele>554.5</ele></trkpt>
+      <trkpt lat="48.335573" lon="7.109750"><ele>564.0</ele></trkpt>
+      <trkpt lat="48.335687" lon="7.110569"><ele>570.5</ele></trkpt>
+      <trkpt lat="48.335889" lon="7.111377"><ele>578.0</ele></trkpt>
+      <trkpt lat="48.335818" lon="7.112321"><ele>583.8</ele></trkpt>
+      <trkpt lat="48.335862" lon="7.112634"><ele>582.2</ele></trkpt>
+      <trkpt lat="48.335620" lon="7.113038"><ele>584.0</ele></trkpt>
+      <trkpt lat="48.335248" lon="7.113198"><ele>584.2</ele></trkpt>
+      <trkpt lat="48.335112" lon="7.113369"><ele>584.2</ele></trkpt>
+      <trkpt lat="48.334746" lon="7.115025"><ele>588.2</ele></trkpt>
+      <trkpt lat="48.334082" lon="7.116700"><ele>588.0</ele></trkpt>
+      <trkpt lat="48.333509" lon="7.117831"><ele>595.8</ele></trkpt>
+      <trkpt lat="48.333285" lon="7.119144"><ele>615.8</ele></trkpt>
+      <trkpt lat="48.333390" lon="7.119574"><ele>622.2</ele></trkpt>
+      <trkpt lat="48.333277" lon="7.121462"><ele>653.0</ele></trkpt>
+      <trkpt lat="48.333356" lon="7.125278"><ele>731.5</ele></trkpt>
+      <trkpt lat="48.333240" lon="7.126306"><ele>763.8</ele></trkpt>
+      <trkpt lat="48.333052" lon="7.127105"><ele>787.0</ele></trkpt>
+      <trkpt lat="48.333013" lon="7.127084"><ele>785.0</ele></trkpt>
+      <trkpt lat="48.333066" lon="7.127101"><ele>786.8</ele></trkpt>
+      <trkpt lat="48.333240" lon="7.126306"><ele>763.8</ele></trkpt>
+      <trkpt lat="48.333356" lon="7.125278"><ele>731.5</ele></trkpt>
+      <trkpt lat="48.333277" lon="7.121462"><ele>653.0</ele></trkpt>
+      <trkpt lat="48.333390" lon="7.119574"><ele>622.2</ele></trkpt>
+      <trkpt lat="48.333285" lon="7.119144"><ele>615.8</ele></trkpt>
+      <trkpt lat="48.333509" lon="7.117831"><ele>595.8</ele></trkpt>
+      <trkpt lat="48.334082" lon="7.116700"><ele>588.0</ele></trkpt>
+      <trkpt lat="48.334746" lon="7.115025"><ele>588.2</ele></trkpt>
+      <trkpt lat="48.335112" lon="7.113369"><ele>584.2</ele></trkpt>
+      <trkpt lat="48.335248" lon="7.113198"><ele>584.2</ele></trkpt>
+      <trkpt lat="48.335620" lon="7.113038"><ele>584.0</ele></trkpt>
+      <trkpt lat="48.335862" lon="7.112634"><ele>582.2</ele></trkpt>
+      <trkpt lat="48.335818" lon="7.112321"><ele>583.8</ele></trkpt>
+      <trkpt lat="48.335889" lon="7.111377"><ele>578.0</ele></trkpt>
+      <trkpt lat="48.335687" lon="7.110569"><ele>570.5</ele></trkpt>
+      <trkpt lat="48.335573" lon="7.109750"><ele>564.0</ele></trkpt>
+      <trkpt lat="48.335572" lon="7.108006"><ele>554.5</ele></trkpt>
+      <trkpt lat="48.335402" lon="7.107053"><ele>550.8</ele></trkpt>
+      <trkpt lat="48.335153" lon="7.106456"><ele>547.2</ele></trkpt>
+      <trkpt lat="48.335141" lon="7.105813"><ele>547.5</ele></trkpt>
+      <trkpt lat="48.335001" lon="7.104981"><ele>545.8</ele></trkpt>
+      <trkpt lat="48.334852" lon="7.104612"><ele>543.5</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

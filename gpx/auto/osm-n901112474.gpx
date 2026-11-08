@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Rocher du Rosskopf</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Rocher du Rosskopf</name>
+    <trkseg>
+      <trkpt lat="48.628253" lon="7.262200"><ele>758.5</ele></trkpt>
+      <trkpt lat="48.628388" lon="7.260321"><ele>752.5</ele></trkpt>
+      <trkpt lat="48.628312" lon="7.259562"><ele>752.5</ele></trkpt>
+      <trkpt lat="48.628307" lon="7.257768"><ele>747.2</ele></trkpt>
+      <trkpt lat="48.628356" lon="7.257060"><ele>741.2</ele></trkpt>
+      <trkpt lat="48.628581" lon="7.256177"><ele>728.2</ele></trkpt>
+      <trkpt lat="48.628361" lon="7.256042"><ele>731.5</ele></trkpt>
+      <trkpt lat="48.628152" lon="7.256037"><ele>734.2</ele></trkpt>
+      <trkpt lat="48.627888" lon="7.256239"><ele>738.5</ele></trkpt>
+      <trkpt lat="48.627802" lon="7.256431"><ele>741.8</ele></trkpt>
+      <trkpt lat="48.627577" lon="7.258079"><ele>754.5</ele></trkpt>
+      <trkpt lat="48.627410" lon="7.258270"><ele>755.5</ele></trkpt>
+      <trkpt lat="48.626833" lon="7.258654"><ele>759.5</ele></trkpt>
+      <trkpt lat="48.626051" lon="7.259534"><ele>765.5</ele></trkpt>
+      <trkpt lat="48.625464" lon="7.260006"><ele>770.5</ele></trkpt>
+      <trkpt lat="48.624785" lon="7.260459"><ele>775.5</ele></trkpt>
+      <trkpt lat="48.623397" lon="7.261132"><ele>783.8</ele></trkpt>
+      <trkpt lat="48.622567" lon="7.262500"><ele>793.8</ele></trkpt>
+      <trkpt lat="48.621552" lon="7.262931"><ele>799.2</ele></trkpt>
+      <trkpt lat="48.621259" lon="7.263383"><ele>801.0</ele></trkpt>
+      <trkpt lat="48.621080" lon="7.263409"><ele>800.2</ele></trkpt>
+      <trkpt lat="48.620880" lon="7.263300"><ele>799.8</ele></trkpt>
+      <trkpt lat="48.620573" lon="7.264233"><ele>788.5</ele></trkpt>
+      <trkpt lat="48.620880" lon="7.263300"><ele>799.8</ele></trkpt>
+      <trkpt lat="48.621080" lon="7.263409"><ele>800.2</ele></trkpt>
+      <trkpt lat="48.621259" lon="7.263383"><ele>801.0</ele></trkpt>
+      <trkpt lat="48.621552" lon="7.262931"><ele>799.2</ele></trkpt>
+      <trkpt lat="48.622567" lon="7.262500"><ele>793.8</ele></trkpt>
+      <trkpt lat="48.623397" lon="7.261132"><ele>783.8</ele></trkpt>
+      <trkpt lat="48.624785" lon="7.260459"><ele>775.5</ele></trkpt>
+      <trkpt lat="48.625464" lon="7.260006"><ele>770.5</ele></trkpt>
+      <trkpt lat="48.626051" lon="7.259534"><ele>765.5</ele></trkpt>
+      <trkpt lat="48.626833" lon="7.258654"><ele>759.5</ele></trkpt>
+      <trkpt lat="48.627410" lon="7.258270"><ele>755.5</ele></trkpt>
+      <trkpt lat="48.627577" lon="7.258079"><ele>754.5</ele></trkpt>
+      <trkpt lat="48.627802" lon="7.256431"><ele>741.8</ele></trkpt>
+      <trkpt lat="48.627888" lon="7.256239"><ele>738.5</ele></trkpt>
+      <trkpt lat="48.628152" lon="7.256037"><ele>734.2</ele></trkpt>
+      <trkpt lat="48.628361" lon="7.256042"><ele>731.5</ele></trkpt>
+      <trkpt lat="48.628581" lon="7.256177"><ele>728.2</ele></trkpt>
+      <trkpt lat="48.628356" lon="7.257060"><ele>741.2</ele></trkpt>
+      <trkpt lat="48.628307" lon="7.257768"><ele>747.2</ele></trkpt>
+      <trkpt lat="48.628312" lon="7.259562"><ele>752.5</ele></trkpt>
+      <trkpt lat="48.628388" lon="7.260321"><ele>752.5</ele></trkpt>
+      <trkpt lat="48.628253" lon="7.262200"><ele>759.0</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

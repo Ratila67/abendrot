@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Rainkopf</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Rainkopf</name>
+    <trkseg>
+      <trkpt lat="48.017554" lon="6.987285"><ele>1212.8</ele></trkpt>
+      <trkpt lat="48.017519" lon="6.987479"><ele>1214.0</ele></trkpt>
+      <trkpt lat="48.017335" lon="6.987629"><ele>1214.2</ele></trkpt>
+      <trkpt lat="48.016858" lon="6.987732"><ele>1213.8</ele></trkpt>
+      <trkpt lat="48.016257" lon="6.986777"><ele>1205.5</ele></trkpt>
+      <trkpt lat="48.016071" lon="6.986300"><ele>1201.2</ele></trkpt>
+      <trkpt lat="48.015745" lon="6.985893"><ele>1195.0</ele></trkpt>
+      <trkpt lat="48.015104" lon="6.985583"><ele>1190.8</ele></trkpt>
+      <trkpt lat="48.014645" lon="6.985662"><ele>1193.8</ele></trkpt>
+      <trkpt lat="48.013965" lon="6.985492"><ele>1205.8</ele></trkpt>
+      <trkpt lat="48.013387" lon="6.985192"><ele>1215.0</ele></trkpt>
+      <trkpt lat="48.011791" lon="6.983659"><ele>1241.2</ele></trkpt>
+      <trkpt lat="48.011712" lon="6.983357"><ele>1245.0</ele></trkpt>
+      <trkpt lat="48.011475" lon="6.983632"><ele>1248.5</ele></trkpt>
+      <trkpt lat="48.011446" lon="6.983336"><ele>1255.5</ele></trkpt>
+      <trkpt lat="48.011370" lon="6.983191"><ele>1259.0</ele></trkpt>
+      <trkpt lat="48.011189" lon="6.983302"><ele>1262.2</ele></trkpt>
+      <trkpt lat="48.011139" lon="6.982919"><ele>1270.2</ele></trkpt>
+      <trkpt lat="48.010958" lon="6.983098"><ele>1273.0</ele></trkpt>
+      <trkpt lat="48.010835" lon="6.982775"><ele>1281.8</ele></trkpt>
+      <trkpt lat="48.010657" lon="6.982899"><ele>1283.5</ele></trkpt>
+      <trkpt lat="48.009727" lon="6.982730"><ele>1304.8</ele></trkpt>
+      <trkpt lat="48.010657" lon="6.982899"><ele>1283.5</ele></trkpt>
+      <trkpt lat="48.010835" lon="6.982775"><ele>1281.8</ele></trkpt>
+      <trkpt lat="48.010958" lon="6.983098"><ele>1273.0</ele></trkpt>
+      <trkpt lat="48.011139" lon="6.982919"><ele>1270.2</ele></trkpt>
+      <trkpt lat="48.011189" lon="6.983302"><ele>1262.2</ele></trkpt>
+      <trkpt lat="48.011370" lon="6.983191"><ele>1259.0</ele></trkpt>
+      <trkpt lat="48.011446" lon="6.983336"><ele>1255.5</ele></trkpt>
+      <trkpt lat="48.011475" lon="6.983632"><ele>1248.5</ele></trkpt>
+      <trkpt lat="48.011712" lon="6.983357"><ele>1245.0</ele></trkpt>
+      <trkpt lat="48.011791" lon="6.983659"><ele>1241.2</ele></trkpt>
+      <trkpt lat="48.013387" lon="6.985192"><ele>1215.0</ele></trkpt>
+      <trkpt lat="48.013965" lon="6.985492"><ele>1205.8</ele></trkpt>
+      <trkpt lat="48.014645" lon="6.985662"><ele>1193.8</ele></trkpt>
+      <trkpt lat="48.015104" lon="6.985583"><ele>1190.8</ele></trkpt>
+      <trkpt lat="48.015745" lon="6.985893"><ele>1195.0</ele></trkpt>
+      <trkpt lat="48.016071" lon="6.986300"><ele>1201.2</ele></trkpt>
+      <trkpt lat="48.016257" lon="6.986777"><ele>1205.5</ele></trkpt>
+      <trkpt lat="48.016858" lon="6.987732"><ele>1213.8</ele></trkpt>
+      <trkpt lat="48.017335" lon="6.987629"><ele>1214.2</ele></trkpt>
+      <trkpt lat="48.017519" lon="6.987479"><ele>1214.0</ele></trkpt>
+      <trkpt lat="48.017554" lon="6.987285"><ele>1211.5</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

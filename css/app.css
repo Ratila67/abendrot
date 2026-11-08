@@ -266,6 +266,10 @@ body.is-map main{max-width:none;padding-bottom:0}
 .pin.mid.guess .pin-b{background:#fff;color:#B06E08;border:2.5px solid #D2860F}
 .pin.day .pin-b{width:22px;height:22px;border-width:2px;background:#E2E7EA}
 .pin.day .pin-b .ic{width:12px;height:12px}
+/* vue d’ensemble (avant le zoom 9) : les plans secondaires deviennent de simples points, les bons gardent leur pastille */
+.fullmap:not(.names) .pin:is(.cold,.day,.late,.guess):not(.sel){width:14px;height:14px}
+.fullmap:not(.names) .pin:is(.cold,.day,.late,.guess):not(.sel) .pin-b{width:11px;height:11px;border-width:2px;font-size:0;box-shadow:0 1px 3px rgba(20,30,40,.35)}
+.fullmap:not(.names) .pin:is(.cold,.day,.late,.guess):not(.sel) .pin-b .ic{display:none}
 /* trop tard ce soir : la couleur reste (le ciel aurait été beau), mais estompée et sans halo */
 .pin.late .pin-b{opacity:.5;box-shadow:0 1px 3px rgba(20,30,40,.25)}
 .fullmap.previewing .pin:not(.sel) .pin-b{opacity:.3}

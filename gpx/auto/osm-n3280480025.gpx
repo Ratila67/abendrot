@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Roche du Kiosque</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Roche du Kiosque</name>
+    <trkseg>
+      <trkpt lat="48.277239" lon="6.932773"><ele>558.5</ele></trkpt>
+      <trkpt lat="48.277244" lon="6.932599"><ele>558.5</ele></trkpt>
+      <trkpt lat="48.277089" lon="6.932563"><ele>558.0</ele></trkpt>
+      <trkpt lat="48.275437" lon="6.932647"><ele>560.8</ele></trkpt>
+      <trkpt lat="48.275026" lon="6.932194"><ele>563.2</ele></trkpt>
+      <trkpt lat="48.274116" lon="6.931639"><ele>570.8</ele></trkpt>
+      <trkpt lat="48.273856" lon="6.931383"><ele>573.8</ele></trkpt>
+      <trkpt lat="48.273600" lon="6.930932"><ele>579.5</ele></trkpt>
+      <trkpt lat="48.273461" lon="6.930893"><ele>587.5</ele></trkpt>
+      <trkpt lat="48.273065" lon="6.930369"><ele>602.5</ele></trkpt>
+      <trkpt lat="48.272653" lon="6.929449"><ele>616.5</ele></trkpt>
+      <trkpt lat="48.272587" lon="6.929407"><ele>620.5</ele></trkpt>
+      <trkpt lat="48.272568" lon="6.932001"><ele>652.0</ele></trkpt>
+      <trkpt lat="48.272492" lon="6.931986"><ele>654.5</ele></trkpt>
+      <trkpt lat="48.271801" lon="6.931312"><ele>663.2</ele></trkpt>
+      <trkpt lat="48.271801" lon="6.931087"><ele>664.0</ele></trkpt>
+      <trkpt lat="48.271658" lon="6.931079"><ele>665.2</ele></trkpt>
+      <trkpt lat="48.271411" lon="6.930844"><ele>670.5</ele></trkpt>
+      <trkpt lat="48.270387" lon="6.929471"><ele>695.0</ele></trkpt>
+      <trkpt lat="48.270679" lon="6.929458"><ele>702.0</ele></trkpt>
+      <trkpt lat="48.271120" lon="6.929695"><ele>702.5</ele></trkpt>
+      <trkpt lat="48.270679" lon="6.929458"><ele>702.0</ele></trkpt>
+      <trkpt lat="48.270387" lon="6.929471"><ele>695.0</ele></trkpt>
+      <trkpt lat="48.271411" lon="6.930844"><ele>670.5</ele></trkpt>
+      <trkpt lat="48.271658" lon="6.931079"><ele>665.2</ele></trkpt>
+      <trkpt lat="48.271801" lon="6.931087"><ele>664.0</ele></trkpt>
+      <trkpt lat="48.271801" lon="6.931312"><ele>663.2</ele></trkpt>
+      <trkpt lat="48.272492" lon="6.931986"><ele>654.5</ele></trkpt>
+      <trkpt lat="48.272568" lon="6.932001"><ele>652.0</ele></trkpt>
+      <trkpt lat="48.272587" lon="6.929407"><ele>620.5</ele></trkpt>
+      <trkpt lat="48.272653" lon="6.929449"><ele>616.5</ele></trkpt>
+      <trkpt lat="48.273065" lon="6.930369"><ele>602.5</ele></trkpt>
+      <trkpt lat="48.273461" lon="6.930893"><ele>587.5</ele></trkpt>
+      <trkpt lat="48.273600" lon="6.930932"><ele>579.5</ele></trkpt>
+      <trkpt lat="48.273856" lon="6.931383"><ele>573.8</ele></trkpt>
+      <trkpt lat="48.274116" lon="6.931639"><ele>570.8</ele></trkpt>
+      <trkpt lat="48.275026" lon="6.932194"><ele>563.2</ele></trkpt>
+      <trkpt lat="48.275437" lon="6.932647"><ele>560.8</ele></trkpt>
+      <trkpt lat="48.277089" lon="6.932563"><ele>558.0</ele></trkpt>
+      <trkpt lat="48.277244" lon="6.932599"><ele>558.5</ele></trkpt>
+      <trkpt lat="48.277239" lon="6.932773"><ele>558.5</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

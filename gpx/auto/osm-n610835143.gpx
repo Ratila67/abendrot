@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Weißer Felsen</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Weißer Felsen</name>
+    <trkseg>
+      <trkpt lat="49.141706" lon="8.004817"><ele>304.0</ele></trkpt>
+      <trkpt lat="49.142039" lon="8.003830"><ele>313.0</ele></trkpt>
+      <trkpt lat="49.142611" lon="8.002489"><ele>325.5</ele></trkpt>
+      <trkpt lat="49.142750" lon="8.002442"><ele>330.0</ele></trkpt>
+      <trkpt lat="49.143057" lon="8.002816"><ele>336.8</ele></trkpt>
+      <trkpt lat="49.143171" lon="8.002596"><ele>341.2</ele></trkpt>
+      <trkpt lat="49.143134" lon="8.001797"><ele>347.5</ele></trkpt>
+      <trkpt lat="49.143199" lon="7.999857"><ele>367.0</ele></trkpt>
+      <trkpt lat="49.143296" lon="7.999482"><ele>369.8</ele></trkpt>
+      <trkpt lat="49.143499" lon="7.999074"><ele>371.8</ele></trkpt>
+      <trkpt lat="49.143825" lon="7.998648"><ele>373.5</ele></trkpt>
+      <trkpt lat="49.143875" lon="7.998409"><ele>373.8</ele></trkpt>
+      <trkpt lat="49.143728" lon="7.997255"><ele>373.0</ele></trkpt>
+      <trkpt lat="49.143542" lon="7.994519"><ele>375.8</ele></trkpt>
+      <trkpt lat="49.144074" lon="7.992771"><ele>390.2</ele></trkpt>
+      <trkpt lat="49.144124" lon="7.992098"><ele>394.2</ele></trkpt>
+      <trkpt lat="49.144290" lon="7.991440"><ele>398.8</ele></trkpt>
+      <trkpt lat="49.144508" lon="7.991211"><ele>400.5</ele></trkpt>
+      <trkpt lat="49.144807" lon="7.991283"><ele>403.0</ele></trkpt>
+      <trkpt lat="49.144741" lon="7.990653"><ele>389.5</ele></trkpt>
+      <trkpt lat="49.144807" lon="7.991283"><ele>403.0</ele></trkpt>
+      <trkpt lat="49.144508" lon="7.991211"><ele>400.5</ele></trkpt>
+      <trkpt lat="49.144290" lon="7.991440"><ele>398.8</ele></trkpt>
+      <trkpt lat="49.144124" lon="7.992098"><ele>394.2</ele></trkpt>
+      <trkpt lat="49.144074" lon="7.992771"><ele>390.2</ele></trkpt>
+      <trkpt lat="49.143542" lon="7.994519"><ele>375.8</ele></trkpt>
+      <trkpt lat="49.143728" lon="7.997255"><ele>373.0</ele></trkpt>
+      <trkpt lat="49.143875" lon="7.998409"><ele>373.8</ele></trkpt>
+      <trkpt lat="49.143825" lon="7.998648"><ele>373.5</ele></trkpt>
+      <trkpt lat="49.143499" lon="7.999074"><ele>371.8</ele></trkpt>
+      <trkpt lat="49.143296" lon="7.999482"><ele>369.8</ele></trkpt>
+      <trkpt lat="49.143199" lon="7.999857"><ele>367.0</ele></trkpt>
+      <trkpt lat="49.143134" lon="8.001797"><ele>347.5</ele></trkpt>
+      <trkpt lat="49.143171" lon="8.002596"><ele>341.2</ele></trkpt>
+      <trkpt lat="49.143057" lon="8.002816"><ele>336.8</ele></trkpt>
+      <trkpt lat="49.142750" lon="8.002442"><ele>330.0</ele></trkpt>
+      <trkpt lat="49.142611" lon="8.002489"><ele>325.5</ele></trkpt>
+      <trkpt lat="49.142039" lon="8.003830"><ele>313.0</ele></trkpt>
+      <trkpt lat="49.141706" lon="8.004817"><ele>304.0</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Schlaichturm</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Schlaichturm</name>
+    <trkseg>
+      <trkpt lat="47.586196" lon="7.607251"><ele>253.2</ele></trkpt>
+      <trkpt lat="47.586509" lon="7.607238"><ele>253.0</ele></trkpt>
+      <trkpt lat="47.586605" lon="7.606866"><ele>253.8</ele></trkpt>
+      <trkpt lat="47.586922" lon="7.606957"><ele>253.0</ele></trkpt>
+      <trkpt lat="47.586550" lon="7.609018"><ele>254.0</ele></trkpt>
+      <trkpt lat="47.586780" lon="7.616237"><ele>259.2</ele></trkpt>
+      <trkpt lat="47.587874" lon="7.616362"><ele>258.8</ele></trkpt>
+      <trkpt lat="47.588328" lon="7.616313"><ele>260.0</ele></trkpt>
+      <trkpt lat="47.588373" lon="7.616373"><ele>260.5</ele></trkpt>
+      <trkpt lat="47.588388" lon="7.616271"><ele>261.0</ele></trkpt>
+      <trkpt lat="47.588327" lon="7.616318"><ele>260.0</ele></trkpt>
+      <trkpt lat="47.588397" lon="7.616351"><ele>261.0</ele></trkpt>
+      <trkpt lat="47.588368" lon="7.616261"><ele>260.8</ele></trkpt>
+      <trkpt lat="47.588370" lon="7.616374"><ele>260.5</ele></trkpt>
+      <trkpt lat="47.588327" lon="7.616318"><ele>260.0</ele></trkpt>
+      <trkpt lat="47.588358" lon="7.616262"><ele>260.8</ele></trkpt>
+      <trkpt lat="47.588402" lon="7.616299"><ele>261.0</ele></trkpt>
+      <trkpt lat="47.588373" lon="7.616373"><ele>260.5</ele></trkpt>
+      <trkpt lat="47.588328" lon="7.616313"><ele>260.0</ele></trkpt>
+      <trkpt lat="47.587874" lon="7.616362"><ele>258.8</ele></trkpt>
+      <trkpt lat="47.586780" lon="7.616237"><ele>259.2</ele></trkpt>
+      <trkpt lat="47.586550" lon="7.609018"><ele>254.0</ele></trkpt>
+      <trkpt lat="47.586922" lon="7.606957"><ele>253.0</ele></trkpt>
+      <trkpt lat="47.586605" lon="7.606866"><ele>253.8</ele></trkpt>
+      <trkpt lat="47.586509" lon="7.607238"><ele>253.0</ele></trkpt>
+      <trkpt lat="47.586196" lon="7.607251"><ele>253.8</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

@@ -1,9 +1,9 @@
 // Service worker : app installable + carte et données disponibles sans réseau
-const VERSION = 'v3.4.2';
+const VERSION = 'v3.5.0';
 const SHELL = `shell-${VERSION}`, DATA = 'data-v1', TILES = 'tiles-v1', API = 'api-v1';
 const MAX_TILES = 6000;
 const CDN = ['https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js', 'https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css'];
-const LOCAL = ['./', './index.html', './css/app.css', './js/app.js', './js/sun.js', './js/geo.js', './js/weather.js', './js/map.js', './js/store.js', './js/sources.js', './js/model.js', './data/hikes.json', './manifest.webmanifest', './icons/icon.svg', './icons/icon-192.png', './icons/icon-512.png'];
+const LOCAL = ['./', './index.html', './css/app.css', './js/app.js', './js/sun.js', './js/geo.js', './js/weather.js', './js/map.js', './js/store.js', './js/sources.js', './js/model.js', './data/hikes.json', './data/hikes-auto.json', './manifest.webmanifest', './icons/icon.svg', './icons/icon-192.png', './icons/icon-512.png'];
 
 self.addEventListener('install', e => e.waitUntil((async () => {
   const c = await caches.open(SHELL);

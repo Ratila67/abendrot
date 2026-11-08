@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Le Geiersberg</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Le Geiersberg</name>
+    <trkseg>
+      <trkpt lat="48.832888" lon="7.648979"><ele>238.5</ele></trkpt>
+      <trkpt lat="48.832798" lon="7.648810"><ele>239.0</ele></trkpt>
+      <trkpt lat="48.832945" lon="7.648593"><ele>239.0</ele></trkpt>
+      <trkpt lat="48.832869" lon="7.648469"><ele>239.0</ele></trkpt>
+      <trkpt lat="48.833201" lon="7.647868"><ele>238.2</ele></trkpt>
+      <trkpt lat="48.833942" lon="7.645992"><ele>243.0</ele></trkpt>
+      <trkpt lat="48.834443" lon="7.644441"><ele>246.8</ele></trkpt>
+      <trkpt lat="48.834690" lon="7.643322"><ele>248.8</ele></trkpt>
+      <trkpt lat="48.836368" lon="7.643737"><ele>254.8</ele></trkpt>
+      <trkpt lat="48.835533" lon="7.639674"><ele>260.0</ele></trkpt>
+      <trkpt lat="48.835530" lon="7.639157"><ele>261.0</ele></trkpt>
+      <trkpt lat="48.835422" lon="7.638623"><ele>261.2</ele></trkpt>
+      <trkpt lat="48.835530" lon="7.639157"><ele>261.0</ele></trkpt>
+      <trkpt lat="48.835533" lon="7.639674"><ele>260.0</ele></trkpt>
+      <trkpt lat="48.836368" lon="7.643737"><ele>254.8</ele></trkpt>
+      <trkpt lat="48.834690" lon="7.643322"><ele>248.8</ele></trkpt>
+      <trkpt lat="48.834443" lon="7.644441"><ele>246.8</ele></trkpt>
+      <trkpt lat="48.833942" lon="7.645992"><ele>243.0</ele></trkpt>
+      <trkpt lat="48.833201" lon="7.647868"><ele>238.2</ele></trkpt>
+      <trkpt lat="48.832869" lon="7.648469"><ele>239.0</ele></trkpt>
+      <trkpt lat="48.832945" lon="7.648593"><ele>239.0</ele></trkpt>
+      <trkpt lat="48.832798" lon="7.648810"><ele>239.0</ele></trkpt>
+      <trkpt lat="48.832888" lon="7.648979"><ele>238.5</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

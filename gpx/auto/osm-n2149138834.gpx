@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Vue sur les Alpes</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Vue sur les Alpes</name>
+    <trkseg>
+      <trkpt lat="47.719733" lon="7.386864"><ele>269.2</ele></trkpt>
+      <trkpt lat="47.719887" lon="7.386919"><ele>268.5</ele></trkpt>
+      <trkpt lat="47.719903" lon="7.386433"><ele>270.0</ele></trkpt>
+      <trkpt lat="47.719796" lon="7.385937"><ele>271.8</ele></trkpt>
+      <trkpt lat="47.720033" lon="7.385444"><ele>271.5</ele></trkpt>
+      <trkpt lat="47.719778" lon="7.383152"><ele>278.8</ele></trkpt>
+      <trkpt lat="47.719909" lon="7.382965"><ele>280.0</ele></trkpt>
+      <trkpt lat="47.721514" lon="7.382358"><ele>302.8</ele></trkpt>
+      <trkpt lat="47.721414" lon="7.380866"><ele>306.2</ele></trkpt>
+      <trkpt lat="47.721650" lon="7.379859"><ele>304.8</ele></trkpt>
+      <trkpt lat="47.721745" lon="7.376948"><ele>322.5</ele></trkpt>
+      <trkpt lat="47.721584" lon="7.375958"><ele>324.0</ele></trkpt>
+      <trkpt lat="47.720960" lon="7.373916"><ele>330.2</ele></trkpt>
+      <trkpt lat="47.719965" lon="7.371468"><ele>342.5</ele></trkpt>
+      <trkpt lat="47.719860" lon="7.370941"><ele>345.5</ele></trkpt>
+      <trkpt lat="47.719872" lon="7.370346"><ele>347.8</ele></trkpt>
+      <trkpt lat="47.718856" lon="7.369184"><ele>354.0</ele></trkpt>
+      <trkpt lat="47.718713" lon="7.369094"><ele>355.5</ele></trkpt>
+      <trkpt lat="47.718032" lon="7.369170"><ele>356.8</ele></trkpt>
+      <trkpt lat="47.718713" lon="7.369094"><ele>355.5</ele></trkpt>
+      <trkpt lat="47.718856" lon="7.369184"><ele>354.0</ele></trkpt>
+      <trkpt lat="47.719872" lon="7.370346"><ele>347.8</ele></trkpt>
+      <trkpt lat="47.719860" lon="7.370941"><ele>345.5</ele></trkpt>
+      <trkpt lat="47.719965" lon="7.371468"><ele>342.5</ele></trkpt>
+      <trkpt lat="47.720960" lon="7.373916"><ele>330.2</ele></trkpt>
+      <trkpt lat="47.721584" lon="7.375958"><ele>324.0</ele></trkpt>
+      <trkpt lat="47.721745" lon="7.376948"><ele>322.5</ele></trkpt>
+      <trkpt lat="47.721650" lon="7.379859"><ele>304.8</ele></trkpt>
+      <trkpt lat="47.721414" lon="7.380866"><ele>306.2</ele></trkpt>
+      <trkpt lat="47.721514" lon="7.382358"><ele>302.8</ele></trkpt>
+      <trkpt lat="47.719909" lon="7.382965"><ele>280.0</ele></trkpt>
+      <trkpt lat="47.719778" lon="7.383152"><ele>278.8</ele></trkpt>
+      <trkpt lat="47.720033" lon="7.385444"><ele>271.5</ele></trkpt>
+      <trkpt lat="47.719796" lon="7.385937"><ele>271.8</ele></trkpt>
+      <trkpt lat="47.719903" lon="7.386433"><ele>270.0</ele></trkpt>
+      <trkpt lat="47.719887" lon="7.386919"><ele>268.5</ele></trkpt>
+      <trkpt lat="47.719733" lon="7.386864"><ele>269.8</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

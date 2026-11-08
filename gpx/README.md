@@ -38,3 +38,17 @@ On n'ajoute un point de passage que pour éviter la route, et une boucle seuleme
    des fiches, × 1,25, arrondis à 5 min). Ce sont les chiffres que l'app affiche avec la trace.
 
 Pour une trace perso, utilise plutôt le bouton « Importer un GPX » de la fiche : elle reste sur ton téléphone.
+
+## Randos générées (`auto/`)
+
+`python scripts/spot_gen.py` produit `data/hikes-auto.json` et `gpx/auto/<id>.gpx` sans intervention :
+
+1. points de vue nommés et tours d'observation d'OpenStreetMap (une étiquette `direction` tournée vers l'est les écarte) ;
+2. relief : le spot est retenu si au moins 35 % de l'arc des couchers de l'année (235° à 300°) est dégagé,
+   horizon à 1° ou moins. Le relief ne connaît pas la forêt : c'est l'étiquette OSM qui atteste la vue ;
+3. parking OSM entre 0,7 et 4,5 km, du plus proche au plus loin : premier aller-retour BRouter qui atteint le
+   spot avec moins de 20 % de route et 1 à 8 km jusqu'au spot.
+
+Les spots proches d'une rando vérifiée (`data/hikes.json`) sont écartés : celles-ci restent prioritaires.
+Dans l'app, une rando générée porte la mention « itinéraire calculé » et un avertissement sur sa fiche.
+Relancer le script ne refait que ce qui manque (cache dans `.cache/spotgen`, hors du dépôt).

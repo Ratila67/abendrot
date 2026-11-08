@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Tempelchen</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Tempelchen</name>
+    <trkseg>
+      <trkpt lat="48.004498" lon="7.818870"><ele>247.0</ele></trkpt>
+      <trkpt lat="48.004560" lon="7.818904"><ele>247.0</ele></trkpt>
+      <trkpt lat="48.004728" lon="7.818715"><ele>247.0</ele></trkpt>
+      <trkpt lat="48.005582" lon="7.819661"><ele>247.0</ele></trkpt>
+      <trkpt lat="48.005656" lon="7.819624"><ele>247.0</ele></trkpt>
+      <trkpt lat="48.006397" lon="7.820252"><ele>246.8</ele></trkpt>
+      <trkpt lat="48.007020" lon="7.820544"><ele>246.0</ele></trkpt>
+      <trkpt lat="48.007881" lon="7.820422"><ele>245.0</ele></trkpt>
+      <trkpt lat="48.008263" lon="7.819761"><ele>243.2</ele></trkpt>
+      <trkpt lat="48.008494" lon="7.818580"><ele>244.2</ele></trkpt>
+      <trkpt lat="48.008883" lon="7.818086"><ele>242.0</ele></trkpt>
+      <trkpt lat="48.009380" lon="7.817201"><ele>241.0</ele></trkpt>
+      <trkpt lat="48.009958" lon="7.816387"><ele>241.0</ele></trkpt>
+      <trkpt lat="48.010120" lon="7.816389"><ele>241.0</ele></trkpt>
+      <trkpt lat="48.010331" lon="7.816544"><ele>241.0</ele></trkpt>
+      <trkpt lat="48.010668" lon="7.815965"><ele>241.0</ele></trkpt>
+      <trkpt lat="48.010868" lon="7.815175"><ele>240.5</ele></trkpt>
+      <trkpt lat="48.011161" lon="7.814734"><ele>241.0</ele></trkpt>
+      <trkpt lat="48.011241" lon="7.814871"><ele>241.2</ele></trkpt>
+      <trkpt lat="48.011380" lon="7.814609"><ele>240.5</ele></trkpt>
+      <trkpt lat="48.011481" lon="7.814619"><ele>240.5</ele></trkpt>
+      <trkpt lat="48.011541" lon="7.814797"><ele>241.2</ele></trkpt>
+      <trkpt lat="48.011592" lon="7.814715"><ele>240.8</ele></trkpt>
+      <trkpt lat="48.011556" lon="7.814684"><ele>240.8</ele></trkpt>
+      <trkpt lat="48.011594" lon="7.814749"><ele>241.0</ele></trkpt>
+      <trkpt lat="48.011541" lon="7.814797"><ele>241.2</ele></trkpt>
+      <trkpt lat="48.011481" lon="7.814619"><ele>240.5</ele></trkpt>
+      <trkpt lat="48.011380" lon="7.814609"><ele>240.5</ele></trkpt>
+      <trkpt lat="48.011241" lon="7.814871"><ele>241.2</ele></trkpt>
+      <trkpt lat="48.011161" lon="7.814734"><ele>241.0</ele></trkpt>
+      <trkpt lat="48.010868" lon="7.815175"><ele>240.5</ele></trkpt>
+      <trkpt lat="48.010668" lon="7.815965"><ele>241.0</ele></trkpt>
+      <trkpt lat="48.010331" lon="7.816544"><ele>241.0</ele></trkpt>
+      <trkpt lat="48.010120" lon="7.816389"><ele>241.0</ele></trkpt>
+      <trkpt lat="48.009958" lon="7.816387"><ele>241.0</ele></trkpt>
+      <trkpt lat="48.009380" lon="7.817201"><ele>241.0</ele></trkpt>
+      <trkpt lat="48.008883" lon="7.818086"><ele>242.0</ele></trkpt>
+      <trkpt lat="48.008494" lon="7.818580"><ele>244.2</ele></trkpt>
+      <trkpt lat="48.008263" lon="7.819761"><ele>243.2</ele></trkpt>
+      <trkpt lat="48.007881" lon="7.820422"><ele>245.0</ele></trkpt>
+      <trkpt lat="48.007020" lon="7.820544"><ele>246.0</ele></trkpt>
+      <trkpt lat="48.006397" lon="7.820252"><ele>246.8</ele></trkpt>
+      <trkpt lat="48.005656" lon="7.819624"><ele>247.0</ele></trkpt>
+      <trkpt lat="48.005582" lon="7.819661"><ele>247.0</ele></trkpt>
+      <trkpt lat="48.004728" lon="7.818715"><ele>247.0</ele></trkpt>
+      <trkpt lat="48.004560" lon="7.818904"><ele>247.0</ele></trkpt>
+      <trkpt lat="48.004498" lon="7.818870"><ele>247.0</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Weindenkmal</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Weindenkmal</name>
+    <trkseg>
+      <trkpt lat="48.709565" lon="8.159675"><ele>165.5</ele></trkpt>
+      <trkpt lat="48.709354" lon="8.161349"><ele>170.5</ele></trkpt>
+      <trkpt lat="48.709378" lon="8.163248"><ele>177.0</ele></trkpt>
+      <trkpt lat="48.708366" lon="8.163442"><ele>191.8</ele></trkpt>
+      <trkpt lat="48.707764" lon="8.163922"><ele>186.2</ele></trkpt>
+      <trkpt lat="48.707799" lon="8.164805"><ele>193.2</ele></trkpt>
+      <trkpt lat="48.707442" lon="8.165222"><ele>199.0</ele></trkpt>
+      <trkpt lat="48.707592" lon="8.165823"><ele>204.0</ele></trkpt>
+      <trkpt lat="48.708219" lon="8.167147"><ele>222.2</ele></trkpt>
+      <trkpt lat="48.708514" lon="8.168194"><ele>229.2</ele></trkpt>
+      <trkpt lat="48.708478" lon="8.169351"><ele>242.2</ele></trkpt>
+      <trkpt lat="48.708372" lon="8.169615"><ele>246.8</ele></trkpt>
+      <trkpt lat="48.708049" lon="8.169937"><ele>253.2</ele></trkpt>
+      <trkpt lat="48.708050" lon="8.170049"><ele>254.2</ele></trkpt>
+      <trkpt lat="48.708357" lon="8.170118"><ele>255.0</ele></trkpt>
+      <trkpt lat="48.708491" lon="8.170238"><ele>258.0</ele></trkpt>
+      <trkpt lat="48.708709" lon="8.170968"><ele>271.0</ele></trkpt>
+      <trkpt lat="48.709139" lon="8.171095"><ele>270.5</ele></trkpt>
+      <trkpt lat="48.708709" lon="8.170968"><ele>271.0</ele></trkpt>
+      <trkpt lat="48.708491" lon="8.170238"><ele>258.0</ele></trkpt>
+      <trkpt lat="48.708357" lon="8.170118"><ele>255.0</ele></trkpt>
+      <trkpt lat="48.708050" lon="8.170049"><ele>254.2</ele></trkpt>
+      <trkpt lat="48.708049" lon="8.169937"><ele>253.2</ele></trkpt>
+      <trkpt lat="48.708372" lon="8.169615"><ele>246.8</ele></trkpt>
+      <trkpt lat="48.708478" lon="8.169351"><ele>242.2</ele></trkpt>
+      <trkpt lat="48.708514" lon="8.168194"><ele>229.2</ele></trkpt>
+      <trkpt lat="48.708219" lon="8.167147"><ele>222.2</ele></trkpt>
+      <trkpt lat="48.707592" lon="8.165823"><ele>204.0</ele></trkpt>
+      <trkpt lat="48.707442" lon="8.165222"><ele>199.0</ele></trkpt>
+      <trkpt lat="48.707799" lon="8.164805"><ele>193.2</ele></trkpt>
+      <trkpt lat="48.707764" lon="8.163922"><ele>186.2</ele></trkpt>
+      <trkpt lat="48.708366" lon="8.163442"><ele>191.8</ele></trkpt>
+      <trkpt lat="48.708300" lon="8.161632"><ele>181.8</ele></trkpt>
+      <trkpt lat="48.709344" lon="8.161842"><ele>171.2</ele></trkpt>
+      <trkpt lat="48.709354" lon="8.161349"><ele>170.5</ele></trkpt>
+      <trkpt lat="48.709565" lon="8.159675"><ele>164.5</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Bergfried Zähringer Burg</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Bergfried Zähringer Burg</name>
+    <trkseg>
+      <trkpt lat="48.030979" lon="7.874912"><ele>272.5</ele></trkpt>
+      <trkpt lat="48.031370" lon="7.875703"><ele>266.8</ele></trkpt>
+      <trkpt lat="48.030927" lon="7.875827"><ele>276.2</ele></trkpt>
+      <trkpt lat="48.029819" lon="7.876537"><ele>302.5</ele></trkpt>
+      <trkpt lat="48.029115" lon="7.876805"><ele>319.2</ele></trkpt>
+      <trkpt lat="48.028733" lon="7.877188"><ele>330.0</ele></trkpt>
+      <trkpt lat="48.028382" lon="7.877388"><ele>340.8</ele></trkpt>
+      <trkpt lat="48.028080" lon="7.877956"><ele>353.2</ele></trkpt>
+      <trkpt lat="48.027010" lon="7.878469"><ele>383.0</ele></trkpt>
+      <trkpt lat="48.026127" lon="7.880703"><ele>391.2</ele></trkpt>
+      <trkpt lat="48.026215" lon="7.881913"><ele>404.5</ele></trkpt>
+      <trkpt lat="48.025928" lon="7.881628"><ele>412.0</ele></trkpt>
+      <trkpt lat="48.025742" lon="7.881610"><ele>420.8</ele></trkpt>
+      <trkpt lat="48.025752" lon="7.881819"><ele>424.8</ele></trkpt>
+      <trkpt lat="48.025940" lon="7.882153"><ele>425.8</ele></trkpt>
+      <trkpt lat="48.026039" lon="7.882980"><ele>449.0</ele></trkpt>
+      <trkpt lat="48.026215" lon="7.883444"><ele>450.0</ele></trkpt>
+      <trkpt lat="48.026075" lon="7.883642"><ele>456.8</ele></trkpt>
+      <trkpt lat="48.025803" lon="7.883801"><ele>466.2</ele></trkpt>
+      <trkpt lat="48.025680" lon="7.883777"><ele>468.8</ele></trkpt>
+      <trkpt lat="48.025655" lon="7.883942"><ele>469.0</ele></trkpt>
+      <trkpt lat="48.025455" lon="7.883866"><ele>473.0</ele></trkpt>
+      <trkpt lat="48.025522" lon="7.883945"><ele>471.8</ele></trkpt>
+      <trkpt lat="48.025294" lon="7.884081"><ele>472.5</ele></trkpt>
+      <trkpt lat="48.025522" lon="7.883945"><ele>471.8</ele></trkpt>
+      <trkpt lat="48.025455" lon="7.883866"><ele>473.0</ele></trkpt>
+      <trkpt lat="48.025655" lon="7.883942"><ele>469.0</ele></trkpt>
+      <trkpt lat="48.025680" lon="7.883777"><ele>468.8</ele></trkpt>
+      <trkpt lat="48.025803" lon="7.883801"><ele>466.2</ele></trkpt>
+      <trkpt lat="48.026075" lon="7.883642"><ele>456.8</ele></trkpt>
+      <trkpt lat="48.026215" lon="7.883444"><ele>450.0</ele></trkpt>
+      <trkpt lat="48.026039" lon="7.882980"><ele>449.0</ele></trkpt>
+      <trkpt lat="48.025940" lon="7.882153"><ele>425.8</ele></trkpt>
+      <trkpt lat="48.025752" lon="7.881819"><ele>424.8</ele></trkpt>
+      <trkpt lat="48.025742" lon="7.881610"><ele>420.8</ele></trkpt>
+      <trkpt lat="48.025928" lon="7.881628"><ele>412.0</ele></trkpt>
+      <trkpt lat="48.026215" lon="7.881913"><ele>404.5</ele></trkpt>
+      <trkpt lat="48.026127" lon="7.880703"><ele>391.2</ele></trkpt>
+      <trkpt lat="48.027010" lon="7.878469"><ele>383.0</ele></trkpt>
+      <trkpt lat="48.028080" lon="7.877956"><ele>353.2</ele></trkpt>
+      <trkpt lat="48.028382" lon="7.877388"><ele>340.8</ele></trkpt>
+      <trkpt lat="48.028733" lon="7.877188"><ele>330.0</ele></trkpt>
+      <trkpt lat="48.029115" lon="7.876805"><ele>319.2</ele></trkpt>
+      <trkpt lat="48.029819" lon="7.876537"><ele>302.5</ele></trkpt>
+      <trkpt lat="48.030927" lon="7.875827"><ele>276.2</ele></trkpt>
+      <trkpt lat="48.031370" lon="7.875703"><ele>266.8</ele></trkpt>
+      <trkpt lat="48.030979" lon="7.874912"><ele>272.5</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

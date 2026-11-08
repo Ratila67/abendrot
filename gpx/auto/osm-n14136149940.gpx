@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Rocher d'Ortomont</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Rocher d'Ortomont</name>
+    <trkseg>
+      <trkpt lat="48.466630" lon="6.924843"><ele>398.0</ele></trkpt>
+      <trkpt lat="48.466834" lon="6.925503"><ele>395.0</ele></trkpt>
+      <trkpt lat="48.467558" lon="6.929061"><ele>390.0</ele></trkpt>
+      <trkpt lat="48.467570" lon="6.929627"><ele>391.5</ele></trkpt>
+      <trkpt lat="48.467476" lon="6.929743"><ele>392.0</ele></trkpt>
+      <trkpt lat="48.467245" lon="6.929754"><ele>393.5</ele></trkpt>
+      <trkpt lat="48.467254" lon="6.929867"><ele>395.5</ele></trkpt>
+      <trkpt lat="48.468056" lon="6.931075"><ele>415.2</ele></trkpt>
+      <trkpt lat="48.468481" lon="6.932291"><ele>429.2</ele></trkpt>
+      <trkpt lat="48.468287" lon="6.932305"><ele>430.2</ele></trkpt>
+      <trkpt lat="48.467894" lon="6.932913"><ele>438.0</ele></trkpt>
+      <trkpt lat="48.467851" lon="6.933582"><ele>442.8</ele></trkpt>
+      <trkpt lat="48.467425" lon="6.933271"><ele>449.8</ele></trkpt>
+      <trkpt lat="48.467188" lon="6.933200"><ele>453.5</ele></trkpt>
+      <trkpt lat="48.467088" lon="6.933937"><ele>458.5</ele></trkpt>
+      <trkpt lat="48.466924" lon="6.934211"><ele>458.2</ele></trkpt>
+      <trkpt lat="48.466678" lon="6.934337"><ele>460.0</ele></trkpt>
+      <trkpt lat="48.466461" lon="6.934334"><ele>464.5</ele></trkpt>
+      <trkpt lat="48.466291" lon="6.934183"><ele>470.5</ele></trkpt>
+      <trkpt lat="48.465796" lon="6.934363"><ele>480.5</ele></trkpt>
+      <trkpt lat="48.465504" lon="6.935080"><ele>483.0</ele></trkpt>
+      <trkpt lat="48.465468" lon="6.935563"><ele>487.5</ele></trkpt>
+      <trkpt lat="48.465152" lon="6.936373"><ele>501.0</ele></trkpt>
+      <trkpt lat="48.464887" lon="6.936770"><ele>507.5</ele></trkpt>
+      <trkpt lat="48.464605" lon="6.936469"><ele>518.5</ele></trkpt>
+      <trkpt lat="48.464067" lon="6.934866"><ele>541.8</ele></trkpt>
+      <trkpt lat="48.464118" lon="6.934565"><ele>539.8</ele></trkpt>
+      <trkpt lat="48.464218" lon="6.934372"><ele>537.2</ele></trkpt>
+      <trkpt lat="48.464301" lon="6.934333"><ele>534.8</ele></trkpt>
+      <trkpt lat="48.464118" lon="6.934565"><ele>539.8</ele></trkpt>
+      <trkpt lat="48.464067" lon="6.934866"><ele>541.8</ele></trkpt>
+      <trkpt lat="48.464605" lon="6.936469"><ele>518.5</ele></trkpt>
+      <trkpt lat="48.464887" lon="6.936770"><ele>507.5</ele></trkpt>
+      <trkpt lat="48.465152" lon="6.936373"><ele>501.0</ele></trkpt>
+      <trkpt lat="48.465468" lon="6.935563"><ele>487.5</ele></trkpt>
+      <trkpt lat="48.465504" lon="6.935080"><ele>483.0</ele></trkpt>
+      <trkpt lat="48.465796" lon="6.934363"><ele>480.5</ele></trkpt>
+      <trkpt lat="48.466291" lon="6.934183"><ele>470.5</ele></trkpt>
+      <trkpt lat="48.466461" lon="6.934334"><ele>464.5</ele></trkpt>
+      <trkpt lat="48.466678" lon="6.934337"><ele>460.0</ele></trkpt>
+      <trkpt lat="48.466924" lon="6.934211"><ele>458.2</ele></trkpt>
+      <trkpt lat="48.467088" lon="6.933937"><ele>458.5</ele></trkpt>
+      <trkpt lat="48.467188" lon="6.933200"><ele>453.5</ele></trkpt>
+      <trkpt lat="48.467425" lon="6.933271"><ele>449.8</ele></trkpt>
+      <trkpt lat="48.467851" lon="6.933582"><ele>442.8</ele></trkpt>
+      <trkpt lat="48.467894" lon="6.932913"><ele>438.0</ele></trkpt>
+      <trkpt lat="48.468287" lon="6.932305"><ele>430.2</ele></trkpt>
+      <trkpt lat="48.468481" lon="6.932291"><ele>429.2</ele></trkpt>
+      <trkpt lat="48.468056" lon="6.931075"><ele>415.2</ele></trkpt>
+      <trkpt lat="48.467254" lon="6.929867"><ele>395.5</ele></trkpt>
+      <trkpt lat="48.467245" lon="6.929754"><ele>393.5</ele></trkpt>
+      <trkpt lat="48.467476" lon="6.929743"><ele>392.0</ele></trkpt>
+      <trkpt lat="48.467570" lon="6.929627"><ele>391.5</ele></trkpt>
+      <trkpt lat="48.467558" lon="6.929061"><ele>390.0</ele></trkpt>
+      <trkpt lat="48.466834" lon="6.925503"><ele>395.0</ele></trkpt>
+      <trkpt lat="48.466630" lon="6.924843"><ele>398.2</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

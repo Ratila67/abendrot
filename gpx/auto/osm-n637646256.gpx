@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Eichelberg</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Eichelberg</name>
+    <trkseg>
+      <trkpt lat="49.135720" lon="7.836669"><ele>292.0</ele></trkpt>
+      <trkpt lat="49.135228" lon="7.835619"><ele>298.8</ele></trkpt>
+      <trkpt lat="49.134853" lon="7.834999"><ele>297.2</ele></trkpt>
+      <trkpt lat="49.134861" lon="7.834834"><ele>298.5</ele></trkpt>
+      <trkpt lat="49.134680" lon="7.834184"><ele>300.2</ele></trkpt>
+      <trkpt lat="49.134335" lon="7.833357"><ele>299.0</ele></trkpt>
+      <trkpt lat="49.134090" lon="7.832406"><ele>299.0</ele></trkpt>
+      <trkpt lat="49.133562" lon="7.829699"><ele>292.0</ele></trkpt>
+      <trkpt lat="49.133498" lon="7.829247"><ele>291.2</ele></trkpt>
+      <trkpt lat="49.133529" lon="7.828985"><ele>294.2</ele></trkpt>
+      <trkpt lat="49.133631" lon="7.828661"><ele>302.0</ele></trkpt>
+      <trkpt lat="49.133728" lon="7.828865"><ele>308.0</ele></trkpt>
+      <trkpt lat="49.133756" lon="7.828592"><ele>312.0</ele></trkpt>
+      <trkpt lat="49.133842" lon="7.828777"><ele>317.2</ele></trkpt>
+      <trkpt lat="49.133867" lon="7.828598"><ele>320.2</ele></trkpt>
+      <trkpt lat="49.133807" lon="7.827596"><ele>321.8</ele></trkpt>
+      <trkpt lat="49.133902" lon="7.825695"><ele>334.0</ele></trkpt>
+      <trkpt lat="49.134050" lon="7.826042"><ele>340.0</ele></trkpt>
+      <trkpt lat="49.134022" lon="7.827128"><ele>333.2</ele></trkpt>
+      <trkpt lat="49.133952" lon="7.827312"><ele>330.5</ele></trkpt>
+      <trkpt lat="49.134022" lon="7.827128"><ele>333.2</ele></trkpt>
+      <trkpt lat="49.134050" lon="7.826042"><ele>340.0</ele></trkpt>
+      <trkpt lat="49.133902" lon="7.825695"><ele>334.0</ele></trkpt>
+      <trkpt lat="49.133807" lon="7.827596"><ele>321.8</ele></trkpt>
+      <trkpt lat="49.133867" lon="7.828598"><ele>320.2</ele></trkpt>
+      <trkpt lat="49.133842" lon="7.828777"><ele>317.2</ele></trkpt>
+      <trkpt lat="49.133756" lon="7.828592"><ele>312.0</ele></trkpt>
+      <trkpt lat="49.133728" lon="7.828865"><ele>308.0</ele></trkpt>
+      <trkpt lat="49.133631" lon="7.828661"><ele>302.0</ele></trkpt>
+      <trkpt lat="49.133529" lon="7.828985"><ele>294.2</ele></trkpt>
+      <trkpt lat="49.133498" lon="7.829247"><ele>291.2</ele></trkpt>
+      <trkpt lat="49.133562" lon="7.829699"><ele>292.0</ele></trkpt>
+      <trkpt lat="49.134090" lon="7.832406"><ele>299.0</ele></trkpt>
+      <trkpt lat="49.134335" lon="7.833357"><ele>299.0</ele></trkpt>
+      <trkpt lat="49.134680" lon="7.834184"><ele>300.2</ele></trkpt>
+      <trkpt lat="49.134861" lon="7.834834"><ele>298.5</ele></trkpt>
+      <trkpt lat="49.134853" lon="7.834999"><ele>297.2</ele></trkpt>
+      <trkpt lat="49.135228" lon="7.835619"><ele>298.8</ele></trkpt>
+      <trkpt lat="49.135720" lon="7.836669"><ele>291.5</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

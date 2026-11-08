@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Hünersedelturm</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Hünersedelturm</name>
+    <trkseg>
+      <trkpt lat="48.203173" lon="7.984089"><ele>709.2</ele></trkpt>
+      <trkpt lat="48.202931" lon="7.983248"><ele>709.5</ele></trkpt>
+      <trkpt lat="48.202824" lon="7.983256"><ele>709.2</ele></trkpt>
+      <trkpt lat="48.202435" lon="7.982773"><ele>708.5</ele></trkpt>
+      <trkpt lat="48.202333" lon="7.982488"><ele>708.8</ele></trkpt>
+      <trkpt lat="48.202173" lon="7.982306"><ele>709.0</ele></trkpt>
+      <trkpt lat="48.202098" lon="7.982040"><ele>709.5</ele></trkpt>
+      <trkpt lat="48.201734" lon="7.981516"><ele>711.2</ele></trkpt>
+      <trkpt lat="48.201935" lon="7.980700"><ele>716.2</ele></trkpt>
+      <trkpt lat="48.201966" lon="7.978857"><ele>719.8</ele></trkpt>
+      <trkpt lat="48.201876" lon="7.977768"><ele>715.5</ele></trkpt>
+      <trkpt lat="48.202157" lon="7.977543"><ele>715.2</ele></trkpt>
+      <trkpt lat="48.204077" lon="7.975227"><ele>710.8</ele></trkpt>
+      <trkpt lat="48.204189" lon="7.974910"><ele>712.0</ele></trkpt>
+      <trkpt lat="48.204546" lon="7.972971"><ele>730.0</ele></trkpt>
+      <trkpt lat="48.204533" lon="7.972156"><ele>738.2</ele></trkpt>
+      <trkpt lat="48.204447" lon="7.972021"><ele>739.8</ele></trkpt>
+      <trkpt lat="48.204533" lon="7.972156"><ele>738.2</ele></trkpt>
+      <trkpt lat="48.204546" lon="7.972971"><ele>730.0</ele></trkpt>
+      <trkpt lat="48.204189" lon="7.974910"><ele>712.0</ele></trkpt>
+      <trkpt lat="48.204077" lon="7.975227"><ele>710.8</ele></trkpt>
+      <trkpt lat="48.202157" lon="7.977543"><ele>715.2</ele></trkpt>
+      <trkpt lat="48.201876" lon="7.977768"><ele>715.5</ele></trkpt>
+      <trkpt lat="48.201966" lon="7.978857"><ele>719.8</ele></trkpt>
+      <trkpt lat="48.201935" lon="7.980700"><ele>716.2</ele></trkpt>
+      <trkpt lat="48.201734" lon="7.981516"><ele>711.2</ele></trkpt>
+      <trkpt lat="48.202098" lon="7.982040"><ele>709.5</ele></trkpt>
+      <trkpt lat="48.202173" lon="7.982306"><ele>709.0</ele></trkpt>
+      <trkpt lat="48.202333" lon="7.982488"><ele>708.8</ele></trkpt>
+      <trkpt lat="48.202435" lon="7.982773"><ele>708.5</ele></trkpt>
+      <trkpt lat="48.202824" lon="7.983256"><ele>709.2</ele></trkpt>
+      <trkpt lat="48.202931" lon="7.983248"><ele>709.5</ele></trkpt>
+      <trkpt lat="48.203173" lon="7.984089"><ele>710.5</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

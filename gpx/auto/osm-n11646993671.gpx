@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Moyemont</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Moyemont</name>
+    <trkseg>
+      <trkpt lat="48.041931" lon="6.763699"><ele>831.5</ele></trkpt>
+      <trkpt lat="48.041676" lon="6.763842"><ele>830.0</ele></trkpt>
+      <trkpt lat="48.041628" lon="6.763647"><ele>829.5</ele></trkpt>
+      <trkpt lat="48.041213" lon="6.764083"><ele>825.0</ele></trkpt>
+      <trkpt lat="48.040985" lon="6.764161"><ele>822.0</ele></trkpt>
+      <trkpt lat="48.040314" lon="6.764005"><ele>814.0</ele></trkpt>
+      <trkpt lat="48.038754" lon="6.764343"><ele>801.2</ele></trkpt>
+      <trkpt lat="48.038298" lon="6.764327"><ele>800.2</ele></trkpt>
+      <trkpt lat="48.037853" lon="6.764042"><ele>803.5</ele></trkpt>
+      <trkpt lat="48.037640" lon="6.763635"><ele>804.2</ele></trkpt>
+      <trkpt lat="48.037361" lon="6.762823"><ele>806.5</ele></trkpt>
+      <trkpt lat="48.037027" lon="6.762737"><ele>812.5</ele></trkpt>
+      <trkpt lat="48.036987" lon="6.762512"><ele>814.8</ele></trkpt>
+      <trkpt lat="48.036908" lon="6.762425"><ele>816.2</ele></trkpt>
+      <trkpt lat="48.036597" lon="6.762293"><ele>821.5</ele></trkpt>
+      <trkpt lat="48.036352" lon="6.762033"><ele>823.5</ele></trkpt>
+      <trkpt lat="48.036057" lon="6.761081"><ele>829.5</ele></trkpt>
+      <trkpt lat="48.036143" lon="6.760293"><ele>832.0</ele></trkpt>
+      <trkpt lat="48.036106" lon="6.760106"><ele>833.5</ele></trkpt>
+      <trkpt lat="48.035738" lon="6.759578"><ele>838.5</ele></trkpt>
+      <trkpt lat="48.035554" lon="6.759449"><ele>840.0</ele></trkpt>
+      <trkpt lat="48.036173" lon="6.757627"><ele>843.2</ele></trkpt>
+      <trkpt lat="48.036080" lon="6.756441"><ele>851.2</ele></trkpt>
+      <trkpt lat="48.036059" lon="6.754129"><ele>859.5</ele></trkpt>
+      <trkpt lat="48.036080" lon="6.756441"><ele>851.2</ele></trkpt>
+      <trkpt lat="48.036173" lon="6.757627"><ele>843.2</ele></trkpt>
+      <trkpt lat="48.035554" lon="6.759449"><ele>840.0</ele></trkpt>
+      <trkpt lat="48.035738" lon="6.759578"><ele>838.5</ele></trkpt>
+      <trkpt lat="48.036106" lon="6.760106"><ele>833.5</ele></trkpt>
+      <trkpt lat="48.036143" lon="6.760293"><ele>832.0</ele></trkpt>
+      <trkpt lat="48.036057" lon="6.761081"><ele>829.5</ele></trkpt>
+      <trkpt lat="48.036352" lon="6.762033"><ele>823.5</ele></trkpt>
+      <trkpt lat="48.036597" lon="6.762293"><ele>821.5</ele></trkpt>
+      <trkpt lat="48.036908" lon="6.762425"><ele>816.2</ele></trkpt>
+      <trkpt lat="48.036987" lon="6.762512"><ele>814.8</ele></trkpt>
+      <trkpt lat="48.037027" lon="6.762737"><ele>812.5</ele></trkpt>
+      <trkpt lat="48.037361" lon="6.762823"><ele>806.5</ele></trkpt>
+      <trkpt lat="48.037640" lon="6.763635"><ele>804.2</ele></trkpt>
+      <trkpt lat="48.037853" lon="6.764042"><ele>803.5</ele></trkpt>
+      <trkpt lat="48.038298" lon="6.764327"><ele>800.2</ele></trkpt>
+      <trkpt lat="48.038754" lon="6.764343"><ele>801.2</ele></trkpt>
+      <trkpt lat="48.040314" lon="6.764005"><ele>814.0</ele></trkpt>
+      <trkpt lat="48.040985" lon="6.764161"><ele>822.0</ele></trkpt>
+      <trkpt lat="48.041213" lon="6.764083"><ele>825.0</ele></trkpt>
+      <trkpt lat="48.041628" lon="6.763647"><ele>829.5</ele></trkpt>
+      <trkpt lat="48.041676" lon="6.763842"><ele>830.0</ele></trkpt>
+      <trkpt lat="48.041931" lon="6.763699"><ele>832.0</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

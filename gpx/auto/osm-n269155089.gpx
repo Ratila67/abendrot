@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Carl-Netter-Turm</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Carl-Netter-Turm</name>
+    <trkseg>
+      <trkpt lat="48.704459" lon="8.139231"><ele>132.5</ele></trkpt>
+      <trkpt lat="48.704211" lon="8.139272"><ele>133.0</ele></trkpt>
+      <trkpt lat="48.704105" lon="8.139433"><ele>133.0</ele></trkpt>
+      <trkpt lat="48.703589" lon="8.139722"><ele>134.0</ele></trkpt>
+      <trkpt lat="48.703128" lon="8.140158"><ele>134.2</ele></trkpt>
+      <trkpt lat="48.703039" lon="8.140114"><ele>134.2</ele></trkpt>
+      <trkpt lat="48.702949" lon="8.140585"><ele>135.2</ele></trkpt>
+      <trkpt lat="48.704041" lon="8.141390"><ele>135.0</ele></trkpt>
+      <trkpt lat="48.702619" lon="8.144013"><ele>150.5</ele></trkpt>
+      <trkpt lat="48.702310" lon="8.144874"><ele>153.5</ele></trkpt>
+      <trkpt lat="48.702188" lon="8.145759"><ele>156.5</ele></trkpt>
+      <trkpt lat="48.702243" lon="8.145944"><ele>158.2</ele></trkpt>
+      <trkpt lat="48.702856" lon="8.146640"><ele>166.5</ele></trkpt>
+      <trkpt lat="48.704534" lon="8.147557"><ele>171.0</ele></trkpt>
+      <trkpt lat="48.704588" lon="8.147683"><ele>170.2</ele></trkpt>
+      <trkpt lat="48.704686" lon="8.148711"><ele>176.8</ele></trkpt>
+      <trkpt lat="48.704418" lon="8.149643"><ele>183.5</ele></trkpt>
+      <trkpt lat="48.704491" lon="8.149682"><ele>183.8</ele></trkpt>
+      <trkpt lat="48.704418" lon="8.149643"><ele>183.5</ele></trkpt>
+      <trkpt lat="48.704686" lon="8.148711"><ele>176.8</ele></trkpt>
+      <trkpt lat="48.704588" lon="8.147683"><ele>170.2</ele></trkpt>
+      <trkpt lat="48.704534" lon="8.147557"><ele>171.0</ele></trkpt>
+      <trkpt lat="48.702856" lon="8.146640"><ele>166.5</ele></trkpt>
+      <trkpt lat="48.702243" lon="8.145944"><ele>158.2</ele></trkpt>
+      <trkpt lat="48.702188" lon="8.145759"><ele>156.5</ele></trkpt>
+      <trkpt lat="48.702310" lon="8.144874"><ele>153.5</ele></trkpt>
+      <trkpt lat="48.702619" lon="8.144013"><ele>150.5</ele></trkpt>
+      <trkpt lat="48.704041" lon="8.141390"><ele>135.0</ele></trkpt>
+      <trkpt lat="48.702949" lon="8.140585"><ele>135.2</ele></trkpt>
+      <trkpt lat="48.703039" lon="8.140114"><ele>134.2</ele></trkpt>
+      <trkpt lat="48.703128" lon="8.140158"><ele>134.2</ele></trkpt>
+      <trkpt lat="48.703589" lon="8.139722"><ele>134.0</ele></trkpt>
+      <trkpt lat="48.704105" lon="8.139433"><ele>133.0</ele></trkpt>
+      <trkpt lat="48.704211" lon="8.139272"><ele>133.0</ele></trkpt>
+      <trkpt lat="48.704459" lon="8.139231"><ele>132.2</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

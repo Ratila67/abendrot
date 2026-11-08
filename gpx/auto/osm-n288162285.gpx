@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Renchtal-Blick</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Renchtal-Blick</name>
+    <trkseg>
+      <trkpt lat="48.497293" lon="8.235261"><ele>913.0</ele></trkpt>
+      <trkpt lat="48.497425" lon="8.234706"><ele>912.5</ele></trkpt>
+      <trkpt lat="48.497663" lon="8.232789"><ele>914.8</ele></trkpt>
+      <trkpt lat="48.497691" lon="8.232071"><ele>920.5</ele></trkpt>
+      <trkpt lat="48.497510" lon="8.231581"><ele>921.2</ele></trkpt>
+      <trkpt lat="48.497244" lon="8.231260"><ele>919.8</ele></trkpt>
+      <trkpt lat="48.496998" lon="8.230811"><ele>918.0</ele></trkpt>
+      <trkpt lat="48.496196" lon="8.228993"><ele>917.2</ele></trkpt>
+      <trkpt lat="48.496158" lon="8.228715"><ele>918.8</ele></trkpt>
+      <trkpt lat="48.496197" lon="8.228454"><ele>921.0</ele></trkpt>
+      <trkpt lat="48.496819" lon="8.227290"><ele>919.0</ele></trkpt>
+      <trkpt lat="48.497760" lon="8.226000"><ele>915.2</ele></trkpt>
+      <trkpt lat="48.497883" lon="8.225993"><ele>916.2</ele></trkpt>
+      <trkpt lat="48.498707" lon="8.226438"><ele>920.2</ele></trkpt>
+      <trkpt lat="48.499793" lon="8.226536"><ele>912.0</ele></trkpt>
+      <trkpt lat="48.500132" lon="8.226483"><ele>910.0</ele></trkpt>
+      <trkpt lat="48.500413" lon="8.226141"><ele>909.8</ele></trkpt>
+      <trkpt lat="48.500624" lon="8.225120"><ele>907.0</ele></trkpt>
+      <trkpt lat="48.501315" lon="8.223873"><ele>908.5</ele></trkpt>
+      <trkpt lat="48.501935" lon="8.223023"><ele>913.5</ele></trkpt>
+      <trkpt lat="48.501315" lon="8.223873"><ele>908.5</ele></trkpt>
+      <trkpt lat="48.500624" lon="8.225120"><ele>907.0</ele></trkpt>
+      <trkpt lat="48.500413" lon="8.226141"><ele>909.8</ele></trkpt>
+      <trkpt lat="48.500132" lon="8.226483"><ele>910.0</ele></trkpt>
+      <trkpt lat="48.499793" lon="8.226536"><ele>912.0</ele></trkpt>
+      <trkpt lat="48.498707" lon="8.226438"><ele>920.2</ele></trkpt>
+      <trkpt lat="48.497883" lon="8.225993"><ele>916.2</ele></trkpt>
+      <trkpt lat="48.497760" lon="8.226000"><ele>915.2</ele></trkpt>
+      <trkpt lat="48.496819" lon="8.227290"><ele>919.0</ele></trkpt>
+      <trkpt lat="48.496197" lon="8.228454"><ele>921.0</ele></trkpt>
+      <trkpt lat="48.496158" lon="8.228715"><ele>918.8</ele></trkpt>
+      <trkpt lat="48.496196" lon="8.228993"><ele>917.2</ele></trkpt>
+      <trkpt lat="48.496998" lon="8.230811"><ele>918.0</ele></trkpt>
+      <trkpt lat="48.497244" lon="8.231260"><ele>919.8</ele></trkpt>
+      <trkpt lat="48.497510" lon="8.231581"><ele>921.2</ele></trkpt>
+      <trkpt lat="48.497691" lon="8.232071"><ele>920.5</ele></trkpt>
+      <trkpt lat="48.497663" lon="8.232789"><ele>914.8</ele></trkpt>
+      <trkpt lat="48.497425" lon="8.234706"><ele>912.5</ele></trkpt>
+      <trkpt lat="48.497293" lon="8.235261"><ele>913.0</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Wiesentalblick</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Wiesentalblick</name>
+    <trkseg>
+      <trkpt lat="47.856484" lon="8.026553"><ele>1223.2</ele></trkpt>
+      <trkpt lat="47.856512" lon="8.026420"><ele>1222.5</ele></trkpt>
+      <trkpt lat="47.856682" lon="8.026483"><ele>1226.5</ele></trkpt>
+      <trkpt lat="47.856735" lon="8.026139"><ele>1225.5</ele></trkpt>
+      <trkpt lat="47.856800" lon="8.026329"><ele>1229.5</ele></trkpt>
+      <trkpt lat="47.856830" lon="8.027143"><ele>1237.2</ele></trkpt>
+      <trkpt lat="47.857025" lon="8.026975"><ele>1243.2</ele></trkpt>
+      <trkpt lat="47.857404" lon="8.027168"><ele>1257.5</ele></trkpt>
+      <trkpt lat="47.857559" lon="8.026613"><ele>1263.5</ele></trkpt>
+      <trkpt lat="47.858043" lon="8.025899"><ele>1277.8</ele></trkpt>
+      <trkpt lat="47.858531" lon="8.025559"><ele>1290.2</ele></trkpt>
+      <trkpt lat="47.858823" lon="8.025491"><ele>1300.5</ele></trkpt>
+      <trkpt lat="47.859028" lon="8.025921"><ele>1312.0</ele></trkpt>
+      <trkpt lat="47.859035" lon="8.026126"><ele>1312.5</ele></trkpt>
+      <trkpt lat="47.859238" lon="8.025982"><ele>1317.5</ele></trkpt>
+      <trkpt lat="47.859425" lon="8.025618"><ele>1321.2</ele></trkpt>
+      <trkpt lat="47.859745" lon="8.025277"><ele>1329.5</ele></trkpt>
+      <trkpt lat="47.859970" lon="8.024392"><ele>1333.5</ele></trkpt>
+      <trkpt lat="47.860180" lon="8.023943"><ele>1344.0</ele></trkpt>
+      <trkpt lat="47.860452" lon="8.022650"><ele>1362.8</ele></trkpt>
+      <trkpt lat="47.860644" lon="8.020646"><ele>1369.8</ele></trkpt>
+      <trkpt lat="47.860854" lon="8.019876"><ele>1374.2</ele></trkpt>
+      <trkpt lat="47.861169" lon="8.019590"><ele>1380.5</ele></trkpt>
+      <trkpt lat="47.861746" lon="8.019493"><ele>1385.0</ele></trkpt>
+      <trkpt lat="47.862228" lon="8.019160"><ele>1384.0</ele></trkpt>
+      <trkpt lat="47.861746" lon="8.019493"><ele>1385.0</ele></trkpt>
+      <trkpt lat="47.861169" lon="8.019590"><ele>1380.5</ele></trkpt>
+      <trkpt lat="47.860854" lon="8.019876"><ele>1374.2</ele></trkpt>
+      <trkpt lat="47.860644" lon="8.020646"><ele>1369.8</ele></trkpt>
+      <trkpt lat="47.860452" lon="8.022650"><ele>1362.8</ele></trkpt>
+      <trkpt lat="47.860180" lon="8.023943"><ele>1344.0</ele></trkpt>
+      <trkpt lat="47.859970" lon="8.024392"><ele>1333.5</ele></trkpt>
+      <trkpt lat="47.859745" lon="8.025277"><ele>1329.5</ele></trkpt>
+      <trkpt lat="47.859425" lon="8.025618"><ele>1321.2</ele></trkpt>
+      <trkpt lat="47.859238" lon="8.025982"><ele>1317.5</ele></trkpt>
+      <trkpt lat="47.859035" lon="8.026126"><ele>1312.5</ele></trkpt>
+      <trkpt lat="47.859028" lon="8.025921"><ele>1312.0</ele></trkpt>
+      <trkpt lat="47.858823" lon="8.025491"><ele>1300.5</ele></trkpt>
+      <trkpt lat="47.858531" lon="8.025559"><ele>1290.2</ele></trkpt>
+      <trkpt lat="47.858043" lon="8.025899"><ele>1277.8</ele></trkpt>
+      <trkpt lat="47.857559" lon="8.026613"><ele>1263.5</ele></trkpt>
+      <trkpt lat="47.857404" lon="8.027168"><ele>1257.5</ele></trkpt>
+      <trkpt lat="47.857025" lon="8.026975"><ele>1243.2</ele></trkpt>
+      <trkpt lat="47.856830" lon="8.027143"><ele>1237.2</ele></trkpt>
+      <trkpt lat="47.856800" lon="8.026329"><ele>1229.5</ele></trkpt>
+      <trkpt lat="47.856735" lon="8.026139"><ele>1225.5</ele></trkpt>
+      <trkpt lat="47.856682" lon="8.026483"><ele>1226.5</ele></trkpt>
+      <trkpt lat="47.856512" lon="8.026420"><ele>1222.5</ele></trkpt>
+      <trkpt lat="47.856484" lon="8.026553"><ele>1224.8</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

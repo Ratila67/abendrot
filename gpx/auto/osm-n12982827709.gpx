@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Roche du Banbois</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Roche du Banbois</name>
+    <trkseg>
+      <trkpt lat="48.230796" lon="6.870476"><ele>549.8</ele></trkpt>
+      <trkpt lat="48.230753" lon="6.870415"><ele>550.0</ele></trkpt>
+      <trkpt lat="48.231487" lon="6.869755"><ele>568.2</ele></trkpt>
+      <trkpt lat="48.232406" lon="6.869290"><ele>585.2</ele></trkpt>
+      <trkpt lat="48.232501" lon="6.869347"><ele>588.2</ele></trkpt>
+      <trkpt lat="48.232813" lon="6.869900"><ele>589.5</ele></trkpt>
+      <trkpt lat="48.233765" lon="6.869564"><ele>616.0</ele></trkpt>
+      <trkpt lat="48.234135" lon="6.869099"><ele>622.5</ele></trkpt>
+      <trkpt lat="48.234452" lon="6.868913"><ele>611.5</ele></trkpt>
+      <trkpt lat="48.234624" lon="6.868928"><ele>606.2</ele></trkpt>
+      <trkpt lat="48.235155" lon="6.869276"><ele>591.8</ele></trkpt>
+      <trkpt lat="48.235747" lon="6.869243"><ele>576.0</ele></trkpt>
+      <trkpt lat="48.235970" lon="6.868869"><ele>572.5</ele></trkpt>
+      <trkpt lat="48.236683" lon="6.868871"><ele>567.5</ele></trkpt>
+      <trkpt lat="48.237328" lon="6.868525"><ele>569.5</ele></trkpt>
+      <trkpt lat="48.237571" lon="6.868803"><ele>572.2</ele></trkpt>
+      <trkpt lat="48.237984" lon="6.868687"><ele>578.5</ele></trkpt>
+      <trkpt lat="48.238251" lon="6.868382"><ele>589.2</ele></trkpt>
+      <trkpt lat="48.238641" lon="6.868207"><ele>603.2</ele></trkpt>
+      <trkpt lat="48.238841" lon="6.867895"><ele>610.2</ele></trkpt>
+      <trkpt lat="48.238895" lon="6.867598"><ele>619.8</ele></trkpt>
+      <trkpt lat="48.239641" lon="6.866857"><ele>648.2</ele></trkpt>
+      <trkpt lat="48.239662" lon="6.866621"><ele>654.2</ele></trkpt>
+      <trkpt lat="48.239547" lon="6.866376"><ele>647.8</ele></trkpt>
+      <trkpt lat="48.239662" lon="6.866621"><ele>654.2</ele></trkpt>
+      <trkpt lat="48.239641" lon="6.866857"><ele>648.2</ele></trkpt>
+      <trkpt lat="48.238895" lon="6.867598"><ele>619.8</ele></trkpt>
+      <trkpt lat="48.238841" lon="6.867895"><ele>610.2</ele></trkpt>
+      <trkpt lat="48.238641" lon="6.868207"><ele>603.2</ele></trkpt>
+      <trkpt lat="48.238251" lon="6.868382"><ele>589.2</ele></trkpt>
+      <trkpt lat="48.237984" lon="6.868687"><ele>578.5</ele></trkpt>
+      <trkpt lat="48.237571" lon="6.868803"><ele>572.2</ele></trkpt>
+      <trkpt lat="48.237328" lon="6.868525"><ele>569.5</ele></trkpt>
+      <trkpt lat="48.236683" lon="6.868871"><ele>567.5</ele></trkpt>
+      <trkpt lat="48.235970" lon="6.868869"><ele>572.5</ele></trkpt>
+      <trkpt lat="48.235747" lon="6.869243"><ele>576.0</ele></trkpt>
+      <trkpt lat="48.235155" lon="6.869276"><ele>591.8</ele></trkpt>
+      <trkpt lat="48.234624" lon="6.868928"><ele>606.2</ele></trkpt>
+      <trkpt lat="48.234452" lon="6.868913"><ele>611.5</ele></trkpt>
+      <trkpt lat="48.234135" lon="6.869099"><ele>622.5</ele></trkpt>
+      <trkpt lat="48.233765" lon="6.869564"><ele>616.0</ele></trkpt>
+      <trkpt lat="48.232813" lon="6.869900"><ele>589.5</ele></trkpt>
+      <trkpt lat="48.232501" lon="6.869347"><ele>588.2</ele></trkpt>
+      <trkpt lat="48.232406" lon="6.869290"><ele>585.2</ele></trkpt>
+      <trkpt lat="48.231487" lon="6.869755"><ele>568.2</ele></trkpt>
+      <trkpt lat="48.230753" lon="6.870415"><ele>550.0</ele></trkpt>
+      <trkpt lat="48.230796" lon="6.870476"><ele>549.8</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

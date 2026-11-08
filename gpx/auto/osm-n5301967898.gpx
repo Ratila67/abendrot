@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Sommet du Galgen</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Sommet du Galgen</name>
+    <trkseg>
+      <trkpt lat="47.680916" lon="7.311536"><ele>285.2</ele></trkpt>
+      <trkpt lat="47.680944" lon="7.311823"><ele>286.2</ele></trkpt>
+      <trkpt lat="47.680749" lon="7.312194"><ele>287.0</ele></trkpt>
+      <trkpt lat="47.679735" lon="7.312867"><ele>294.0</ele></trkpt>
+      <trkpt lat="47.678633" lon="7.312639"><ele>298.2</ele></trkpt>
+      <trkpt lat="47.677653" lon="7.312153"><ele>303.2</ele></trkpt>
+      <trkpt lat="47.676609" lon="7.312279"><ele>307.0</ele></trkpt>
+      <trkpt lat="47.676054" lon="7.312566"><ele>308.0</ele></trkpt>
+      <trkpt lat="47.675820" lon="7.312757"><ele>309.2</ele></trkpt>
+      <trkpt lat="47.675617" lon="7.313052"><ele>310.2</ele></trkpt>
+      <trkpt lat="47.673919" lon="7.314124"><ele>318.0</ele></trkpt>
+      <trkpt lat="47.673211" lon="7.314902"><ele>322.0</ele></trkpt>
+      <trkpt lat="47.669603" lon="7.319348"><ele>382.5</ele></trkpt>
+      <trkpt lat="47.669052" lon="7.319931"><ele>393.8</ele></trkpt>
+      <trkpt lat="47.667989" lon="7.320673"><ele>403.0</ele></trkpt>
+      <trkpt lat="47.669052" lon="7.319931"><ele>393.8</ele></trkpt>
+      <trkpt lat="47.669603" lon="7.319348"><ele>382.5</ele></trkpt>
+      <trkpt lat="47.673211" lon="7.314902"><ele>322.0</ele></trkpt>
+      <trkpt lat="47.673919" lon="7.314124"><ele>318.0</ele></trkpt>
+      <trkpt lat="47.675617" lon="7.313052"><ele>310.2</ele></trkpt>
+      <trkpt lat="47.675820" lon="7.312757"><ele>309.2</ele></trkpt>
+      <trkpt lat="47.676054" lon="7.312566"><ele>308.0</ele></trkpt>
+      <trkpt lat="47.676609" lon="7.312279"><ele>307.0</ele></trkpt>
+      <trkpt lat="47.677653" lon="7.312153"><ele>303.2</ele></trkpt>
+      <trkpt lat="47.678633" lon="7.312639"><ele>298.2</ele></trkpt>
+      <trkpt lat="47.679735" lon="7.312867"><ele>294.0</ele></trkpt>
+      <trkpt lat="47.680749" lon="7.312194"><ele>287.0</ele></trkpt>
+      <trkpt lat="47.680944" lon="7.311823"><ele>286.2</ele></trkpt>
+      <trkpt lat="47.680916" lon="7.311536"><ele>284.8</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

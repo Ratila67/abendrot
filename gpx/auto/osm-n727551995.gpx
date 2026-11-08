@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Blick auf Lotharpfad</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Blick auf Lotharpfad</name>
+    <trkseg>
+      <trkpt lat="48.496853" lon="8.237684"><ele>918.2</ele></trkpt>
+      <trkpt lat="48.497148" lon="8.235707"><ele>913.8</ele></trkpt>
+      <trkpt lat="48.497425" lon="8.234706"><ele>912.5</ele></trkpt>
+      <trkpt lat="48.497663" lon="8.232789"><ele>914.8</ele></trkpt>
+      <trkpt lat="48.497691" lon="8.232071"><ele>920.5</ele></trkpt>
+      <trkpt lat="48.497510" lon="8.231581"><ele>921.2</ele></trkpt>
+      <trkpt lat="48.497244" lon="8.231260"><ele>919.8</ele></trkpt>
+      <trkpt lat="48.496998" lon="8.230811"><ele>918.0</ele></trkpt>
+      <trkpt lat="48.496196" lon="8.228993"><ele>917.2</ele></trkpt>
+      <trkpt lat="48.496173" lon="8.228544"><ele>920.5</ele></trkpt>
+      <trkpt lat="48.496819" lon="8.227290"><ele>919.0</ele></trkpt>
+      <trkpt lat="48.497298" lon="8.226682"><ele>917.8</ele></trkpt>
+      <trkpt lat="48.497621" lon="8.226122"><ele>914.0</ele></trkpt>
+      <trkpt lat="48.497883" lon="8.225993"><ele>916.2</ele></trkpt>
+      <trkpt lat="48.497621" lon="8.226122"><ele>914.0</ele></trkpt>
+      <trkpt lat="48.497298" lon="8.226682"><ele>917.8</ele></trkpt>
+      <trkpt lat="48.496819" lon="8.227290"><ele>919.0</ele></trkpt>
+      <trkpt lat="48.496173" lon="8.228544"><ele>920.5</ele></trkpt>
+      <trkpt lat="48.496196" lon="8.228993"><ele>917.2</ele></trkpt>
+      <trkpt lat="48.496998" lon="8.230811"><ele>918.0</ele></trkpt>
+      <trkpt lat="48.497244" lon="8.231260"><ele>919.8</ele></trkpt>
+      <trkpt lat="48.497510" lon="8.231581"><ele>921.2</ele></trkpt>
+      <trkpt lat="48.497691" lon="8.232071"><ele>920.5</ele></trkpt>
+      <trkpt lat="48.497663" lon="8.232789"><ele>914.8</ele></trkpt>
+      <trkpt lat="48.497425" lon="8.234706"><ele>912.5</ele></trkpt>
+      <trkpt lat="48.497148" lon="8.235707"><ele>913.8</ele></trkpt>
+      <trkpt lat="48.496853" lon="8.237684"><ele>919.0</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

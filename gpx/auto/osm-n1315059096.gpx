@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Bastberg</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Bastberg</name>
+    <trkseg>
+      <trkpt lat="48.822059" lon="7.468449"><ele>270.2</ele></trkpt>
+      <trkpt lat="48.818578" lon="7.459340"><ele>271.8</ele></trkpt>
+      <trkpt lat="48.817694" lon="7.457430"><ele>274.5</ele></trkpt>
+      <trkpt lat="48.816056" lon="7.455018"><ele>285.0</ele></trkpt>
+      <trkpt lat="48.814250" lon="7.452986"><ele>298.0</ele></trkpt>
+      <trkpt lat="48.813353" lon="7.452174"><ele>309.5</ele></trkpt>
+      <trkpt lat="48.812416" lon="7.451728"><ele>321.8</ele></trkpt>
+      <trkpt lat="48.812306" lon="7.451801"><ele>322.8</ele></trkpt>
+      <trkpt lat="48.811745" lon="7.451239"><ele>325.8</ele></trkpt>
+      <trkpt lat="48.812306" lon="7.451801"><ele>322.8</ele></trkpt>
+      <trkpt lat="48.812416" lon="7.451728"><ele>321.8</ele></trkpt>
+      <trkpt lat="48.813353" lon="7.452174"><ele>309.5</ele></trkpt>
+      <trkpt lat="48.814250" lon="7.452986"><ele>298.0</ele></trkpt>
+      <trkpt lat="48.816056" lon="7.455018"><ele>285.0</ele></trkpt>
+      <trkpt lat="48.817694" lon="7.457430"><ele>274.5</ele></trkpt>
+      <trkpt lat="48.818578" lon="7.459340"><ele>271.8</ele></trkpt>
+      <trkpt lat="48.822059" lon="7.468449"><ele>270.2</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

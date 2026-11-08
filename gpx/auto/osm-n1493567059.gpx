@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Annaruh</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Annaruh</name>
+    <trkseg>
+      <trkpt lat="48.613744" lon="8.086658"><ele>161.5</ele></trkpt>
+      <trkpt lat="48.613762" lon="8.087207"><ele>162.0</ele></trkpt>
+      <trkpt lat="48.613881" lon="8.087865"><ele>165.0</ele></trkpt>
+      <trkpt lat="48.613866" lon="8.088336"><ele>175.0</ele></trkpt>
+      <trkpt lat="48.614484" lon="8.088441"><ele>174.5</ele></trkpt>
+      <trkpt lat="48.614560" lon="8.088621"><ele>178.2</ele></trkpt>
+      <trkpt lat="48.614448" lon="8.088827"><ele>180.8</ele></trkpt>
+      <trkpt lat="48.614391" lon="8.090000"><ele>187.2</ele></trkpt>
+      <trkpt lat="48.614303" lon="8.090287"><ele>189.5</ele></trkpt>
+      <trkpt lat="48.614145" lon="8.090501"><ele>192.2</ele></trkpt>
+      <trkpt lat="48.613303" lon="8.090309"><ele>207.8</ele></trkpt>
+      <trkpt lat="48.612956" lon="8.090595"><ele>213.8</ele></trkpt>
+      <trkpt lat="48.612941" lon="8.092194"><ele>231.8</ele></trkpt>
+      <trkpt lat="48.612214" lon="8.091883"><ele>243.2</ele></trkpt>
+      <trkpt lat="48.611831" lon="8.092125"><ele>250.8</ele></trkpt>
+      <trkpt lat="48.611789" lon="8.092229"><ele>253.5</ele></trkpt>
+      <trkpt lat="48.611824" lon="8.092360"><ele>257.2</ele></trkpt>
+      <trkpt lat="48.611765" lon="8.092406"><ele>258.2</ele></trkpt>
+      <trkpt lat="48.611918" lon="8.092597"><ele>262.8</ele></trkpt>
+      <trkpt lat="48.611960" lon="8.092760"><ele>265.2</ele></trkpt>
+      <trkpt lat="48.611807" lon="8.092844"><ele>268.5</ele></trkpt>
+      <trkpt lat="48.611315" lon="8.092828"><ele>273.2</ele></trkpt>
+      <trkpt lat="48.611337" lon="8.092934"><ele>275.8</ele></trkpt>
+      <trkpt lat="48.611192" lon="8.093374"><ele>281.2</ele></trkpt>
+      <trkpt lat="48.611185" lon="8.094149"><ele>284.8</ele></trkpt>
+      <trkpt lat="48.610957" lon="8.094648"><ele>288.0</ele></trkpt>
+      <trkpt lat="48.610420" lon="8.095088"><ele>292.0</ele></trkpt>
+      <trkpt lat="48.610079" lon="8.095250"><ele>290.0</ele></trkpt>
+      <trkpt lat="48.610002" lon="8.095397"><ele>287.0</ele></trkpt>
+      <trkpt lat="48.610079" lon="8.095250"><ele>290.0</ele></trkpt>
+      <trkpt lat="48.610420" lon="8.095088"><ele>292.0</ele></trkpt>
+      <trkpt lat="48.610957" lon="8.094648"><ele>288.0</ele></trkpt>
+      <trkpt lat="48.611185" lon="8.094149"><ele>284.8</ele></trkpt>
+      <trkpt lat="48.611192" lon="8.093374"><ele>281.2</ele></trkpt>
+      <trkpt lat="48.611337" lon="8.092934"><ele>275.8</ele></trkpt>
+      <trkpt lat="48.611315" lon="8.092828"><ele>273.2</ele></trkpt>
+      <trkpt lat="48.611807" lon="8.092844"><ele>268.5</ele></trkpt>
+      <trkpt lat="48.611960" lon="8.092760"><ele>265.2</ele></trkpt>
+      <trkpt lat="48.611918" lon="8.092597"><ele>262.8</ele></trkpt>
+      <trkpt lat="48.611765" lon="8.092406"><ele>258.2</ele></trkpt>
+      <trkpt lat="48.611824" lon="8.092360"><ele>257.2</ele></trkpt>
+      <trkpt lat="48.611789" lon="8.092229"><ele>253.5</ele></trkpt>
+      <trkpt lat="48.611831" lon="8.092125"><ele>250.8</ele></trkpt>
+      <trkpt lat="48.612214" lon="8.091883"><ele>243.2</ele></trkpt>
+      <trkpt lat="48.612941" lon="8.092194"><ele>231.8</ele></trkpt>
+      <trkpt lat="48.612956" lon="8.090595"><ele>213.8</ele></trkpt>
+      <trkpt lat="48.613303" lon="8.090309"><ele>207.8</ele></trkpt>
+      <trkpt lat="48.614145" lon="8.090501"><ele>192.2</ele></trkpt>
+      <trkpt lat="48.614303" lon="8.090287"><ele>189.5</ele></trkpt>
+      <trkpt lat="48.614391" lon="8.090000"><ele>187.2</ele></trkpt>
+      <trkpt lat="48.614448" lon="8.088827"><ele>180.8</ele></trkpt>
+      <trkpt lat="48.614560" lon="8.088621"><ele>178.2</ele></trkpt>
+      <trkpt lat="48.614484" lon="8.088441"><ele>174.5</ele></trkpt>
+      <trkpt lat="48.613866" lon="8.088336"><ele>175.0</ele></trkpt>
+      <trkpt lat="48.613881" lon="8.087865"><ele>165.0</ele></trkpt>
+      <trkpt lat="48.613762" lon="8.087207"><ele>162.0</ele></trkpt>
+      <trkpt lat="48.613744" lon="8.086658"><ele>161.5</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

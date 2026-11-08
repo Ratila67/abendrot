@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Hafelochköpfle</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Hafelochköpfle</name>
+    <trkseg>
+      <trkpt lat="48.576655" lon="8.075491"><ele>306.8</ele></trkpt>
+      <trkpt lat="48.576411" lon="8.076000"><ele>301.5</ele></trkpt>
+      <trkpt lat="48.575413" lon="8.077033"><ele>284.2</ele></trkpt>
+      <trkpt lat="48.574164" lon="8.079067"><ele>286.2</ele></trkpt>
+      <trkpt lat="48.573209" lon="8.079631"><ele>279.5</ele></trkpt>
+      <trkpt lat="48.572086" lon="8.080496"><ele>282.5</ele></trkpt>
+      <trkpt lat="48.571555" lon="8.080098"><ele>288.0</ele></trkpt>
+      <trkpt lat="48.570911" lon="8.080219"><ele>292.5</ele></trkpt>
+      <trkpt lat="48.570758" lon="8.080113"><ele>292.2</ele></trkpt>
+      <trkpt lat="48.570693" lon="8.079921"><ele>291.0</ele></trkpt>
+      <trkpt lat="48.570614" lon="8.079102"><ele>294.0</ele></trkpt>
+      <trkpt lat="48.570367" lon="8.078337"><ele>302.2</ele></trkpt>
+      <trkpt lat="48.570650" lon="8.077517"><ele>302.8</ele></trkpt>
+      <trkpt lat="48.570675" lon="8.077101"><ele>304.2</ele></trkpt>
+      <trkpt lat="48.570584" lon="8.075228"><ele>291.2</ele></trkpt>
+      <trkpt lat="48.570283" lon="8.073577"><ele>294.2</ele></trkpt>
+      <trkpt lat="48.570826" lon="8.072320"><ele>293.2</ele></trkpt>
+      <trkpt lat="48.571156" lon="8.070746"><ele>279.5</ele></trkpt>
+      <trkpt lat="48.571141" lon="8.070338"><ele>279.2</ele></trkpt>
+      <trkpt lat="48.571156" lon="8.070746"><ele>279.5</ele></trkpt>
+      <trkpt lat="48.570826" lon="8.072320"><ele>293.2</ele></trkpt>
+      <trkpt lat="48.570283" lon="8.073577"><ele>294.2</ele></trkpt>
+      <trkpt lat="48.570584" lon="8.075228"><ele>291.2</ele></trkpt>
+      <trkpt lat="48.570675" lon="8.077101"><ele>304.2</ele></trkpt>
+      <trkpt lat="48.570650" lon="8.077517"><ele>302.8</ele></trkpt>
+      <trkpt lat="48.570367" lon="8.078337"><ele>302.2</ele></trkpt>
+      <trkpt lat="48.570614" lon="8.079102"><ele>294.0</ele></trkpt>
+      <trkpt lat="48.570648" lon="8.079722"><ele>291.0</ele></trkpt>
+      <trkpt lat="48.570758" lon="8.080113"><ele>292.2</ele></trkpt>
+      <trkpt lat="48.570911" lon="8.080219"><ele>292.5</ele></trkpt>
+      <trkpt lat="48.571555" lon="8.080098"><ele>288.0</ele></trkpt>
+      <trkpt lat="48.572086" lon="8.080496"><ele>282.5</ele></trkpt>
+      <trkpt lat="48.573209" lon="8.079631"><ele>279.5</ele></trkpt>
+      <trkpt lat="48.574164" lon="8.079067"><ele>286.2</ele></trkpt>
+      <trkpt lat="48.575413" lon="8.077033"><ele>284.2</ele></trkpt>
+      <trkpt lat="48.576411" lon="8.076000"><ele>301.5</ele></trkpt>
+      <trkpt lat="48.576655" lon="8.075491"><ele>308.0</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

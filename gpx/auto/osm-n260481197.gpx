@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Schliffkopf</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Schliffkopf</name>
+    <trkseg>
+      <trkpt lat="48.539502" lon="8.222552"><ele>1025.2</ele></trkpt>
+      <trkpt lat="48.539692" lon="8.222400"><ele>1023.8</ele></trkpt>
+      <trkpt lat="48.539728" lon="8.222245"><ele>1023.8</ele></trkpt>
+      <trkpt lat="48.540252" lon="8.221436"><ele>1019.0</ele></trkpt>
+      <trkpt lat="48.540010" lon="8.220184"><ele>1021.2</ele></trkpt>
+      <trkpt lat="48.539449" lon="8.218878"><ele>1023.8</ele></trkpt>
+      <trkpt lat="48.538644" lon="8.219691"><ele>1038.0</ele></trkpt>
+      <trkpt lat="48.537671" lon="8.220340"><ele>1048.0</ele></trkpt>
+      <trkpt lat="48.536742" lon="8.219235"><ele>1050.8</ele></trkpt>
+      <trkpt lat="48.536060" lon="8.217566"><ele>1052.5</ele></trkpt>
+      <trkpt lat="48.535531" lon="8.215802"><ele>1052.8</ele></trkpt>
+      <trkpt lat="48.535336" lon="8.215404"><ele>1052.5</ele></trkpt>
+      <trkpt lat="48.535347" lon="8.215190"><ele>1052.5</ele></trkpt>
+      <trkpt lat="48.535336" lon="8.215404"><ele>1052.5</ele></trkpt>
+      <trkpt lat="48.535531" lon="8.215802"><ele>1052.8</ele></trkpt>
+      <trkpt lat="48.536060" lon="8.217566"><ele>1052.5</ele></trkpt>
+      <trkpt lat="48.536742" lon="8.219235"><ele>1050.8</ele></trkpt>
+      <trkpt lat="48.537671" lon="8.220340"><ele>1048.0</ele></trkpt>
+      <trkpt lat="48.538644" lon="8.219691"><ele>1038.0</ele></trkpt>
+      <trkpt lat="48.539449" lon="8.218878"><ele>1023.8</ele></trkpt>
+      <trkpt lat="48.540010" lon="8.220184"><ele>1021.2</ele></trkpt>
+      <trkpt lat="48.540252" lon="8.221436"><ele>1019.0</ele></trkpt>
+      <trkpt lat="48.539728" lon="8.222245"><ele>1023.8</ele></trkpt>
+      <trkpt lat="48.539692" lon="8.222400"><ele>1023.8</ele></trkpt>
+      <trkpt lat="48.539502" lon="8.222552"><ele>1026.0</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

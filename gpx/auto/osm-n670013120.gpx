@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Eichelspitzturm</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Eichelspitzturm</name>
+    <trkseg>
+      <trkpt lat="48.085334" lon="7.693143"><ele>357.8</ele></trkpt>
+      <trkpt lat="48.085487" lon="7.692748"><ele>362.8</ele></trkpt>
+      <trkpt lat="48.085814" lon="7.692372"><ele>366.8</ele></trkpt>
+      <trkpt lat="48.086656" lon="7.692182"><ele>375.2</ele></trkpt>
+      <trkpt lat="48.086569" lon="7.691840"><ele>377.5</ele></trkpt>
+      <trkpt lat="48.086579" lon="7.691409"><ele>381.0</ele></trkpt>
+      <trkpt lat="48.086732" lon="7.690883"><ele>386.2</ele></trkpt>
+      <trkpt lat="48.086877" lon="7.690751"><ele>389.8</ele></trkpt>
+      <trkpt lat="48.088819" lon="7.692371"><ele>419.8</ele></trkpt>
+      <trkpt lat="48.089490" lon="7.693026"><ele>436.0</ele></trkpt>
+      <trkpt lat="48.090127" lon="7.693305"><ele>439.2</ele></trkpt>
+      <trkpt lat="48.092029" lon="7.695874"><ele>513.2</ele></trkpt>
+      <trkpt lat="48.092192" lon="7.695999"><ele>517.8</ele></trkpt>
+      <trkpt lat="48.092498" lon="7.695847"><ele>513.5</ele></trkpt>
+      <trkpt lat="48.092192" lon="7.695999"><ele>517.8</ele></trkpt>
+      <trkpt lat="48.092029" lon="7.695874"><ele>513.2</ele></trkpt>
+      <trkpt lat="48.090127" lon="7.693305"><ele>439.2</ele></trkpt>
+      <trkpt lat="48.089490" lon="7.693026"><ele>436.0</ele></trkpt>
+      <trkpt lat="48.088819" lon="7.692371"><ele>419.8</ele></trkpt>
+      <trkpt lat="48.086877" lon="7.690751"><ele>389.8</ele></trkpt>
+      <trkpt lat="48.086732" lon="7.690883"><ele>386.2</ele></trkpt>
+      <trkpt lat="48.086579" lon="7.691409"><ele>381.0</ele></trkpt>
+      <trkpt lat="48.086569" lon="7.691840"><ele>377.5</ele></trkpt>
+      <trkpt lat="48.086656" lon="7.692182"><ele>375.2</ele></trkpt>
+      <trkpt lat="48.085814" lon="7.692372"><ele>366.8</ele></trkpt>
+      <trkpt lat="48.085487" lon="7.692748"><ele>362.8</ele></trkpt>
+      <trkpt lat="48.085334" lon="7.693143"><ele>357.5</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

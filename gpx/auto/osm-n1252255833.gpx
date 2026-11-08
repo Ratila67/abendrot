@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Haferfels / Schützenwand</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Haferfels / Schützenwand</name>
+    <trkseg>
+      <trkpt lat="49.142791" lon="7.789625"><ele>212.8</ele></trkpt>
+      <trkpt lat="49.143641" lon="7.789485"><ele>236.8</ele></trkpt>
+      <trkpt lat="49.143971" lon="7.789556"><ele>245.0</ele></trkpt>
+      <trkpt lat="49.144448" lon="7.789408"><ele>259.0</ele></trkpt>
+      <trkpt lat="49.144557" lon="7.788560"><ele>261.0</ele></trkpt>
+      <trkpt lat="49.144821" lon="7.787976"><ele>262.8</ele></trkpt>
+      <trkpt lat="49.144987" lon="7.787857"><ele>265.5</ele></trkpt>
+      <trkpt lat="49.145391" lon="7.787942"><ele>269.8</ele></trkpt>
+      <trkpt lat="49.145563" lon="7.788168"><ele>272.0</ele></trkpt>
+      <trkpt lat="49.145668" lon="7.789637"><ele>290.5</ele></trkpt>
+      <trkpt lat="49.146378" lon="7.792357"><ele>319.2</ele></trkpt>
+      <trkpt lat="49.146542" lon="7.792464"><ele>315.0</ele></trkpt>
+      <trkpt lat="49.146826" lon="7.792983"><ele>310.8</ele></trkpt>
+      <trkpt lat="49.147203" lon="7.793263"><ele>307.8</ele></trkpt>
+      <trkpt lat="49.147483" lon="7.793873"><ele>304.2</ele></trkpt>
+      <trkpt lat="49.147760" lon="7.794248"><ele>300.0</ele></trkpt>
+      <trkpt lat="49.147935" lon="7.794784"><ele>296.2</ele></trkpt>
+      <trkpt lat="49.148010" lon="7.795336"><ele>298.8</ele></trkpt>
+      <trkpt lat="49.148161" lon="7.795615"><ele>303.0</ele></trkpt>
+      <trkpt lat="49.148249" lon="7.796423"><ele>313.0</ele></trkpt>
+      <trkpt lat="49.148228" lon="7.797388"><ele>320.5</ele></trkpt>
+      <trkpt lat="49.147829" lon="7.798161"><ele>318.0</ele></trkpt>
+      <trkpt lat="49.147616" lon="7.798724"><ele>306.5</ele></trkpt>
+      <trkpt lat="49.147610" lon="7.798885"><ele>305.0</ele></trkpt>
+      <trkpt lat="49.147616" lon="7.798724"><ele>306.5</ele></trkpt>
+      <trkpt lat="49.147829" lon="7.798161"><ele>318.0</ele></trkpt>
+      <trkpt lat="49.148228" lon="7.797388"><ele>320.5</ele></trkpt>
+      <trkpt lat="49.148249" lon="7.796423"><ele>313.0</ele></trkpt>
+      <trkpt lat="49.148161" lon="7.795615"><ele>303.0</ele></trkpt>
+      <trkpt lat="49.148010" lon="7.795336"><ele>298.8</ele></trkpt>
+      <trkpt lat="49.147935" lon="7.794784"><ele>296.2</ele></trkpt>
+      <trkpt lat="49.147760" lon="7.794248"><ele>300.0</ele></trkpt>
+      <trkpt lat="49.147483" lon="7.793873"><ele>304.2</ele></trkpt>
+      <trkpt lat="49.147203" lon="7.793263"><ele>307.8</ele></trkpt>
+      <trkpt lat="49.146826" lon="7.792983"><ele>310.8</ele></trkpt>
+      <trkpt lat="49.146542" lon="7.792464"><ele>315.0</ele></trkpt>
+      <trkpt lat="49.146378" lon="7.792357"><ele>319.2</ele></trkpt>
+      <trkpt lat="49.145668" lon="7.789637"><ele>290.5</ele></trkpt>
+      <trkpt lat="49.145563" lon="7.788168"><ele>272.0</ele></trkpt>
+      <trkpt lat="49.145391" lon="7.787942"><ele>269.8</ele></trkpt>
+      <trkpt lat="49.144987" lon="7.787857"><ele>265.5</ele></trkpt>
+      <trkpt lat="49.144821" lon="7.787976"><ele>262.8</ele></trkpt>
+      <trkpt lat="49.144557" lon="7.788560"><ele>261.0</ele></trkpt>
+      <trkpt lat="49.144448" lon="7.789408"><ele>259.0</ele></trkpt>
+      <trkpt lat="49.143971" lon="7.789556"><ele>245.0</ele></trkpt>
+      <trkpt lat="49.143641" lon="7.789485"><ele>236.8</ele></trkpt>
+      <trkpt lat="49.142791" lon="7.789625"><ele>213.2</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

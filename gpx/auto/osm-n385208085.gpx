@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Dr. Egon Sattler Bank</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Dr. Egon Sattler Bank</name>
+    <trkseg>
+      <trkpt lat="48.697708" lon="8.176940"><ele>228.8</ele></trkpt>
+      <trkpt lat="48.698025" lon="8.177719"><ele>241.5</ele></trkpt>
+      <trkpt lat="48.698068" lon="8.177965"><ele>244.2</ele></trkpt>
+      <trkpt lat="48.698098" lon="8.179340"><ele>263.0</ele></trkpt>
+      <trkpt lat="48.698579" lon="8.178510"><ele>264.2</ele></trkpt>
+      <trkpt lat="48.699090" lon="8.178581"><ele>260.5</ele></trkpt>
+      <trkpt lat="48.699802" lon="8.178361"><ele>261.2</ele></trkpt>
+      <trkpt lat="48.700692" lon="8.178909"><ele>260.0</ele></trkpt>
+      <trkpt lat="48.701501" lon="8.179833"><ele>265.2</ele></trkpt>
+      <trkpt lat="48.701946" lon="8.180615"><ele>272.2</ele></trkpt>
+      <trkpt lat="48.702323" lon="8.181916"><ele>296.0</ele></trkpt>
+      <trkpt lat="48.702718" lon="8.182713"><ele>299.5</ele></trkpt>
+      <trkpt lat="48.703256" lon="8.183218"><ele>316.8</ele></trkpt>
+      <trkpt lat="48.703916" lon="8.183591"><ele>328.8</ele></trkpt>
+      <trkpt lat="48.703101" lon="8.183854"><ele>339.2</ele></trkpt>
+      <trkpt lat="48.702825" lon="8.184261"><ele>351.2</ele></trkpt>
+      <trkpt lat="48.702465" lon="8.184596"><ele>360.0</ele></trkpt>
+      <trkpt lat="48.702381" lon="8.184598"><ele>357.5</ele></trkpt>
+      <trkpt lat="48.702465" lon="8.184596"><ele>360.0</ele></trkpt>
+      <trkpt lat="48.702825" lon="8.184261"><ele>351.2</ele></trkpt>
+      <trkpt lat="48.703101" lon="8.183854"><ele>339.2</ele></trkpt>
+      <trkpt lat="48.703916" lon="8.183591"><ele>328.8</ele></trkpt>
+      <trkpt lat="48.703256" lon="8.183218"><ele>316.8</ele></trkpt>
+      <trkpt lat="48.702718" lon="8.182713"><ele>299.5</ele></trkpt>
+      <trkpt lat="48.702323" lon="8.181916"><ele>296.0</ele></trkpt>
+      <trkpt lat="48.701946" lon="8.180615"><ele>272.2</ele></trkpt>
+      <trkpt lat="48.701545" lon="8.179938"><ele>267.0</ele></trkpt>
+      <trkpt lat="48.701342" lon="8.179777"><ele>265.5</ele></trkpt>
+      <trkpt lat="48.701058" lon="8.179698"><ele>271.2</ele></trkpt>
+      <trkpt lat="48.700355" lon="8.179086"><ele>274.0</ele></trkpt>
+      <trkpt lat="48.699997" lon="8.178977"><ele>278.0</ele></trkpt>
+      <trkpt lat="48.698696" lon="8.179409"><ele>278.2</ele></trkpt>
+      <trkpt lat="48.698509" lon="8.179585"><ele>277.0</ele></trkpt>
+      <trkpt lat="48.698260" lon="8.180348"><ele>277.8</ele></trkpt>
+      <trkpt lat="48.698094" lon="8.179473"><ele>265.2</ele></trkpt>
+      <trkpt lat="48.698068" lon="8.177965"><ele>244.2</ele></trkpt>
+      <trkpt lat="48.698025" lon="8.177719"><ele>241.5</ele></trkpt>
+      <trkpt lat="48.697708" lon="8.176940"><ele>228.0</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>
