@@ -272,7 +272,8 @@ def route_cached(waypoints):
         raise RuntimeError("BRouter indisponible après 5 essais")
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(json.dumps(f), "utf-8")
-    time.sleep(2.5)   # serveur public : une requête à la fois, sans le saturer
+    if "localhost" not in G.BROUTER and "127.0.0.1" not in G.BROUTER:
+        time.sleep(2.5)   # serveur public : une requête à la fois, sans le saturer
     return f
 
 

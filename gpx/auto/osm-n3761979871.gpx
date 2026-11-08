@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Talblick</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Talblick</name>
+    <trkseg>
+      <trkpt lat="49.104226" lon="7.869068"><ele>227.8</ele></trkpt>
+      <trkpt lat="49.103832" lon="7.869213"><ele>226.0</ele></trkpt>
+      <trkpt lat="49.103786" lon="7.868900"><ele>224.5</ele></trkpt>
+      <trkpt lat="49.103837" lon="7.868792"><ele>224.5</ele></trkpt>
+      <trkpt lat="49.106407" lon="7.867096"><ele>238.8</ele></trkpt>
+      <trkpt lat="49.106698" lon="7.866362"><ele>246.8</ele></trkpt>
+      <trkpt lat="49.107205" lon="7.866015"><ele>248.2</ele></trkpt>
+      <trkpt lat="49.107289" lon="7.865671"><ele>246.8</ele></trkpt>
+      <trkpt lat="49.107384" lon="7.864199"><ele>253.2</ele></trkpt>
+      <trkpt lat="49.106408" lon="7.864197"><ele>248.0</ele></trkpt>
+      <trkpt lat="49.106191" lon="7.863995"><ele>250.5</ele></trkpt>
+      <trkpt lat="49.106043" lon="7.863634"><ele>257.2</ele></trkpt>
+      <trkpt lat="49.105985" lon="7.863052"><ele>266.8</ele></trkpt>
+      <trkpt lat="49.105705" lon="7.862373"><ele>280.5</ele></trkpt>
+      <trkpt lat="49.104733" lon="7.861169"><ele>310.8</ele></trkpt>
+      <trkpt lat="49.103424" lon="7.859710"><ele>344.0</ele></trkpt>
+      <trkpt lat="49.102186" lon="7.857509"><ele>352.0</ele></trkpt>
+      <trkpt lat="49.101220" lon="7.856875"><ele>357.5</ele></trkpt>
+      <trkpt lat="49.100549" lon="7.856088"><ele>356.2</ele></trkpt>
+      <trkpt lat="49.100090" lon="7.855679"><ele>355.2</ele></trkpt>
+      <trkpt lat="49.098281" lon="7.854630"><ele>358.8</ele></trkpt>
+      <trkpt lat="49.097933" lon="7.854543"><ele>360.0</ele></trkpt>
+      <trkpt lat="49.097167" lon="7.854824"><ele>363.0</ele></trkpt>
+      <trkpt lat="49.096911" lon="7.854731"><ele>362.2</ele></trkpt>
+      <trkpt lat="49.095949" lon="7.854115"><ele>355.5</ele></trkpt>
+      <trkpt lat="49.095855" lon="7.853653"><ele>347.5</ele></trkpt>
+      <trkpt lat="49.095949" lon="7.854115"><ele>355.5</ele></trkpt>
+      <trkpt lat="49.096911" lon="7.854731"><ele>362.2</ele></trkpt>
+      <trkpt lat="49.097167" lon="7.854824"><ele>363.0</ele></trkpt>
+      <trkpt lat="49.097933" lon="7.854543"><ele>360.0</ele></trkpt>
+      <trkpt lat="49.098281" lon="7.854630"><ele>358.8</ele></trkpt>
+      <trkpt lat="49.100090" lon="7.855679"><ele>355.2</ele></trkpt>
+      <trkpt lat="49.100549" lon="7.856088"><ele>356.2</ele></trkpt>
+      <trkpt lat="49.101220" lon="7.856875"><ele>357.5</ele></trkpt>
+      <trkpt lat="49.102186" lon="7.857509"><ele>352.0</ele></trkpt>
+      <trkpt lat="49.103424" lon="7.859710"><ele>344.0</ele></trkpt>
+      <trkpt lat="49.104733" lon="7.861169"><ele>310.8</ele></trkpt>
+      <trkpt lat="49.105705" lon="7.862373"><ele>280.5</ele></trkpt>
+      <trkpt lat="49.105985" lon="7.863052"><ele>266.8</ele></trkpt>
+      <trkpt lat="49.106043" lon="7.863634"><ele>257.2</ele></trkpt>
+      <trkpt lat="49.106191" lon="7.863995"><ele>250.5</ele></trkpt>
+      <trkpt lat="49.106408" lon="7.864197"><ele>248.0</ele></trkpt>
+      <trkpt lat="49.107384" lon="7.864199"><ele>253.2</ele></trkpt>
+      <trkpt lat="49.107289" lon="7.865671"><ele>246.8</ele></trkpt>
+      <trkpt lat="49.107205" lon="7.866015"><ele>248.2</ele></trkpt>
+      <trkpt lat="49.106698" lon="7.866362"><ele>246.8</ele></trkpt>
+      <trkpt lat="49.106407" lon="7.867096"><ele>238.8</ele></trkpt>
+      <trkpt lat="49.103837" lon="7.868792"><ele>224.5</ele></trkpt>
+      <trkpt lat="49.103786" lon="7.868900"><ele>224.5</ele></trkpt>
+      <trkpt lat="49.103832" lon="7.869213"><ele>226.0</ele></trkpt>
+      <trkpt lat="49.104226" lon="7.869068"><ele>230.0</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

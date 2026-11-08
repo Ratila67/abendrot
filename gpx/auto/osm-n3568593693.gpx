@@ -9,23 +9,12 @@
   <trk>
     <name>Schniddelfels</name>
     <trkseg>
-      <trkpt lat="49.103479" lon="7.875500"><ele>223.5</ele></trkpt>
-      <trkpt lat="49.103228" lon="7.875117"><ele>223.5</ele></trkpt>
-      <trkpt lat="49.103226" lon="7.874951"><ele>222.0</ele></trkpt>
-      <trkpt lat="49.102857" lon="7.874379"><ele>223.0</ele></trkpt>
-      <trkpt lat="49.102154" lon="7.872863"><ele>222.5</ele></trkpt>
-      <trkpt lat="49.101710" lon="7.872090"><ele>222.0</ele></trkpt>
-      <trkpt lat="49.100769" lon="7.871314"><ele>221.2</ele></trkpt>
-      <trkpt lat="49.100877" lon="7.870926"><ele>219.2</ele></trkpt>
-      <trkpt lat="49.101031" lon="7.870646"><ele>222.5</ele></trkpt>
-      <trkpt lat="49.101755" lon="7.870758"><ele>221.2</ele></trkpt>
-      <trkpt lat="49.101930" lon="7.870638"><ele>221.5</ele></trkpt>
-      <trkpt lat="49.101995" lon="7.870407"><ele>224.0</ele></trkpt>
-      <trkpt lat="49.102575" lon="7.869914"><ele>221.8</ele></trkpt>
-      <trkpt lat="49.102989" lon="7.869811"><ele>222.0</ele></trkpt>
+      <trkpt lat="49.104226" lon="7.869068"><ele>227.8</ele></trkpt>
+      <trkpt lat="49.103796" lon="7.869231"><ele>225.8</ele></trkpt>
+      <trkpt lat="49.103821" lon="7.869392"><ele>227.5</ele></trkpt>
       <trkpt lat="49.103511" lon="7.869537"><ele>225.8</ele></trkpt>
       <trkpt lat="49.103405" lon="7.869702"><ele>225.2</ele></trkpt>
-      <trkpt lat="49.104039" lon="7.869663"><ele>236.5</ele></trkpt>
+      <trkpt lat="49.103815" lon="7.869634"><ele>232.2</ele></trkpt>
       <trkpt lat="49.104171" lon="7.869718"><ele>239.8</ele></trkpt>
       <trkpt lat="49.103789" lon="7.870226"><ele>250.0</ele></trkpt>
       <trkpt lat="49.104240" lon="7.870170"><ele>258.2</ele></trkpt>
@@ -37,7 +26,7 @@
       <trkpt lat="49.104461" lon="7.871208"><ele>294.0</ele></trkpt>
       <trkpt lat="49.104493" lon="7.871471"><ele>293.8</ele></trkpt>
       <trkpt lat="49.104815" lon="7.872119"><ele>296.8</ele></trkpt>
-      <trkpt lat="49.105137" lon="7.872215"><ele>305.2</ele></trkpt>
+      <trkpt lat="49.104952" lon="7.872196"><ele>300.5</ele></trkpt>
       <trkpt lat="49.106263" lon="7.872159"><ele>324.2</ele></trkpt>
       <trkpt lat="49.107720" lon="7.871764"><ele>334.5</ele></trkpt>
       <trkpt lat="49.107942" lon="7.871168"><ele>332.8</ele></trkpt>
@@ -67,7 +56,7 @@
       <trkpt lat="49.107942" lon="7.871168"><ele>332.8</ele></trkpt>
       <trkpt lat="49.107720" lon="7.871764"><ele>334.5</ele></trkpt>
       <trkpt lat="49.106263" lon="7.872159"><ele>324.2</ele></trkpt>
-      <trkpt lat="49.105137" lon="7.872215"><ele>305.2</ele></trkpt>
+      <trkpt lat="49.104952" lon="7.872196"><ele>300.5</ele></trkpt>
       <trkpt lat="49.104815" lon="7.872119"><ele>296.8</ele></trkpt>
       <trkpt lat="49.104493" lon="7.871471"><ele>293.8</ele></trkpt>
       <trkpt lat="49.104461" lon="7.871208"><ele>294.0</ele></trkpt>
@@ -79,23 +68,12 @@
       <trkpt lat="49.104240" lon="7.870170"><ele>258.2</ele></trkpt>
       <trkpt lat="49.103789" lon="7.870226"><ele>250.0</ele></trkpt>
       <trkpt lat="49.104171" lon="7.869718"><ele>239.8</ele></trkpt>
-      <trkpt lat="49.104039" lon="7.869663"><ele>236.5</ele></trkpt>
+      <trkpt lat="49.103815" lon="7.869634"><ele>232.2</ele></trkpt>
       <trkpt lat="49.103405" lon="7.869702"><ele>225.2</ele></trkpt>
       <trkpt lat="49.103511" lon="7.869537"><ele>225.8</ele></trkpt>
-      <trkpt lat="49.102989" lon="7.869811"><ele>222.0</ele></trkpt>
-      <trkpt lat="49.102575" lon="7.869914"><ele>221.8</ele></trkpt>
-      <trkpt lat="49.101995" lon="7.870407"><ele>224.0</ele></trkpt>
-      <trkpt lat="49.101930" lon="7.870638"><ele>221.5</ele></trkpt>
-      <trkpt lat="49.101755" lon="7.870758"><ele>221.2</ele></trkpt>
-      <trkpt lat="49.101031" lon="7.870646"><ele>222.5</ele></trkpt>
-      <trkpt lat="49.100877" lon="7.870926"><ele>219.2</ele></trkpt>
-      <trkpt lat="49.100769" lon="7.871314"><ele>221.2</ele></trkpt>
-      <trkpt lat="49.101710" lon="7.872090"><ele>222.0</ele></trkpt>
-      <trkpt lat="49.102154" lon="7.872863"><ele>222.5</ele></trkpt>
-      <trkpt lat="49.102857" lon="7.874379"><ele>223.0</ele></trkpt>
-      <trkpt lat="49.103226" lon="7.874951"><ele>222.0</ele></trkpt>
-      <trkpt lat="49.103228" lon="7.875117"><ele>223.5</ele></trkpt>
-      <trkpt lat="49.103479" lon="7.875500"><ele>223.5</ele></trkpt>
+      <trkpt lat="49.103821" lon="7.869392"><ele>227.5</ele></trkpt>
+      <trkpt lat="49.103796" lon="7.869231"><ele>225.8</ele></trkpt>
+      <trkpt lat="49.104226" lon="7.869068"><ele>230.0</ele></trkpt>
     </trkseg>
   </trk>
 </gpx>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Roche de Minuit</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Roche de Minuit</name>
+    <trkseg>
+      <trkpt lat="47.987878" lon="6.868862"><ele>873.2</ele></trkpt>
+      <trkpt lat="47.987802" lon="6.869256"><ele>876.0</ele></trkpt>
+      <trkpt lat="47.987659" lon="6.869605"><ele>879.2</ele></trkpt>
+      <trkpt lat="47.987447" lon="6.869454"><ele>882.5</ele></trkpt>
+      <trkpt lat="47.986864" lon="6.868423"><ele>890.8</ele></trkpt>
+      <trkpt lat="47.986762" lon="6.867910"><ele>895.0</ele></trkpt>
+      <trkpt lat="47.986852" lon="6.867018"><ele>900.5</ele></trkpt>
+      <trkpt lat="47.987115" lon="6.866277"><ele>906.2</ele></trkpt>
+      <trkpt lat="47.987536" lon="6.865374"><ele>914.5</ele></trkpt>
+      <trkpt lat="47.987938" lon="6.864941"><ele>919.5</ele></trkpt>
+      <trkpt lat="47.988567" lon="6.863718"><ele>928.8</ele></trkpt>
+      <trkpt lat="47.988734" lon="6.862846"><ele>931.2</ele></trkpt>
+      <trkpt lat="47.988787" lon="6.861750"><ele>936.0</ele></trkpt>
+      <trkpt lat="47.988729" lon="6.861340"><ele>937.8</ele></trkpt>
+      <trkpt lat="47.988326" lon="6.859970"><ele>943.8</ele></trkpt>
+      <trkpt lat="47.988047" lon="6.859590"><ele>946.0</ele></trkpt>
+      <trkpt lat="47.988177" lon="6.858669"><ele>943.0</ele></trkpt>
+      <trkpt lat="47.988112" lon="6.858138"><ele>947.2</ele></trkpt>
+      <trkpt lat="47.987974" lon="6.857936"><ele>948.8</ele></trkpt>
+      <trkpt lat="47.988029" lon="6.857383"><ele>948.2</ele></trkpt>
+      <trkpt lat="47.987974" lon="6.857936"><ele>948.8</ele></trkpt>
+      <trkpt lat="47.988112" lon="6.858138"><ele>947.2</ele></trkpt>
+      <trkpt lat="47.988177" lon="6.858669"><ele>943.0</ele></trkpt>
+      <trkpt lat="47.988047" lon="6.859590"><ele>946.0</ele></trkpt>
+      <trkpt lat="47.988326" lon="6.859970"><ele>943.8</ele></trkpt>
+      <trkpt lat="47.988729" lon="6.861340"><ele>937.8</ele></trkpt>
+      <trkpt lat="47.988787" lon="6.861750"><ele>936.0</ele></trkpt>
+      <trkpt lat="47.988734" lon="6.862846"><ele>931.2</ele></trkpt>
+      <trkpt lat="47.988567" lon="6.863718"><ele>928.8</ele></trkpt>
+      <trkpt lat="47.987938" lon="6.864941"><ele>919.5</ele></trkpt>
+      <trkpt lat="47.987536" lon="6.865374"><ele>914.5</ele></trkpt>
+      <trkpt lat="47.987115" lon="6.866277"><ele>906.2</ele></trkpt>
+      <trkpt lat="47.986852" lon="6.867018"><ele>900.5</ele></trkpt>
+      <trkpt lat="47.986762" lon="6.867910"><ele>895.0</ele></trkpt>
+      <trkpt lat="47.986864" lon="6.868423"><ele>890.8</ele></trkpt>
+      <trkpt lat="47.987447" lon="6.869454"><ele>882.5</ele></trkpt>
+      <trkpt lat="47.987659" lon="6.869605"><ele>879.2</ele></trkpt>
+      <trkpt lat="47.987802" lon="6.869256"><ele>876.0</ele></trkpt>
+      <trkpt lat="47.987878" lon="6.868862"><ele>870.5</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

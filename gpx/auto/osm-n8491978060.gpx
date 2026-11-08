@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Sturmbühl</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Sturmbühl</name>
+    <trkseg>
+      <trkpt lat="48.125687" lon="8.291954"><ele>873.0</ele></trkpt>
+      <trkpt lat="48.125786" lon="8.292187"><ele>873.2</ele></trkpt>
+      <trkpt lat="48.125748" lon="8.292229"><ele>873.5</ele></trkpt>
+      <trkpt lat="48.125409" lon="8.292110"><ele>876.8</ele></trkpt>
+      <trkpt lat="48.124578" lon="8.291254"><ele>888.0</ele></trkpt>
+      <trkpt lat="48.124218" lon="8.291090"><ele>890.5</ele></trkpt>
+      <trkpt lat="48.123751" lon="8.291230"><ele>893.8</ele></trkpt>
+      <trkpt lat="48.123097" lon="8.291574"><ele>900.5</ele></trkpt>
+      <trkpt lat="48.122386" lon="8.291770"><ele>905.2</ele></trkpt>
+      <trkpt lat="48.121985" lon="8.291735"><ele>908.5</ele></trkpt>
+      <trkpt lat="48.121712" lon="8.291548"><ele>910.0</ele></trkpt>
+      <trkpt lat="48.121431" lon="8.290533"><ele>911.0</ele></trkpt>
+      <trkpt lat="48.121031" lon="8.288527"><ele>927.5</ele></trkpt>
+      <trkpt lat="48.120785" lon="8.287947"><ele>932.8</ele></trkpt>
+      <trkpt lat="48.120211" lon="8.285925"><ele>938.5</ele></trkpt>
+      <trkpt lat="48.119585" lon="8.284406"><ele>940.8</ele></trkpt>
+      <trkpt lat="48.119459" lon="8.284154"><ele>941.0</ele></trkpt>
+      <trkpt lat="48.118889" lon="8.283521"><ele>941.5</ele></trkpt>
+      <trkpt lat="48.118407" lon="8.282797"><ele>941.0</ele></trkpt>
+      <trkpt lat="48.117813" lon="8.282559"><ele>940.0</ele></trkpt>
+      <trkpt lat="48.118407" lon="8.282797"><ele>941.0</ele></trkpt>
+      <trkpt lat="48.118889" lon="8.283521"><ele>941.5</ele></trkpt>
+      <trkpt lat="48.119459" lon="8.284154"><ele>941.0</ele></trkpt>
+      <trkpt lat="48.119585" lon="8.284406"><ele>940.8</ele></trkpt>
+      <trkpt lat="48.120211" lon="8.285925"><ele>938.5</ele></trkpt>
+      <trkpt lat="48.120785" lon="8.287947"><ele>932.8</ele></trkpt>
+      <trkpt lat="48.121031" lon="8.288527"><ele>927.5</ele></trkpt>
+      <trkpt lat="48.121431" lon="8.290533"><ele>911.0</ele></trkpt>
+      <trkpt lat="48.121712" lon="8.291548"><ele>910.0</ele></trkpt>
+      <trkpt lat="48.121985" lon="8.291735"><ele>908.5</ele></trkpt>
+      <trkpt lat="48.122386" lon="8.291770"><ele>905.2</ele></trkpt>
+      <trkpt lat="48.123097" lon="8.291574"><ele>900.5</ele></trkpt>
+      <trkpt lat="48.123751" lon="8.291230"><ele>893.8</ele></trkpt>
+      <trkpt lat="48.124218" lon="8.291090"><ele>890.5</ele></trkpt>
+      <trkpt lat="48.124578" lon="8.291254"><ele>888.0</ele></trkpt>
+      <trkpt lat="48.125409" lon="8.292110"><ele>876.8</ele></trkpt>
+      <trkpt lat="48.125748" lon="8.292229"><ele>873.5</ele></trkpt>
+      <trkpt lat="48.125786" lon="8.292187"><ele>873.2</ele></trkpt>
+      <trkpt lat="48.125687" lon="8.291954"><ele>873.0</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Hoyers Tännle</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Hoyers Tännle</name>
+    <trkseg>
+      <trkpt lat="47.802157" lon="7.634353"><ele>269.2</ele></trkpt>
+      <trkpt lat="47.802096" lon="7.634461"><ele>269.5</ele></trkpt>
+      <trkpt lat="47.802201" lon="7.634667"><ele>267.2</ele></trkpt>
+      <trkpt lat="47.802128" lon="7.634766"><ele>267.8</ele></trkpt>
+      <trkpt lat="47.802433" lon="7.636043"><ele>267.8</ele></trkpt>
+      <trkpt lat="47.801837" lon="7.636320"><ele>271.2</ele></trkpt>
+      <trkpt lat="47.800866" lon="7.637307"><ele>285.0</ele></trkpt>
+      <trkpt lat="47.800812" lon="7.637575"><ele>291.2</ele></trkpt>
+      <trkpt lat="47.800996" lon="7.637415"><ele>290.2</ele></trkpt>
+      <trkpt lat="47.801424" lon="7.637245"><ele>293.0</ele></trkpt>
+      <trkpt lat="47.801536" lon="7.637293"><ele>295.8</ele></trkpt>
+      <trkpt lat="47.801594" lon="7.637432"><ele>299.5</ele></trkpt>
+      <trkpt lat="47.801441" lon="7.637627"><ele>301.8</ele></trkpt>
+      <trkpt lat="47.801440" lon="7.637911"><ele>306.8</ele></trkpt>
+      <trkpt lat="47.801203" lon="7.638002"><ele>307.0</ele></trkpt>
+      <trkpt lat="47.800445" lon="7.638796"><ele>313.2</ele></trkpt>
+      <trkpt lat="47.799932" lon="7.640075"><ele>321.8</ele></trkpt>
+      <trkpt lat="47.800074" lon="7.640588"><ele>325.5</ele></trkpt>
+      <trkpt lat="47.800587" lon="7.641289"><ele>330.8</ele></trkpt>
+      <trkpt lat="47.801075" lon="7.642614"><ele>339.0</ele></trkpt>
+      <trkpt lat="47.801551" lon="7.643289"><ele>343.5</ele></trkpt>
+      <trkpt lat="47.802282" lon="7.643817"><ele>346.0</ele></trkpt>
+      <trkpt lat="47.801551" lon="7.643289"><ele>343.5</ele></trkpt>
+      <trkpt lat="47.801075" lon="7.642614"><ele>339.0</ele></trkpt>
+      <trkpt lat="47.800587" lon="7.641289"><ele>330.8</ele></trkpt>
+      <trkpt lat="47.800074" lon="7.640588"><ele>325.5</ele></trkpt>
+      <trkpt lat="47.799932" lon="7.640075"><ele>321.8</ele></trkpt>
+      <trkpt lat="47.800445" lon="7.638796"><ele>313.2</ele></trkpt>
+      <trkpt lat="47.801203" lon="7.638002"><ele>307.0</ele></trkpt>
+      <trkpt lat="47.801440" lon="7.637911"><ele>306.8</ele></trkpt>
+      <trkpt lat="47.801441" lon="7.637627"><ele>301.8</ele></trkpt>
+      <trkpt lat="47.801594" lon="7.637432"><ele>299.5</ele></trkpt>
+      <trkpt lat="47.801536" lon="7.637293"><ele>295.8</ele></trkpt>
+      <trkpt lat="47.801424" lon="7.637245"><ele>293.0</ele></trkpt>
+      <trkpt lat="47.800996" lon="7.637415"><ele>290.2</ele></trkpt>
+      <trkpt lat="47.800812" lon="7.637575"><ele>291.2</ele></trkpt>
+      <trkpt lat="47.800866" lon="7.637307"><ele>285.0</ele></trkpt>
+      <trkpt lat="47.801837" lon="7.636320"><ele>271.2</ele></trkpt>
+      <trkpt lat="47.802433" lon="7.636043"><ele>267.8</ele></trkpt>
+      <trkpt lat="47.802128" lon="7.634766"><ele>267.8</ele></trkpt>
+      <trkpt lat="47.802201" lon="7.634667"><ele>267.2</ele></trkpt>
+      <trkpt lat="47.802096" lon="7.634461"><ele>269.5</ele></trkpt>
+      <trkpt lat="47.802157" lon="7.634353"><ele>268.8</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

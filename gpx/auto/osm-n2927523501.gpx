@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Rotwild und Mufflon</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Rotwild und Mufflon</name>
+    <trkseg>
+      <trkpt lat="48.766171" lon="8.261084"><ele>273.8</ele></trkpt>
+      <trkpt lat="48.766633" lon="8.262482"><ele>286.5</ele></trkpt>
+      <trkpt lat="48.766733" lon="8.262952"><ele>290.8</ele></trkpt>
+      <trkpt lat="48.766986" lon="8.264734"><ele>308.2</ele></trkpt>
+      <trkpt lat="48.766825" lon="8.264917"><ele>305.8</ele></trkpt>
+      <trkpt lat="48.766888" lon="8.265332"><ele>308.8</ele></trkpt>
+      <trkpt lat="48.766870" lon="8.265763"><ele>307.2</ele></trkpt>
+      <trkpt lat="48.766660" lon="8.265885"><ele>303.2</ele></trkpt>
+      <trkpt lat="48.766158" lon="8.265872"><ele>300.8</ele></trkpt>
+      <trkpt lat="48.765714" lon="8.266563"><ele>297.8</ele></trkpt>
+      <trkpt lat="48.765566" lon="8.266408"><ele>294.2</ele></trkpt>
+      <trkpt lat="48.765556" lon="8.265906"><ele>290.5</ele></trkpt>
+      <trkpt lat="48.765423" lon="8.265511"><ele>289.5</ele></trkpt>
+      <trkpt lat="48.765125" lon="8.265241"><ele>289.0</ele></trkpt>
+      <trkpt lat="48.764755" lon="8.265280"><ele>288.2</ele></trkpt>
+      <trkpt lat="48.764395" lon="8.265136"><ele>287.0</ele></trkpt>
+      <trkpt lat="48.764151" lon="8.264863"><ele>286.8</ele></trkpt>
+      <trkpt lat="48.763621" lon="8.263948"><ele>282.8</ele></trkpt>
+      <trkpt lat="48.763411" lon="8.263936"><ele>284.0</ele></trkpt>
+      <trkpt lat="48.763209" lon="8.264196"><ele>285.2</ele></trkpt>
+      <trkpt lat="48.762988" lon="8.264332"><ele>284.8</ele></trkpt>
+      <trkpt lat="48.762214" lon="8.264268"><ele>285.8</ele></trkpt>
+      <trkpt lat="48.761880" lon="8.264026"><ele>287.2</ele></trkpt>
+      <trkpt lat="48.761750" lon="8.264604"><ele>289.0</ele></trkpt>
+      <trkpt lat="48.762038" lon="8.265279"><ele>292.5</ele></trkpt>
+      <trkpt lat="48.762060" lon="8.265458"><ele>292.5</ele></trkpt>
+      <trkpt lat="48.761934" lon="8.265588"><ele>290.0</ele></trkpt>
+      <trkpt lat="48.761357" lon="8.265601"><ele>291.5</ele></trkpt>
+      <trkpt lat="48.760904" lon="8.265920"><ele>294.2</ele></trkpt>
+      <trkpt lat="48.760660" lon="8.265982"><ele>294.8</ele></trkpt>
+      <trkpt lat="48.760385" lon="8.266331"><ele>301.5</ele></trkpt>
+      <trkpt lat="48.760292" lon="8.266315"><ele>300.8</ele></trkpt>
+      <trkpt lat="48.760069" lon="8.265984"><ele>302.8</ele></trkpt>
+      <trkpt lat="48.759889" lon="8.266058"><ele>304.0</ele></trkpt>
+      <trkpt lat="48.759441" lon="8.266615"><ele>308.8</ele></trkpt>
+      <trkpt lat="48.759394" lon="8.267045"><ele>314.2</ele></trkpt>
+      <trkpt lat="48.759125" lon="8.268058"><ele>316.2</ele></trkpt>
+      <trkpt lat="48.758673" lon="8.268564"><ele>318.2</ele></trkpt>
+      <trkpt lat="48.758420" lon="8.269769"><ele>324.0</ele></trkpt>
+      <trkpt lat="48.758138" lon="8.269556"><ele>317.2</ele></trkpt>
+      <trkpt lat="48.758420" lon="8.269769"><ele>324.0</ele></trkpt>
+      <trkpt lat="48.758673" lon="8.268564"><ele>318.2</ele></trkpt>
+      <trkpt lat="48.759125" lon="8.268058"><ele>316.2</ele></trkpt>
+      <trkpt lat="48.759394" lon="8.267045"><ele>314.2</ele></trkpt>
+      <trkpt lat="48.759441" lon="8.266615"><ele>308.8</ele></trkpt>
+      <trkpt lat="48.759889" lon="8.266058"><ele>304.0</ele></trkpt>
+      <trkpt lat="48.760069" lon="8.265984"><ele>302.8</ele></trkpt>
+      <trkpt lat="48.760292" lon="8.266315"><ele>300.8</ele></trkpt>
+      <trkpt lat="48.760385" lon="8.266331"><ele>301.5</ele></trkpt>
+      <trkpt lat="48.760660" lon="8.265982"><ele>294.8</ele></trkpt>
+      <trkpt lat="48.760904" lon="8.265920"><ele>294.2</ele></trkpt>
+      <trkpt lat="48.761357" lon="8.265601"><ele>291.5</ele></trkpt>
+      <trkpt lat="48.761934" lon="8.265588"><ele>290.0</ele></trkpt>
+      <trkpt lat="48.762060" lon="8.265458"><ele>292.5</ele></trkpt>
+      <trkpt lat="48.762038" lon="8.265279"><ele>292.5</ele></trkpt>
+      <trkpt lat="48.761750" lon="8.264604"><ele>289.0</ele></trkpt>
+      <trkpt lat="48.761880" lon="8.264026"><ele>287.2</ele></trkpt>
+      <trkpt lat="48.762214" lon="8.264268"><ele>285.8</ele></trkpt>
+      <trkpt lat="48.762988" lon="8.264332"><ele>284.8</ele></trkpt>
+      <trkpt lat="48.763209" lon="8.264196"><ele>285.2</ele></trkpt>
+      <trkpt lat="48.763411" lon="8.263936"><ele>284.0</ele></trkpt>
+      <trkpt lat="48.763621" lon="8.263948"><ele>282.8</ele></trkpt>
+      <trkpt lat="48.764151" lon="8.264863"><ele>286.8</ele></trkpt>
+      <trkpt lat="48.764395" lon="8.265136"><ele>287.0</ele></trkpt>
+      <trkpt lat="48.764755" lon="8.265280"><ele>288.2</ele></trkpt>
+      <trkpt lat="48.765125" lon="8.265241"><ele>289.0</ele></trkpt>
+      <trkpt lat="48.765423" lon="8.265511"><ele>289.5</ele></trkpt>
+      <trkpt lat="48.765556" lon="8.265906"><ele>290.5</ele></trkpt>
+      <trkpt lat="48.765566" lon="8.266408"><ele>294.2</ele></trkpt>
+      <trkpt lat="48.765714" lon="8.266563"><ele>297.8</ele></trkpt>
+      <trkpt lat="48.766158" lon="8.265872"><ele>300.8</ele></trkpt>
+      <trkpt lat="48.766660" lon="8.265885"><ele>303.2</ele></trkpt>
+      <trkpt lat="48.766870" lon="8.265763"><ele>307.2</ele></trkpt>
+      <trkpt lat="48.766888" lon="8.265332"><ele>308.8</ele></trkpt>
+      <trkpt lat="48.766825" lon="8.264917"><ele>305.8</ele></trkpt>
+      <trkpt lat="48.766986" lon="8.264734"><ele>308.2</ele></trkpt>
+      <trkpt lat="48.766733" lon="8.262952"><ele>290.8</ele></trkpt>
+      <trkpt lat="48.766633" lon="8.262482"><ele>286.5</ele></trkpt>
+      <trkpt lat="48.766171" lon="8.261084"><ele>273.0</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

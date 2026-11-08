@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Hornfelsen</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Hornfelsen</name>
+    <trkseg>
+      <trkpt lat="47.562274" lon="7.638624"><ele>265.5</ele></trkpt>
+      <trkpt lat="47.561337" lon="7.639812"><ele>265.0</ele></trkpt>
+      <trkpt lat="47.561595" lon="7.640168"><ele>265.0</ele></trkpt>
+      <trkpt lat="47.561719" lon="7.639972"><ele>265.0</ele></trkpt>
+      <trkpt lat="47.561921" lon="7.640276"><ele>265.8</ele></trkpt>
+      <trkpt lat="47.561539" lon="7.641038"><ele>269.2</ele></trkpt>
+      <trkpt lat="47.561310" lon="7.641296"><ele>272.0</ele></trkpt>
+      <trkpt lat="47.561325" lon="7.643719"><ele>282.5</ele></trkpt>
+      <trkpt lat="47.560750" lon="7.643799"><ele>283.2</ele></trkpt>
+      <trkpt lat="47.560933" lon="7.643930"><ele>287.5</ele></trkpt>
+      <trkpt lat="47.560456" lon="7.644264"><ele>298.8</ele></trkpt>
+      <trkpt lat="47.560071" lon="7.644416"><ele>304.0</ele></trkpt>
+      <trkpt lat="47.560059" lon="7.644674"><ele>314.0</ele></trkpt>
+      <trkpt lat="47.559909" lon="7.644699"><ele>316.2</ele></trkpt>
+      <trkpt lat="47.560108" lon="7.644833"><ele>319.2</ele></trkpt>
+      <trkpt lat="47.559608" lon="7.645108"><ele>328.0</ele></trkpt>
+      <trkpt lat="47.559855" lon="7.645520"><ele>340.2</ele></trkpt>
+      <trkpt lat="47.559951" lon="7.645939"><ele>346.2</ele></trkpt>
+      <trkpt lat="47.559476" lon="7.646139"><ele>357.8</ele></trkpt>
+      <trkpt lat="47.559358" lon="7.646275"><ele>361.0</ele></trkpt>
+      <trkpt lat="47.558821" lon="7.646445"><ele>364.2</ele></trkpt>
+      <trkpt lat="47.559358" lon="7.646275"><ele>361.0</ele></trkpt>
+      <trkpt lat="47.559476" lon="7.646139"><ele>357.8</ele></trkpt>
+      <trkpt lat="47.559951" lon="7.645939"><ele>346.2</ele></trkpt>
+      <trkpt lat="47.559855" lon="7.645520"><ele>340.2</ele></trkpt>
+      <trkpt lat="47.559608" lon="7.645108"><ele>328.0</ele></trkpt>
+      <trkpt lat="47.560108" lon="7.644833"><ele>319.2</ele></trkpt>
+      <trkpt lat="47.559909" lon="7.644699"><ele>316.2</ele></trkpt>
+      <trkpt lat="47.560059" lon="7.644674"><ele>314.0</ele></trkpt>
+      <trkpt lat="47.560071" lon="7.644416"><ele>304.0</ele></trkpt>
+      <trkpt lat="47.560456" lon="7.644264"><ele>298.8</ele></trkpt>
+      <trkpt lat="47.560933" lon="7.643930"><ele>287.5</ele></trkpt>
+      <trkpt lat="47.560750" lon="7.643799"><ele>283.2</ele></trkpt>
+      <trkpt lat="47.561325" lon="7.643719"><ele>282.5</ele></trkpt>
+      <trkpt lat="47.561310" lon="7.641296"><ele>272.0</ele></trkpt>
+      <trkpt lat="47.561539" lon="7.641038"><ele>269.2</ele></trkpt>
+      <trkpt lat="47.561921" lon="7.640276"><ele>265.8</ele></trkpt>
+      <trkpt lat="47.561719" lon="7.639972"><ele>265.0</ele></trkpt>
+      <trkpt lat="47.561595" lon="7.640168"><ele>265.0</ele></trkpt>
+      <trkpt lat="47.561337" lon="7.639812"><ele>265.0</ele></trkpt>
+      <trkpt lat="47.562274" lon="7.638624"><ele>265.8</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Belle vue</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Belle vue</name>
+    <trkseg>
+      <trkpt lat="47.719733" lon="7.386864"><ele>269.2</ele></trkpt>
+      <trkpt lat="47.719887" lon="7.386919"><ele>268.5</ele></trkpt>
+      <trkpt lat="47.719903" lon="7.386433"><ele>270.0</ele></trkpt>
+      <trkpt lat="47.719796" lon="7.385937"><ele>271.8</ele></trkpt>
+      <trkpt lat="47.720033" lon="7.385444"><ele>271.5</ele></trkpt>
+      <trkpt lat="47.719778" lon="7.383152"><ele>278.8</ele></trkpt>
+      <trkpt lat="47.719909" lon="7.382965"><ele>280.0</ele></trkpt>
+      <trkpt lat="47.721514" lon="7.382358"><ele>302.8</ele></trkpt>
+      <trkpt lat="47.721414" lon="7.380866"><ele>306.2</ele></trkpt>
+      <trkpt lat="47.721650" lon="7.379859"><ele>304.8</ele></trkpt>
+      <trkpt lat="47.721745" lon="7.376948"><ele>322.5</ele></trkpt>
+      <trkpt lat="47.722363" lon="7.377610"><ele>324.5</ele></trkpt>
+      <trkpt lat="47.723943" lon="7.378610"><ele>332.0</ele></trkpt>
+      <trkpt lat="47.723815" lon="7.377624"><ele>333.0</ele></trkpt>
+      <trkpt lat="47.723715" lon="7.377297"><ele>333.5</ele></trkpt>
+      <trkpt lat="47.723251" lon="7.376241"><ele>335.0</ele></trkpt>
+      <trkpt lat="47.723023" lon="7.376022"><ele>335.8</ele></trkpt>
+      <trkpt lat="47.723251" lon="7.376241"><ele>335.0</ele></trkpt>
+      <trkpt lat="47.723715" lon="7.377297"><ele>333.5</ele></trkpt>
+      <trkpt lat="47.723815" lon="7.377624"><ele>333.0</ele></trkpt>
+      <trkpt lat="47.723943" lon="7.378610"><ele>332.0</ele></trkpt>
+      <trkpt lat="47.722363" lon="7.377610"><ele>324.5</ele></trkpt>
+      <trkpt lat="47.721745" lon="7.376948"><ele>322.5</ele></trkpt>
+      <trkpt lat="47.721650" lon="7.379859"><ele>304.8</ele></trkpt>
+      <trkpt lat="47.721414" lon="7.380866"><ele>306.2</ele></trkpt>
+      <trkpt lat="47.721514" lon="7.382358"><ele>302.8</ele></trkpt>
+      <trkpt lat="47.719909" lon="7.382965"><ele>280.0</ele></trkpt>
+      <trkpt lat="47.719778" lon="7.383152"><ele>278.8</ele></trkpt>
+      <trkpt lat="47.720033" lon="7.385444"><ele>271.5</ele></trkpt>
+      <trkpt lat="47.719796" lon="7.385937"><ele>271.8</ele></trkpt>
+      <trkpt lat="47.719903" lon="7.386433"><ele>270.0</ele></trkpt>
+      <trkpt lat="47.719887" lon="7.386919"><ele>268.5</ele></trkpt>
+      <trkpt lat="47.719733" lon="7.386864"><ele>269.8</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

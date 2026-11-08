@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Kandelblick</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Kandelblick</name>
+    <trkseg>
+      <trkpt lat="48.126421" lon="7.943276"><ele>459.8</ele></trkpt>
+      <trkpt lat="48.126280" lon="7.943255"><ele>459.8</ele></trkpt>
+      <trkpt lat="48.126245" lon="7.943142"><ele>458.2</ele></trkpt>
+      <trkpt lat="48.126173" lon="7.942385"><ele>456.0</ele></trkpt>
+      <trkpt lat="48.125800" lon="7.941209"><ele>465.0</ele></trkpt>
+      <trkpt lat="48.125778" lon="7.940718"><ele>469.2</ele></trkpt>
+      <trkpt lat="48.125995" lon="7.940225"><ele>471.8</ele></trkpt>
+      <trkpt lat="48.126606" lon="7.939650"><ele>477.0</ele></trkpt>
+      <trkpt lat="48.127015" lon="7.938942"><ele>471.5</ele></trkpt>
+      <trkpt lat="48.127339" lon="7.938620"><ele>468.0</ele></trkpt>
+      <trkpt lat="48.127356" lon="7.938369"><ele>467.5</ele></trkpt>
+      <trkpt lat="48.127211" lon="7.938070"><ele>468.5</ele></trkpt>
+      <trkpt lat="48.126863" lon="7.937785"><ele>470.8</ele></trkpt>
+      <trkpt lat="48.125968" lon="7.937329"><ele>477.5</ele></trkpt>
+      <trkpt lat="48.125349" lon="7.936784"><ele>483.5</ele></trkpt>
+      <trkpt lat="48.125153" lon="7.936378"><ele>487.2</ele></trkpt>
+      <trkpt lat="48.124112" lon="7.936177"><ele>490.2</ele></trkpt>
+      <trkpt lat="48.123666" lon="7.936315"><ele>484.0</ele></trkpt>
+      <trkpt lat="48.123156" lon="7.936108"><ele>480.8</ele></trkpt>
+      <trkpt lat="48.122327" lon="7.936119"><ele>481.5</ele></trkpt>
+      <trkpt lat="48.121793" lon="7.935804"><ele>486.0</ele></trkpt>
+      <trkpt lat="48.122327" lon="7.936119"><ele>481.5</ele></trkpt>
+      <trkpt lat="48.123156" lon="7.936108"><ele>480.8</ele></trkpt>
+      <trkpt lat="48.123666" lon="7.936315"><ele>484.0</ele></trkpt>
+      <trkpt lat="48.124112" lon="7.936177"><ele>490.2</ele></trkpt>
+      <trkpt lat="48.125153" lon="7.936378"><ele>487.2</ele></trkpt>
+      <trkpt lat="48.125349" lon="7.936784"><ele>483.5</ele></trkpt>
+      <trkpt lat="48.125968" lon="7.937329"><ele>477.5</ele></trkpt>
+      <trkpt lat="48.126863" lon="7.937785"><ele>470.8</ele></trkpt>
+      <trkpt lat="48.127211" lon="7.938070"><ele>468.5</ele></trkpt>
+      <trkpt lat="48.127356" lon="7.938369"><ele>467.5</ele></trkpt>
+      <trkpt lat="48.127339" lon="7.938620"><ele>468.0</ele></trkpt>
+      <trkpt lat="48.127015" lon="7.938942"><ele>471.5</ele></trkpt>
+      <trkpt lat="48.126606" lon="7.939650"><ele>477.0</ele></trkpt>
+      <trkpt lat="48.125995" lon="7.940225"><ele>471.8</ele></trkpt>
+      <trkpt lat="48.125778" lon="7.940718"><ele>469.2</ele></trkpt>
+      <trkpt lat="48.125800" lon="7.941209"><ele>465.0</ele></trkpt>
+      <trkpt lat="48.126173" lon="7.942385"><ele>456.0</ele></trkpt>
+      <trkpt lat="48.126245" lon="7.943142"><ele>458.2</ele></trkpt>
+      <trkpt lat="48.126280" lon="7.943255"><ele>459.8</ele></trkpt>
+      <trkpt lat="48.126421" lon="7.943276"><ele>460.0</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

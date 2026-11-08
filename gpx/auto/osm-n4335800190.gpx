@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Herzogenhornblick</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Herzogenhornblick</name>
+    <trkseg>
+      <trkpt lat="47.859496" lon="8.035792"><ele>1275.0</ele></trkpt>
+      <trkpt lat="47.859344" lon="8.035990"><ele>1273.0</ele></trkpt>
+      <trkpt lat="47.859277" lon="8.035841"><ele>1273.0</ele></trkpt>
+      <trkpt lat="47.859035" lon="8.035632"><ele>1272.5</ele></trkpt>
+      <trkpt lat="47.858957" lon="8.035776"><ele>1270.8</ele></trkpt>
+      <trkpt lat="47.858867" lon="8.035625"><ele>1271.2</ele></trkpt>
+      <trkpt lat="47.858949" lon="8.035177"><ele>1275.2</ele></trkpt>
+      <trkpt lat="47.859336" lon="8.034469"><ele>1280.8</ele></trkpt>
+      <trkpt lat="47.859439" lon="8.033873"><ele>1284.0</ele></trkpt>
+      <trkpt lat="47.859477" lon="8.033455"><ele>1286.5</ele></trkpt>
+      <trkpt lat="47.859413" lon="8.032089"><ele>1291.8</ele></trkpt>
+      <trkpt lat="47.860067" lon="8.031080"><ele>1306.2</ele></trkpt>
+      <trkpt lat="47.861286" lon="8.029520"><ele>1345.2</ele></trkpt>
+      <trkpt lat="47.861543" lon="8.028470"><ele>1350.8</ele></trkpt>
+      <trkpt lat="47.861875" lon="8.027616"><ele>1357.2</ele></trkpt>
+      <trkpt lat="47.862184" lon="8.027022"><ele>1362.2</ele></trkpt>
+      <trkpt lat="47.862151" lon="8.026625"><ele>1361.5</ele></trkpt>
+      <trkpt lat="47.861727" lon="8.026523"><ele>1355.0</ele></trkpt>
+      <trkpt lat="47.861570" lon="8.026325"><ele>1357.2</ele></trkpt>
+      <trkpt lat="47.861475" lon="8.026005"><ele>1384.0</ele></trkpt>
+      <trkpt lat="47.861570" lon="8.026325"><ele>1357.2</ele></trkpt>
+      <trkpt lat="47.861727" lon="8.026523"><ele>1355.0</ele></trkpt>
+      <trkpt lat="47.862151" lon="8.026625"><ele>1361.5</ele></trkpt>
+      <trkpt lat="47.862184" lon="8.027022"><ele>1362.2</ele></trkpt>
+      <trkpt lat="47.861875" lon="8.027616"><ele>1357.2</ele></trkpt>
+      <trkpt lat="47.861543" lon="8.028470"><ele>1350.8</ele></trkpt>
+      <trkpt lat="47.861286" lon="8.029520"><ele>1345.2</ele></trkpt>
+      <trkpt lat="47.860067" lon="8.031080"><ele>1306.2</ele></trkpt>
+      <trkpt lat="47.859413" lon="8.032089"><ele>1291.8</ele></trkpt>
+      <trkpt lat="47.859477" lon="8.033455"><ele>1286.5</ele></trkpt>
+      <trkpt lat="47.859439" lon="8.033873"><ele>1284.0</ele></trkpt>
+      <trkpt lat="47.859336" lon="8.034469"><ele>1280.8</ele></trkpt>
+      <trkpt lat="47.858949" lon="8.035177"><ele>1275.2</ele></trkpt>
+      <trkpt lat="47.858867" lon="8.035625"><ele>1271.2</ele></trkpt>
+      <trkpt lat="47.858957" lon="8.035776"><ele>1270.8</ele></trkpt>
+      <trkpt lat="47.859035" lon="8.035632"><ele>1272.5</ele></trkpt>
+      <trkpt lat="47.859277" lon="8.035841"><ele>1273.0</ele></trkpt>
+      <trkpt lat="47.859344" lon="8.035990"><ele>1273.0</ele></trkpt>
+      <trkpt lat="47.859496" lon="8.035792"><ele>1277.8</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

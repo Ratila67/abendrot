@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Panoramatafel Urberg</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Panoramatafel Urberg</name>
+    <trkseg>
+      <trkpt lat="47.741856" lon="8.116602"><ele>1014.2</ele></trkpt>
+      <trkpt lat="47.742287" lon="8.117187"><ele>1017.2</ele></trkpt>
+      <trkpt lat="47.742813" lon="8.117555"><ele>1017.5</ele></trkpt>
+      <trkpt lat="47.743135" lon="8.117610"><ele>1018.0</ele></trkpt>
+      <trkpt lat="47.744055" lon="8.117336"><ele>1017.0</ele></trkpt>
+      <trkpt lat="47.744890" lon="8.118079"><ele>1012.0</ele></trkpt>
+      <trkpt lat="47.744971" lon="8.118296"><ele>1009.8</ele></trkpt>
+      <trkpt lat="47.745043" lon="8.119372"><ele>1003.8</ele></trkpt>
+      <trkpt lat="47.745432" lon="8.119847"><ele>998.8</ele></trkpt>
+      <trkpt lat="47.745534" lon="8.120148"><ele>996.2</ele></trkpt>
+      <trkpt lat="47.745643" lon="8.121053"><ele>992.0</ele></trkpt>
+      <trkpt lat="47.745423" lon="8.121625"><ele>989.5</ele></trkpt>
+      <trkpt lat="47.745188" lon="8.122084"><ele>986.2</ele></trkpt>
+      <trkpt lat="47.744875" lon="8.122357"><ele>981.8</ele></trkpt>
+      <trkpt lat="47.744096" lon="8.122838"><ele>977.5</ele></trkpt>
+      <trkpt lat="47.743118" lon="8.123284"><ele>975.0</ele></trkpt>
+      <trkpt lat="47.742521" lon="8.124087"><ele>979.2</ele></trkpt>
+      <trkpt lat="47.741619" lon="8.124575"><ele>996.8</ele></trkpt>
+      <trkpt lat="47.740766" lon="8.124288"><ele>1007.8</ele></trkpt>
+      <trkpt lat="47.739885" lon="8.124683"><ele>1026.2</ele></trkpt>
+      <trkpt lat="47.739833" lon="8.124948"><ele>1028.0</ele></trkpt>
+      <trkpt lat="47.738685" lon="8.125702"><ele>1025.0</ele></trkpt>
+      <trkpt lat="47.738342" lon="8.126280"><ele>1022.8</ele></trkpt>
+      <trkpt lat="47.738143" lon="8.126149"><ele>1020.2</ele></trkpt>
+      <trkpt lat="47.738342" lon="8.126280"><ele>1022.8</ele></trkpt>
+      <trkpt lat="47.738685" lon="8.125702"><ele>1025.0</ele></trkpt>
+      <trkpt lat="47.739833" lon="8.124948"><ele>1028.0</ele></trkpt>
+      <trkpt lat="47.739885" lon="8.124683"><ele>1026.2</ele></trkpt>
+      <trkpt lat="47.740766" lon="8.124288"><ele>1007.8</ele></trkpt>
+      <trkpt lat="47.741619" lon="8.124575"><ele>996.8</ele></trkpt>
+      <trkpt lat="47.742521" lon="8.124087"><ele>979.2</ele></trkpt>
+      <trkpt lat="47.743118" lon="8.123284"><ele>975.0</ele></trkpt>
+      <trkpt lat="47.744096" lon="8.122838"><ele>977.5</ele></trkpt>
+      <trkpt lat="47.744875" lon="8.122357"><ele>981.8</ele></trkpt>
+      <trkpt lat="47.745188" lon="8.122084"><ele>986.2</ele></trkpt>
+      <trkpt lat="47.745423" lon="8.121625"><ele>989.5</ele></trkpt>
+      <trkpt lat="47.745643" lon="8.121053"><ele>992.0</ele></trkpt>
+      <trkpt lat="47.745534" lon="8.120148"><ele>996.2</ele></trkpt>
+      <trkpt lat="47.745432" lon="8.119847"><ele>998.8</ele></trkpt>
+      <trkpt lat="47.745043" lon="8.119372"><ele>1003.8</ele></trkpt>
+      <trkpt lat="47.744971" lon="8.118296"><ele>1009.8</ele></trkpt>
+      <trkpt lat="47.744890" lon="8.118079"><ele>1012.0</ele></trkpt>
+      <trkpt lat="47.744055" lon="8.117336"><ele>1017.0</ele></trkpt>
+      <trkpt lat="47.743135" lon="8.117610"><ele>1018.0</ele></trkpt>
+      <trkpt lat="47.742813" lon="8.117555"><ele>1017.5</ele></trkpt>
+      <trkpt lat="47.742287" lon="8.117187"><ele>1017.2</ele></trkpt>
+      <trkpt lat="47.741856" lon="8.116602"><ele>1013.2</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

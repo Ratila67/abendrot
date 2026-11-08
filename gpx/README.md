@@ -52,3 +52,16 @@ Pour une trace perso, utilise plutôt le bouton « Importer un GPX » de la fich
 Les spots proches d'une rando vérifiée (`data/hikes.json`) sont écartés : celles-ci restent prioritaires.
 Dans l'app, une rando générée porte la mention « itinéraire calculé » et un avertissement sur sa fiche.
 Relancer le script ne refait que ce qui manque (cache dans `.cache/spotgen`, hors du dépôt).
+
+Le serveur public brouter.de limite vite le nombre de requêtes (« 403 retry later »). Pour une génération
+complète, fais tourner BRouter en local (Java 17 ou plus) avec la tuile qui couvre toute la région :
+
+```bash
+mkdir -p .cache/brouter/segments4 .cache/brouter/customprofiles && cd .cache/brouter
+curl -LO https://github.com/abrensch/brouter/releases/download/v1.7.10/brouter-1.7.10.zip && unzip brouter-1.7.10.zip -d dist
+curl -L -o segments4/E5_N45.rd5 https://brouter.de/brouter/segments4/E5_N45.rd5
+java -Xmx2g -cp dist/brouter-1.7.10/brouter-1.7.10-all.jar btools.server.RouteServer segments4 dist/brouter-1.7.10/profiles2 customprofiles 17777 4 localhost
+```
+
+puis, dans un autre terminal : `BROUTER_URL=http://localhost:17777/brouter python scripts/spot_gen.py`
+(la même variable vaut pour `gpx_route.py`).

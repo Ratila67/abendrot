@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>rocher du Lampertstein</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>rocher du Lampertstein</name>
+    <trkseg>
+      <trkpt lat="48.579043" lon="7.081152"><ele>429.2</ele></trkpt>
+      <trkpt lat="48.578999" lon="7.080700"><ele>428.2</ele></trkpt>
+      <trkpt lat="48.578520" lon="7.079313"><ele>431.2</ele></trkpt>
+      <trkpt lat="48.578388" lon="7.078712"><ele>432.0</ele></trkpt>
+      <trkpt lat="48.578440" lon="7.078141"><ele>430.5</ele></trkpt>
+      <trkpt lat="48.578264" lon="7.077311"><ele>433.8</ele></trkpt>
+      <trkpt lat="48.578541" lon="7.076701"><ele>432.8</ele></trkpt>
+      <trkpt lat="48.578922" lon="7.076406"><ele>431.8</ele></trkpt>
+      <trkpt lat="48.579076" lon="7.075844"><ele>431.0</ele></trkpt>
+      <trkpt lat="48.579368" lon="7.075184"><ele>429.2</ele></trkpt>
+      <trkpt lat="48.580322" lon="7.073671"><ele>419.2</ele></trkpt>
+      <trkpt lat="48.580733" lon="7.073299"><ele>417.5</ele></trkpt>
+      <trkpt lat="48.580971" lon="7.073282"><ele>415.2</ele></trkpt>
+      <trkpt lat="48.581295" lon="7.073451"><ele>410.0</ele></trkpt>
+      <trkpt lat="48.581537" lon="7.073728"><ele>404.0</ele></trkpt>
+      <trkpt lat="48.582328" lon="7.075082"><ele>396.5</ele></trkpt>
+      <trkpt lat="48.583556" lon="7.075818"><ele>400.5</ele></trkpt>
+      <trkpt lat="48.583840" lon="7.075488"><ele>405.8</ele></trkpt>
+      <trkpt lat="48.584307" lon="7.075174"><ele>417.8</ele></trkpt>
+      <trkpt lat="48.585351" lon="7.075171"><ele>444.2</ele></trkpt>
+      <trkpt lat="48.585677" lon="7.074892"><ele>456.0</ele></trkpt>
+      <trkpt lat="48.585724" lon="7.074514"><ele>463.8</ele></trkpt>
+      <trkpt lat="48.585438" lon="7.074414"><ele>470.0</ele></trkpt>
+      <trkpt lat="48.585201" lon="7.074667"><ele>462.2</ele></trkpt>
+      <trkpt lat="48.585438" lon="7.074414"><ele>470.0</ele></trkpt>
+      <trkpt lat="48.585724" lon="7.074514"><ele>463.8</ele></trkpt>
+      <trkpt lat="48.585677" lon="7.074892"><ele>456.0</ele></trkpt>
+      <trkpt lat="48.585351" lon="7.075171"><ele>444.2</ele></trkpt>
+      <trkpt lat="48.584307" lon="7.075174"><ele>417.8</ele></trkpt>
+      <trkpt lat="48.583840" lon="7.075488"><ele>405.8</ele></trkpt>
+      <trkpt lat="48.583556" lon="7.075818"><ele>400.5</ele></trkpt>
+      <trkpt lat="48.582328" lon="7.075082"><ele>396.5</ele></trkpt>
+      <trkpt lat="48.581537" lon="7.073728"><ele>404.0</ele></trkpt>
+      <trkpt lat="48.581295" lon="7.073451"><ele>410.0</ele></trkpt>
+      <trkpt lat="48.580971" lon="7.073282"><ele>415.2</ele></trkpt>
+      <trkpt lat="48.580733" lon="7.073299"><ele>417.5</ele></trkpt>
+      <trkpt lat="48.580322" lon="7.073671"><ele>419.2</ele></trkpt>
+      <trkpt lat="48.579368" lon="7.075184"><ele>429.2</ele></trkpt>
+      <trkpt lat="48.579076" lon="7.075844"><ele>431.0</ele></trkpt>
+      <trkpt lat="48.578922" lon="7.076406"><ele>431.8</ele></trkpt>
+      <trkpt lat="48.578541" lon="7.076701"><ele>432.8</ele></trkpt>
+      <trkpt lat="48.578264" lon="7.077311"><ele>433.8</ele></trkpt>
+      <trkpt lat="48.578440" lon="7.078141"><ele>430.5</ele></trkpt>
+      <trkpt lat="48.578388" lon="7.078712"><ele>432.0</ele></trkpt>
+      <trkpt lat="48.578520" lon="7.079313"><ele>431.2</ele></trkpt>
+      <trkpt lat="48.578999" lon="7.080700"><ele>428.2</ele></trkpt>
+      <trkpt lat="48.579043" lon="7.081152"><ele>430.0</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

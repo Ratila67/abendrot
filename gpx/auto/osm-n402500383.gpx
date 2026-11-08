@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Mondhalde</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Mondhalde</name>
+    <trkseg>
+      <trkpt lat="48.105497" lon="7.647306"><ele>419.2</ele></trkpt>
+      <trkpt lat="48.105243" lon="7.646953"><ele>421.2</ele></trkpt>
+      <trkpt lat="48.104670" lon="7.646771"><ele>422.2</ele></trkpt>
+      <trkpt lat="48.104503" lon="7.646567"><ele>423.8</ele></trkpt>
+      <trkpt lat="48.103822" lon="7.644819"><ele>417.5</ele></trkpt>
+      <trkpt lat="48.103421" lon="7.644073"><ele>409.5</ele></trkpt>
+      <trkpt lat="48.102537" lon="7.642973"><ele>409.0</ele></trkpt>
+      <trkpt lat="48.101420" lon="7.641365"><ele>403.2</ele></trkpt>
+      <trkpt lat="48.100609" lon="7.640704"><ele>386.8</ele></trkpt>
+      <trkpt lat="48.099971" lon="7.640432"><ele>378.2</ele></trkpt>
+      <trkpt lat="48.098528" lon="7.640190"><ele>370.0</ele></trkpt>
+      <trkpt lat="48.098265" lon="7.640331"><ele>368.2</ele></trkpt>
+      <trkpt lat="48.097946" lon="7.639875"><ele>367.8</ele></trkpt>
+      <trkpt lat="48.097512" lon="7.639602"><ele>367.8</ele></trkpt>
+      <trkpt lat="48.097490" lon="7.639660"><ele>366.5</ele></trkpt>
+      <trkpt lat="48.097331" lon="7.639607"><ele>364.0</ele></trkpt>
+      <trkpt lat="48.097223" lon="7.639234"><ele>363.2</ele></trkpt>
+      <trkpt lat="48.097331" lon="7.639607"><ele>364.0</ele></trkpt>
+      <trkpt lat="48.097490" lon="7.639660"><ele>366.5</ele></trkpt>
+      <trkpt lat="48.097512" lon="7.639602"><ele>367.8</ele></trkpt>
+      <trkpt lat="48.097946" lon="7.639875"><ele>367.8</ele></trkpt>
+      <trkpt lat="48.098265" lon="7.640331"><ele>368.2</ele></trkpt>
+      <trkpt lat="48.098528" lon="7.640190"><ele>370.0</ele></trkpt>
+      <trkpt lat="48.099971" lon="7.640432"><ele>378.2</ele></trkpt>
+      <trkpt lat="48.100609" lon="7.640704"><ele>386.8</ele></trkpt>
+      <trkpt lat="48.101420" lon="7.641365"><ele>403.2</ele></trkpt>
+      <trkpt lat="48.102537" lon="7.642973"><ele>409.0</ele></trkpt>
+      <trkpt lat="48.103421" lon="7.644073"><ele>409.5</ele></trkpt>
+      <trkpt lat="48.103822" lon="7.644819"><ele>417.5</ele></trkpt>
+      <trkpt lat="48.104503" lon="7.646567"><ele>423.8</ele></trkpt>
+      <trkpt lat="48.104670" lon="7.646771"><ele>422.2</ele></trkpt>
+      <trkpt lat="48.105243" lon="7.646953"><ele>421.2</ele></trkpt>
+      <trkpt lat="48.105497" lon="7.647306"><ele>419.0</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

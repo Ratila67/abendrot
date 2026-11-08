@@ -19,12 +19,13 @@ Données : © contributeurs OpenStreetMap (ODbL), itinéraire calculé par BRout
 import argparse
 import json
 import math
+import os
 import time
 from pathlib import Path
 from xml.sax.saxutils import escape, quoteattr
 
 ROOT = Path(__file__).resolve().parents[1]
-BROUTER = "https://brouter.de/brouter"
+BROUTER = os.environ.get("BROUTER_URL", "https://brouter.de/brouter")   # serveur local : voir gpx/README.md
 PROFILE = "hiking-mountain"
 ROADS = {"motorway", "trunk", "primary", "secondary", "tertiary", "unclassified", "residential", "living_street", "service"}
 MAX_SNAP_M = 150       # distance maximale entre un point clé (ou le spot) et la trace

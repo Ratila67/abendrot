@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Le Poli</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Le Poli</name>
+    <trkseg>
+      <trkpt lat="48.063509" lon="6.913166"><ele>1001.2</ele></trkpt>
+      <trkpt lat="48.063450" lon="6.913538"><ele>1003.0</ele></trkpt>
+      <trkpt lat="48.063564" lon="6.914052"><ele>1007.5</ele></trkpt>
+      <trkpt lat="48.063774" lon="6.914289"><ele>1011.0</ele></trkpt>
+      <trkpt lat="48.063979" lon="6.914675"><ele>1013.8</ele></trkpt>
+      <trkpt lat="48.064119" lon="6.914801"><ele>1015.5</ele></trkpt>
+      <trkpt lat="48.064404" lon="6.914866"><ele>1018.0</ele></trkpt>
+      <trkpt lat="48.064454" lon="6.914181"><ele>1019.0</ele></trkpt>
+      <trkpt lat="48.064544" lon="6.913886"><ele>1019.2</ele></trkpt>
+      <trkpt lat="48.065105" lon="6.912757"><ele>1017.5</ele></trkpt>
+      <trkpt lat="48.065179" lon="6.912820"><ele>1018.5</ele></trkpt>
+      <trkpt lat="48.065383" lon="6.912577"><ele>1018.2</ele></trkpt>
+      <trkpt lat="48.066125" lon="6.912016"><ele>1019.2</ele></trkpt>
+      <trkpt lat="48.066649" lon="6.911368"><ele>1018.8</ele></trkpt>
+      <trkpt lat="48.066978" lon="6.911175"><ele>1016.8</ele></trkpt>
+      <trkpt lat="48.068372" lon="6.909895"><ele>1002.5</ele></trkpt>
+      <trkpt lat="48.069249" lon="6.909229"><ele>990.2</ele></trkpt>
+      <trkpt lat="48.070104" lon="6.908256"><ele>979.5</ele></trkpt>
+      <trkpt lat="48.070157" lon="6.908032"><ele>980.2</ele></trkpt>
+      <trkpt lat="48.070309" lon="6.907992"><ele>977.2</ele></trkpt>
+      <trkpt lat="48.070157" lon="6.908032"><ele>980.2</ele></trkpt>
+      <trkpt lat="48.070104" lon="6.908256"><ele>979.5</ele></trkpt>
+      <trkpt lat="48.069249" lon="6.909229"><ele>990.2</ele></trkpt>
+      <trkpt lat="48.068372" lon="6.909895"><ele>1002.5</ele></trkpt>
+      <trkpt lat="48.066978" lon="6.911175"><ele>1016.8</ele></trkpt>
+      <trkpt lat="48.066649" lon="6.911368"><ele>1018.8</ele></trkpt>
+      <trkpt lat="48.066125" lon="6.912016"><ele>1019.2</ele></trkpt>
+      <trkpt lat="48.065383" lon="6.912577"><ele>1018.2</ele></trkpt>
+      <trkpt lat="48.065179" lon="6.912820"><ele>1018.5</ele></trkpt>
+      <trkpt lat="48.065105" lon="6.912757"><ele>1017.5</ele></trkpt>
+      <trkpt lat="48.064544" lon="6.913886"><ele>1019.2</ele></trkpt>
+      <trkpt lat="48.064454" lon="6.914181"><ele>1019.0</ele></trkpt>
+      <trkpt lat="48.064404" lon="6.914866"><ele>1018.0</ele></trkpt>
+      <trkpt lat="48.064119" lon="6.914801"><ele>1015.5</ele></trkpt>
+      <trkpt lat="48.063979" lon="6.914675"><ele>1013.8</ele></trkpt>
+      <trkpt lat="48.063774" lon="6.914289"><ele>1011.0</ele></trkpt>
+      <trkpt lat="48.063564" lon="6.914052"><ele>1007.5</ele></trkpt>
+      <trkpt lat="48.063450" lon="6.913538"><ele>1003.0</ele></trkpt>
+      <trkpt lat="48.063509" lon="6.913166"><ele>1001.0</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

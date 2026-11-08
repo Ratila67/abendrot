@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Hasentisch</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Hasentisch</name>
+    <trkseg>
+      <trkpt lat="49.136241" lon="7.822388"><ele>262.8</ele></trkpt>
+      <trkpt lat="49.136598" lon="7.823458"><ele>265.5</ele></trkpt>
+      <trkpt lat="49.136970" lon="7.824257"><ele>269.2</ele></trkpt>
+      <trkpt lat="49.137139" lon="7.824289"><ele>270.2</ele></trkpt>
+      <trkpt lat="49.137622" lon="7.824139"><ele>267.8</ele></trkpt>
+      <trkpt lat="49.138349" lon="7.824210"><ele>268.2</ele></trkpt>
+      <trkpt lat="49.139006" lon="7.824984"><ele>269.0</ele></trkpt>
+      <trkpt lat="49.139344" lon="7.825763"><ele>268.8</ele></trkpt>
+      <trkpt lat="49.139324" lon="7.826198"><ele>268.8</ele></trkpt>
+      <trkpt lat="49.139229" lon="7.826516"><ele>267.8</ele></trkpt>
+      <trkpt lat="49.138931" lon="7.827171"><ele>268.2</ele></trkpt>
+      <trkpt lat="49.138611" lon="7.827565"><ele>273.5</ele></trkpt>
+      <trkpt lat="49.137071" lon="7.828875"><ele>277.0</ele></trkpt>
+      <trkpt lat="49.136599" lon="7.829507"><ele>280.2</ele></trkpt>
+      <trkpt lat="49.136295" lon="7.829573"><ele>282.0</ele></trkpt>
+      <trkpt lat="49.135830" lon="7.829384"><ele>279.0</ele></trkpt>
+      <trkpt lat="49.135731" lon="7.829429"><ele>276.8</ele></trkpt>
+      <trkpt lat="49.135813" lon="7.830039"><ele>268.8</ele></trkpt>
+      <trkpt lat="49.135956" lon="7.830384"><ele>265.8</ele></trkpt>
+      <trkpt lat="49.136449" lon="7.830723"><ele>259.5</ele></trkpt>
+      <trkpt lat="49.136865" lon="7.830664"><ele>256.0</ele></trkpt>
+      <trkpt lat="49.137492" lon="7.830225"><ele>252.0</ele></trkpt>
+      <trkpt lat="49.137559" lon="7.830618"><ele>255.2</ele></trkpt>
+      <trkpt lat="49.137232" lon="7.831558"><ele>270.2</ele></trkpt>
+      <trkpt lat="49.137401" lon="7.831637"><ele>273.5</ele></trkpt>
+      <trkpt lat="49.137255" lon="7.831834"><ele>277.2</ele></trkpt>
+      <trkpt lat="49.137426" lon="7.831910"><ele>280.5</ele></trkpt>
+      <trkpt lat="49.137267" lon="7.832103"><ele>284.8</ele></trkpt>
+      <trkpt lat="49.137444" lon="7.832158"><ele>288.2</ele></trkpt>
+      <trkpt lat="49.137285" lon="7.832319"><ele>292.2</ele></trkpt>
+      <trkpt lat="49.137479" lon="7.832402"><ele>297.2</ele></trkpt>
+      <trkpt lat="49.137306" lon="7.832544"><ele>301.2</ele></trkpt>
+      <trkpt lat="49.137470" lon="7.832622"><ele>305.5</ele></trkpt>
+      <trkpt lat="49.137322" lon="7.832791"><ele>311.2</ele></trkpt>
+      <trkpt lat="49.137488" lon="7.832840"><ele>314.5</ele></trkpt>
+      <trkpt lat="49.137324" lon="7.832993"><ele>320.5</ele></trkpt>
+      <trkpt lat="49.137521" lon="7.833078"><ele>325.5</ele></trkpt>
+      <trkpt lat="49.137350" lon="7.833257"><ele>332.0</ele></trkpt>
+      <trkpt lat="49.137405" lon="7.833318"><ele>334.8</ele></trkpt>
+      <trkpt lat="49.137520" lon="7.833239"><ele>332.2</ele></trkpt>
+      <trkpt lat="49.137675" lon="7.833272"><ele>338.2</ele></trkpt>
+      <trkpt lat="49.137962" lon="7.833058"><ele>336.2</ele></trkpt>
+      <trkpt lat="49.138354" lon="7.832925"><ele>341.2</ele></trkpt>
+      <trkpt lat="49.138602" lon="7.832464"><ele>338.0</ele></trkpt>
+      <trkpt lat="49.138442" lon="7.832817"><ele>341.0</ele></trkpt>
+      <trkpt lat="49.138239" lon="7.833012"><ele>341.2</ele></trkpt>
+      <trkpt lat="49.137962" lon="7.833058"><ele>336.2</ele></trkpt>
+      <trkpt lat="49.137675" lon="7.833272"><ele>338.2</ele></trkpt>
+      <trkpt lat="49.137520" lon="7.833239"><ele>332.2</ele></trkpt>
+      <trkpt lat="49.137405" lon="7.833318"><ele>334.8</ele></trkpt>
+      <trkpt lat="49.137350" lon="7.833257"><ele>332.0</ele></trkpt>
+      <trkpt lat="49.137521" lon="7.833078"><ele>325.5</ele></trkpt>
+      <trkpt lat="49.137324" lon="7.832993"><ele>320.5</ele></trkpt>
+      <trkpt lat="49.137488" lon="7.832840"><ele>314.5</ele></trkpt>
+      <trkpt lat="49.137322" lon="7.832791"><ele>311.2</ele></trkpt>
+      <trkpt lat="49.137470" lon="7.832622"><ele>305.5</ele></trkpt>
+      <trkpt lat="49.137306" lon="7.832544"><ele>301.2</ele></trkpt>
+      <trkpt lat="49.137479" lon="7.832402"><ele>297.2</ele></trkpt>
+      <trkpt lat="49.137285" lon="7.832319"><ele>292.2</ele></trkpt>
+      <trkpt lat="49.137444" lon="7.832158"><ele>288.2</ele></trkpt>
+      <trkpt lat="49.137267" lon="7.832103"><ele>284.8</ele></trkpt>
+      <trkpt lat="49.137426" lon="7.831910"><ele>280.5</ele></trkpt>
+      <trkpt lat="49.137255" lon="7.831834"><ele>277.2</ele></trkpt>
+      <trkpt lat="49.137401" lon="7.831637"><ele>273.5</ele></trkpt>
+      <trkpt lat="49.137232" lon="7.831558"><ele>270.2</ele></trkpt>
+      <trkpt lat="49.137559" lon="7.830618"><ele>255.2</ele></trkpt>
+      <trkpt lat="49.137492" lon="7.830225"><ele>252.0</ele></trkpt>
+      <trkpt lat="49.136865" lon="7.830664"><ele>256.0</ele></trkpt>
+      <trkpt lat="49.136449" lon="7.830723"><ele>259.5</ele></trkpt>
+      <trkpt lat="49.135956" lon="7.830384"><ele>265.8</ele></trkpt>
+      <trkpt lat="49.135813" lon="7.830039"><ele>268.8</ele></trkpt>
+      <trkpt lat="49.135731" lon="7.829429"><ele>276.8</ele></trkpt>
+      <trkpt lat="49.135830" lon="7.829384"><ele>279.0</ele></trkpt>
+      <trkpt lat="49.136295" lon="7.829573"><ele>282.0</ele></trkpt>
+      <trkpt lat="49.136599" lon="7.829507"><ele>280.2</ele></trkpt>
+      <trkpt lat="49.137071" lon="7.828875"><ele>277.0</ele></trkpt>
+      <trkpt lat="49.138611" lon="7.827565"><ele>273.5</ele></trkpt>
+      <trkpt lat="49.138931" lon="7.827171"><ele>268.2</ele></trkpt>
+      <trkpt lat="49.139229" lon="7.826516"><ele>267.8</ele></trkpt>
+      <trkpt lat="49.139324" lon="7.826198"><ele>268.8</ele></trkpt>
+      <trkpt lat="49.139344" lon="7.825763"><ele>268.8</ele></trkpt>
+      <trkpt lat="49.139006" lon="7.824984"><ele>269.0</ele></trkpt>
+      <trkpt lat="49.138349" lon="7.824210"><ele>268.2</ele></trkpt>
+      <trkpt lat="49.137622" lon="7.824139"><ele>267.8</ele></trkpt>
+      <trkpt lat="49.137139" lon="7.824289"><ele>270.2</ele></trkpt>
+      <trkpt lat="49.136970" lon="7.824257"><ele>269.2</ele></trkpt>
+      <trkpt lat="49.136598" lon="7.823458"><ele>265.5</ele></trkpt>
+      <trkpt lat="49.136241" lon="7.822388"><ele>262.8</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

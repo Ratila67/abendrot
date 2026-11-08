@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Belvedere</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Belvedere</name>
+    <trkseg>
+      <trkpt lat="48.655824" lon="7.516719"><ele>239.2</ele></trkpt>
+      <trkpt lat="48.655876" lon="7.516469"><ele>240.0</ele></trkpt>
+      <trkpt lat="48.656149" lon="7.516477"><ele>240.5</ele></trkpt>
+      <trkpt lat="48.656234" lon="7.514996"><ele>248.2</ele></trkpt>
+      <trkpt lat="48.656227" lon="7.511749"><ele>258.0</ele></trkpt>
+      <trkpt lat="48.656354" lon="7.510627"><ele>262.8</ele></trkpt>
+      <trkpt lat="48.656308" lon="7.509324"><ele>271.0</ele></trkpt>
+      <trkpt lat="48.656159" lon="7.508402"><ele>277.8</ele></trkpt>
+      <trkpt lat="48.655859" lon="7.507286"><ele>283.8</ele></trkpt>
+      <trkpt lat="48.655712" lon="7.506493"><ele>288.0</ele></trkpt>
+      <trkpt lat="48.655761" lon="7.506334"><ele>288.8</ele></trkpt>
+      <trkpt lat="48.656505" lon="7.505569"><ele>293.8</ele></trkpt>
+      <trkpt lat="48.659364" lon="7.503454"><ele>314.5</ele></trkpt>
+      <trkpt lat="48.656505" lon="7.505569"><ele>293.8</ele></trkpt>
+      <trkpt lat="48.655761" lon="7.506334"><ele>288.8</ele></trkpt>
+      <trkpt lat="48.655712" lon="7.506493"><ele>288.0</ele></trkpt>
+      <trkpt lat="48.655859" lon="7.507286"><ele>283.8</ele></trkpt>
+      <trkpt lat="48.656159" lon="7.508402"><ele>277.8</ele></trkpt>
+      <trkpt lat="48.656308" lon="7.509324"><ele>271.0</ele></trkpt>
+      <trkpt lat="48.656354" lon="7.510627"><ele>262.8</ele></trkpt>
+      <trkpt lat="48.656227" lon="7.511749"><ele>258.0</ele></trkpt>
+      <trkpt lat="48.656234" lon="7.514996"><ele>248.2</ele></trkpt>
+      <trkpt lat="48.656149" lon="7.516477"><ele>240.5</ele></trkpt>
+      <trkpt lat="48.655876" lon="7.516469"><ele>240.0</ele></trkpt>
+      <trkpt lat="48.655824" lon="7.516719"><ele>238.8</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

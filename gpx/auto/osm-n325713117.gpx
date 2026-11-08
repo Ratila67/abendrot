@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="abendrot" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Predigerplatz, 375m</name>
+    <desc>Itinéraire calculé sur les sentiers OpenStreetMap du parking au point de vue, aller-retour.</desc>
+    <copyright author="Contributeurs OpenStreetMap"><license>https://opendatacommons.org/licenses/odbl/</license></copyright>
+    <link href="https://www.openstreetmap.org/copyright"><text>© OpenStreetMap</text></link>
+  </metadata>
+  <trk>
+    <name>Predigerplatz, 375m</name>
+    <trkseg>
+      <trkpt lat="47.972563" lon="7.843357"><ele>298.8</ele></trkpt>
+      <trkpt lat="47.972645" lon="7.843294"><ele>298.5</ele></trkpt>
+      <trkpt lat="47.972428" lon="7.842814"><ele>301.5</ele></trkpt>
+      <trkpt lat="47.971263" lon="7.840589"><ele>315.8</ele></trkpt>
+      <trkpt lat="47.970341" lon="7.839732"><ele>323.2</ele></trkpt>
+      <trkpt lat="47.970344" lon="7.838413"><ele>316.8</ele></trkpt>
+      <trkpt lat="47.970458" lon="7.838201"><ele>320.0</ele></trkpt>
+      <trkpt lat="47.969874" lon="7.837648"><ele>331.5</ele></trkpt>
+      <trkpt lat="47.969032" lon="7.837174"><ele>340.2</ele></trkpt>
+      <trkpt lat="47.968821" lon="7.836937"><ele>343.8</ele></trkpt>
+      <trkpt lat="47.968372" lon="7.836731"><ele>345.8</ele></trkpt>
+      <trkpt lat="47.967530" lon="7.836160"><ele>355.8</ele></trkpt>
+      <trkpt lat="47.966944" lon="7.835941"><ele>362.2</ele></trkpt>
+      <trkpt lat="47.966744" lon="7.836125"><ele>363.5</ele></trkpt>
+      <trkpt lat="47.966345" lon="7.836092"><ele>369.5</ele></trkpt>
+      <trkpt lat="47.966121" lon="7.835966"><ele>371.8</ele></trkpt>
+      <trkpt lat="47.965979" lon="7.836011"><ele>371.8</ele></trkpt>
+      <trkpt lat="47.966121" lon="7.835966"><ele>371.8</ele></trkpt>
+      <trkpt lat="47.966345" lon="7.836092"><ele>369.5</ele></trkpt>
+      <trkpt lat="47.966744" lon="7.836125"><ele>363.5</ele></trkpt>
+      <trkpt lat="47.966944" lon="7.835941"><ele>362.2</ele></trkpt>
+      <trkpt lat="47.967530" lon="7.836160"><ele>355.8</ele></trkpt>
+      <trkpt lat="47.968372" lon="7.836731"><ele>345.8</ele></trkpt>
+      <trkpt lat="47.968821" lon="7.836937"><ele>343.8</ele></trkpt>
+      <trkpt lat="47.969032" lon="7.837174"><ele>340.2</ele></trkpt>
+      <trkpt lat="47.969874" lon="7.837648"><ele>331.5</ele></trkpt>
+      <trkpt lat="47.970458" lon="7.838201"><ele>320.0</ele></trkpt>
+      <trkpt lat="47.970344" lon="7.838413"><ele>316.8</ele></trkpt>
+      <trkpt lat="47.970341" lon="7.839732"><ele>323.2</ele></trkpt>
+      <trkpt lat="47.971263" lon="7.840589"><ele>315.8</ele></trkpt>
+      <trkpt lat="47.972428" lon="7.842814"><ele>301.5</ele></trkpt>
+      <trkpt lat="47.972645" lon="7.843294"><ele>298.5</ele></trkpt>
+      <trkpt lat="47.972563" lon="7.843357"><ele>298.8</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>
