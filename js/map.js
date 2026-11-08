@@ -3,6 +3,22 @@ const ML = () => window.maplibregl;
 export const IGN = 'https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/png&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}';
 export const TOPO = ['a', 'b', 'c'].map(s => `https://${s}.tile.opentopomap.org/{z}/{x}/{y}.png`);
 const DEM = 'https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png';
+const OFM = dark => `https://tiles.openfreemap.org/styles/${dark ? 'dark' : 'positron'}`;
+
+/** Carte d'ensemble : fond vectoriel sobre (OpenFreeMap), relief éclairé depuis le couchant, glissé sous les noms de lieux. */
+function overviewStyle(dark, sunAz = 240) {
+  return (prev, next) => {
+    const layers = next.layers.filter(l => l.source !== 'ne2_shaded');   // relief basse résolution du style : remplacé par le nôtre
+    const at = layers.findIndex(l => l.type === 'symbol');
+    const hs = { id: 'hs', type: 'hillshade', source: 'demhs', paint: {
+      'hillshade-illumination-direction': Math.round(sunAz) % 360, 'hillshade-exaggeration': dark ? 0.7 : 0.45,
+      'hillshade-shadow-color': dark ? '#000000' : '#3B4652', 'hillshade-highlight-color': dark ? '#7A6046' : '#FFE6B8',
+      'hillshade-accent-color': dark ? '#000000' : '#56616B' } };
+    layers.splice(at < 0 ? layers.length : at, 0, hs);
+    return { ...next, layers, sources: { ...next.sources,
+      demhs: { type: 'raster-dem', tiles: [DEM], encoding: 'terrarium', tileSize: 256, maxzoom: 12, attribution: 'Terrain Tiles' } } };
+  };
+}
 
 function style(base) {
   const dem = { type: 'raster-dem', tiles: [DEM], encoding: 'terrarium', tileSize: 256, maxzoom: 13, attribution: 'Terrain Tiles' };
@@ -22,9 +38,14 @@ function style(base) {
   };
 }
 
-export function createMap(container, { center, zoom = 12, base = 'ign' } = {}) {
-  const map = new (ML().Map)({ container, style: style(base), center, zoom, maxPitch: 80, attributionControl: { compact: true } });
-  map.addControl(new (ML().NavigationControl)({ visualizePitch: true }), 'top-right');
+export function createMap(container, { center, zoom = 12, base = 'ign', overview = false, dark = false, sunAz, bounds } = {}) {
+  const map = new (ML().Map)({
+    container, style: overview ? undefined : style(base), center, zoom, attributionControl: { compact: true },
+    ...(bounds ? { bounds, fitBoundsOptions: { padding: { top: 100, bottom: 100, left: 30, right: 64 }, maxZoom: 10 } } : {}),
+    ...(overview ? { maxPitch: 0, dragRotate: false, pitchWithRotate: false, touchPitch: false } : { maxPitch: 80 })
+  });
+  if (overview) { map.touchZoomRotate.disableRotation(); map.setStyle(OFM(dark), { transformStyle: overviewStyle(dark, sunAz) }); }
+  map.addControl(new (ML().NavigationControl)(overview ? { showCompass: false } : { visualizePitch: true }), 'top-right');
   map.addControl(new (ML().ScaleControl)({ unit: 'metric' }), 'bottom-left');
   map.on('error', e => console.warn('Carte :', e?.error?.message));
   return map;

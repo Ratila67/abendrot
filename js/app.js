@@ -612,25 +612,54 @@ function viewWeek() {
 }
 
 /* ---------- carte d'ensemble ---------- */
+const darkUI = () => matchMedia('(prefers-color-scheme: dark)').matches;
 function viewMap() {
   document.body.classList.remove('is-detail');
+  document.body.classList.add('is-map');
+  const when = isToday() ? 'Ce soir' : upFirst(noon(S.date).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric' }));
   app.innerHTML = `<div class="fullmap"><div id="bigmap"></div>
-    <div class="mapcard" id="mapcard" role="dialog" aria-live="polite"></div></div>`;
+    <div class="maphead"><strong>${when}</strong>
+      <span class="lg" aria-label="Chance de beau coucher"><i class="hot"></i>75+<i class="mid"></i>50+<i class="cold"></i>moins</span></div>
+    <div class="mapcard" id="mapcard" aria-live="polite"></div></div>`;
   if (!window.maplibregl) { $('#bigmap').innerHTML = '<p class="empty">Carte indisponible : ouvre l’app une fois avec du réseau.</p>'; return; }
-  map = MAP.createMap('bigmap', { center: [7.3, 48.3], zoom: 7.4, base: 'topo' });
+  const E = S.hikes.map(h => evaluate(h));
+  const az = E.reduce((a, e) => a + e.p.az, 0) / E.length;
+  const lons = S.hikes.map(h => h.start.lon), lats = S.hikes.map(h => h.start.lat);
+  map = MAP.createMap('bigmap', { overview: true, dark: darkUI(), sunAz: az, center: [7.2, 48.2], zoom: 7.6,
+    bounds: [[Math.min(...lons), Math.min(...lats)], [Math.max(...lons), Math.max(...lats)]] });
+  const z = () => $('.fullmap')?.classList.toggle('names', map.getZoom() >= 9);
+  map.on('zoom', z);
   map.on('load', () => {
-    S.hikes.map(h => evaluate(h)).forEach(e => {
-      const { h, p, w } = e, v = w && p.sunsetHike ? w.display : (h.sunsetScore === 5 ? 80 : h.sunsetScore === 4 ? 60 : 30);
-      const el = document.createElement('button'); el.type = 'button'; el.className = `hk-dot ${scoreCls(v)}`; el.setAttribute('aria-label', h.name);
-      el.onclick = ev => {
-        ev.stopPropagation(); const card = $('#mapcard');
-        card.innerHTML = `<strong>${esc(h.name)}</strong><a class="btn primary" href="#${h.id}">Voir</a><small>${p.sunsetHike ? `Coucher ${hm(p.set)}, parking ${hm(p.dep)}${w ? `, score ${w.display}` : ''}` : 'Rando de journée'}${e.late ? ', trop tard ce soir' : ''}</small>`;
-        card.classList.add('show');
-      };
-      mapMarkers.push(MAP.marker(el, [h.start.lon, h.start.lat]).addTo(map));
-    });
-    map.on('click', () => $('#mapcard')?.classList.remove('show'));
+    z(); mapPins();
+    $('.fullmap .maplibregl-compact-show')?.classList.remove('maplibregl-compact-show');   // crédits repliés derrière le (i)
+    map.on('click', () => { $('#mapcard')?.classList.remove('show'); $$('.pin.sel').forEach(x => x.classList.remove('sel')); });
     MAP.geolocate(map, cc => { if (cc) S.pos = { lat: cc.latitude, lon: cc.longitude }; });
+  });
+}
+/** Un repère par rando, posé au parking : le score du coucher, ou une simple pastille pour une rando de journée. */
+function mapPins() {
+  mapMarkers.forEach(m => m.remove()); mapMarkers = [];
+  const E = S.hikes.map(h => evaluate(h));
+  const val = e => e.p.sunsetHike ? (e.w ? e.w.display : e.h.sunsetScore * 16) : -1;
+  E.sort((a, b) => val(a) - val(b)).forEach(e => {   // les meilleurs posés en dernier, donc au-dessus
+    const { h, p, w, m } = e, v = val(e);
+    const el = document.createElement('button'); el.type = 'button';
+    el.className = `pin ${v < 0 ? 'day' : scoreCls(v)}${w ? '' : ' guess'}${e.late ? ' late' : ''}`;
+    el.innerHTML = `<span class="pin-b">${v >= 0 && w ? v : v >= 0 ? ic('sunset') : ic('boot')}</span><span class="pin-n">${esc(h.name)}</span>`;
+    el.onclick = ev => {
+      ev.stopPropagation();
+      $$('.pin.sel').forEach(x => x.classList.remove('sel')); el.classList.add('sel');
+      const card = $('#mapcard');
+      const lead = p.sunsetHike && w ? ring(w.display, 46) : `<span class="lead">${p.sunsetHike ? `<span><b>${hm(p.set)}</b>coucher</span>` : `<span>${ic('boot')}<br>journée</span>`}</span>`;
+      card.innerHTML = `<a class="mc" href="#${h.id}">${lead}
+        <span><strong>${esc(h.name)}</strong>
+          <small>${p.sunsetHike ? `Coucher à ${hm(p.set)}, parking à ${hm(p.dep)}` : 'Rando de journée'}${e.late ? ', trop tard' : ''}</small>
+          <small>${nf(m.km)} km, ${Math.round(m.dplus)} m, ${dur(m.total)}</small></span>
+        <span class="mc-go">${ic('back')}</span></a>`;
+      card.classList.add('show');
+    };
+    mapMarkers.push(MAP.marker(el, [h.start.lon, h.start.lat], { anchor: 'center' }).addTo(map));
+    el.setAttribute('aria-label', `${h.name}${v >= 0 && w ? `, score ${v}` : ''}`);   // après coup : MapLibre pose « Map marker »
   });
 }
 
@@ -657,7 +686,7 @@ function bindSettings() {
 function teardown() { mapMarkers.forEach(m => m.remove()); mapMarkers = []; if (map) { map.remove(); map = null; } S.cur = null; }
 function toggle(k, id) { const a = S.saved[k], i = a.indexOf(id); i < 0 ? a.push(id) : a.splice(i, 1); store.set('saved', S.saved).catch(() => {}); }
 function route() {
-  S.token++; teardown();
+  S.token++; teardown(); document.body.classList.remove('is-map');
   const h = location.hash.slice(1), hike = S.hikes.find(x => x.id === h);
   const tab = hike ? null : ['carte', 'favoris', 'semaine'].includes(h) ? h : 'liste';
   $$('.tabs a').forEach(a => a.toggleAttribute('aria-current', false));
@@ -676,7 +705,8 @@ async function loadWeather() {
   try { S.wx = await fetchForecast(S.hikes.map(wxPoint)); S.wxErr = null; } catch (e) { S.wxErr = e.message; }
   const c = S.cur;
   if (c && $('#wx')) { c.w = wxFor(c.h, c.p); $('#wx').innerHTML = wxHTML(c.h, c.p); fillSecond(c.h, c.p, S.token); }
-  else if (location.hash !== '#carte') route();
+  else if (location.hash === '#carte') { if (map?.loaded()) mapPins(); }
+  else route();
 }
 async function init() {
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(() => {});

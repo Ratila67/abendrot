@@ -1,5 +1,5 @@
 // Service worker : app installable + carte et données disponibles sans réseau
-const VERSION = 'v3.3.1';
+const VERSION = 'v3.4.0';
 const SHELL = `shell-${VERSION}`, DATA = 'data-v1', TILES = 'tiles-v1', API = 'api-v1';
 const MAX_TILES = 6000;
 const CDN = ['https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js', 'https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css'];
@@ -48,6 +48,8 @@ self.addEventListener('fetch', e => {
   if (req.method !== 'GET') return;
   const u = new URL(req.url);
   if (isTile(u)) return e.respondWith(cacheFirst(req, TILES));
+  // OpenFreeMap : le style et l'index changent chaque semaine (réseau d'abord), tuiles, polices et icônes sont versionnées
+  if (u.hostname === 'tiles.openfreemap.org') return e.respondWith(/^\/(styles\/|planet\/?$)/.test(u.pathname) ? networkFirst(req, API) : cacheFirst(req, TILES));
   if (['api.open-meteo.com', 'air-quality-api.open-meteo.com', 'overpass-api.de', 'api.sunsethue.com'].includes(u.hostname)) return e.respondWith(networkFirst(req, API));
   if (u.hostname === 'api.windy.com' || u.hostname.endsWith('windy.com')) return; // jetons d'image à 10 min : jamais en cache
   if (req.mode === 'navigate') return e.respondWith(networkFirst(req, SHELL, new URL('./index.html', self.registration.scope).href));
