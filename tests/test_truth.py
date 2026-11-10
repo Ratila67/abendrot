@@ -156,8 +156,55 @@ def test_gemini_reponse_et_repli(monkeypatch):
         return R(200, {"candidates": [{"content": {"parts": [{"text": txt}]}}]})
 
     monkeypatch.setattr(vision.requests, "post", fake_post)
+    monkeypatch.setattr(vision, "time", FakeTime())
     assert vision.classify(b"jpeg") == {"vis_sky": "feu", "vis_sea": 1, "vis_alps": None, "vis_conf": 0.8}
     assert calls == ["retire", "gemini-2.5-flash"]
+
+
+class FakeTime:
+    """Horloge simulée : sleep avance le temps sans attendre."""
+    def __init__(self): self.now, self.sleeps = 1000.0, []
+    def monotonic(self): return self.now
+    def sleep(self, s):
+        if s > 0:
+            self.sleeps.append(round(s, 1)); self.now += s
+
+
+def test_gemini_cadence_reprise_et_pause(monkeypatch):
+    from truth import vision
+    monkeypatch.setenv("GEMINI_API_KEY", "k")
+    monkeypatch.setattr(vision, "GEMINI_MODELS", ["gemini-flash-latest", "gemini-flash-lite-latest"])
+    monkeypatch.setattr(vision, "_last", [0.0])
+    monkeypatch.setattr(vision, "_paused", [False])
+    monkeypatch.setattr(vision, "_warned", set())
+    clock = FakeTime()
+    monkeypatch.setattr(vision, "time", clock)
+    ok = '{"sky": "pale", "sea_of_clouds": false, "alps_visible": false, "confidence": 0.6}'
+
+    class R:
+        def __init__(self, code, text=""):
+            self.status_code, self.ok, self.text = code, code == 200, text
+        def json(self): return {"candidates": [{"content": {"parts": [{"text": ok}]}}]}
+
+    replies, calls = [], []
+    def fake_post(url, **kw):
+        calls.append(url.split("/models/")[1].split(":")[0])
+        return replies.pop(0)
+    monkeypatch.setattr(vision.requests, "post", fake_post)
+
+    # 429 avec délai court : on attend ce que Google demande, puis on reprend le même modèle
+    replies[:] = [R(429, '{"error": {"details": [{"retryDelay": "5s"}]}}'), R(200)]
+    assert vision.classify(b"a")["vis_sky"] == "pale"
+    assert calls == ["gemini-flash-latest"] * 2 and clock.sleeps == [5.0, 2.0]   # 5 s demandées, puis 7 s entre deux appels
+
+    # appel suivant espacé de 7 s ; quota du jour épuisé (délai d'une heure) : modèle lite tout de suite ;
+    # lite surchargé trois fois : on abandonne pour ce passage, sans plus rien appeler
+    calls.clear(); clock.sleeps.clear()
+    replies[:] = [R(429, '{"retryDelay": "3600s"}'), R(503), R(503), R(503)]
+    assert vision.classify(b"b") == {}
+    assert calls == ["gemini-flash-latest"] + ["gemini-flash-lite-latest"] * 3
+    assert clock.sleeps[0] == 7.0 and 3600.0 not in clock.sleeps
+    assert vision.classify(b"c") == {} and len(calls) == 4   # en pause jusqu'au passage suivant
 
 
 def decor(seed, size=(400, 225)):
@@ -269,6 +316,7 @@ def test_boucle_du_soir_couvre_chaque_fenetre(capsys, isole):
 def test_echec_d_etiquetage_visible_en_annotation(monkeypatch, capsys):
     from truth import vision
     monkeypatch.setattr(vision, "_warned", set())
+    monkeypatch.setattr(vision, "_paused", [False])
     monkeypatch.delenv("GEMINI_API_KEY", raising=False)
     monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
     assert vision.classify(b"jpeg") == {} and vision.classify(b"jpeg") == {}
