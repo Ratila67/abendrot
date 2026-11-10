@@ -263,3 +263,22 @@ def test_boucle_du_soir_couvre_chaque_fenetre(capsys, isole):
     assert capsys.readouterr().out.strip() == "600"
     with pytest.raises(SystemExit, match="Rien à capturer"):
         capture.main(now=d_end + dt.timedelta(minutes=1), argv=["--wait"])
+
+
+def test_echec_d_etiquetage_visible_en_annotation(monkeypatch, capsys):
+    from truth import vision
+    monkeypatch.setattr(vision, "_warned", set())
+    monkeypatch.delenv("GEMINI_API_KEY", raising=False)
+    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    assert vision.classify(b"jpeg") == {} and vision.classify(b"jpeg") == {}
+    out = capsys.readouterr().out
+    assert out.count("::warning::étiquetage IA désactivé") == 1   # une seule annotation par passage
+
+    monkeypatch.setenv("GEMINI_API_KEY", "k")
+    monkeypatch.setattr(vision, "_gemini", lambda jpeg, key: (_ for _ in ()).throw(RuntimeError("Gemini 429 : quota")))
+    assert vision.classify(b"jpeg") == {}
+    monkeypatch.setattr(vision, "_gemini", lambda jpeg, key: "pas du JSON {")
+    assert vision.classify(b"jpeg") == {}
+    out = capsys.readouterr().out
+    assert "::warning::étiquetage gemini indisponible : Gemini 429 : quota" in out
+    assert "::warning::étiquetage gemini : réponse illisible" in out

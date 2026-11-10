@@ -73,13 +73,31 @@ def provider():
     return None
 
 
+_warned = set()
+
+
+def _warn(kind, msg):
+    """Annotation GitHub (visible sans connexion, sous le run), une fois par type et par passage."""
+    if kind not in _warned:
+        _warned.add(kind)
+        print(f"::warning::{msg}")
+
+
 def classify(jpeg):
     p = provider()
     if not p:
+        _warn("cle", "étiquetage IA désactivé : ni GEMINI_API_KEY ni ANTHROPIC_API_KEY dans l’environnement du job")
         return {}
     try:
         text = _gemini(jpeg, os.environ["GEMINI_API_KEY"].strip()) if p == "gemini" else _claude(jpeg, os.environ["ANTHROPIC_API_KEY"].strip())
-        return _parse(text)
     except Exception as e:  # noqa: BLE001 - l'étiquetage ne doit jamais bloquer la capture
         print(f"  étiquetage {p} indisponible : {e}")
+        _warn("appel", f"étiquetage {p} indisponible : {str(e)[:300]}")
         return {}
+    try:
+        lab = _parse(text)
+    except ValueError:
+        lab = {}
+    if not lab:
+        _warn("reponse", f"étiquetage {p} : réponse illisible : {(text or '')[:200]!r}")
+    return lab
