@@ -16,6 +16,11 @@ def main(now=None):
     spots = sunset_spots()
     path = DATA / "forecasts.csv"
     seen = {(r["snapshot_date"], r["date"], r["spot_id"]) for r in read_csv(path)}
+    if all((today.isoformat(), (today + dt.timedelta(days=lead)).isoformat(), s["spot_id"]) in seen
+           for s in spots for lead in (0, 1)):
+        # Cron de secours arrivé après le Worker : rien à refaire, et surtout pas d'appel météo qui pourrait échouer.
+        print(f"Prévisions du {today} déjà archivées : rien à faire.")
+        return
     series, plain = weather.forecast([(s["lat"], s["lon"], s["alt"]) for s in spots])
     key = env("SUNSETHUE_KEY")
     rows = []

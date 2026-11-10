@@ -84,7 +84,8 @@ def test_snapshot(isole, monkeypatch):
     monkeypatch.setattr(weather, "forecast", lambda pts: ([ser(10) for _ in pts], ser(90)))
     monkeypatch.setattr(weather, "aerosols", lambda lat, lon: {"time": times, "aerosol_optical_depth": [0.08] * 72})
     snapshot.main(now=now)
-    snapshot.main(now=now)  # relancer le même jour n'ajoute rien
+    monkeypatch.setattr(weather, "forecast", lambda pts: (_ for _ in ()).throw(RuntimeError("Open-Meteo 429")))
+    snapshot.main(now=now)  # relancer le même jour n'ajoute rien, et ne rappelle pas la météo
     rows = common.read_csv(isole / "forecasts.csv")
     assert len(rows) == 2 * len(spots)
     assert {r["lead_day"] for r in rows} == {"0", "1"} and rows[0]["aod"] == "0.08"
