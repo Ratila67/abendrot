@@ -331,3 +331,30 @@ def test_echec_d_etiquetage_visible_en_annotation(monkeypatch, capsys):
     out = capsys.readouterr().out
     assert "::warning::étiquetage gemini indisponible : Gemini 429 : quota" in out
     assert "::warning::étiquetage gemini : réponse illisible" in out
+
+
+def test_gemini_402_bascule_sur_le_modele_suivant(monkeypatch, capsys):
+    from truth import vision
+    monkeypatch.setenv("GEMINI_API_KEY", "k")
+    monkeypatch.setattr(vision, "GEMINI_MODELS", ["gemini-flash-latest", "gemini-flash-lite-latest"])
+    monkeypatch.setattr(vision, "_last", [0.0])
+    monkeypatch.setattr(vision, "_paused", [False])
+    monkeypatch.setattr(vision, "_warned", set())
+    monkeypatch.setattr(vision, "time", FakeTime())
+    ok = '{"sky": "couvert", "sea_of_clouds": false, "alps_visible": null, "confidence": 0.9}'
+    refus = '{\n  "error": {\n    "code": 402,\n    "message": "Billing required"\n  }\n}'
+
+    class R:
+        def __init__(self, code, text=""): self.status_code, self.ok, self.text = code, code == 200, text
+        def json(self): return {"candidates": [{"content": {"parts": [{"text": ok}]}}]}
+
+    replies, calls = [R(402, refus), R(200)], []
+    monkeypatch.setattr(vision.requests, "post", lambda url, **kw: calls.append(url.split("/models/")[1].split(":")[0]) or replies.pop(0))
+    assert vision.classify(b"a")["vis_sky"] == "couvert"
+    assert calls == ["gemini-flash-latest", "gemini-flash-lite-latest"]
+
+    # les deux modèles refusés : une annotation sur une seule ligne, avec la raison donnée par Google, puis pause
+    replies[:] = [R(402, refus), R(402, refus)]
+    assert vision.classify(b"b") == {} and vision.classify(b"c") == {} and len(calls) == 4
+    warn = [l for l in capsys.readouterr().out.splitlines() if l.startswith("::warning::")]
+    assert len(warn) == 1 and warn[0].count("Billing required") == 2 and "gemini-flash-lite-latest" in warn[0]

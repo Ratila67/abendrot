@@ -51,8 +51,13 @@ def _claude(jpeg, key):
     return "".join(b.get("text", "") for b in r.json().get("content", []) if b.get("type") == "text")
 
 
+def _flat(text, n=400):
+    """Réponse d'erreur sur une ligne : une annotation GitHub s'arrête au premier saut de ligne."""
+    return " ".join((text or "").split())[:n]
+
+
 class Saturated(RuntimeError):
-    """Gemini refuse encore après les reprises (quota ou surcharge) : on n'insiste plus pendant ce passage."""
+    """Gemini refuse encore après les reprises (quota, surcharge ou paiement requis) : on n'insiste plus pendant ce passage."""
 
 
 _last = [0.0]
@@ -63,7 +68,7 @@ def _gemini(jpeg, key):
     body = {"contents": [{"parts": [{"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(jpeg).decode()}},
                                     {"text": PROMPT}]}],
             "generationConfig": {"temperature": 0, "responseMimeType": "application/json"}}
-    last = busy = None
+    last, busy = None, {}   # busy : dernier refus par modèle, tous rapportés dans l'annotation
     for model in GEMINI_MODELS:  # repli si un modèle est retiré, renommé ou à court de quota
         for attempt in range(3):
             time.sleep(max(0.0, _last[0] + GEMINI_GAP - time.monotonic()))
@@ -72,21 +77,24 @@ def _gemini(jpeg, key):
             if r.status_code == 404:
                 last = f"modèle {model} introuvable"
                 break
+            if r.status_code in (402, 403):   # modèle hors de l'offre de la clé (402 : paiement requis) : modèle suivant
+                busy[model] = f"Gemini {r.status_code} sur {model} : {_flat(r.text, 300)}"
+                break
             _last[0] = time.monotonic()
             if r.status_code in (429, 503):
                 m = re.search(r'"retryDelay":\s*"(\d+(?:\.\d+)?)s"', r.text or "")
                 wait = float(m.group(1)) if m else 10.0 * (attempt + 1)
-                busy = f"Gemini {r.status_code} sur {model} : {(r.text or '')[:160]}"
+                busy[model] = f"Gemini {r.status_code} sur {model} : {_flat(r.text, 300)}"
                 if wait > GEMINI_WAIT or attempt == 2:
                     break
                 time.sleep(wait)
                 continue
             if not r.ok:
-                raise RuntimeError(f"Gemini {r.status_code} : {r.text[:200]}")
+                raise RuntimeError(f"Gemini {r.status_code} sur {model} : {_flat(r.text)}")
             parts = (r.json().get("candidates") or [{}])[0].get("content", {}).get("parts", [])
             return "".join(p.get("text", "") for p in parts)
     if busy:
-        raise Saturated(busy)
+        raise Saturated(" ; ".join(busy.values()))
     raise RuntimeError(last or "aucun modèle Gemini disponible")
 
 
@@ -105,7 +113,7 @@ def _warn(kind, msg):
     """Annotation GitHub (visible sans connexion, sous le run), une fois par type et par passage."""
     if kind not in _warned:
         _warned.add(kind)
-        print(f"::warning::{msg}")
+        print(f"::warning::{_flat(msg, 900)}")
 
 
 def classify(jpeg):
@@ -121,7 +129,7 @@ def classify(jpeg):
         print(f"  étiquetage {p} indisponible : {e}")
         if isinstance(e, Saturated):
             _paused[0] = True   # repris au passage suivant, 10 min plus tard
-        _warn("appel", f"étiquetage {p} indisponible : {str(e)[:300]}")
+        _warn("appel", f"étiquetage {p} indisponible : {e}")
         return {}
     try:
         lab = _parse(text)
