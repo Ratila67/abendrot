@@ -70,6 +70,7 @@ soirée     truth.capture    un job par soir, un passage toutes les 10 min    �
 2. Dans Settings, Secrets and variables, Actions :
    - secret `WINDY_KEY` (obligatoire) ;
    - secret `GEMINI_API_KEY` (étiquettes par Gemini, palier gratuit) ou `ANTHROPIC_API_KEY` (Claude), optionnel ;
+     Pour vérifier la clé : Actions → « Étiquetage IA, test » → Run workflow ; chaque modèle Gemini répond en annotation en haut du run.
    - secret `SUNSETHUE_KEY` (variable du modèle, optionnel) ;
    - secret `HF_TOKEN` et variable `HF_DATASET`, par exemple `ton-pseudo/abendrot-sky` (archive privée des images sur Hugging Face, recommandé).
 3. Onglet Actions, lance « Vérité terrain, découverte des webcams ».

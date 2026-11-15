@@ -358,3 +358,22 @@ def test_gemini_402_bascule_sur_le_modele_suivant(monkeypatch, capsys):
     assert vision.classify(b"b") == {} and vision.classify(b"c") == {} and len(calls) == 4
     warn = [l for l in capsys.readouterr().out.splitlines() if l.startswith("::warning::")]
     assert len(warn) == 1 and warn[0].count("Billing required") == 2 and "gemini-flash-lite-latest" in warn[0]
+
+
+def test_diagnostic_gemini_un_appel_par_modele(monkeypatch, capsys):
+    from truth import vision
+    monkeypatch.setenv("GEMINI_API_KEY", "k")
+    monkeypatch.setattr(vision, "GEMINI_MODELS", ["gemini-flash-latest", "gemini-flash-lite-latest"])
+    ok = '{"sky": "colore", "sea_of_clouds": false, "alps_visible": null, "confidence": 0.7}'
+
+    class R:
+        def __init__(self, code, text=""): self.status_code, self.ok, self.text = code, code == 200, text
+        def json(self): return {"candidates": [{"content": {"parts": [{"text": ok}]}}]}
+
+    replies = [R(402, '{"error": {"message": "Billing\nrequired"}}'), R(200)]
+    monkeypatch.setattr(vision.requests, "post", lambda url, **kw: replies.pop(0))
+    assert vision.check() == 0
+    out = capsys.readouterr().out.splitlines()
+    assert out[0].startswith("::warning::gemini-flash-latest : 402") and out[1].startswith("::notice::gemini-flash-lite-latest : OK")
+    monkeypatch.delenv("GEMINI_API_KEY")
+    assert vision.check() == 1

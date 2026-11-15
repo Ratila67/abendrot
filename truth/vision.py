@@ -5,6 +5,7 @@ Fournisseur choisi automatiquement selon le secret présent :
   ANTHROPIC_API_KEY → Claude
 """
 import base64
+import io
 import json
 import os
 import re
@@ -64,10 +65,14 @@ _last = [0.0]
 _paused = [False]
 
 
-def _gemini(jpeg, key):
-    body = {"contents": [{"parts": [{"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(jpeg).decode()}},
+def _gemini_body(jpeg):
+    return {"contents": [{"parts": [{"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(jpeg).decode()}},
                                     {"text": PROMPT}]}],
             "generationConfig": {"temperature": 0, "responseMimeType": "application/json"}}
+
+
+def _gemini(jpeg, key):
+    body = _gemini_body(jpeg)
     last, busy = None, {}   # busy : dernier refus par modèle, tous rapportés dans l'annotation
     for model in GEMINI_MODELS:  # repli si un modèle est retiré, renommé ou à court de quota
         for attempt in range(3):
@@ -138,3 +143,33 @@ def classify(jpeg):
     if not lab:
         _warn("reponse", f"étiquetage {p} : réponse illisible : {(text or '')[:200]!r}")
     return lab
+
+
+def check():
+    """Diagnostic manuel (workflow « Étiquetage IA, test ») : un appel par modèle Gemini sur une image de test,
+    résultat en annotation du run, lisible sans connexion."""
+    from PIL import Image
+    key = os.environ.get("GEMINI_API_KEY", "").strip()
+    if not key:
+        print("::error::GEMINI_API_KEY absente de l’environnement du job")
+        return 1
+    buf = io.BytesIO()
+    Image.new("RGB", (320, 180), (214, 120, 60)).save(buf, "JPEG")   # aplat orangé : un ciel de couchant schématique
+    ok = False
+    for model in GEMINI_MODELS:
+        r = requests.post(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                          headers={"x-goog-api-key": key, "content-type": "application/json"},
+                          json=_gemini_body(buf.getvalue()), timeout=60)
+        if r.ok:
+            parts = (r.json().get("candidates") or [{}])[0].get("content", {}).get("parts", [])
+            text = "".join(x.get("text", "") for x in parts)
+            print(f"::notice::{model} : OK, étiquette {_parse(text) or 'illisible'} ; réponse {_flat(text, 200)}")
+            ok = True
+        else:
+            print(f"::warning::{model} : {r.status_code} {_flat(r.text, 600)}")
+    return 0 if ok else 1
+
+
+if __name__ == "__main__":
+    import sys
+    sys.exit(check())
